@@ -120,6 +120,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <li>
 <p>Feature for admin to delete users</p>
 </li>
+<li>
+<p>Feature for users to change password</p>
+</li>
 </ul>
 </div>
 </li>
@@ -375,8 +378,98 @@ There is no need to save manually.</p>
 <div class="sect3">
 <h4 id="login-to-the-system-code-login-code"><a class="link" href="#login-to-the-system-code-login-code">3.2.1. Login to the system : <code>login</code></a></h4>
 <div class="paragraph">
-<p>Prompt the users for their username and password.<br>
-Format: <code>login</code></p>
+<p>Login with users' given username and password.<br>
+Format: <code>login u/USERNAME p/PASSWORD</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Login user with username as zulq9 and password as zulsenpai.<br>
+<code>login u/zulq9 p/zulsenpai</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="add-users-code-add_user-code"><a class="link" href="#add-users-code-add_user-code">3.2.2. Add users : <code>add_user</code></a></h4>
+<div class="paragraph">
+<p>Adds an user into the system.<br>
+Format: <code>add_user n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add user with username as yaotx, password as yaotxfanboi, name as Yao TengXiong and role as manager.<br>
+<code>add_user u/yaotx p/yaotxfanboi n/Yao TengXiong r/manager</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="update-users-code-update_user-code"><a class="link" href="#update-users-code-update_user-code">3.2.3. Update users : <code>update_user</code></a></h4>
+<div class="paragraph">
+<p>Updates an user information into the system with given username.<br>
+Format: <code>update_user u/USERNAME n/NAME  r/ROLE</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update user with given username as yaotx. Change name to Yao Teng Xiong and role as admin.<br>
+<code>update_user u/yaotx n/Yao Teng Xiong r/admin</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="remove-users-code-remove_user-code"><a class="link" href="#remove-users-code-remove_user-code">3.2.4. Remove users : <code>remove_user</code></a></h4>
+<div class="paragraph">
+<p>Removes an user from the system with given username.<br>
+Format: <code>remove_user u/USERNAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Reomove user with given username as fzdy1914.<br>
+<code>remove_user u/fzdy1914</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-users-code-list_user-code"><a class="link" href="#list-users-code-list_user-code">3.2.5. List users : <code>list_user</code></a></h4>
+<div class="paragraph">
+<p>Displays a list of existing users in the system.<br>
+Format: <code>list_user</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="change-user-s-password-code-change_password-code"><a class="link" href="#change-user-s-password-code-change_password-code">3.2.6. Change user&#8217;s password : <code>change_password</code></a></h4>
+<div class="paragraph">
+<p>Updates an user information into the system with given username.<br>
+Format: <code>change_password u/USERNAME o/OLD_PASSWORD n/NEW_PASSWORD</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Change user&#8217;s password with given username as darren96, old password as darren123, new password as darrensinglenus.<br>
+<code>change_password u/darren96 o/darren123 n/darrensinglenus</code>.</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -941,6 +1034,24 @@ Selects the 1st item in the results of the <code>find</code> command.</p>
 <div class="ulist">
 <ul>
 <li>
+<p><strong>Login</strong> <code>login u/USERNAME p/PASSWORD</code></p>
+</li>
+<li>
+<p><strong>Add User</strong> <code>add_user n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
+</li>
+<li>
+<p><strong>Update User</strong> <code>update_user n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
+</li>
+<li>
+<p><strong>Remove User</strong> <code>remove_user u/USERNAME</code></p>
+</li>
+<li>
+<p><strong>List User</strong> <code>list_user</code></p>
+</li>
+<li>
+<p><strong>Change Password</strong> <code>change_password u/USERNAME o/OLD_PASSWORD n/NEW_PASSWORD</code></p>
+</li>
+<li>
 <p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
 e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
 </li>
@@ -1051,4 +1162,4 @@ e.g. <code>reject id/12 d/Only 100 amount is allowed</code></p>
 <p>A graphical user interface (GUI) is an interface through which a user interacts with the software.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-02 15:51:01 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-02 16:08:15 UTC</div></div></div></body></html>
