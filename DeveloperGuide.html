@@ -70,16 +70,22 @@
 </li>
 <li><a href="#product-scope">Appendix B: Product Scope</a></li>
 <li><a href="#user-stories">Appendix C: User Stories</a></li>
-<li><a href="#use-cases">Appendix D: Use Cases</a></li>
+<li><a href="#use-cases">Appendix D: Use Cases</a>
+<ul class="sectlevel2">
+<li><a href="#use-case-approve-po">D.1. Use case: Approve PO</a></li>
+<li><a href="#use-case-reject-po">D.2. Use case: Reject PO</a></li>
+</ul>
+</li>
 <li><a href="#non-functional-requirements">Appendix E: Non Functional Requirements</a></li>
 <li><a href="#project-management">Appendix F: Project Management</a></li>
 <li><a href="#glossary">Appendix G: Glossary</a></li>
-<li><a href="#product-survey">Appendix H: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix I: Instructions for Manual Testing</a>
+<li><a href="#acronyms">Appendix H: Acronyms</a></li>
+<li><a href="#product-survey">Appendix I: Product Survey</a></li>
+<li><a href="#instructions-for-manual-testing">Appendix J: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">I.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">I.2. Deleting a person</a></li>
-<li><a href="#saving-data">I.3. Saving data</a></li>
+<li><a href="#launch-and-shutdown">J.1. Launch and Shutdown</a></li>
+<li><a href="#deleting-a-person">J.2. Deleting a person</a></li>
+<li><a href="#saving-data">J.3. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -2306,8 +2312,159 @@ staff and inventory without a need to invest a huge sum in complicated and expen
 </li>
 </ul>
 </div>
+<h3 id="use-case-generate-po" class="discrete">Use case: Generate PO</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list inventory</p>
+</li>
+<li>
+<p>Inventory Manager shows a list of inventory</p>
+</li>
+<li>
+<p>User requests to generate PO on the inventory with low amount</p>
+</li>
+<li>
+<p>Inventory Manager generates PO</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given command is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="use-case-approve-po"><a class="link" href="#use-case-approve-po">D.1. Use case: Approve PO</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list PO</p>
+</li>
+<li>
+<p>Inventory Manager shows a list of PO</p>
+</li>
+<li>
+<p>User requests to approve a specific PO in the list</p>
+</li>
+<li>
+<p>Inventory Manager updates PO status</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given PO ID is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-reject-po"><a class="link" href="#use-case-reject-po">D.2. Use case: Reject PO</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list PO</p>
+</li>
+<li>
+<p>Inventory Manager shows a list of PO</p>
+</li>
+<li>
+<p>User requests to reject a specific PO in the list</p>
+</li>
+<li>
+<p>Inventory Manager updates PO status</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given PO ID is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p><em>{To be updated}</em></p>
+</div>
 </div>
 </div>
 </div>
@@ -2474,7 +2631,24 @@ staff and inventory without a need to invest a huge sum in complicated and expen
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix H: Product Survey</a></h2>
+<h2 id="acronyms"><a class="link" href="#acronyms">Appendix H: Acronyms</a></h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><a id="mss"></a> MSS</dt>
+<dd>
+<p>MSS stands for Main Success Scenario where it describes the shortest and most straightforward interaction by which the post-conditions can be achieved</p>
+</dd>
+<dt class="hdlist1"><a id="po"></a> PO</dt>
+<dd>
+<p>PO stands for purchase order</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="product-survey"><a class="link" href="#product-survey">Appendix I: Product Survey</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Product Name</strong></p>
@@ -2511,7 +2685,7 @@ staff and inventory without a need to invest a huge sum in complicated and expen
 </div>
 </div>
 <div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix I: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix J: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -2529,7 +2703,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">I.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">J.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2567,7 +2741,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">I.2. Deleting a person</a></h3>
+<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">J.2. Deleting a person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2599,7 +2773,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">I.3. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">J.3. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -2619,4 +2793,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-02 05:12:00 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-02 15:51:01 UTC</div></div></div></body></html>
