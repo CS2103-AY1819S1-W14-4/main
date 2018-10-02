@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Inventory Manager - User Guide</title><link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Inventory Manager - User Guide</h1></div><div id="content"><div id="preamble">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level3">AB-3</a></li><li class="nav-item"><a class="nav-link active" href="index.html">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="index.html">AddressBook-Level4</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/se-edu/addressbook-level4"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Inventory Manager - User Guide</h1></div><div id="content"><div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
 <p>By: <code>Team W14-4</code>      Since: <code>Sept 2018</code>      Licence: <code>MIT</code></p>
@@ -13,31 +13,17 @@
 <li><a href="#quick-start">2. Quick Start</a></li>
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></li>
-<li><a href="#login-to-the-system-code-login-code">3.2. Login to the system : <code>login</code></a></li>
-<li><a href="#selling-an-item-cashier-code-sell-code">3.3. Selling an item (Cashier) : <code>sell</code></a></li>
-<li><a href="#adding-an-item-code-add-code">3.4. Adding an item : <code>add</code></a></li>
-<li><a href="#listing-all-items-code-list-code">3.5. Listing all items : <code>list</code></a></li>
-<li><a href="#editing-an-item-code-update-code">3.6. Editing an item : <code>update</code></a></li>
-<li><a href="#locating-items-by-name-code-find-code">3.7. Locating items by name : <code>find</code></a></li>
-<li><a href="#deleting-an-item-code-delete-code">3.8. Deleting an item : <code>delete</code></a></li>
-<li><a href="#selecting-an-item-code-select-code">3.9. Selecting an item : <code>select</code></a></li>
-<li><a href="#export-to-csv-code-export-csv-code">3.10. Export to CSV: <code>export-csv</code></a></li>
-<li><a href="#export-entire-data-to-im-file-code-export-im-code">3.11. Export entire data to .im file: <code>export-im</code></a></li>
-<li><a href="#import-from-csv-code-import-csv-code">3.12. Import from CSV: <code>import-csv</code></a></li>
-<li><a href="#import-entire-data-from-im-file-code-import-im-code">3.13. Import entire data from .im file: <code>import-im</code></a></li>
-<li><a href="#generate-purchase-order-code-generate-po-code">3.14. Generate purchase order : <code>generate-po</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">3.15. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">3.16. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">3.17. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">3.18. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">3.19. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">3.20. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">3.21. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#general">3.1. General</a></li>
+<li><a href="#users-management">3.2. Users Management</a></li>
+<li><a href="#sales-management">3.3. Sales Management</a></li>
+<li><a href="#reports-management">3.4. Reports Management</a></li>
+<li><a href="#inventory-management">3.5. Inventory Management</a></li>
+<li><a href="#purchase-orders-management">3.6. Purchase Orders Management</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
 <li><a href="#command-summary">5. Command Summary</a></li>
+<li><a href="#glossary">Glossary</a></li>
 </ul>
 </div>
 </div>
@@ -110,7 +96,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <h2 id="Features"><a class="link" href="#Features">3. Features</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>Major Features</strong><br></p>
+<p><strong>Key Features</strong><br></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -137,20 +123,20 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </li>
 <li>
-<p><strong>Sales</strong></p>
+<p><strong>Sales Entry</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Feature for cashier to create an order</p>
+<p>Feature for cashier to create a sale</p>
 </li>
 <li>
-<p>Feature for cashier to delete an order</p>
+<p>Feature for cashier to delete a sale</p>
 </li>
 <li>
-<p>Feature for cashier to search for an order</p>
+<p>Feature for listing sales</p>
 </li>
 <li>
-<p>Order creation to automatically update inventory level</p>
+<p>Feature for cashier to search for a sale</p>
 </li>
 </ul>
 </div>
@@ -240,402 +226,31 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/IPhone X</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user. For example <code>add n/NAME</code>. <code>NAME</code> is a parameter which can be used as <code>add n/IPhone X</code>.</p>
 </li>
 <li>
-<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/IPhone X t/Expensive</code> or as <code>n/IPhone X</code>.</p>
+<p>Items in square brackets are optional. For example <code>add n/NAME [t/TAG]</code> can be used as <code>add n/IPhone X t/Expensive</code> or as <code>n/IPhone X</code>.</p>
 </li>
 <li>
-<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/Firmware</code> t/ExpiryDate` etc.</p>
+<p>Items with <code>…</code>​ after them can be zero or more times. For example <code>add n/NAME [t/TAG]&#8230;&#8203;</code> can be used as <code>add n/IPhone X</code> (i.e. 0 times) or <code>add n/IPhone X t/Firmware t/ExpiryDate</code> (i.e. 2 times).</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME q/QUANTITY</code>, <code>q/QUANTITY n/NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order. For example, if the command specifies <code>add n/NAME q/QUANTITY</code>, <code>add q/QUANTITY n/NAME</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1. Viewing help : <code>help</code></a></h3>
+<h3 id="general"><a class="link" href="#general">3.1. General</a></h3>
+<div class="sect3">
+<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1.1. Viewing help : <code>help</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="login-to-the-system-code-login-code"><a class="link" href="#login-to-the-system-code-login-code">3.2. Login to the system : <code>login</code></a></h3>
-<div class="paragraph">
-<p>Prompt the users for their username and password.<br>
-Format: <code>login</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="selling-an-item-cashier-code-sell-code"><a class="link" href="#selling-an-item-cashier-code-sell-code">3.3. Selling an item (Cashier) : <code>sell</code></a></h3>
-<div class="paragraph">
-<p>Format: <code>sell</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="adding-an-item-code-add-code"><a class="link" href="#adding-an-item-code-add-code">3.4. Adding an item : <code>add</code></a></h3>
-<div class="paragraph">
-<p>Adds an item to the inventory manager<br>
-Format: <code>add n/NAME s/SERIAL_NUMBER q/QUANTITY l/LOCATION b/BATCH_NUMBER [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-An item can have any number of tags (including 0)
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>add n/IPhone X s/SN-1234 q/1000 l/101-001A b/12-12-2012</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="listing-all-items-code-list-code"><a class="link" href="#listing-all-items-code-list-code">3.5. Listing all items : <code>list</code></a></h3>
-<div class="paragraph">
-<p>Shows a list of all items in the inventory manager.<br>
-Format: <code>list</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="editing-an-item-code-update-code"><a class="link" href="#editing-an-item-code-update-code">3.6. Editing an item : <code>update</code></a></h3>
-<div class="paragraph">
-<p>Edits an existing person in the address book.<br>
-Format: <code>update INDEX [n/NAME] [s/SERIAL_NUMBER] [q/QUANTITY] [l/LOCATION] [b/BATCH_NUMBER] [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Update the item at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed inventory list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-<li>
-<p>When updating tags, the existing tags of the item will be removed i.e adding of tags is not cumulative.</p>
-</li>
-<li>
-<p>You can remove all the item&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>update 1 l/111-123A q/999</code><br>
-Updates the location and quantity of the 1st item to be <code>111-123A</code> and <code>999</code> respectively.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="locating-items-by-name-code-find-code"><a class="link" href="#locating-items-by-name-code-find-code">3.7. Locating items by name : <code>find</code></a></h3>
-<div class="paragraph">
-<p>Finds item whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The search is case insensitive. e.g <code>iphone</code> will match <code>IPhone</code></p>
-</li>
-<li>
-<p>The order of the keywords does not matter. e.g. <code>X IPhone</code> will match <code>IPhone X</code></p>
-</li>
-<li>
-<p>Only the name of the item is searched.</p>
-</li>
-<li>
-<p>Only full words will be matched e.g. <code>phone</code> will not match <code>IPhone</code></p>
-</li>
-<li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Iphone 10</code> will return <code>IPhone X</code>, <code>Samsung 10</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>find iphone</code><br>
-Returns <code>IPhone X</code> and <code>IPhone 10</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-an-item-code-delete-code"><a class="link" href="#deleting-an-item-code-delete-code">3.8. Deleting an item : <code>delete</code></a></h3>
-<div class="paragraph">
-<p>Deletes the specified item from the inventory.<br>
-Format: <code>delete INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the item at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed inventory list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
-Deletes the 2nd item in the inventory.</p>
-</li>
-<li>
-<p><code>find IPhone X</code><br>
-<code>delete 1</code><br>
-Deletes the 1st item in the results of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="selecting-an-item-code-select-code"><a class="link" href="#selecting-an-item-code-select-code">3.9. Selecting an item : <code>select</code></a></h3>
-<div class="paragraph">
-<p>Selects the item identified by the index number used in the displayed inventory.<br>
-Format: <code>select INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Selects the person and loads the Google search page the person at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed item list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list</code><br>
-<code>select 2</code><br>
-Selects the 2nd item in the inventory.</p>
-</li>
-<li>
-<p><code>find IPhone X</code><br>
-<code>select 1</code><br>
-Selects the 1st item in the results of the <code>find</code> command.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="export-to-csv-code-export-csv-code"><a class="link" href="#export-to-csv-code-export-csv-code">3.10. Export to CSV: <code>export-csv</code></a></h3>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Export the data to the file specified by <code>FILEPATH</code>.</p>
-</li>
-<li>
-<p><code>FILEPATH</code> must end with an extension of <code>.csv</code>.</p>
-</li>
-<li>
-<p><code>FILEPATH</code> can be a relative path and the data will be exported to a location relative to the <strong>Inventory Manager</strong> installation directory.</p>
-</li>
-<li>
-<p>Existing data file at <code>FILEPATH</code> will be overwritten.</p>
-</li>
-<li>
-<p>The parent directories will be created if they do not exist.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect3">
-<h4 id="export-sales-report-to-csv-code-export-csv-sales-code"><a class="link" href="#export-sales-report-to-csv-code-export-csv-sales-code">3.10.1. Export sales report to CSV: <code>export-csv-sales</code></a></h4>
-<div class="paragraph">
-<p>Export the sales report in CSV format to the filepath given.<br>
-Format: <code>export-csv-sales f/FILEPATH</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="export-list-of-items-to-csv-code-export-csv-items-code"><a class="link" href="#export-list-of-items-to-csv-code-export-csv-items-code">3.10.2. Export list of items to CSV : <code>export-csv-items</code></a></h4>
-<div class="paragraph">
-<p>Export the list of items in CSV format to the filepath given.<br>
-Format: <code>export-csv-items f/FILEPATH</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="export-list-of-users-to-csv-code-export-csv-users-code"><a class="link" href="#export-list-of-users-to-csv-code-export-csv-users-code">3.10.3. Export list of users to CSV: <code>export-csv-users</code></a></h4>
-<div class="paragraph">
-<p>Export the list of users in CSV format to the filepath given.<br>
-Format: <code>export-csv-users f/FILEPATH</code></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="export-entire-data-to-im-file-code-export-im-code"><a class="link" href="#export-entire-data-to-im-file-code-export-im-code">3.11. Export entire data to .im file: <code>export-im</code></a></h3>
-<div class="paragraph">
-<p>Export the entire data to the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
-Format: <code>export-im f/FILEPATH</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The .im is a format that the <strong>Inventory Manager</strong> use to tranfer the entire data.</p>
-</li>
-<li>
-<p><code>FILEPATH</code> must end with an extension of <code>.im</code>.</p>
-</li>
-<li>
-<p><code>FILEPATH</code> can be a relative path and the data will be exported to a location relative to the <strong>Inventory Manager</strong> installation directory.</p>
-</li>
-<li>
-<p>Existing data file at <code>FILEPATH</code> will be overwritten.</p>
-</li>
-<li>
-<p>The parent directories will be created if they do not exist.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="import-from-csv-code-import-csv-code"><a class="link" href="#import-from-csv-code-import-csv-code">3.12. Import from CSV: <code>import-csv</code></a></h3>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Imports the data from the file specified by <code>FILEPATH</code>.</p>
-</li>
-<li>
-<p><code>FILEPATH</code> must end with an extension of <code>.csv</code>.</p>
-</li>
-<li>
-<p><code>FILEPATH</code> can be a relative path and the data will be imported from a location relative to the <strong>Inventory Manager</strong> installation directory.</p>
-</li>
-<li>
-<p>Data that already exist in <strong>Inventory Manager</strong> will not be imported.</p>
-</li>
-<li>
-<p>Data in the CSV file must be recognizable by <strong>Inventory Manager</strong>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="import-sales-report-from-csv-code-import-csv-sales-code"><a class="link" href="#import-sales-report-from-csv-code-import-csv-sales-code">3.12.1. Import sales report from CSV: <code>import-csv-sales</code></a></h4>
-<div class="paragraph">
-<p>Import the sales report in CSV format from the filepath given.<br>
-Format: <code>import-csv-sales f/FILEPATH</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="import-list-of-items-from-csv-code-import-csv-items-code"><a class="link" href="#import-list-of-items-from-csv-code-import-csv-items-code">3.12.2. Import list of items from CSV : <code>import-csv-items</code></a></h4>
-<div class="paragraph">
-<p>Import the list of items in CSV format from the filepath given.<br>
-Format: <code>import-csv-items f/FILEPATH</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="import-list-of-users-from-csv-code-import-csv-users-code"><a class="link" href="#import-list-of-users-from-csv-code-import-csv-users-code">3.12.3. Import list of users from CSV: <code>import-csv-users</code></a></h4>
-<div class="paragraph">
-<p>Import the list of users in CSV format from the filepath given.<br>
-Format: <code>import-csv-users f/FILEPATH</code></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="import-entire-data-from-im-file-code-import-im-code"><a class="link" href="#import-entire-data-from-im-file-code-import-im-code">3.13. Import entire data from .im file: <code>import-im</code></a></h3>
-<div class="paragraph">
-<p>Import the entire data from the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
-Format: <code>import-im f/FILEPATH</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The .im is a format that the <strong>Inventory Manager</strong> use to tranfer the entire data.</p>
-</li>
-<li>
-<p><code>FILEPATH</code> must end with an extension of <code>.im</code>.</p>
-</li>
-<li>
-<p><code>FILEPATH</code> can be a relative path and the data will be imported from a location relative to the <strong>Inventory Manager</strong> installation directory.</p>
-</li>
-<li>
-<p>Data that already exist in <strong>Inventory Manager</strong> will not be imported.</p>
-</li>
-<li>
-<p>Data in the .im file must be recognizable by <strong>Inventory Manager</strong>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="generate-purchase-order-code-generate-po-code"><a class="link" href="#generate-purchase-order-code-generate-po-code">3.14. Generate purchase order : <code>generate-po</code></a></h3>
-<div class="paragraph">
-<p>Format: <code>generate-po</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.15. Listing entered commands : <code>history</code></a></h3>
+<h4 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">3.1.2. Listing entered commands : <code>history</code></a></h4>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
 Format: <code>history</code></p>
@@ -655,8 +270,8 @@ Format: <code>history</code></p>
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.16. Undoing previous command : <code>undo</code></a></h3>
+<div class="sect3">
+<h4 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">3.1.3. Undoing previous command : <code>undo</code></a></h4>
 <div class="paragraph">
 <p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
 Format: <code>undo</code></p>
@@ -700,8 +315,8 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.17. Redoing the previously undone command : <code>redo</code></a></h3>
+<div class="sect3">
+<h4 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">3.1.4. Redoing the previously undone command : <code>redo</code></a></h4>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
 Format: <code>redo</code></p>
@@ -732,31 +347,504 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.18. Clearing all entries : <code>clear</code></a></h3>
+<div class="sect3">
+<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.1.5. Clearing all entries : <code>clear</code></a></h4>
 <div class="paragraph">
 <p>Clears all entries from the address book.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.19. Exiting the program : <code>exit</code></a></h3>
+<div class="sect3">
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.1.6. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">3.20. Saving the data</a></h3>
+<div class="sect3">
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.1.7. Saving the data</a></h4>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">3.21. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="users-management"><a class="link" href="#users-management">3.2. Users Management</a></h3>
+<div class="sect3">
+<h4 id="login-to-the-system-code-login-code"><a class="link" href="#login-to-the-system-code-login-code">3.2.1. Login to the system : <code>login</code></a></h4>
 <div class="paragraph">
-<p><em>{explain how the user can enable/disable data encryption}</em></p>
+<p>Prompt the users for their username and password.<br>
+Format: <code>login</code></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sales-management"><a class="link" href="#sales-management">3.3. Sales Management</a></h3>
+<div class="sect3">
+<h4 id="creating-a-sale-order-code-createsale-code"><a class="link" href="#creating-a-sale-order-code-createsale-code">3.3.1. Creating a sale order : <code>createSale</code></a></h4>
+<div class="paragraph">
+<p>Creating a sale and deducting the inventory stocks automatically.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>createSale i/SKU q/X</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sold 5 quantity of a product with SKU 0123.<br>
+<code>createSale i/0123 q/5</code></p>
+</li>
+<li>
+<p>Sold 1 quantity of a product with SKU 456.<br>
+<code>createSale i/456 q/1</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-sale-order-code-deletesale-code"><a class="link" href="#deleting-a-sale-order-code-deletesale-code">3.3.2. Deleting a sale order : <code>deleteSale</code></a></h4>
+<div class="paragraph">
+<p>Deleting a sale and restoring the inventory quantity automatically.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>deleteSale id/X</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Deleting sale ID 12.<br>
+<code>deleteSale id/12</code></p>
+</li>
+<li>
+<p>Deleting sale ID 123.<br>
+<code>deleteSale id/123</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-sale-orders-code-listsales-code"><a class="link" href="#listing-sale-orders-code-listsales-code">3.3.3. Listing sale orders : <code>listSales</code></a></h4>
+<div class="paragraph">
+<p>Listing sale orders currently recorded in the system.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>listSales t/X</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>List latest 50 records.<br>
+<code>listSales t/50</code></p>
+</li>
+<li>
+<p>List latest 20 records.<br>
+<code>listSales /20</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="searching-for-sale-orders-code-searchsale-code"><a class="link" href="#searching-for-sale-orders-code-searchsale-code">3.3.4. Searching for sale orders : <code>searchSale</code></a></h4>
+<div class="paragraph">
+<p>Searching for a sale based on sale ID or a specific date</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>searchSale [d/YYYY-mm-dd] [id/X]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Searching for sale ID 12.<br>
+<code>searchSale id/12</code></p>
+</li>
+<li>
+<p>Searching for sales created on 01 October 2018.<br>
+<code>searchSale d/2018-10-01</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="reports-management"><a class="link" href="#reports-management">3.4. Reports Management</a></h3>
+<div class="sect3">
+<h4 id="export-to-csv-code-export-csv-code"><a class="link" href="#export-to-csv-code-export-csv-code">3.4.1. Export to CSV: <code>export-csv</code></a></h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Export the data to the file specified by <code>FILEPATH</code>.</p>
+</li>
+<li>
+<p><code>FILEPATH</code> must end with an extension of <code>.csv</code>.</p>
+</li>
+<li>
+<p><code>FILEPATH</code> can be a relative path and the data will be exported to a location relative to the <strong>Inventory Manager</strong> installation directory.</p>
+</li>
+<li>
+<p>Existing data file at <code>FILEPATH</code> will be overwritten.</p>
+</li>
+<li>
+<p>The parent directories will be created if they do not exist.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="export-sales-report-to-csv-code-export-csv-sales-code"><a class="link" href="#export-sales-report-to-csv-code-export-csv-sales-code">Export sales report to CSV: <code>export-csv-sales</code></a></h5>
+<div class="paragraph">
+<p>Export the sales report in CSV format to the filepath given.<br>
+Format: <code>export-csv-sales f/FILEPATH</code></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="export-list-of-items-to-csv-code-export-csv-items-code"><a class="link" href="#export-list-of-items-to-csv-code-export-csv-items-code">Export list of items to CSV : <code>export-csv-items</code></a></h5>
+<div class="paragraph">
+<p>Export the list of items in CSV format to the filepath given.<br>
+Format: <code>export-csv-items f/FILEPATH</code></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="export-list-of-users-to-csv-code-export-csv-users-code"><a class="link" href="#export-list-of-users-to-csv-code-export-csv-users-code">Export list of users to CSV: <code>export-csv-users</code></a></h5>
+<div class="paragraph">
+<p>Export the list of users in CSV format to the filepath given.<br>
+Format: <code>export-csv-users f/FILEPATH</code></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="export-entire-data-to-im-file-code-export-im-code"><a class="link" href="#export-entire-data-to-im-file-code-export-im-code">3.4.2. Export entire data to .im file: <code>export-im</code></a></h4>
+<div class="paragraph">
+<p>Export the entire data to the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
+Format: <code>export-im f/FILEPATH</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The .im is a format that the <strong>Inventory Manager</strong> use to tranfer the entire data.</p>
+</li>
+<li>
+<p><code>FILEPATH</code> must end with an extension of <code>.im</code>.</p>
+</li>
+<li>
+<p><code>FILEPATH</code> can be a relative path and the data will be exported to a location relative to the <strong>Inventory Manager</strong> installation directory.</p>
+</li>
+<li>
+<p>Existing data file at <code>FILEPATH</code> will be overwritten.</p>
+</li>
+<li>
+<p>The parent directories will be created if they do not exist.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="import-from-csv-code-import-csv-code"><a class="link" href="#import-from-csv-code-import-csv-code">3.4.3. Import from CSV: <code>import-csv</code></a></h4>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Imports the data from the file specified by <code>FILEPATH</code>.</p>
+</li>
+<li>
+<p><code>FILEPATH</code> must end with an extension of <code>.csv</code>.</p>
+</li>
+<li>
+<p><code>FILEPATH</code> can be a relative path and the data will be imported from a location relative to the <strong>Inventory Manager</strong> installation directory.</p>
+</li>
+<li>
+<p>Data that already exist in <strong>Inventory Manager</strong> will not be imported.</p>
+</li>
+<li>
+<p>Data in the CSV file must be recognizable by <strong>Inventory Manager</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="import-sales-report-from-csv-code-import-csv-sales-code"><a class="link" href="#import-sales-report-from-csv-code-import-csv-sales-code">Import sales report from CSV: <code>import-csv-sales</code></a></h5>
+<div class="paragraph">
+<p>Import the sales report in CSV format from the filepath given.<br>
+Format: <code>import-csv-sales f/FILEPATH</code></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="import-list-of-items-from-csv-code-import-csv-items-code"><a class="link" href="#import-list-of-items-from-csv-code-import-csv-items-code">Import list of items from CSV : <code>import-csv-items</code></a></h5>
+<div class="paragraph">
+<p>Import the list of items in CSV format from the filepath given.<br>
+Format: <code>import-csv-items f/FILEPATH</code></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="import-list-of-users-from-csv-code-import-csv-users-code"><a class="link" href="#import-list-of-users-from-csv-code-import-csv-users-code">Import list of users from CSV: <code>import-csv-users</code></a></h5>
+<div class="paragraph">
+<p>Import the list of users in CSV format from the filepath given.<br>
+Format: <code>import-csv-users f/FILEPATH</code></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="import-entire-data-from-im-file-code-import-im-code"><a class="link" href="#import-entire-data-from-im-file-code-import-im-code">3.4.4. Import entire data from .im file: <code>import-im</code></a></h4>
+<div class="paragraph">
+<p>Import the entire data from the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
+Format: <code>import-im f/FILEPATH</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The .im is a format that the <strong>Inventory Manager</strong> use to tranfer the entire data.</p>
+</li>
+<li>
+<p><code>FILEPATH</code> must end with an extension of <code>.im</code>.</p>
+</li>
+<li>
+<p><code>FILEPATH</code> can be a relative path and the data will be imported from a location relative to the <strong>Inventory Manager</strong> installation directory.</p>
+</li>
+<li>
+<p>Data that already exist in <strong>Inventory Manager</strong> will not be imported.</p>
+</li>
+<li>
+<p>Data in the .im file must be recognizable by <strong>Inventory Manager</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="inventory-management"><a class="link" href="#inventory-management">3.5. Inventory Management</a></h3>
+<div class="sect3">
+<h4 id="adding-an-item-code-add-code"><a class="link" href="#adding-an-item-code-add-code">3.5.1. Adding an item : <code>add</code></a></h4>
+<div class="paragraph">
+<p>Adds an item to the inventory manager<br>
+Format: <code>add n/NAME s/SERIAL_NUMBER q/QUANTITY l/LOCATION b/BATCH_NUMBER [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+An item can have any number of tags (including 0)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/IPhone X s/SN-1234 q/1000 l/101-001A b/12-12-2012</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-all-items-code-list-code"><a class="link" href="#listing-all-items-code-list-code">3.5.2. Listing all items : <code>list</code></a></h4>
+<div class="paragraph">
+<p>Shows a list of all items in the inventory manager.<br>
+Format: <code>list</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-an-item-code-update-code"><a class="link" href="#editing-an-item-code-update-code">3.5.3. Editing an item : <code>update</code></a></h4>
+<div class="paragraph">
+<p>Edits an existing person in the address book.<br>
+Format: <code>update INDEX [n/NAME] [s/SERIAL_NUMBER] [q/QUANTITY] [l/LOCATION] [b/BATCH_NUMBER] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Update the item at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed inventory list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When updating tags, the existing tags of the item will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the item&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>update 1 l/111-123A q/999</code><br>
+Updates the location and quantity of the 1st item to be <code>111-123A</code> and <code>999</code> respectively.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="locating-items-by-name-code-find-code"><a class="link" href="#locating-items-by-name-code-find-code">3.5.4. Locating items by name : <code>find</code></a></h4>
+<div class="paragraph">
+<p>Finds item whose names contain any of the given keywords.<br>
+Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>iphone</code> will match <code>IPhone</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>X IPhone</code> will match <code>IPhone X</code></p>
+</li>
+<li>
+<p>Only the name of the item is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>phone</code> will not match <code>IPhone</code></p>
+</li>
+<li>
+<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Iphone 10</code> will return <code>IPhone X</code>, <code>Samsung 10</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find iphone</code><br>
+Returns <code>IPhone X</code> and <code>IPhone 10</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-an-item-code-delete-code"><a class="link" href="#deleting-an-item-code-delete-code">3.5.5. Deleting an item : <code>delete</code></a></h4>
+<div class="paragraph">
+<p>Deletes the specified item from the inventory.<br>
+Format: <code>delete INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the item at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed inventory list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd item in the inventory.</p>
+</li>
+<li>
+<p><code>find IPhone X</code><br>
+<code>delete 1</code><br>
+Deletes the 1st item in the results of the <code>find</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="selecting-an-item-code-select-code"><a class="link" href="#selecting-an-item-code-select-code">3.5.6. Selecting an item : <code>select</code></a></h4>
+<div class="paragraph">
+<p>Selects the item identified by the index number used in the displayed inventory.<br>
+Format: <code>select INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Selects the person and loads the Google search page the person at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed item list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>select 2</code><br>
+Selects the 2nd item in the inventory.</p>
+</li>
+<li>
+<p><code>find IPhone X</code><br>
+<code>select 1</code><br>
+Selects the 1st item in the results of the <code>find</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="purchase-orders-management"><a class="link" href="#purchase-orders-management">3.6. Purchase Orders Management</a></h3>
+<div class="sect3">
+<h4 id="generate-purchase-order-code-generate-po-code"><a class="link" href="#generate-purchase-order-code-generate-po-code">3.6.1. Generate purchase order : <code>generate-po</code></a></h4>
+<div class="paragraph">
+<p>Format: <code>generate-po</code></p>
+</div>
 </div>
 </div>
 </div>
@@ -848,4 +936,17 @@ e.g. <code>import-im f/C:/in/data.im</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-02 02:08:31 UTC</div></div></div></body></html>
+</div>
+<h1 id="glossary" class="sect0"><a class="link" href="#glossary">Glossary</a></h1>
+<div class="paragraph">
+<p><strong>CLI (Command Line Interface)</strong></p>
+</div>
+<div class="paragraph">
+<p>A command line interface (CLI) is an interface where you can input commands to interact with the software.</p>
+</div>
+<div class="paragraph">
+<p><strong>GUI (Graphical User Interface)</strong></p>
+</div>
+<div class="paragraph">
+<p>A graphical user interface (GUI) is an interface through which a user interacts with the software.</p>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-02 05:12:00 UTC</div></div></div></body></html>
