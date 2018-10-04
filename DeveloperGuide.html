@@ -28,7 +28,7 @@
 </ul>
 </li>
 <li><a href="#implementation">3. Implementation</a>
-<ul class="sectlevel3">
+<ul class="sectlevel2">
 <li><a href="#design-considerations">3.1. Design Considerations</a></li>
 <li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
 <li><a href="#logging">3.3. Logging</a></li>
@@ -175,7 +175,7 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 This will generate all resources required by the application and tests.</p>
 </li>
 <li>
-<p>Open <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/storage/XmlAdaptedPerson.java"><code>XmlAdaptedPerson.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
+<p>Open <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/storage/XmlAdaptedPerson.java"><code>XmlAdaptedPerson.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -188,7 +188,7 @@ This will generate all resources required by the application and tests.</p>
 </div>
 </li>
 <li>
-<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/address/commons/util/XmlUtilTest.java"><code>XmlUtilTest.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/address/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
+<p>Repeat this for the test folder as well (e.g. check <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/image/commons/util/XmlUtilTest.java"><code>XmlUtilTest.java</code></a> and <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/image/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way)</p>
 </li>
 </ol>
 </div>
@@ -198,7 +198,7 @@ This will generate all resources required by the application and tests.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Run the <code>seedu.address.MainApp</code> and try a few commands</p>
+<p>Run the <code>seedu.inventory.MainApp</code> and try a few commands</p>
 </li>
 <li>
 <p><a href="#Testing">Run the tests</a> to ensure they all pass.</p>
@@ -341,7 +341,7 @@ The <code>.pptx</code> files used to create diagrams in this document can be fou
 </table>
 </div>
 <div class="paragraph">
-<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><code>Main</code> has only one class called <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
 </div>
 <div class="ulist">
 <ul>
@@ -463,13 +463,13 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="title">Figure 5. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code>, <code>BrowserPanel</code> etc. All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
-<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+<p>The <code>UI</code> component uses JavaFx UI framework. The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder. For example, the layout of the <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component,</p>
@@ -498,7 +498,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
-<a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/logic/Logic.java"><code>Logic.java</code></a></p>
+<a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/logic/Logic.java"><code>Logic.java</code></a></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -509,7 +509,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
 </li>
 <li>
-<p>The command execution can affect the <code>Model</code> (e.g. adding a person) and/or raise events.</p>
+<p>The command execution can affect the <code>Model</code> (e.g. adding a item) and/or raise events.</p>
 </li>
 <li>
 <p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
@@ -535,7 +535,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <div class="title">Figure 8. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/Model.java"><code>Model.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Model</code>,</p>
@@ -580,7 +580,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="title">Figure 9. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
-<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
+<p><strong>API</strong> : <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Storage</code> component,</p>
@@ -623,13 +623,13 @@ Additionally, it implements the following operations:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current address book state in its history.</p>
+<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current image book state in its history.</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous address book state from its history.</p>
+<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous image book state from its history.</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone address book state from its history.</p>
+<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone image book state from its history.</p>
 </li>
 </ul>
 </div>
@@ -640,7 +640,7 @@ Additionally, it implements the following operations:</p>
 <p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial address book state, and the <code>currentStatePointer</code> pointing to that single address book state.</p>
+<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial image book state, and the <code>currentStatePointer</code> pointing to that single image book state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -648,7 +648,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th person in the address book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the address book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted address book state.</p>
+<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th item in the image book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the image book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted image book state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -656,7 +656,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new person. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified address book state to be saved into the <code>addressBookStateList</code>.</p>
+<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new item. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified image book state to be saved into the <code>addressBookStateList</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -670,13 +670,13 @@ Additionally, it implements the following operations:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the address book state will not be saved into the <code>addressBookStateList</code>.
+If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the image book state will not be saved into the <code>addressBookStateList</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 4. The user now decides that adding the person was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous address book state, and restores the address book to that state.</p>
+<p>Step 4. The user now decides that adding the item was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous image book state, and restores the image book to that state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -690,7 +690,7 @@ If a command fails its execution, it will not call <code>Model#commitAddressBook
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial address book state, then there are no previous address book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
+If the <code>currentStatePointer</code> is at index 0, pointing to the initial image book state, then there are no previous image book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
 </td>
 </tr>
 </table>
@@ -704,7 +704,7 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial a
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the address book to that state.</p>
+<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the image book to that state.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -713,13 +713,13 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial a
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest address book state, then there are no undone address book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest image book state, then there are no undone image book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the address book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
+<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the image book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -727,7 +727,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all address book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all image book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -742,14 +742,14 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <img src="images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="650">
 </div>
 </div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.1. Design Considerations</a></h4>
+<div class="sect2">
+<h3 id="design-considerations"><a class="link" href="#design-considerations">3.1. Design Considerations</a></h3>
 <div class="sect4">
 <h5 id="aspect-how-undo-redo-executes"><a class="link" href="#aspect-how-undo-redo-executes">Aspect: How undo &amp; redo executes</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire address book.</p>
+<p><strong>Alternative 1 (current choice):</strong> Saves the entire image book.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -766,7 +766,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the person being deleted).</p>
+<p>Pros: Will use less memory (e.g. for <code>delete</code>, just save the item being deleted).</p>
 </li>
 <li>
 <p>Cons: We must ensure that the implementation of each individual command are correct.</p>
@@ -782,7 +782,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of address book states.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of image book states.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1150,7 +1150,7 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <p><em>System Tests</em> that test the entire App by simulating user actions on the GUI. These are in the <code>systemtests</code> package.</p>
 </li>
 <li>
-<p><em>Unit tests</em> that test the individual components. These are in <code>seedu.address.ui</code> package.</p>
+<p><em>Unit tests</em> that test the individual components. These are in <code>seedu.inventory.ui</code> package.</p>
 </li>
 </ol>
 </div>
@@ -1161,15 +1161,15 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more info on how to run 
 <ol class="loweralpha" type="a">
 <li>
 <p><em>Unit tests</em> targeting the lowest level methods/classes.<br>
-e.g. <code>seedu.address.commons.StringUtilTest</code></p>
+e.g. <code>seedu.inventory.commons.StringUtilTest</code></p>
 </li>
 <li>
 <p><em>Integration tests</em> that are checking the integration of multiple code units (those code units are assumed to be working).<br>
-e.g. <code>seedu.address.storage.StorageManagerTest</code></p>
+e.g. <code>seedu.inventory.storage.StorageManagerTest</code></p>
 </li>
 <li>
 <p>Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together.<br>
-e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
+e.g. <code>seedu.inventory.logic.LogicManagerTest</code></p>
 </li>
 </ol>
 </div>
@@ -1230,7 +1230,7 @@ e.g. <code>seedu.address.logic.LogicManagerTest</code></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Update the version number in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/MainApp.java"><code>MainApp.java</code></a>.</p>
+<p>Update the version number in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/MainApp.java"><code>MainApp.java</code></a>.</p>
 </li>
 <li>
 <p>Generate a JAR file <a href="UsingGradle.html#creating-the-jar-file">using Gradle</a>.</p>
@@ -1294,7 +1294,7 @@ Do take a look at <a href="#Design-Logic">Section 2.3, &#8220;Logic component&#8
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a shorthand equivalent alias for each of the individual commands. For example, besides typing <code>clear</code>, the user can also type <code>c</code> to remove all persons in the list.</p>
+<p>Add a shorthand equivalent alias for each of the individual commands. For example, besides typing <code>clear</code>, the user can also type <code>c</code> to remove all items in the list.</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -1304,10 +1304,10 @@ Do take a look at <a href="#Design-Logic">Section 2.3, &#8220;Logic component&#8
 <div class="ulist">
 <ul>
 <li>
-<p>Just like we store each individual command word constant <code>COMMAND_WORD</code> inside <code>*Command.java</code> (e.g.  <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/logic/commands/FindCommand.java"><code>FindCommand#COMMAND_WORD</code></a>, <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/logic/commands/DeleteCommand.java"><code>DeleteCommand#COMMAND_WORD</code></a>), you need a new constant for aliases as well (e.g. <code>FindCommand#COMMAND_ALIAS</code>).</p>
+<p>Just like we store each individual command word constant <code>COMMAND_WORD</code> inside <code>*Command.java</code> (e.g.  <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/logic/commands/FindCommand.java"><code>FindCommand#COMMAND_WORD</code></a>, <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/logic/commands/DeleteCommand.java"><code>DeleteCommand#COMMAND_WORD</code></a>), you need a new constant for aliases as well (e.g. <code>FindCommand#COMMAND_ALIAS</code>).</p>
 </li>
 <li>
-<p><a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/logic/parser/AddressBookParser.java"><code>AddressBookParser</code></a> is responsible for analyzing command words.</p>
+<p><a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/logic/parser/AddressBookParser.java"><code>AddressBookParser</code></a> is responsible for analyzing command words.</p>
 </li>
 </ul>
 </div>
@@ -1317,7 +1317,7 @@ Do take a look at <a href="#Design-Logic">Section 2.3, &#8220;Logic component&#8
 <div class="ulist">
 <ul>
 <li>
-<p>Modify the switch statement in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/logic/parser/AddressBookParser.java"><code>AddressBookParser#parseCommand(String)</code></a> such that both the proper command word and alias can be used to execute the same intended command.</p>
+<p>Modify the switch statement in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/logic/parser/AddressBookParser.java"><code>AddressBookParser#parseCommand(String)</code></a> such that both the proper command word and alias can be used to execute the same intended command.</p>
 </li>
 <li>
 <p>Add new tests for each of the aliases that you have added.</p>
@@ -1340,7 +1340,7 @@ Do take a look at <a href="#Design-Logic">Section 2.3, &#8220;Logic component&#8
 </div>
 <h4 id="code-model-code-component" class="discrete"><code>Model</code> component</h4>
 <div class="paragraph">
-<p><strong>Scenario:</strong> You are in charge of <code>model</code>. One day, the <code>logic</code>-in-charge approaches you for help. He wants to implement a command such that the user is able to remove a particular tag from everyone in the address book, but the model API does not support such a functionality at the moment. Your job is to implement an API method, so that your teammate can use your API to implement his command.</p>
+<p><strong>Scenario:</strong> You are in charge of <code>model</code>. One day, the <code>logic</code>-in-charge approaches you for help. He wants to implement a command such that the user is able to remove a particular tag from everyone in the image book, but the model API does not support such a functionality at the moment. Your job is to implement an API method, so that your teammate can use your API to implement his command.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1357,7 +1357,7 @@ Do take a look at <a href="#Design-Model">Section 2.4, &#8220;Model component&#8
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a <code>removeTag(Tag)</code> method. The specified tag will be removed from everyone in the address book.</p>
+<p>Add a <code>removeTag(Tag)</code> method. The specified tag will be removed from everyone in the image book.</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -1367,13 +1367,13 @@ Do take a look at <a href="#Design-Model">Section 2.4, &#8220;Model component&#8
 <div class="ulist">
 <ul>
 <li>
-<p>The <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/Model.java"><code>Model</code></a> and the <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/AddressBook.java"><code>AddressBook</code></a> API need to be updated.</p>
+<p>The <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/Model.java"><code>Model</code></a> and the <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/AddressBook.java"><code>AddressBook</code></a> API need to be updated.</p>
 </li>
 <li>
 <p>Think about how you can use SLAP to design the method. Where should we place the main logic of deleting tags?</p>
 </li>
 <li>
-<p>Find out which of the existing API methods in  <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/AddressBook.java"><code>AddressBook</code></a> and <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/person/Person.java"><code>Person</code></a> classes can be used to implement the tag removal logic. <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/AddressBook.java"><code>AddressBook</code></a> allows you to update a person, and <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/person/Person.java"><code>Person</code></a> allows you to update the tags.</p>
+<p>Find out which of the existing API methods in  <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/AddressBook.java"><code>AddressBook</code></a> and <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/item/Person.java"><code>Person</code></a> classes can be used to implement the tag removal logic. <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/AddressBook.java"><code>AddressBook</code></a> allows you to update a item, and <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/item/Person.java"><code>Person</code></a> allows you to update the tags.</p>
 </li>
 </ul>
 </div>
@@ -1383,10 +1383,10 @@ Do take a look at <a href="#Design-Model">Section 2.4, &#8220;Model component&#8
 <div class="ulist">
 <ul>
 <li>
-<p>Implement a <code>removeTag(Tag)</code> method in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/AddressBook.java"><code>AddressBook</code></a>. Loop through each person, and remove the <code>tag</code> from each person.</p>
+<p>Implement a <code>removeTag(Tag)</code> method in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/AddressBook.java"><code>AddressBook</code></a>. Loop through each item, and remove the <code>tag</code> from each item.</p>
 </li>
 <li>
-<p>Add a new API method <code>deleteTag(Tag)</code> in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/ModelManager.java"><code>ModelManager</code></a>. Your <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/ModelManager.java"><code>ModelManager</code></a> should call <code>AddressBook#removeTag(Tag)</code>.</p>
+<p>Add a new API method <code>deleteTag(Tag)</code> in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/ModelManager.java"><code>ModelManager</code></a>. Your <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/ModelManager.java"><code>ModelManager</code></a> should call <code>AddressBook#removeTag(Tag)</code>.</p>
 </li>
 <li>
 <p>Add new tests for each of the new public methods that you have added.</p>
@@ -1406,7 +1406,7 @@ Do take a look at <a href="#Design-Model">Section 2.4, &#8220;Model component&#8
 </div>
 <h4 id="code-ui-code-component" class="discrete"><code>Ui</code> component</h4>
 <div class="paragraph">
-<p><strong>Scenario:</strong> You are in charge of <code>ui</code>. During a beta testing session, your team is observing how the users use your address book application. You realize that one of the users occasionally tries to delete non-existent tags from a contact, because the tags all look the same visually, and the user got confused. Another user made a typing mistake in his command, but did not realize he had done so because the error message wasn&#8217;t prominent enough. A third user keeps scrolling down the list, because he keeps forgetting the index of the last person in the list. Your job is to implement improvements to the UI to solve all these problems.</p>
+<p><strong>Scenario:</strong> You are in charge of <code>ui</code>. During a beta testing session, your team is observing how the users use your image book application. You realize that one of the users occasionally tries to delete non-existent tags from a contact, because the tags all look the same visually, and the user got confused. Another user made a typing mistake in his command, but did not realize he had done so because the error message wasn&#8217;t prominent enough. A third user keeps scrolling down the list, because he keeps forgetting the index of the last item in the list. Your job is to implement improvements to the UI to solve all these problems.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1423,7 +1423,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Use different colors for different tags inside person cards. For example, <code>friends</code> tags can be all in brown, and <code>colleagues</code> tags can be all in yellow.</p>
+<p>Use different colors for different tags inside item cards. For example, <code>friends</code> tags can be all in brown, and <code>colleagues</code> tags can be all in yellow.</p>
 <div class="paragraph">
 <p><strong>Before</strong></p>
 </div>
@@ -1449,7 +1449,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p>The tag labels are created inside <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/PersonCard.java">the <code>PersonCard</code> constructor</a> (<code>new Label(tag.tagName)</code>). <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Label.html">JavaFX&#8217;s <code>Label</code> class</a> allows you to modify the style of each Label, such as changing its color.</p>
+<p>The tag labels are created inside <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/PersonCard.java">the <code>PersonCard</code> constructor</a> (<code>new Label(tag.tagName)</code>). <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Label.html">JavaFX&#8217;s <code>Label</code> class</a> allows you to modify the style of each Label, such as changing its color.</p>
 </li>
 <li>
 <p>Use the .css attribute <code>-fx-background-color</code> to add a color.</p>
@@ -1486,7 +1486,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 </div>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> such that <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/ResultDisplay.java"><code>ResultDisplay</code></a> can show a different style on error (currently it shows the same regardless of errors).</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> such that <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/ResultDisplay.java"><code>ResultDisplay</code></a> can show a different style on error (currently it shows the same regardless of errors).</p>
 <div class="paragraph">
 <p><strong>Before</strong></p>
 </div>
@@ -1512,10 +1512,10 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> is raised by <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/CommandBox.java"><code>CommandBox</code></a> which also knows whether the result is a success or failure, and is caught by <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/ResultDisplay.java"><code>ResultDisplay</code></a> which is where we want to change the style to.</p>
+<p><a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> is raised by <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/CommandBox.java"><code>CommandBox</code></a> which also knows whether the result is a success or failure, and is caught by <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/ResultDisplay.java"><code>ResultDisplay</code></a> which is where we want to change the style to.</p>
 </li>
 <li>
-<p>Refer to <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/CommandBox.java"><code>CommandBox</code></a> for an example on how to display an error.</p>
+<p>Refer to <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/CommandBox.java"><code>CommandBox</code></a> for an example on how to display an error.</p>
 </li>
 </ul>
 </div>
@@ -1525,10 +1525,10 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> 's constructor so that users of the event can indicate whether an error has occurred.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/commons/events/ui/NewResultAvailableEvent.java"><code>NewResultAvailableEvent</code></a> 's constructor so that users of the event can indicate whether an error has occurred.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/ResultDisplay.java"><code>ResultDisplay#handleNewResultAvailableEvent(NewResultAvailableEvent)</code></a> to react to this event appropriately.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/ResultDisplay.java"><code>ResultDisplay#handleNewResultAvailableEvent(NewResultAvailableEvent)</code></a> to react to this event appropriately.</p>
 </li>
 <li>
 <p>You can write two different kinds of tests to ensure that the functionality works:</p>
@@ -1562,7 +1562,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 </div>
 </li>
 <li>
-<p>Modify the <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to show the total number of people in the address book.</p>
+<p>Modify the <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to show the total number of people in the image book.</p>
 <div class="paragraph">
 <p><strong>Before</strong></p>
 </div>
@@ -1591,7 +1591,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <p><a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/resources/view/StatusBarFooter.fxml"><code>StatusBarFooter.fxml</code></a> will need a new <code>StatusBar</code>. Be sure to set the <code>GridPane.columnIndex</code> properly for each <code>StatusBar</code> to avoid misalignment!</p>
 </li>
 <li>
-<p><a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> needs to initialize the status bar on application start, and to update it accordingly whenever the address book is updated.</p>
+<p><a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> needs to initialize the status bar on application start, and to update it accordingly whenever the image book is updated.</p>
 </li>
 </ul>
 </div>
@@ -1601,16 +1601,16 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 <div class="ulist">
 <ul>
 <li>
-<p>Modify the constructor of <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to take in the number of persons when the application just started.</p>
+<p>Modify the constructor of <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/StatusBarFooter.java"><code>StatusBarFooter</code></a> to take in the number of items when the application just started.</p>
 </li>
 <li>
-<p>Use <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/StatusBarFooter.java"><code>StatusBarFooter#handleAddressBookChangedEvent(AddressBookChangedEvent)</code></a> to update the number of persons whenever there are new changes to the addressbook.</p>
+<p>Use <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/StatusBarFooter.java"><code>StatusBarFooter#handleAddressBookChangedEvent(AddressBookChangedEvent)</code></a> to update the number of items whenever there are new changes to the addressbook.</p>
 </li>
 <li>
 <p>For tests, modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/guitests/guihandles/StatusBarFooterHandle.java"><code>StatusBarFooterHandle</code></a> by adding a state-saving functionality for the total number of people status, just like what we did for save location and sync status.</p>
 </li>
 <li>
-<p>For system tests, modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/systemtests/AddressBookSystemTest.java"><code>AddressBookSystemTest</code></a> to also verify the new total number of persons status bar.</p>
+<p>For system tests, modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/systemtests/AddressBookSystemTest.java"><code>AddressBookSystemTest</code></a> to also verify the new total number of items status bar.</p>
 </li>
 <li>
 <p>See this <a href="https://github.com/se-edu/addressbook-level4/pull/803">PR</a> for the full solution.</p>
@@ -1627,7 +1627,7 @@ Do take a look at <a href="#Design-Ui">Section 2.2, &#8220;UI component&#8221;</
 </div>
 <h4 id="code-storage-code-component" class="discrete"><code>Storage</code> component</h4>
 <div class="paragraph">
-<p><strong>Scenario:</strong> You are in charge of <code>storage</code>. For your next project milestone, your team plans to implement a new feature of saving the address book to the cloud. However, the current implementation of the application constantly saves the address book after the execution of each command, which is not ideal if the user is working on limited internet connection. Your team decided that the application should instead save the changes to a temporary local backup file first, and only upload to the cloud after the user closes the application. Your job is to implement a backup API for the address book storage.</p>
+<p><strong>Scenario:</strong> You are in charge of <code>storage</code>. For your next project milestone, your team plans to implement a new feature of saving the image book to the cloud. However, the current implementation of the application constantly saves the image book after the execution of each command, which is not ideal if the user is working on limited internet connection. Your team decided that the application should instead save the changes to a temporary local backup file first, and only upload to the cloud after the user closes the application. Your job is to implement a backup API for the image book storage.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1644,7 +1644,7 @@ Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage componen
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a new method <code>backupAddressBook(ReadOnlyAddressBook)</code>, so that the address book can be saved in a fixed temporary location.</p>
+<p>Add a new method <code>backupAddressBook(ReadOnlyAddressBook)</code>, so that the image book can be saved in a fixed temporary location.</p>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -1654,10 +1654,10 @@ Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage componen
 <div class="ulist">
 <ul>
 <li>
-<p>Add the API method in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/storage/AddressBookStorage.java"><code>AddressBookStorage</code></a> interface.</p>
+<p>Add the API method in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/storage/AddressBookStorage.java"><code>AddressBookStorage</code></a> interface.</p>
 </li>
 <li>
-<p>Implement the logic in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/storage/StorageManager.java"><code>StorageManager</code></a> and <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/storage/XmlAddressBookStorage.java"><code>XmlAddressBookStorage</code></a> class.</p>
+<p>Implement the logic in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/storage/StorageManager.java"><code>StorageManager</code></a> and <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/storage/XmlAddressBookStorage.java"><code>XmlAddressBookStorage</code></a> class.</p>
 </li>
 </ul>
 </div>
@@ -1691,7 +1691,7 @@ Do take a look at <a href="#Design-Storage">Section 2.5, &#8220;Storage componen
 <div class="sect3">
 <h4 id="description"><a class="link" href="#description">A.2.1. Description</a></h4>
 <div class="paragraph">
-<p>Edits the remark for a person specified in the <code>INDEX</code>.<br>
+<p>Edits the remark for a item specified in the <code>INDEX</code>.<br>
 Format: <code>remark INDEX r/[REMARK]</code></p>
 </div>
 <div class="paragraph">
@@ -1701,11 +1701,11 @@ Format: <code>remark INDEX r/[REMARK]</code></p>
 <ul>
 <li>
 <p><code>remark 1 r/Likes to drink coffee.</code><br>
-Edits the remark for the first person to <code>Likes to drink coffee.</code></p>
+Edits the remark for the first item to <code>Likes to drink coffee.</code></p>
 </li>
 <li>
 <p><code>remark 1 r/</code><br>
-Removes the remark for the first person.</p>
+Removes the remark for the first item.</p>
 </li>
 </ul>
 </div>
@@ -1723,10 +1723,10 @@ Removes the remark for the first person.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a <code>RemarkCommand</code> that extends <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/logic/commands/Command.java"><code>Command</code></a>. Upon execution, it should just throw an <code>Exception</code>.</p>
+<p>Add a <code>RemarkCommand</code> that extends <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/logic/commands/Command.java"><code>Command</code></a>. Upon execution, it should just throw an <code>Exception</code>.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/logic/parser/AddressBookParser.java"><code>AddressBookParser</code></a> to accept a <code>RemarkCommand</code>.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/logic/parser/AddressBookParser.java"><code>AddressBookParser</code></a> to accept a <code>RemarkCommand</code>.</p>
 </li>
 </ol>
 </div>
@@ -1739,7 +1739,7 @@ Removes the remark for the first person.</p>
 <p>Add <code>RemarkCommandTest</code> that tests that <code>execute()</code> throws an Exception.</p>
 </li>
 <li>
-<p>Add new test method to <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/address/logic/parser/AddressBookParserTest.java"><code>AddressBookParserTest</code></a>, which tests that typing "remark" returns an instance of <code>RemarkCommand</code>.</p>
+<p>Add new test method to <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/image/logic/parser/AddressBookParserTest.java"><code>AddressBookParserTest</code></a>, which tests that typing "remark" returns an instance of <code>RemarkCommand</code>.</p>
 </li>
 </ol>
 </div>
@@ -1761,7 +1761,7 @@ Removes the remark for the first person.</p>
 <p>Add <code>RemarkCommandParser</code> that knows how to parse two arguments, one index and one with prefix 'r/'.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/logic/parser/AddressBookParser.java"><code>AddressBookParser</code></a> to use the newly implemented <code>RemarkCommandParser</code>.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/logic/parser/AddressBookParser.java"><code>AddressBookParser</code></a> to use the newly implemented <code>RemarkCommandParser</code>.</p>
 </li>
 </ol>
 </div>
@@ -1778,7 +1778,7 @@ Removes the remark for the first person.</p>
 for <code>RemarkCommandParser</code>.</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/address/logic/parser/AddressBookParserTest.java"><code>AddressBookParserTest</code></a> to test that the correct command is generated according to the user input.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/image/logic/parser/AddressBookParserTest.java"><code>AddressBookParserTest</code></a> to test that the correct command is generated according to the user input.</p>
 </li>
 </ol>
 </div>
@@ -1786,7 +1786,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect4">
 <h5 id="step-3-ui-add-a-placeholder-for-remark-in-code-personcard-code"><a class="link" href="#step-3-ui-add-a-placeholder-for-remark-in-code-personcard-code">[Step 3] Ui: Add a placeholder for remark in <code>PersonCard</code></a></h5>
 <div class="paragraph">
-<p>Let&#8217;s add a placeholder on all our <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/PersonCard.java"><code>PersonCard</code></a> s to display a remark for each person later.</p>
+<p>Let&#8217;s add a placeholder on all our <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/PersonCard.java"><code>PersonCard</code></a> s to display a remark for each item later.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -1797,7 +1797,7 @@ for <code>RemarkCommandParser</code>.</p>
 <p>Add a <code>Label</code> with any random text inside <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/resources/view/PersonListCard.fxml"><code>PersonListCard.fxml</code></a>.</p>
 </li>
 <li>
-<p>Add FXML annotation in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/PersonCard.java"><code>PersonCard</code></a> to tie the variable to the actual label.</p>
+<p>Add FXML annotation in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/PersonCard.java"><code>PersonCard</code></a> to tie the variable to the actual label.</p>
 </li>
 </ol>
 </div>
@@ -1815,7 +1815,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect4">
 <h5 id="step-4-model-add-code-remark-code-class"><a class="link" href="#step-4-model-add-code-remark-code-class">[Step 4] Model: Add <code>Remark</code> class</a></h5>
 <div class="paragraph">
-<p>We have to properly encapsulate the remark in our <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/person/Person.java"><code>Person</code></a> class. Instead of just using a <code>String</code>, let&#8217;s follow the conventional class structure that the codebase already uses by adding a <code>Remark</code> class.</p>
+<p>We have to properly encapsulate the remark in our <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/item/Person.java"><code>Person</code></a> class. Instead of just using a <code>String</code>, let&#8217;s follow the conventional class structure that the codebase already uses by adding a <code>Remark</code> class.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -1823,7 +1823,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add <code>Remark</code> to model component (you can copy from <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/person/Address.java"><code>Address</code></a>, remove the regex and change the names accordingly).</p>
+<p>Add <code>Remark</code> to model component (you can copy from <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/item/Address.java"><code>Address</code></a>, remove the regex and change the names accordingly).</p>
 </li>
 <li>
 <p>Modify <code>RemarkCommand</code> to now take in a <code>Remark</code> instead of a <code>String</code>.</p>
@@ -1844,7 +1844,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect4">
 <h5 id="step-5-model-modify-code-person-code-to-support-a-code-remark-code-field"><a class="link" href="#step-5-model-modify-code-person-code-to-support-a-code-remark-code-field">[Step 5] Model: Modify <code>Person</code> to support a <code>Remark</code> field</a></h5>
 <div class="paragraph">
-<p>Now we have the <code>Remark</code> class, we need to actually use it inside <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/person/Person.java"><code>Person</code></a>.</p>
+<p>Now we have the <code>Remark</code> class, we need to actually use it inside <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/item/Person.java"><code>Person</code></a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -1852,13 +1852,13 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add <code>getRemark()</code> in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/person/Person.java"><code>Person</code></a>.</p>
+<p>Add <code>getRemark()</code> in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/item/Person.java"><code>Person</code></a>.</p>
 </li>
 <li>
-<p>You may assume that the user will not be able to use the <code>add</code> and <code>edit</code> commands to modify the remarks field (i.e. the person will be created without a remark).</p>
+<p>You may assume that the user will not be able to use the <code>add</code> and <code>edit</code> commands to modify the remarks field (i.e. the item will be created without a remark).</p>
 </li>
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/util/SampleDataUtil.java/"><code>SampleDataUtil</code></a> to add remarks for the sample data (delete your <code>addressBook.xml</code> so that the application will load the sample data when you launch it.)</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/util/SampleDataUtil.java/"><code>SampleDataUtil</code></a> to add remarks for the sample data (delete your <code>inventory.xml</code> so that the application will load the sample data when you launch it.)</p>
 </li>
 </ol>
 </div>
@@ -1866,7 +1866,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect4">
 <h5 id="step-6-storage-add-code-remark-code-field-to-code-xmladaptedperson-code-class"><a class="link" href="#step-6-storage-add-code-remark-code-field-to-code-xmladaptedperson-code-class">[Step 6] Storage: Add <code>Remark</code> field to <code>XmlAdaptedPerson</code> class</a></h5>
 <div class="paragraph">
-<p>We now have <code>Remark</code> s for <code>Person</code> s, but they will be gone when we exit the application. Let&#8217;s modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/storage/XmlAdaptedPerson.java"><code>XmlAdaptedPerson</code></a> to include a <code>Remark</code> field so that it will be saved.</p>
+<p>We now have <code>Remark</code> s for <code>Person</code> s, but they will be gone when we exit the application. Let&#8217;s modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/storage/XmlAdaptedPerson.java"><code>XmlAdaptedPerson</code></a> to include a <code>Remark</code> field so that it will be saved.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -1884,7 +1884,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Fix <code>invalidAndValidPersonAddressBook.xml</code>, <code>typicalPersonsAddressBook.xml</code>, <code>validAddressBook.xml</code> etc., such that the XML tests will not fail due to a missing <code>&lt;remark&gt;</code> element.</p>
+<p>Fix <code>invalidAndValidPersonAddressBook.xml</code>, <code>typicalPersonsInventory.xml</code>, <code>validAddressBook.xml</code> etc., such that the XML tests will not fail due to a missing <code>&lt;remark&gt;</code> element.</p>
 </li>
 </ol>
 </div>
@@ -1892,7 +1892,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect4">
 <h5 id="step-6b-test-add-withremark-for-code-personbuilder-code"><a class="link" href="#step-6b-test-add-withremark-for-code-personbuilder-code">[Step 6b] Test: Add withRemark() for <code>PersonBuilder</code></a></h5>
 <div class="paragraph">
-<p>Since <code>Person</code> can now have a <code>Remark</code>, we should add a helper method to <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/address/testutil/PersonBuilder.java"><code>PersonBuilder</code></a>, so that users are able to create remarks when building a <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/model/person/Person.java"><code>Person</code></a>.</p>
+<p>Since <code>Person</code> can now have a <code>Remark</code>, we should add a helper method to <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/image/testutil/PersonBuilder.java"><code>PersonBuilder</code></a>, so that users are able to create remarks when building a <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/model/item/Person.java"><code>Person</code></a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Tests:</strong></p>
@@ -1900,10 +1900,10 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add a new method <code>withRemark()</code> for <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/address/testutil/PersonBuilder.java"><code>PersonBuilder</code></a>. This method will create a new <code>Remark</code> for the person that it is currently building.</p>
+<p>Add a new method <code>withRemark()</code> for <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/image/testutil/PersonBuilder.java"><code>PersonBuilder</code></a>. This method will create a new <code>Remark</code> for the item that it is currently building.</p>
 </li>
 <li>
-<p>Try and use the method on any sample <code>Person</code> in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/address/testutil/TypicalPersons.java"><code>TypicalPersons</code></a>.</p>
+<p>Try and use the method on any sample <code>Person</code> in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/image/testutil/TypicalPersons.java"><code>TypicalPersons</code></a>.</p>
 </li>
 </ol>
 </div>
@@ -1911,7 +1911,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="sect4">
 <h5 id="step-7-ui-connect-code-remark-code-field-to-code-personcard-code"><a class="link" href="#step-7-ui-connect-code-remark-code-field-to-code-personcard-code">[Step 7] Ui: Connect <code>Remark</code> field to <code>PersonCard</code></a></h5>
 <div class="paragraph">
-<p>Our remark label in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/PersonCard.java"><code>PersonCard</code></a> is still a placeholder. Let&#8217;s bring it to life by binding it with the actual <code>remark</code> field.</p>
+<p>Our remark label in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/PersonCard.java"><code>PersonCard</code></a> is still a placeholder. Let&#8217;s bring it to life by binding it with the actual <code>remark</code> field.</p>
 </div>
 <div class="paragraph">
 <p><strong>Main:</strong></p>
@@ -1919,7 +1919,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/address/ui/PersonCard.java"><code>PersonCard</code></a>'s constructor to bind the <code>Remark</code> field to the <code>Person</code> 's remark.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/main/java/seedu/image/ui/PersonCard.java"><code>PersonCard</code></a>'s constructor to bind the <code>Remark</code> field to the <code>Person</code> 's remark.</p>
 </li>
 </ol>
 </div>
@@ -1929,7 +1929,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/address/ui/testutil/GuiTestAssert.java"><code>GuiTestAssert#assertCardDisplaysPerson(&#8230;&#8203;)</code></a> so that it will compare the now-functioning remark label.</p>
+<p>Modify <a href="https://github.com/CS2103-AY1819S1-W14-4/main/src/test/java/seedu/image/ui/testutil/GuiTestAssert.java"><code>GuiTestAssert#assertCardDisplaysPerson(&#8230;&#8203;)</code></a> so that it will compare the now-functioning remark label.</p>
 </li>
 </ol>
 </div>
@@ -1945,7 +1945,7 @@ for <code>RemarkCommandParser</code>.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Replace the logic in <code>RemarkCommand#execute()</code> (that currently just throws an <code>Exception</code>), with the actual logic to modify the remarks of a person.</p>
+<p>Replace the logic in <code>RemarkCommand#execute()</code> (that currently just throws an <code>Exception</code>), with the actual logic to modify the remarks of a item.</p>
 </li>
 </ol>
 </div>
@@ -2059,7 +2059,7 @@ staff and inventory without a need to invest a huge sum in complicated and expen
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">manager</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">send email to users</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">send sku to users</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">send important information to staff</p></td>
 </tr>
 <tr>
@@ -2730,10 +2730,10 @@ staff and inventory without a need to invest a huge sum in complicated and expen
 <p>V1.1 Support daily sales report</p>
 </li>
 <li>
-<p>V1.2 Support exporting users and sales to email and excel</p>
+<p>V1.2 Support exporting users and sales to sku and excel</p>
 </li>
 <li>
-<p>V1.3 Support exporting inventory to email and excel</p>
+<p>V1.3 Support exporting inventory to sku and excel</p>
 </li>
 </ul>
 </div>
@@ -2952,11 +2952,11 @@ Expected: Similar to previous.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a person while all persons are listed</p>
+<p>Deleting a item while all items are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Prerequisites: List all items using the <code>list</code> command. Multiple items in the list.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
@@ -2964,7 +2964,7 @@ Expected: First contact is deleted from the list. Details of the deleted contact
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: No item is deleted. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
 <p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
@@ -3000,4 +3000,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-02 16:51:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-04 03:29:52 UTC</div></div></div></body></html>
