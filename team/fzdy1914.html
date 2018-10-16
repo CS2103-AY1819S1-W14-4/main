@@ -144,6 +144,13 @@ Format: <code>export-csv-items f/FILEPATH</code></p>
 Format: <code>export-csv-users f/FILEPATH</code></p>
 </div>
 </div>
+<div class="sect4">
+<h5 id="export-list-of-purchase-orders-to-csv-code-export-csv-orders-code"><a class="link" href="#export-list-of-purchase-orders-to-csv-code-export-csv-orders-code">Export list of purchase orders to CSV: <code>export-csv-orders</code></a></h5>
+<div class="paragraph">
+<p>Export the list of orders in CSV format to the filepath given.<br>
+Format: <code>export-csv-orders f/FILEPATH</code></p>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="export-entire-data-to-im-file-code-export-im-code"><a class="link" href="#export-entire-data-to-im-file-code-export-im-code">Export entire data to .im file: <code>export-im</code></a></h4>
@@ -219,6 +226,13 @@ Format: <code>import-csv-items f/FILEPATH</code></p>
 <div class="paragraph">
 <p>Import the list of users in CSV format from the filepath given.<br>
 Format: <code>import-csv-users f/FILEPATH</code></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="import-list-of-purchase-orders-from-csv-code-import-csv-orders-code"><a class="link" href="#import-list-of-purchase-orders-from-csv-code-import-csv-orders-code">Import list of purchase orders from CSV: <code>import-csv-orders</code></a></h5>
+<div class="paragraph">
+<p>Import the list of orders in CSV format from the filepath given.<br>
+Format: <code>import-csv-orders f/FILEPATH</code></p>
 </div>
 </div>
 </div>
@@ -365,7 +379,8 @@ Format: <code>import-im f/FILEPATH</code></p>
 <li>
 <p>2a1. Inventory Manager shows an error message.</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case resumes at step 1.
+=== Export CSV mechanism</p>
 </div>
 </li>
 </ul>
@@ -373,5 +388,140 @@ Format: <code>import-im f/FILEPATH</code></p>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>In order to enable users to have further analysis on the data in <strong>Inventory Manager</strong>,
+we support several <code>export</code> commands to export the data in <strong>Inventory Manager</strong> to CSV files.
+We are using <code>ExportCsvItemsCommand</code>, <code>ExportCsvSalesCommand</code>, <code>ExportCsvOrdersCommand</code>, <code>ExportCsvUsersCommand</code>
+ to support exporting of <strong>Inventory Manager</strong> data through CSV files.</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-16 11:02:45 UTC</div></div></div></body></html>
+<div class="paragraph">
+<p>In the following sections, we will focus on how these commands depend on the <code>Model</code> and <code>Storage</code> component
+to retrieve external data and where to validate the given file path.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="sect4">
+<h5 id="data-access"><a class="link" href="#data-access">Data Access</a></h5>
+<div class="paragraph">
+<p>In order to achieve their tasks, all <code>export</code> commands require direct access to the data and output to the
+external environment. Unlike other command, these commands are highly depend on the <code>Storage</code> component.
+However, if we only directly set an <code>Storage</code> for the command and manipulate on the <code>Storage</code> in <code>export</code> command,
+we also need <code>Storage</code> component to directly access the data in <code>Model</code> component which will violate
+Single Responsibility Principle.</p>
+</div>
+<div class="paragraph">
+<p>So we decide to use the same method as other command use to export data. When executing the <code>export</code> commands,
+a <code>DataExportEvent</code> will be raised in the <code>EventsCenter</code> through <code>Model</code> component. Since <code>Logic</code> directly has
+<code>Model</code> as one field, it will not violate Single Responsibility Principle. Then, the handler function in <code>Storage</code>
+component will catch this <code>DataExportingEvent</code> and export data to the external environment.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="file-path-validation"><a class="link" href="#file-path-validation">File Path Validation</a></h5>
+<div class="paragraph">
+<p>File paths, as required by <code>export</code> commands, need to be validated during the execution of the commands.
+However, where to implement it can be decided. It can be implement in <code>CommandParser</code> or <code>Command</code>
+or even in <code>Storage</code>.</p>
+</div>
+<div class="paragraph">
+<p>In our implementation, we choose to validate the file path during the execution of <code>export</code> Command. A static method
+in <code>FileUtil</code> will be called to test whether the given file path is valid when executing the command. In doing so,
+we are able to make sure that the path parameter passed to <code>Model</code> component and <code>Storage</code> component is a valid
+file path. Also, it is easier for the implementation of command feedback to the users.
+Further details can be found in the sequence diagram of next section.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="sequence-diagram"><a class="link" href="#sequence-diagram">Sequence Diagram</a></h5>
+<div class="paragraph">
+<p>Considering that all the <code>export</code> commands have similar sequence diagrams. So we will just show the sequence diagrams
+for <code>ExportCsvItemsCommand</code> to illustrate how the <code>export</code> commands work.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExportCsvItemCommandSequenceDiagram.png" alt="ExportCsvItemCommandSequenceDiagram" width="1000">
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-code-export-code-commands-interact-with-code-storage-code-component-and-code-logic-code-component"><a class="link" href="#aspect-how-code-export-code-commands-interact-with-code-storage-code-component-and-code-logic-code-component">Aspect: How <code>export</code> commands interact with <code>Storage</code> Component and <code>Logic</code> Component</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Raise a <code>DataExportEvent</code> in the <code>EventsCenter</code> through <code>Model</code> and handle it
+in <code>Storage</code>.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Avoid direct access of <code>Storage</code> from <code>export</code> commands. Does not violate Single Responsibility Principle.<br></p>
+</li>
+<li>
+<p>Cons: Need a middle Component to achieve the goal. An additional event need to be raised<br></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Couples <code>Command</code> with <code>Storage</code><br>
+<strong>Pros:</strong> Provides direct access to <code>Storage</code> for commands that is highly depend it.<br>
+<strong>Cons:</strong> <code>Storage</code> will also need directly access of data in <code>Model</code> component which will violate
+Single Responsibility Principle.<br></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-location-for-implementation-of-file-path-validation-and-location-to-check-file-path-validation-br"><a class="link" href="#aspect-location-for-implementation-of-file-path-validation-and-location-to-check-file-path-validation-br">Aspect: Location for Implementation of File Path Validation and Location to Check File Path Validation<br></a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Implement in <code>FileUtil</code> and check in <code>export</code> command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: It&#8217;s sure that the path passed to <code>Model</code> component and <code>Storage</code> component is a valid file path.
+Easier implementation of command feedback. File Validation is reusable in other component.<br></p>
+</li>
+<li>
+<p>Cons: File Validation need to interact with <code>Commons</code> component.
+due to the saving of the address book.<br></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Implement in <code>CommandParser</code> and check in <code>CommandParser</code> command.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: No need to interact with other component.<br></p>
+</li>
+<li>
+<p>Cons: File Validation is not reusable in other component.<br></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 3:</strong> Implement in <code>Storage</code> and check in <code>Storage</code>.<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: No need to interact with other component. File Validation is reusable in other method of <code>Storage</code>.<br></p>
+</li>
+<li>
+<p>Cons: The path passed to <code>Storage</code> component may not be valid. More difficult implementation of command feedback.
+Need to raise an additional event for invalid file path.<br></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-16 12:59:35 UTC</div></div></div></body></html>
