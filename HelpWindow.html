@@ -14,11 +14,12 @@
 <li><a href="#Features">3. Features</a>
 <ul class="sectlevel2">
 <li><a href="#general">3.1. General</a></li>
-<li><a href="#users-management">3.2. Users Management</a></li>
-<li><a href="#sale-orders-management">3.3. Sale Orders Management</a></li>
-<li><a href="#reports-management">3.4. Reports Management</a></li>
-<li><a href="#purchase-order-management">3.5. Purchase Order Management</a></li>
-<li><a href="#inventory-management">3.6. Inventory Management</a></li>
+<li><a href="#authentication">3.2. Authentication</a></li>
+<li><a href="#user-management">3.3. User Management</a></li>
+<li><a href="#sale-orders-management">3.4. Sale Orders Management</a></li>
+<li><a href="#reports-management">3.5. Reports Management</a></li>
+<li><a href="#purchase-order-management">3.6. Purchase Order Management</a></li>
+<li><a href="#inventory-management">3.7. Inventory Management</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -98,12 +99,25 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Authentication and User Management</strong>:</p>
+<p><strong>Authentication</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Login for different group of users in CLI (cashier/admin/manager)</p>
+<p>Feature for users to login in CLI (cashier/admin/manager)</p>
 </li>
+<li>
+<p>Feature for users to change password</p>
+</li>
+<li>
+<p>Feature for users to logout from the apps</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>User Management</strong>:</p>
+<div class="ulist">
+<ul>
 <li>
 <p>Feature for admin to create users</p>
 </li>
@@ -115,9 +129,6 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </li>
 <li>
 <p>Feature for admin to delete users</p>
-</li>
-<li>
-<p>Feature for users to change password</p>
 </li>
 </ul>
 </div>
@@ -370,7 +381,10 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="users-management"><a class="link" href="#users-management">3.2. Users Management</a></h3>
+<h3 id="authentication"><a class="link" href="#authentication">3.2. Authentication</a></h3>
+<div class="paragraph">
+<p>Users authenticate their identities prior using other functions of the applications and able to change their password.</p>
+</div>
 <div class="sect3">
 <h4 id="login-to-the-system-code-login-code"><a class="link" href="#login-to-the-system-code-login-code">3.2.1. Login to the system : <code>login</code></a></h4>
 <div class="paragraph">
@@ -390,71 +404,10 @@ Format: <code>login u/USERNAME p/PASSWORD</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-users-code-add_user-code"><a class="link" href="#add-users-code-add_user-code">3.2.2. Add users : <code>add_user</code></a></h4>
-<div class="paragraph">
-<p>Adds an user into the system.<br>
-Format: <code>add_user n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Add user with username as yaotx, password as yaotxfanboi, name as Yao TengXiong and role as manager.<br>
-<code>add_user u/yaotx p/yaotxfanboi n/Yao TengXiong r/manager</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="update-users-code-update_user-code"><a class="link" href="#update-users-code-update_user-code">3.2.3. Update users : <code>update_user</code></a></h4>
+<h4 id="change-user-s-password-code-change-password-code"><a class="link" href="#change-user-s-password-code-change-password-code">3.2.2. Change user&#8217;s password : <code>change-password</code></a></h4>
 <div class="paragraph">
 <p>Updates an user information into the system with given username.<br>
-Format: <code>update_user u/USERNAME n/NAME  r/ROLE</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Update user with given username as yaotx. Change name to Yao Teng Xiong and role as admin.<br>
-<code>update_user u/yaotx n/Yao Teng Xiong r/admin</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="remove-users-code-remove_user-code"><a class="link" href="#remove-users-code-remove_user-code">3.2.4. Remove users : <code>remove_user</code></a></h4>
-<div class="paragraph">
-<p>Removes an user from the system with given username.<br>
-Format: <code>remove_user u/USERNAME</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Reomove user with given username as fzdy1914.<br>
-<code>remove_user u/fzdy1914</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-users-code-list_user-code"><a class="link" href="#list-users-code-list_user-code">3.2.5. List users : <code>list_user</code></a></h4>
-<div class="paragraph">
-<p>Displays a list of existing users in the system.<br>
-Format: <code>list_user</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="change-user-s-password-code-change_password-code"><a class="link" href="#change-user-s-password-code-change_password-code">3.2.6. Change user&#8217;s password : <code>change_password</code></a></h4>
-<div class="paragraph">
-<p>Updates an user information into the system with given username.<br>
-Format: <code>change_password u/USERNAME o/OLD_PASSWORD n/NEW_PASSWORD</code></p>
+Format: <code>change-password u/USERNAME o/OLD_PASSWORD n/NEW_PASSWORD</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -463,19 +416,104 @@ Format: <code>change_password u/USERNAME o/OLD_PASSWORD n/NEW_PASSWORD</code></p
 <ul>
 <li>
 <p>Change user&#8217;s password with given username as darren96, old password as darren123, new password as darrensinglenus.<br>
-<code>change_password u/darren96 o/darren123 n/darrensinglenus</code>.</p>
+<code>change-password u/darren96 o/darren123 n/darrensinglenus</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="logout-from-the-system-code-logout-code"><a class="link" href="#logout-from-the-system-code-logout-code">3.2.3. Logout from the system : <code>logout</code></a></h4>
+<div class="paragraph">
+<p>Logout the current users from the system.<br>
+Format: <code>logout</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Logout from the current session.<br>
+<code>logout</code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sale-orders-management"><a class="link" href="#sale-orders-management">3.3. Sale Orders Management</a></h3>
+<h3 id="user-management"><a class="link" href="#user-management">3.3. User Management</a></h3>
+<div class="paragraph">
+<p>Admin of the system manages the staffs who use this applications.</p>
+</div>
+<div class="sect3">
+<h4 id="add-users-code-add-user-code"><a class="link" href="#add-users-code-add-user-code">3.3.1. Add users : <code>add-user</code></a></h4>
+<div class="paragraph">
+<p>Adds an user into the system.<br>
+Format: <code>add-user n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Add user with username as yaotx, password as yaotxfanboi, name as Yao TengXiong and role as manager.<br>
+<code>add-user u/yaotx p/yaotxfanboi n/Yao TengXiong r/manager</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-users-code-list-user-code"><a class="link" href="#list-users-code-list-user-code">3.3.2. List users : <code>list-user</code></a></h4>
+<div class="paragraph">
+<p>Displays a list of existing users in the system.<br>
+Format: <code>list-user</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="update-users-code-update-user-code"><a class="link" href="#update-users-code-update-user-code">3.3.3. Update users : <code>update-user</code></a></h4>
+<div class="paragraph">
+<p>Updates an user information into the system with given username.<br>
+Format: <code>update-user i/INDEX u/USERNAME n/NAME  r/ROLE</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Update user with given username as yaotx. Change name to Yao Teng Xiong and role as admin.<br>
+<code>update-user i/2 u/yaotx n/Yao Teng Xiong r/admin</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="remove-users-code-delete-user-code"><a class="link" href="#remove-users-code-delete-user-code">3.3.4. Remove users : <code>delete-user</code></a></h4>
+<div class="paragraph">
+<p>Deletes an user from the system with given index as shown in the list.<br>
+Format: <code>delete-user i/INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Reomove user with given index as shown in the list.<br>
+<code>remove-user i/1</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sale-orders-management"><a class="link" href="#sale-orders-management">3.4. Sale Orders Management</a></h3>
 <div class="paragraph">
 <p>Staff users and manager users can create sale orders on the system using the commands below.</p>
 </div>
 <div class="sect3">
-<h4 id="creating-a-sale-order-code-create-sale-code"><a class="link" href="#creating-a-sale-order-code-create-sale-code">3.3.1. Creating a sale order : <code>create-sale</code></a></h4>
+<h4 id="creating-a-sale-order-code-create-sale-code"><a class="link" href="#creating-a-sale-order-code-create-sale-code">3.4.1. Creating a sale order : <code>create-sale</code></a></h4>
 <div class="paragraph">
 <p>This command allows the user to create a new sale order in Inventory Manager. Creating a sale order will deduct the
 inventory quantity automatically. User will need to ensure that the entered item SKU and sold quantity is valid.</p>
@@ -505,7 +543,7 @@ on screen too.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-sale-order-code-delete-sale-code"><a class="link" href="#deleting-a-sale-order-code-delete-sale-code">3.3.2. Deleting a sale order : <code>delete-sale</code></a></h4>
+<h4 id="deleting-a-sale-order-code-delete-sale-code"><a class="link" href="#deleting-a-sale-order-code-delete-sale-code">3.4.2. Deleting a sale order : <code>delete-sale</code></a></h4>
 <div class="paragraph">
 <p>This command allows the user to delete a specific sale order in Inventory Manager. Deleting a sale order will restore
 the inventory quantity deducted automatically. User will need to ensure that the entered sale ID is valid.</p>
@@ -533,7 +571,7 @@ the inventory quantity deducted automatically. User will need to ensure that the
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-sale-orders-code-list-sales-code"><a class="link" href="#listing-sale-orders-code-list-sales-code">3.3.3. Listing sale orders : <code>list-sales</code></a></h4>
+<h4 id="listing-sale-orders-code-list-sales-code"><a class="link" href="#listing-sale-orders-code-list-sales-code">3.4.3. Listing sale orders : <code>list-sales</code></a></h4>
 <div class="paragraph">
 <p>This command allows the user to list a specific number of recently recorded sale orders in Inventory Manager.</p>
 </div>
@@ -557,7 +595,7 @@ the inventory quantity deducted automatically. User will need to ensure that the
 </div>
 </div>
 <div class="sect3">
-<h4 id="finding-sale-orders-code-find-sales-code"><a class="link" href="#finding-sale-orders-code-find-sales-code">3.3.4. Finding sale orders : <code>find-sales</code></a></h4>
+<h4 id="finding-sale-orders-code-find-sales-code"><a class="link" href="#finding-sale-orders-code-find-sales-code">3.4.4. Finding sale orders : <code>find-sales</code></a></h4>
 <div class="paragraph">
 <p>This command allows the user to search for a specific sale order based on the sale ID or for all sale orders created on
 a specific date. Either a valid sale order ID or date is required for this command.</p>
@@ -583,9 +621,9 @@ a specific date. Either a valid sale order ID or date is required for this comma
 </div>
 </div>
 <div class="sect2">
-<h3 id="reports-management"><a class="link" href="#reports-management">3.4. Reports Management</a></h3>
+<h3 id="reports-management"><a class="link" href="#reports-management">3.5. Reports Management</a></h3>
 <div class="sect3">
-<h4 id="export-to-csv-code-export-csv-code"><a class="link" href="#export-to-csv-code-export-csv-code">3.4.1. Export to CSV: <code>export-csv</code></a></h4>
+<h4 id="export-to-csv-code-export-csv-code"><a class="link" href="#export-to-csv-code-export-csv-code">3.5.1. Export to CSV: <code>export-csv</code></a></h4>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -639,7 +677,7 @@ Format: <code>export-csv-orders f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="export-entire-data-to-im-file-code-export-im-code"><a class="link" href="#export-entire-data-to-im-file-code-export-im-code">3.4.2. Export entire data to .im file: <code>export-im</code></a></h4>
+<h4 id="export-entire-data-to-im-file-code-export-im-code"><a class="link" href="#export-entire-data-to-im-file-code-export-im-code">3.5.2. Export entire data to .im file: <code>export-im</code></a></h4>
 <div class="paragraph">
 <p>Export the entire data to the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
 Format: <code>export-im f/FILEPATH</code></p>
@@ -669,7 +707,7 @@ Format: <code>export-im f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-from-csv-code-import-csv-code"><a class="link" href="#import-from-csv-code-import-csv-code">3.4.3. Import from CSV: <code>import-csv</code></a></h4>
+<h4 id="import-from-csv-code-import-csv-code"><a class="link" href="#import-from-csv-code-import-csv-code">3.5.3. Import from CSV: <code>import-csv</code></a></h4>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -723,7 +761,7 @@ Format: <code>import-csv-orders f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-entire-data-from-im-file-code-import-im-code"><a class="link" href="#import-entire-data-from-im-file-code-import-im-code">3.4.4. Import entire data from .im file: <code>import-im</code></a></h4>
+<h4 id="import-entire-data-from-im-file-code-import-im-code"><a class="link" href="#import-entire-data-from-im-file-code-import-im-code">3.5.4. Import entire data from .im file: <code>import-im</code></a></h4>
 <div class="paragraph">
 <p>Import the entire data from the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
 Format: <code>import-im f/FILEPATH</code></p>
@@ -754,9 +792,9 @@ Format: <code>import-im f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="purchase-order-management"><a class="link" href="#purchase-order-management">3.5. Purchase Order Management</a></h3>
+<h3 id="purchase-order-management"><a class="link" href="#purchase-order-management">3.6. Purchase Order Management</a></h3>
 <div class="sect3">
-<h4 id="generate-purchase-order-code-generate-po-code"><a class="link" href="#generate-purchase-order-code-generate-po-code">3.5.1. Generate purchase order : <code>generate-po</code></a></h4>
+<h4 id="generate-purchase-order-code-generate-po-code"><a class="link" href="#generate-purchase-order-code-generate-po-code">3.6.1. Generate purchase order : <code>generate-po</code></a></h4>
 <div class="paragraph">
 <p>Generate purchase order for an item.<br>
 The id of a purchase order and the date will be auto generated.<br>
@@ -774,28 +812,28 @@ Format: <code>generate-po i/SKU_NUMBER q/QUANTITY sp/SUPPLIER rd/REQUIRED_DATE [
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-all-purchase-order-code-list-po-code"><a class="link" href="#list-all-purchase-order-code-list-po-code">3.5.2. List all purchase order : <code>list po</code></a></h4>
+<h4 id="list-all-purchase-order-code-list-po-code"><a class="link" href="#list-all-purchase-order-code-list-po-code">3.6.2. List all purchase order : <code>list po</code></a></h4>
 <div class="paragraph">
 <p>Shows a list of all the purchase order.
 Format: <code>list-po</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-approved-purchase-order-code-list-approved-po-code"><a class="link" href="#list-approved-purchase-order-code-list-approved-po-code">3.5.3. List approved purchase order : <code>list approved-po</code></a></h4>
+<h4 id="list-approved-purchase-order-code-list-approved-po-code"><a class="link" href="#list-approved-purchase-order-code-list-approved-po-code">3.6.3. List approved purchase order : <code>list approved-po</code></a></h4>
 <div class="paragraph">
 <p>Shows a list of all the approved purchase order.
 Format: <code>list approved-po</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-pending-purchase-order-code-list-pending-po-code"><a class="link" href="#list-pending-purchase-order-code-list-pending-po-code">3.5.4. List pending purchase order : <code>list pending-po</code></a></h4>
+<h4 id="list-pending-purchase-order-code-list-pending-po-code"><a class="link" href="#list-pending-purchase-order-code-list-pending-po-code">3.6.4. List pending purchase order : <code>list pending-po</code></a></h4>
 <div class="paragraph">
 <p>Shows a list of all the pending purchase order.
 Format: <code>list pending-po</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="approve-purchase-order-code-approve-code"><a class="link" href="#approve-purchase-order-code-approve-code">3.5.5. Approve purchase order : <code>approve</code></a></h4>
+<h4 id="approve-purchase-order-code-approve-code"><a class="link" href="#approve-purchase-order-code-approve-code">3.6.5. Approve purchase order : <code>approve</code></a></h4>
 <div class="paragraph">
 <p>Approve a purchase order.
 Format: <code>approve id/PO_ID</code></p>
@@ -812,7 +850,7 @@ Format: <code>approve id/PO_ID</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="reject-purchase-order-code-reject-code"><a class="link" href="#reject-purchase-order-code-reject-code">3.5.6. Reject purchase order : <code>reject</code></a></h4>
+<h4 id="reject-purchase-order-code-reject-code"><a class="link" href="#reject-purchase-order-code-reject-code">3.6.6. Reject purchase order : <code>reject</code></a></h4>
 <div class="paragraph">
 <p>Reject a purchase order along with a reason description.
 Format: <code>reject id/PO_ID d/DESCRIPTION</code></p>
@@ -830,9 +868,9 @@ Format: <code>reject id/PO_ID d/DESCRIPTION</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="inventory-management"><a class="link" href="#inventory-management">3.6. Inventory Management</a></h3>
+<h3 id="inventory-management"><a class="link" href="#inventory-management">3.7. Inventory Management</a></h3>
 <div class="sect3">
-<h4 id="adding-an-item-code-add-code"><a class="link" href="#adding-an-item-code-add-code">3.6.1. Adding an item : <code>add</code></a></h4>
+<h4 id="adding-an-item-code-add-code"><a class="link" href="#adding-an-item-code-add-code">3.7.1. Adding an item : <code>add</code></a></h4>
 <div class="paragraph">
 <p>Adds an item to the inventory manager<br>
 Format: <code>add n/NAME q/QUANTITY s/SKU i/IMAGE_LOCATION [t/TAG]&#8230;&#8203;</code></p>
@@ -861,14 +899,14 @@ An item can have any number of tags (including 0)
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-items-code-list-code"><a class="link" href="#listing-all-items-code-list-code">3.6.2. Listing all items : <code>list</code></a></h4>
+<h4 id="listing-all-items-code-list-code"><a class="link" href="#listing-all-items-code-list-code">3.7.2. Listing all items : <code>list</code></a></h4>
 <div class="paragraph">
 <p>Shows a list of all items in the inventory manager.<br>
 Format: <code>list</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-an-item-code-update-code"><a class="link" href="#editing-an-item-code-update-code">3.6.3. Editing an item : <code>update</code></a></h4>
+<h4 id="editing-an-item-code-update-code"><a class="link" href="#editing-an-item-code-update-code">3.7.3. Editing an item : <code>update</code></a></h4>
 <div class="paragraph">
 <p>Edits an existing person in the Inventory Manager.<br>
 Format: <code>update INDEX [n/NAME] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/TAG]&#8230;&#8203;</code></p>
@@ -909,7 +947,7 @@ Updates the location and quantity of the 1st item to be <code>111-123A</code> an
 </div>
 </div>
 <div class="sect3">
-<h4 id="locating-items-by-name-code-find-code"><a class="link" href="#locating-items-by-name-code-find-code">3.6.4. Locating items by name : <code>find</code></a></h4>
+<h4 id="locating-items-by-name-code-find-code"><a class="link" href="#locating-items-by-name-code-find-code">3.7.4. Locating items by name : <code>find</code></a></h4>
 <div class="paragraph">
 <p>Finds item whose names contain any of the given keywords.<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
@@ -950,7 +988,7 @@ Returns <code>IPhone X</code> and <code>IPhone 10</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-an-item-code-delete-code"><a class="link" href="#deleting-an-item-code-delete-code">3.6.5. Deleting an item : <code>delete</code></a></h4>
+<h4 id="deleting-an-item-code-delete-code"><a class="link" href="#deleting-an-item-code-delete-code">3.7.5. Deleting an item : <code>delete</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified item from the inventory.<br>
 Format: <code>delete INDEX</code></p>
@@ -991,7 +1029,7 @@ Deletes the 1st item in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="selecting-an-item-code-select-code"><a class="link" href="#selecting-an-item-code-select-code">3.6.6. Selecting an item : <code>select</code></a></h4>
+<h4 id="selecting-an-item-code-select-code"><a class="link" href="#selecting-an-item-code-select-code">3.7.6. Selecting an item : <code>select</code></a></h4>
 <div class="paragraph">
 <p>Selects the item identified by the index number used in the displayed inventory.<br>
 Format: <code>select INDEX</code></p>
@@ -1063,24 +1101,39 @@ Selects the 1st item in the results of the <code>find</code> command.</p>
 <li>
 <p><strong>Redo</strong> : <code>redo</code></p>
 </li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><strong>Login</strong> <code>login u/USERNAME p/PASSWORD</code></p>
 </li>
 <li>
-<p><strong>Add User</strong> <code>add_user n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
-</li>
-<li>
-<p><strong>Update User</strong> <code>update_user n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
-</li>
-<li>
-<p><strong>Remove User</strong> <code>remove_user u/USERNAME</code></p>
-</li>
-<li>
-<p><strong>List User</strong> <code>list_user</code></p>
-</li>
-<li>
 <p><strong>Change Password</strong> <code>change_password u/USERNAME o/OLD_PASSWORD n/NEW_PASSWORD</code></p>
 </li>
+<li>
+<p><strong>Logout</strong> <code>logout</code></p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Add User</strong> <code>add-user n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
+</li>
+<li>
+<p><strong>Update User</strong> <code>update-user i/INDEX n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
+</li>
+<li>
+<p><strong>Remove User</strong> <code>delete-user i/INDEX</code></p>
+</li>
+<li>
+<p><strong>List User</strong> <code>list-user</code></p>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><strong>Add Sale Order</strong> <code>add-sale s/SKU q/QTY</code><br>
 e.g. <code>add-sale s/0123 q/1</code></p>
@@ -1201,4 +1254,4 @@ e.g.<code>select 2</code></p>
 <p>A graphical user interface (GUI) is an interface through which a user interacts with the software.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 17:47:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 17:52:57 UTC</div></div></div></body></html>

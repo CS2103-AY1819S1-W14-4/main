@@ -41,9 +41,9 @@
 <li><a href="#editing-documentation">4.1. Editing Documentation</a></li>
 <li><a href="#publishing-documentation">4.2. Publishing Documentation</a></li>
 <li><a href="#converting-documentation-to-pdf-format">4.3. Converting Documentation to PDF format</a></li>
-<li><a href="#Docs-SiteWideDocSettings">4.4. Site-wide Documentation Settings</a></li>
-<li><a href="#Docs-PerFileDocSettings">4.5. Per-file Documentation Settings</a></li>
-<li><a href="#site-template">4.6. Site Template</a></li>
+<li><a href="#Docs-SiteWideDocSettings">4.4. Changing Site-wide Documentation Settings</a></li>
+<li><a href="#Docs-PerFileDocSettings">4.5. Specifying Per-file Documentation Settings</a></li>
+<li><a href="#modifying-site-template">4.6. Modifying Site Template</a></li>
 </ul>
 </li>
 <li><a href="#Testing">5. Testing</a>
@@ -79,9 +79,10 @@
 <li><a href="#instructions-for-manual-testing">Appendix I: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">I.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-staff">Deleting a staff</a></li>
-<li><a href="#deleting-a-person">I.2. Deleting a person</a></li>
-<li><a href="#saving-data">I.3. Saving data</a></li>
+<li><a href="#login">I.2. Login</a></li>
+<li><a href="#deleting-a-staff">I.3. Deleting a staff</a></li>
+<li><a href="#deleting-a-person">I.4. Deleting a person</a></li>
+<li><a href="#saving-data">I.5. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -1003,7 +1004,7 @@ Need to raise an additional event for invalid file path.<br></p>
 <h2 id="documentation"><a class="link" href="#documentation">4. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>We use asciidoc for writing documentation.</p>
+<p>We use asciidoc to write documentation.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1012,7 +1013,7 @@ Need to raise an additional event for invalid file path.<br></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-We chose asciidoc over Markdown because asciidoc, although a bit more complex than Markdown, provides more flexibility in formatting.
+We chose asciidoc over Markdown because asciidoc provides more flexibility in formatting.
 </td>
 </tr>
 </table>
@@ -1020,14 +1021,38 @@ We chose asciidoc over Markdown because asciidoc, although a bit more complex th
 <div class="sect2">
 <h3 id="editing-documentation"><a class="link" href="#editing-documentation">4.1. Editing Documentation</a></h3>
 <div class="paragraph">
-<p>See <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to learn how to render <code>.adoc</code> files locally to preview the end result of your edits.
-Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows you to preview the changes you have made to your <code>.adoc</code> files in real-time.</p>
+<p>We use IntelliJ to edit the documentation. The documentation can be rendered and previewed on IntelliJ.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See <a href="UsingGradle.html#rendering-asciidoc-files">UsingGradle.adoc</a> to learn how to render <code>.adoc</code> files locally to preview the end result of your edits.
+Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows you to preview the changes you have made to your <code>.adoc</code> files in real-time.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="publishing-documentation"><a class="link" href="#publishing-documentation">4.2. Publishing Documentation</a></h3>
 <div class="paragraph">
-<p>See <a href="UsingTravis.html#deploying-github-pages">UsingTravis.adoc</a> to learn how to deploy GitHub Pages using Travis.</p>
+<p>We use Travis as an automation tool to deploy the documentation to Github Page.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See <a href="UsingTravis.html#deploying-github-pages">UsingTravis.adoc</a> to learn how to deploy GitHub Pages using Travis.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -1047,7 +1072,7 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 <p>Go to your generated HTML files in the <code>build/docs</code> folder, right click on them and select <code>Open with</code> &#8594; <code>Google Chrome</code>.</p>
 </li>
 <li>
-<p>Within Chrome, click on the <code>Print</code> option in Chrome&#8217;s menu.</p>
+<p>Click on the <code>Print</code> option in Google Chrome&#8217;s menu.</p>
 </li>
 <li>
 <p>Set the destination to <code>Save as PDF</code>, then click <code>Save</code> to save a copy of the file in PDF format. For best results, use the settings indicated in the screenshot below.</p>
@@ -1062,9 +1087,9 @@ Alternatively, you can download the AsciiDoc plugin for IntelliJ, which allows y
 </div>
 </div>
 <div class="sect2">
-<h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">4.4. Site-wide Documentation Settings</a></h3>
+<h3 id="Docs-SiteWideDocSettings"><a class="link" href="#Docs-SiteWideDocSettings">4.4. Changing Site-wide Documentation Settings</a></h3>
 <div class="paragraph">
-<p>The <a href="https://github.com/CS2103-AY1819S1-W14-4/main/build.gradle"><code>build.gradle</code></a> file specifies some project-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how all documentation files within this project are rendered.</p>
+<p>We specify project-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/build.gradle"><code>build.gradle</code></a> file which affects how all documentation files within this project are rendered.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -1104,7 +1129,7 @@ If set, the name will be displayed near the top of the page.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>site-githuburl</code></p></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>URL to the site&#8217;s repository on <a href="https://github.com">GitHub</a>.
+<p>The URL to the site&#8217;s repository on <a href="https://github.com">GitHub</a>.
 Setting this will add a "View on GitHub" link in the navigation bar.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>not set</em></p></td>
@@ -1112,7 +1137,7 @@ Setting this will add a "View on GitHub" link in the navigation bar.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>site-seedu</code></p></td>
 <td class="tableblock halign-left valign-top"><div><div class="paragraph">
-<p>Define this attribute if the project is an official SE-EDU project.
+<p>The attribute to indicate if the project is an official SE-EDU project.
 This will render the SE-EDU navigation bar at the top of the page, and add some SE-EDU-specific navigation items.</p>
 </div></div></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>not set</em></p></td>
@@ -1121,9 +1146,9 @@ This will render the SE-EDU navigation bar at the top of the page, and add some 
 </table>
 </div>
 <div class="sect2">
-<h3 id="Docs-PerFileDocSettings"><a class="link" href="#Docs-PerFileDocSettings">4.5. Per-file Documentation Settings</a></h3>
+<h3 id="Docs-PerFileDocSettings"><a class="link" href="#Docs-PerFileDocSettings">4.5. Specifying Per-file Documentation Settings</a></h3>
 <div class="paragraph">
-<p>Each <code>.adoc</code> file may also specify some file-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> which affects how the file is rendered.</p>
+<p>We specify the file-specific <a href="https://asciidoctor.org/docs/user-manual/#attributes">asciidoc attributes</a> in each <code>.adoc</code> file which affects how the file is rendered.</p>
 </div>
 <div class="paragraph">
 <p>Asciidoctor&#8217;s <a href="https://asciidoctor.org/docs/user-manual/#builtin-attributes">built-in attributes</a> may be specified and used as well.</p>
@@ -1178,7 +1203,7 @@ One of: <code>UserGuide</code>, <code>DeveloperGuide</code>, <code>LearningOutco
 </table>
 </div>
 <div class="sect2">
-<h3 id="site-template"><a class="link" href="#site-template">4.6. Site Template</a></h3>
+<h3 id="modifying-site-template"><a class="link" href="#modifying-site-template">4.6. Modifying Site Template</a></h3>
 <div class="paragraph">
 <p>The files in <a href="https://github.com/CS2103-AY1819S1-W14-4/main/docs/stylesheets"><code>docs/stylesheets</code></a> are the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS stylesheets</a> of the site.
 You can modify them to change some properties of the site&#8217;s design.</p>
@@ -1340,16 +1365,43 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more information on how 
 <div class="sect1">
 <h2 id="dev-ops"><a class="link" href="#dev-ops">6. Dev Ops</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This part will guide you through on the approach of integration we used.</p>
+</div>
 <div class="sect2">
 <h3 id="build-automation"><a class="link" href="#build-automation">6.1. Build Automation</a></h3>
 <div class="paragraph">
-<p>See <a href="UsingGradle.html">UsingGradle.adoc</a> to learn how to use Gradle for build automation.</p>
+<p>We use <a href="https://gradle.org">Gradle</a> as our build automation tool to automate the build process.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See <a href="UsingGradle.html">UsingGradle.adoc</a> to learn how to use Gradle for build automation.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="continuous-integration"><a class="link" href="#continuous-integration">6.2. Continuous Integration</a></h3>
 <div class="paragraph">
-<p>We use <a href="https://travis-ci.org/">Travis CI</a> and <a href="https://www.appveyor.com/">AppVeyor</a> to perform <em>Continuous Integration</em> on our projects. See <a href="UsingTravis.html">UsingTravis.adoc</a> and <a href="UsingAppVeyor.html">UsingAppVeyor.adoc</a> for more details.</p>
+<p>We use <a href="https://travis-ci.org/">Travis CI</a> and <a href="https://www.appveyor.com/">AppVeyor</a> to perform <em>Continuous Integration</em> on our projects.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See <a href="UsingTravis.html">UsingTravis.adoc</a> and <a href="UsingAppVeyor.html">UsingAppVeyor.adoc</a> for more details.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -1361,7 +1413,19 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more information on how 
 <div class="sect2">
 <h3 id="documentation-previews"><a class="link" href="#documentation-previews">6.4. Documentation Previews</a></h3>
 <div class="paragraph">
-<p>When a pull request has changes to asciidoc files, you can use <a href="https://www.netlify.com/">Netlify</a> to see a preview of how the HTML version of those asciidoc files will look like when the pull request is merged. See <a href="UsingNetlify.html">UsingNetlify.adoc</a> for more details.</p>
+<p>When a pull request has changes to asciidoc files, you can use <a href="https://www.netlify.com/">Netlify</a> to see a preview of how the HTML version of those asciidoc files will look like when the pull request is merged.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+See <a href="UsingNetlify.html">UsingNetlify.adoc</a> for more details.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -3145,26 +3209,26 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-staff"><a class="link" href="#deleting-a-staff">Deleting a staff</a></h3>
+<h3 id="login"><a class="link" href="#login">I.2. Login</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a staff</p>
+<p>Login</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: The username provided must be the username of the existing user</p>
+<p>Prerequisites: The username and password of the staff must be in the staffs record.</p>
 </li>
 <li>
-<p>Test case: <code>remove_user u/johnd1912</code><br>
-Expected: User with username, johnd1912, will be deleted. Details of the deleted staff shown in the status message. Timestamp in the status bar is updated.</p>
+<p>Test case: <code>login u/user1 p/password1</code><br>
+Expected: User will be logged in and granted access on using other functions of the application.</p>
 </li>
 <li>
-<p>Test case: <code>remove_user u/</code><br>
-Expected: No staff is deleted. Error details shown in the status message. Status bar remains the same.</p>
+<p>Test case: <code>login u/asd1231 p/</code><br>
+Expected: User will be prompted to fill in the empty password field.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>remove_user</code>, `remove_user ,,,`_<br>
+<p>Test case: <code>login</code> , <code>login u/ p/password</code><br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -3174,7 +3238,36 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">I.2. Deleting a person</a></h3>
+<h3 id="deleting-a-staff"><a class="link" href="#deleting-a-staff">I.3. Deleting a staff</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a staff</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The index provided must be the index in the existing list of staff shown</p>
+</li>
+<li>
+<p>Test case: <code>delete-staff i/2</code><br>
+Expected: Staff listed as second in the list will be deleted. Details of the deleted staff shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>delete-staff i/</code><br>
+Expected: No staff is deleted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete-staff</code>, `delete-staff ,,,`_<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">I.4. Deleting a person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3206,7 +3299,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">I.3. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">I.5. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -3226,4 +3319,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 17:47:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 17:52:57 UTC</div></div></div></body></html>
