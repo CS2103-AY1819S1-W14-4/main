@@ -10,7 +10,7 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Inventory manager is for Small to Medium Enterprises (SMEs) who prefer to use a
+<p>Inventory manager is designed for Small to Medium Enterprises (SMEs) who prefer to use a
 desktop app to manage their shop inventory. More importantly, it is optimized for those
 who prefer to work with a Command Line Interface (CLI) while still having the benefits of
 a Graphical User Interface (GUI). It will allow various users to perform multiple inventory
@@ -104,13 +104,22 @@ and more.</p>
 </tr>
 </tbody>
 </table>
-<div class="sect3">
-<h4 id="creating-a-sale-order-code-createsale-code"><a class="link" href="#creating-a-sale-order-code-createsale-code">Creating a sale order : <code>createSale</code></a></h4>
 <div class="paragraph">
-<p>Creating a sale and deducting the inventory stocks automatically.</p>
+<p>Staff users and manager users can create sale orders on the system using the commands below.</p>
+</div>
+<div class="sect3">
+<h4 id="creating-a-sale-order-code-create-sale-code"><a class="link" href="#creating-a-sale-order-code-create-sale-code">Creating a sale order : <code>create-sale</code></a></h4>
+<div class="paragraph">
+<p>This command allows the user to create a new sale order in Inventory Manager. Creating a sale order will deduct the
+inventory quantity automatically. User will need to ensure that the entered item SKU and sold quantity is valid.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>createSale s/SKU q/QTY</code></p>
+<p>Entering an invalid SKU that cannot be found in Inventory Manager will result in an error shown on screen.
+Entering a quantity that is greater than the available item quantity will result in an error shown
+on screen too.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>create-sale s/SKU q/QTY</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -118,23 +127,27 @@ and more.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Sold 5 quantity of a product with SKU 0123.<br>
-<code>createSale i/0123 q/5</code></p>
+<p>User sold 5 quantity of a product with SKU 0123.<br>
+<code>create-sale s/0123 q/5</code></p>
 </li>
 <li>
-<p>Sold 1 quantity of a product with SKU 456.<br>
-<code>createSale i/456 q/1</code></p>
+<p>User sold 1 quantity of a product with SKU 456.<br>
+<code>create-sale s/456 q/1</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-sale-order-code-deletesale-code"><a class="link" href="#deleting-a-sale-order-code-deletesale-code">Deleting a sale order : <code>deleteSale</code></a></h4>
+<h4 id="deleting-a-sale-order-code-delete-sale-code"><a class="link" href="#deleting-a-sale-order-code-delete-sale-code">Deleting a sale order : <code>delete-sale</code></a></h4>
 <div class="paragraph">
-<p>Deleting a sale and restoring the inventory quantity automatically.</p>
+<p>This command allows the user to delete a specific sale order in Inventory Manager. Deleting a sale order will restore
+the inventory quantity deducted automatically. User will need to ensure that the entered sale ID is valid.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>deleteSale id/ID</code></p>
+<p>Entering an invalid sale ID that cannot be found in Inventory Manager will result in an error shown on screen.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete-sale id/ID</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -142,23 +155,23 @@ and more.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Deleting sale ID 12.<br>
-<code>deleteSale id/12</code></p>
+<p>User wishes to delete sale ID 12.<br>
+<code>delete-sale id/12</code></p>
 </li>
 <li>
-<p>Deleting sale ID 123.<br>
-<code>deleteSale id/123</code></p>
+<p>User wishes to delete sale ID 123.<br>
+<code>delete-sale id/123</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-sale-orders-code-listsales-code"><a class="link" href="#listing-sale-orders-code-listsales-code">Listing sale orders : <code>listSales</code></a></h4>
+<h4 id="listing-sale-orders-code-list-sales-code"><a class="link" href="#listing-sale-orders-code-list-sales-code">Listing sale orders : <code>list-sales</code></a></h4>
 <div class="paragraph">
-<p>Listing sale orders currently recorded in the system.</p>
+<p>This command allows the user to list a specific number of recently recorded sale orders in Inventory Manager.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>listSales r/RECORDS</code></p>
+<p>Format: <code>list-sales r/RECORDS</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -166,23 +179,24 @@ and more.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>List latest 50 records.<br>
-<code>listSales r/50</code></p>
+<p>User wishes to list the latest 50 sale orders.<br>
+<code>list-sales r/50</code></p>
 </li>
 <li>
-<p>List latest 20 records.<br>
-<code>listSales r/20</code></p>
+<p>User wishes to list the latest 20 sale orders.<br>
+<code>list-sales r/20</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="searching-for-sale-orders-code-searchsale-code"><a class="link" href="#searching-for-sale-orders-code-searchsale-code">Searching for sale orders : <code>searchSale</code></a></h4>
+<h4 id="finding-sale-orders-code-find-sales-code"><a class="link" href="#finding-sale-orders-code-find-sales-code">Finding sale orders : <code>find-sales</code></a></h4>
 <div class="paragraph">
-<p>Searching for a sale based on sale ID or a specific date</p>
+<p>This command allows the user to search for a specific sale order based on the sale ID or for all sale orders created on
+a specific date. Either a valid sale order ID or date is required for this command.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>searchSale [d/YYYY-mm-dd] [id/ID]</code></p>
+<p>Format: <code>search-sale [d/YYYY-mm-dd] [id/ID]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -190,12 +204,12 @@ and more.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Searching for sale ID 12.<br>
-<code>searchSale id/12</code></p>
+<p>User wishes to search for sale order ID 12.<br>
+<code>search-sale id/12</code></p>
 </li>
 <li>
-<p>Searching for sales created on 01 October 2018.<br>
-<code>searchSale d/2018-10-01</code></p>
+<p>User wishes to search for sale orders created on 01 October 2018.<br>
+<code>search-sale d/2018-10-01</code></p>
 </li>
 </ul>
 </div>
@@ -222,4 +236,4 @@ and more.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-16 18:29:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 13:26:56 UTC</div></div></div></body></html>
