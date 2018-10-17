@@ -29,65 +29,15 @@ and more.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Created Sales Management Feature</p>
+<p>Created Sale Orders Management Feature</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
-</li>
-<li>
-<p><strong>Other contributions</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Project management:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>]</p>
 </li>
 </ul>
-</div>
-</li>
-<li>
-<p>Enhancements to existing features:
-<strong>*</strong></p>
-</li>
-<li>
-<p>Documentation:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Community:</p>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Created an organization for team on Github</p>
-</li>
-<li>
-<p>Integrated a Github plugin (TravisCI) to the team repo</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -104,6 +54,8 @@ and more.</p>
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="sale-orders-management"><a class="link" href="#sale-orders-management">Sale Orders Management</a></h3>
 <div class="paragraph">
 <p>Staff users and manager users can create sale orders on the system using the commands below.</p>
 </div>
@@ -216,6 +168,7 @@ a specific date. Either a valid sale order ID or date is required for this comma
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
 <h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
@@ -229,11 +182,356 @@ a specific date. Either a valid sale order ID or date is required for this comma
 </tr>
 </tbody>
 </table>
-<div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">[Proposed] Data Encryption</a></h3>
+</div>
+</div>
+<div class="sect1">
+<h2 id="setting-up"><a class="link" href="#setting-up">Setting up</a></h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
+<p>The steps for developers to setup Inventory Manager locally is described below.</p>
+</div>
+<div class="sect2">
+<h3 id="prerequisites"><a class="link" href="#prerequisites">Prerequisites</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>JDK <code>9</code></strong> or later</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+JDK <code>10</code> on Windows will fail to run tests in <a href="UsingGradle.html#Running-Tests">headless mode</a> due to a <a href="https://github.com/javafxports/openjdk-jfx/issues/66">JavaFX bug</a>.
+Windows developers are highly recommended to use JDK <code>9</code>.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>IntelliJ</strong> IDE</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+IntelliJ by default has Gradle and JavaFx plugins installed.<br>
+Do not disable them. If you have disabled them, go to <code>File</code> &gt; <code>Settings</code> &gt; <code>Plugins</code> to re-enable them.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="setting-up-the-project-in-your-computer"><a class="link" href="#setting-up-the-project-in-your-computer">Setting up the project in your computer</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Fork this repo, and clone the fork to your computer.</p>
+</li>
+<li>
+<p>Open IntelliJ (if you are not in the welcome screen, click <code>File</code> &gt; <code>Close Project</code> to close the existing project dialog first).</p>
+</li>
+<li>
+<p>Set up the correct JDK version for Gradle.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Click <code>Configure</code> &gt; <code>Project Defaults</code> &gt; <code>Project Structure</code>.</p>
+</li>
+<li>
+<p>Click <code>New&#8230;&#8203;</code> and find the directory where the JDK is stored.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Click <code>Import Project</code>.</p>
+</li>
+<li>
+<p>Locate the <code>build.gradle</code> file and select it. Click <code>OK</code>.</p>
+</li>
+<li>
+<p>Click <code>Open as Project</code>.</p>
+</li>
+<li>
+<p>Click <code>OK</code> to accept the default settings.</p>
+</li>
+<li>
+<p>Open a console and run the command <code>gradlew processResources</code> (Mac/Linux: <code>./gradlew processResources</code>). It should finish with the <code>BUILD SUCCESSFUL</code> message.<br>
+This will generate all resources required by the application and tests.</p>
+</li>
+<li>
+<p>Open <a href="{repoURL}/blob/master/src/main/java/seedu/inventory/storage/XmlAdaptedItem.java"><code>XmlAdaptedItem.java</code></a> and <a href="{repoURL}/blob/master/src/main/java/seedu/inventory/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Due to an ongoing <a href="https://youtrack.jetbrains.com/issue/IDEA-189060">issue</a> with some of the newer versions of IntelliJ, code errors may be detected even if the project can be built and run successfully</p>
+</li>
+<li>
+<p>To resolve this, place your cursor over any of the code section highlighted in red. Press the keys:[ALT + ENTER], and select <code>Add '--add-modules=&#8230;&#8203;' to module compiler options</code> for each error.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Repeat the above step for the test folder as well (i.e. check <a href="{repoURL}/blob/master/src/test/java/seedu/inventory/commons/util/XmlUtilTest.java"><code>XmlUtilTest.java</code></a> and <a href="{repoURL}/blob/master/src/test/java/seedu/inventory/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way as above).</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verifying-the-setup"><a class="link" href="#verifying-the-setup">Verifying the setup</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Run the <code>seedu.inventory.MainApp</code> and try a few commands (e.g. <code>help</code> or <code>list</code>).</p>
+</li>
+<li>
+<p><a href="#Testing">Run the tests</a> to ensure they all pass.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configuring-the-setup"><a class="link" href="#configuring-the-setup">Configuring the setup</a></h3>
+<div class="sect3">
+<h4 id="configuring-the-coding-style"><a class="link" href="#configuring-the-coding-style">Configuring the coding style</a></h4>
+<div class="paragraph">
+<p>This project follows <a href="https://github.com/oss-generic/process/blob/master/docs/CodingStandards.adoc">oss-generic coding standards</a>. IntelliJ&#8217;s default style is mostly compliant with ours but it uses a different import order from ours. To rectify, please follow the steps described below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to <code>File</code> &gt; <code>Settings&#8230;&#8203;</code> (Windows/Linux), or <code>IntelliJ IDEA</code> &gt; <code>Preferences&#8230;&#8203;</code> (macOS).</p>
+</li>
+<li>
+<p>Select <code>Editor</code> &gt; <code>Code Style</code> &gt; <code>Java</code>.</p>
+</li>
+<li>
+<p>Click on the <code>Imports</code> tab to set the order.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For <code>Class count to use import with '*'</code> and <code>Names count to use static import with '*'</code>: Set to <code>999</code> to prevent IntelliJ from contracting the import statements.</p>
+</li>
+<li>
+<p>For <code>Import Layout</code>: The order is <code>import static all other imports</code>, <code>import java.*</code>, <code>import javax.*</code>, <code>import org.*</code>, <code>import com.*</code>, <code>import all other imports</code>. Add a <code>&lt;blank line&gt;</code> between each <code>import</code>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Optionally, you can follow the <a href="UsingCheckstyle.html">UsingCheckstyle.adoc</a> document to configure Intellij to check style-compliance as you write code.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="updating-documentation-to-match-your-fork"><a class="link" href="#updating-documentation-to-match-your-fork">Updating documentation to match your fork</a></h4>
+<div class="paragraph">
+<p>After forking the repo, the documentation will still have the SE-EDU branding and reference to the <code>se-edu/addressbook-level4</code> repo.</p>
+</div>
+<div class="paragraph">
+<p>If you plan to develop this fork as a separate product (i.e. instead of contributing to <code>se-edu/addressbook-level4</code>), you should do the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Configure the <a href="#Docs-SiteWideDocSettings">site-wide documentation settings</a> in <a href="{repoURL}/blob/master/build.gradle"><code>build.gradle</code></a>, such as the <code>site-name</code>, to suit your own project.</p>
+</li>
+<li>
+<p>Replace the URL in the attribute <code>repoURL</code> in <a href="{repoURL}/blob/master/docs/DeveloperGuide.adoc"><code>DeveloperGuide.adoc</code></a> and <a href="{repoURL}/blob/master/docs/UserGuide.adoc"><code>UserGuide.adoc</code></a> with the URL of your fork.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="setting-up-continuous-integration"><a class="link" href="#setting-up-continuous-integration">Setting up Continuous Integration</a></h4>
+<div class="paragraph">
+<p>Set up Travis to perform Continuous Integration (CI) for your fork. See <a href="UsingTravis.html">UsingTravis.adoc</a> to learn how to set it up.</p>
+</div>
+<div class="paragraph">
+<p>After setting up Travis, you can optionally set up coverage reporting for your team fork (see <a href="UsingCoveralls.html">UsingCoveralls.adoc</a>).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Coverage reporting may be useful for a team repository that hosts the final version but it is not that useful for your personal fork.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Optionally, you can set up AppVeyor as a second CI (see <a href="UsingAppVeyor.html">UsingAppVeyor.adoc</a>).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Having both Travis and AppVeyor ensures your App works on both Unix-based platforms and Windows-based platforms (Travis is Unix-based and AppVeyor is Windows-based).
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="getting-started-with-coding"><a class="link" href="#getting-started-with-coding">Getting started with coding</a></h4>
+<div class="paragraph">
+<p>Below you start coding, do take note of the below two points.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Get some sense of the overall design by reading <a href="#Design-Architecture">[Design-Architecture]</a>.</p>
+</li>
+<li>
+<p>Take a look at <a href="#GetStartedProgramming">[GetStartedProgramming]</a>.
+== Testing</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Testing the software will provide a better user experience for the users. Below will describe the type of tests available, the ways it can be run and the steps to troubleshooting the tests when it fails.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 13:26:56 UTC</div></div></div></body></html>
+<div class="sect2">
+<h3 id="types-of-tests"><a class="link" href="#types-of-tests">Types of tests</a></h3>
+<div class="paragraph">
+<p>Below describe the two types of tests available.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>GUI Tests</strong> - These are tests involving the GUI. They include the below.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><em>System Tests</em> that test the entire App by simulating user actions on the GUI. These are in the <code>systemtests</code> package.</p>
+</li>
+<li>
+<p><em>Unit tests</em> that test the individual components. These are in <code>seedu.inventory.ui</code> package.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Non-GUI Tests</strong> - These are tests not involving the GUI. They include the below.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><em>Unit tests</em> targeting the lowest level methods / classes.<br>
+e.g. <code>seedu.inventory.commons.StringUtilTest</code></p>
+</li>
+<li>
+<p><em>Integration tests</em> that are checking the integration of multiple code units (those code units are assumed to be working).<br>
+e.g. <code>seedu.inventory.storage.StorageManagerTest</code></p>
+</li>
+<li>
+<p>Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together.<br>
+e.g. <code>seedu.inventory.logic.LogicManagerTest</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="running-tests"><a class="link" href="#running-tests">Running Tests</a></h3>
+<div class="paragraph">
+<p>There are three ways to run tests.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The most reliable way to run tests is the third method. The first two methods might fail some GUI tests due to platform / resolution-specific idiosyncrasies.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Method 1: Using IntelliJ JUnit test runner</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To run all tests, right-click on the <code>src/test/java</code> folder and choose <code>Run 'All Tests'</code>.</p>
+</li>
+<li>
+<p>To run a subset of tests, you can right-click on a test package, test class, or a test and choose <code>Run 'X'</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Method 2: Using Gradle</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Open a console and run the command <code>gradlew clean allTests</code> (Mac/Linux: <code>./gradlew clean allTests</code>).</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+See <a href="UsingGradle.html">UsingGradle.adoc</a> for more information on how to run tests using Gradle.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><strong>Method 3: Using Gradle (headless)</strong></p>
+</div>
+<div class="paragraph">
+<p>Thanks to the <a href="https://github.com/TestFX/TestFX">TestFX</a> library we use, our GUI tests can run in the <em>headless</em> mode. In the headless mode, GUI tests do not show up on the screen. That means the developer can perform other tasks on the computer while the tests are running.</p>
+</div>
+<div class="paragraph">
+<p>To run the tests in headless mode, open a console and run the command <code>gradlew clean headless allTests</code> (Mac/Linux: <code>./gradlew clean headless allTests</code>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="troubleshooting-testing"><a class="link" href="#troubleshooting-testing">Troubleshooting Testing</a></h3>
+<div class="paragraph">
+<p>Below is a common error faced during testing.</p>
+</div>
+<div class="paragraph">
+<p><strong><code>NullPointerException</code> error.</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Reason: One of its dependencies, such as <code>HelpWindow.html</code> in <code>src/main/resources/docs</code> is missing.</p>
+</li>
+<li>
+<p>Solution: Execute Gradle task <code>processResources</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 17:47:52 UTC</div></div></div></body></html>
