@@ -778,10 +778,10 @@ Format: <code>reject id/PO_ID d/DESCRIPTION</code></p>
 <p>The following commands are mainly used for users to manage the item in the inventory.</p>
 </div>
 <div class="sect3">
-<h4 id="adding-an-item-code-add-code"><a class="link" href="#adding-an-item-code-add-code">4.8.1. Adding an item : <code>add</code></a></h4>
+<h4 id="adding-an-item-code-add-item-code"><a class="link" href="#adding-an-item-code-add-item-code">4.8.1. Adding an item : <code>add-item</code></a></h4>
 <div class="paragraph">
 <p>Adds an item to the inventory manager<br>
-Format: <code>add n/NAME q/QUANTITY s/SKU i/IMAGE_LOCATION [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>add-item n/NAME p/PRICE q/QUANTITY s/SKU i/IMAGE_LOCATION [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -801,23 +801,23 @@ An item can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
-<p><code>add n/IPhone X q/1000 s/SN-1234 i/docs/images/iphone.jpg t/12-12-2012</code></p>
+<p><code>add n/IPhone X p/1600 q/1000 s/SN-1234 i/docs/images/iphone.jpg t/12-12-2012</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-items-code-list-code"><a class="link" href="#listing-all-items-code-list-code">4.8.2. Listing all items : <code>list</code></a></h4>
+<h4 id="listing-all-items-code-list-item-code"><a class="link" href="#listing-all-items-code-list-item-code">4.8.2. Listing all items : <code>list-item</code></a></h4>
 <div class="paragraph">
 <p>Shows a list of all items in the inventory manager.<br>
-Format: <code>list</code></p>
+Format: <code>list-item</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="editing-an-item-code-update-code"><a class="link" href="#editing-an-item-code-update-code">4.8.3. Editing an item : <code>update</code></a></h4>
+<h4 id="editing-an-item-code-edit-item-code"><a class="link" href="#editing-an-item-code-edit-item-code">4.8.3. Editing an item : <code>edit-item</code></a></h4>
 <div class="paragraph">
-<p>Edits an existing person in the Inventory Manager.<br>
-Format: <code>update INDEX [n/NAME] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/TAG]&#8230;&#8203;</code></p>
+<p>Edits an existing item in the Inventory Manager.<br>
+Format: <code>edit-item INDEX [n/NAME] [p/PRICE] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -848,17 +848,17 @@ Format: <code>update INDEX [n/NAME] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/T
 <div class="ulist">
 <ul>
 <li>
-<p><code>update 1 l/111-123A q/999</code><br>
-Updates the location and quantity of the 1st item to be <code>111-123A</code> and <code>999</code> respectively.</p>
+<p><code>edit-item 1 i/docs/images/iphone.jpg q/999</code><br>
+Updates the image location and quantity of the 1st item to be <code>docs/images/iphone.jpg</code> and <code>999</code> respectively.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="locating-items-by-name-code-find-code"><a class="link" href="#locating-items-by-name-code-find-code">4.8.4. Locating items by name : <code>find</code></a></h4>
+<h4 id="locating-items-by-name-code-find-item-code"><a class="link" href="#locating-items-by-name-code-find-item-code">4.8.4. Locating items by name : <code>find-item</code></a></h4>
 <div class="paragraph">
 <p>Finds item whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+Format: <code>find-item KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -889,17 +889,17 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find iphone</code><br>
+<p><code>find-item iphone</code><br>
 Returns <code>IPhone X</code> and <code>IPhone 10</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-an-item-code-delete-code"><a class="link" href="#deleting-an-item-code-delete-code">4.8.5. Deleting an item : <code>delete</code></a></h4>
+<h4 id="deleting-an-item-code-delete-item-code"><a class="link" href="#deleting-an-item-code-delete-item-code">4.8.5. Deleting an item : <code>delete-item</code></a></h4>
 <div class="paragraph">
 <p>Deletes the specified item from the inventory.<br>
-Format: <code>delete INDEX</code></p>
+Format: <code>delete-item INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -924,14 +924,14 @@ Format: <code>delete INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>delete 2</code><br>
+<p><code>list-item</code><br>
+<code>delete-item 2</code><br>
 Deletes the 2nd item in the inventory.</p>
 </li>
 <li>
-<p><code>find IPhone X</code><br>
-<code>delete 1</code><br>
-Deletes the 1st item in the results of the <code>find</code> command.</p>
+<p><code>find-item IPhone X</code><br>
+<code>delete-item 1</code><br>
+Deletes the 1st item in the results of the <code>find-item</code> command.</p>
 </li>
 </ul>
 </div>
@@ -965,14 +965,14 @@ Format: <code>select INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
+<p><code>list-item</code><br>
 <code>select 2</code><br>
 Selects the 2nd item in the inventory.</p>
 </li>
 <li>
-<p><code>find IPhone X</code><br>
+<p><code>find-item IPhone X</code><br>
 <code>select 1</code><br>
-Selects the 1st item in the results of the <code>find</code> command.</p>
+Selects the 1st item in the results of the <code>find-item</code> command.</p>
 </li>
 </ul>
 </div>
@@ -1233,4 +1233,4 @@ Selects the 1st item in the results of the <code>find</code> command.</p>
 <p>A graphical user interface (GUI) is an interface through which a user interacts with the software.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-17 18:29:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-18 01:53:28 UTC</div></div></div></body></html>
