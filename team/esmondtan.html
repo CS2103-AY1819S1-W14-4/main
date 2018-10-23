@@ -68,18 +68,17 @@ having the benefits of a Graphical User Interface (GUI).</p>
 <p>Staff users and manager users can create sale orders on the system using the commands below.</p>
 </div>
 <div class="sect3">
-<h4 id="creating-a-sale-order-code-create-sale-code"><a class="link" href="#creating-a-sale-order-code-create-sale-code">Creating a sale order : <code>create-sale</code></a></h4>
+<h4 id="creating-a-sale-order-code-add-sale-code"><a class="link" href="#creating-a-sale-order-code-add-sale-code">Creating a sale order : <code>add-sale</code></a></h4>
 <div class="paragraph">
-<p>This command allows the user to create a new sale order in Inventory Manager. Creating a sale order will deduct the
-inventory quantity automatically. User will need to ensure that the entered item SKU and sold quantity is valid.</p>
+<p>This command allows the user to add a new sale order into Inventory Manager. Adding a new sale order will deduct the
+item quantity automatically. User will need to ensure that the entered item SKU and sold quantity is valid.</p>
 </div>
 <div class="paragraph">
 <p>Entering an invalid SKU that cannot be found in Inventory Manager will result in an error shown on screen.
-Entering a quantity that is greater than the available item quantity will result in an error shown
-on screen too.</p>
+Entering a quantity that is greater than the available item quantity will result in an error shown on screen too.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>create-sale s/SKU q/QTY</code></p>
+<p>Format: <code>add-sale s/SKU q/QTY</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -88,11 +87,11 @@ on screen too.</p>
 <ul>
 <li>
 <p>User sold 5 quantity of a product with SKU 0123.<br>
-<code>create-sale s/0123 q/5</code></p>
+<code>add-sale s/0123 q/5</code></p>
 </li>
 <li>
 <p>User sold 1 quantity of a product with SKU 456.<br>
-<code>create-sale s/456 q/1</code></p>
+<code>add-sale s/456 q/1</code></p>
 </li>
 </ul>
 </div>
@@ -107,7 +106,7 @@ the inventory quantity deducted automatically. User will need to ensure that the
 <p>Entering an invalid sale ID that cannot be found in Inventory Manager will result in an error shown on screen.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>delete-sale id/ID</code></p>
+<p>Format: <code>delete-sale SALE-ID</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -116,60 +115,31 @@ the inventory quantity deducted automatically. User will need to ensure that the
 <ul>
 <li>
 <p>User wishes to delete sale ID 12.<br>
-<code>delete-sale id/12</code></p>
+<code>delete-sale 12</code></p>
 </li>
 <li>
 <p>User wishes to delete sale ID 123.<br>
-<code>delete-sale id/123</code></p>
+<code>delete-sale 123</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-sale-orders-code-list-sales-code"><a class="link" href="#listing-sale-orders-code-list-sales-code">Listing sale orders : <code>list-sales</code></a></h4>
+<h4 id="listing-sale-orders-code-list-sale-code"><a class="link" href="#listing-sale-orders-code-list-sale-code">Listing sale orders : <code>list-sale</code></a></h4>
 <div class="paragraph">
-<p>This command allows the user to list a specific number of recently recorded sale orders in Inventory Manager.</p>
+<p>This command allows the user to list all sale orders in Inventory Manager.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>list-sales r/RECORDS</code></p>
+<p>Format: <code>list-sale</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>User wishes to list the latest 50 sale orders.<br>
-<code>list-sales r/50</code></p>
-</li>
-<li>
-<p>User wishes to list the latest 20 sale orders.<br>
-<code>list-sales r/20</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="finding-sale-orders-code-find-sales-code"><a class="link" href="#finding-sale-orders-code-find-sales-code">Finding sale orders : <code>find-sales</code></a></h4>
-<div class="paragraph">
-<p>This command allows the user to search for a specific sale order based on the sale ID or for all sale orders created on
-a specific date. Either a valid sale order ID or date is required for this command.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>search-sale [d/YYYY-mm-dd] [id/ID]</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>User wishes to search for sale order ID 12.<br>
-<code>search-sale id/12</code></p>
-</li>
-<li>
-<p>User wishes to search for sale orders created on 01 October 2018.<br>
-<code>search-sale d/2018-10-01</code></p>
+<p>User wishes to list all sale orders.<br>
+<code>list-sale</code></p>
 </li>
 </ul>
 </div>
@@ -542,4 +512,4 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more information on how 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-18 01:53:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-23 10:32:28 UTC</div></div></div></body></html>
