@@ -198,7 +198,7 @@ Format: <code>export-im f/FILEPATH</code></p>
 <p><code>FILEPATH</code> can be a relative path and the data will be imported from a location relative to the <strong>Inventory Manager</strong> installation directory.</p>
 </li>
 <li>
-<p>Data that already exist in <strong>Inventory Manager</strong> will not be imported.</p>
+<p>Original data in <strong>Inventory Manager</strong> will be overwritten.</p>
 </li>
 <li>
 <p>Data in the CSV file must be recognizable by <strong>Inventory Manager</strong>.</p>
@@ -256,7 +256,7 @@ Format: <code>import-im f/FILEPATH</code></p>
 <p><code>FILEPATH</code> can be a relative path and the data will be imported from a location relative to the <strong>Inventory Manager</strong> installation directory.</p>
 </li>
 <li>
-<p>Data that already exist in <strong>Inventory Manager</strong> will not be imported.</p>
+<p>Original data in <strong>Inventory Manager</strong> will be overwritten.</p>
 </li>
 <li>
 <p>Data in the .im file must be recognizable by <strong>Inventory Manager</strong>.</p>
@@ -465,10 +465,18 @@ in <code>Storage</code>.<br></p>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Couples <code>Command</code> with <code>Storage</code><br>
-<strong>Pros:</strong> Provides direct access to <code>Storage</code> for commands that is highly depend it.<br>
-<strong>Cons:</strong> <code>Storage</code> will also need directly access of data in <code>Model</code> component which will violate
+<p><strong>Alternative 2:</strong> Couples <code>Command</code> with <code>Storage</code><br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Provides direct access to <code>Storage</code> for commands that is highly depend it.<br></p>
+</li>
+<li>
+<p>Cons: <code>Storage</code> will also need directly access of data in <code>Model</code> component which will violate
 Single Responsibility Principle.<br></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -524,4 +532,4 @@ Need to raise an additional event for invalid file path.<br></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-23 17:15:10 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-24 06:23:09 UTC</div></div></div></body></html>
