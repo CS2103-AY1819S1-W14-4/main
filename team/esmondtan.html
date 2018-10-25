@@ -10,20 +10,19 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Inventory manager is a <strong>desktop application</strong> designed for <strong>Small to Medium Enterprises (SMEs)</strong> to <strong>manage their shop
-inventory</strong>. It allows users to perform multiple inventory management tasks such as <em>creating sales</em>, <em>generating
-reports</em>, <em>creating purchase orders</em> and more.</p>
+<p>Let Inventory Manager do the hard work of managing the shop inventory while you focus on making money.</p>
 </div>
 <div class="paragraph">
-<p>The main purpose of the application is to provide <strong>good inventory control</strong> for SMEs so that they are
-able to run an <strong>efficient business</strong> and make money in the process.</p>
+<p>Inventory Manager aims to tackle the chore of stock taking for Small to Medium Enterprises (SMEs). Designed to be easy
+to use, Inventory Manager gives you control over your business right from your keyboard.</p>
 </div>
 <div class="paragraph">
-<p>More importantly, it is <strong>optimized for those who prefer to work with a Command Line Interface (CLI)</strong> while still
-having the benefits of a Graphical User Interface (GUI).</p>
+<p>Inventory Manager comes with features to manage the shop inventory such as creating sale orders, purchase orders,
+generating reports and more. With user authentication put in place, it gives SMEs greater control over users'
+access to the application too.</p>
 </div>
 <div class="paragraph">
-<p>Ensure inventory control for your company now by jumping to <a href="#Quick Start">[Quick Start]</a>. Enjoy!</p>
+<p>Get control over your shop&#8217;s inventory now by heading over to <a href="#Quick Start">[Quick Start]</a>. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -65,23 +64,31 @@ having the benefits of a Graphical User Interface (GUI).</p>
 <div class="sect2">
 <h3 id="sale-orders-management"><a class="link" href="#sale-orders-management">Sale Orders Management</a></h3>
 <div class="paragraph">
-<p>Staff users and manager users can create sale orders on the system using the commands below.</p>
+<p>All authenticated users can manage sale orders on the system using the commands below.</p>
 </div>
 <div class="sect3">
 <h4 id="creating-a-sale-order-code-add-sale-code"><a class="link" href="#creating-a-sale-order-code-add-sale-code">Creating a sale order : <code>add-sale</code></a></h4>
 <div class="paragraph">
-<p>This command allows the user to add a new sale order into Inventory Manager. Adding a new sale order will deduct the
+<p>The <code>add-sale</code> command allows the user to add a new sale order into Inventory Manager. Adding a new sale order will deduct the
 item quantity automatically. User will need to ensure that the entered item SKU and sold quantity is valid.</p>
 </div>
 <div class="paragraph">
 <p>Entering an invalid SKU that cannot be found in Inventory Manager will result in an error shown on screen.
 Entering a quantity that is greater than the available item quantity will result in an error shown on screen too.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/doc-add-sale-failed.png" alt="doc add sale failed" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure X. Error shown on screen when creating a sale order with invalid SKU.</em></p>
+</div>
 <div class="paragraph">
 <p>Format: <code>add-sale s/SKU q/QTY</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -89,27 +96,31 @@ Entering a quantity that is greater than the available item quantity will result
 <p>User sold 5 quantity of a product with SKU 0123.<br>
 <code>add-sale s/0123 q/5</code></p>
 </li>
-<li>
-<p>User sold 1 quantity of a product with SKU 456.<br>
-<code>add-sale s/456 q/1</code></p>
-</li>
 </ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="deleting-a-sale-order-code-delete-sale-code"><a class="link" href="#deleting-a-sale-order-code-delete-sale-code">Deleting a sale order : <code>delete-sale</code></a></h4>
 <div class="paragraph">
-<p>This command allows the user to delete a specific sale order in Inventory Manager. Deleting a sale order will restore
+<p>The <code>delete-sale</code> command allows the user to delete a specific sale order in Inventory Manager. Deleting a sale order will restore
 the inventory quantity deducted automatically. User will need to ensure that the entered sale ID is valid.</p>
 </div>
 <div class="paragraph">
 <p>Entering an invalid sale ID that cannot be found in Inventory Manager will result in an error shown on screen.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/doc-delete-sale-failed.png" alt="doc delete sale failed" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure X. Error shown on screen when deleting a sale order that cannot be found.</em></p>
+</div>
 <div class="paragraph">
 <p>Format: <code>delete-sale SALE-ID</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -117,17 +128,21 @@ the inventory quantity deducted automatically. User will need to ensure that the
 <p>User wishes to delete sale ID 12.<br>
 <code>delete-sale 12</code></p>
 </li>
-<li>
-<p>User wishes to delete sale ID 123.<br>
-<code>delete-sale 123</code></p>
-</li>
 </ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="listing-sale-orders-code-list-sale-code"><a class="link" href="#listing-sale-orders-code-list-sale-code">Listing sale orders : <code>list-sale</code></a></h4>
 <div class="paragraph">
-<p>This command allows the user to list all sale orders in Inventory Manager.</p>
+<p>The <code>list-sale</code> command allows the user to list all sale orders in Inventory Manager.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/doc-list-sale.png" alt="doc list sale" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure X. All sales in Inventory Manager listed on screen.</em></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>list-sale</code></p>
@@ -170,6 +185,9 @@ the inventory quantity deducted automatically. User will need to ensure that the
 </div>
 <div class="sect2">
 <h3 id="prerequisites"><a class="link" href="#prerequisites">Prerequisites</a></h3>
+<div class="paragraph">
+<p>The prerequisites for setting up Inventory Manager is described below.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -209,6 +227,9 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 </div>
 <div class="sect2">
 <h3 id="setting-up-the-project-in-your-computer"><a class="link" href="#setting-up-the-project-in-your-computer">Setting up the project in your computer</a></h3>
+<div class="paragraph">
+<p>Begin setting up Inventory Manager in your computer by following the steps below.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -267,19 +288,25 @@ This will generate all resources required by the application and tests.</p>
 </div>
 <div class="sect2">
 <h3 id="verifying-the-setup"><a class="link" href="#verifying-the-setup">Verifying the setup</a></h3>
+<div class="paragraph">
+<p>After setting up, you can verify if Inventory Manager is setup correctly by performing the steps below.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Run the <code>seedu.inventory.MainApp</code> and try a few commands (e.g. <code>help</code> or <code>list</code>).</p>
 </li>
 <li>
-<p><a href="#Testing">Run the tests</a> to ensure they all pass.</p>
+<p><a href="#Testing">Run the tests</a> to ensure all tests pass.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
 <h3 id="configuring-the-setup"><a class="link" href="#configuring-the-setup">Configuring the setup</a></h3>
+<div class="paragraph">
+<p>You are encouraged to customise your setup in your local computer by following the steps below.</p>
+</div>
 <div class="sect3">
 <h4 id="configuring-the-coding-style"><a class="link" href="#configuring-the-coding-style">Configuring the coding style</a></h4>
 <div class="paragraph">
@@ -512,4 +539,4 @@ See <a href="UsingGradle.html">UsingGradle.adoc</a> for more information on how 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-24 06:23:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-25 02:20:37 UTC</div></div></div></body></html>

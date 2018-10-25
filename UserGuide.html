@@ -14,14 +14,13 @@
 <li><a href="#quick-start">3. Quick Start</a></li>
 <li><a href="#Features">4. Features</a>
 <ul class="sectlevel2">
-<li><a href="#command-format">4.1. Command Format</a></li>
-<li><a href="#basic-features">4.2. Basic Features</a></li>
-<li><a href="#authentication">4.3. Authentication</a></li>
-<li><a href="#user-management">4.4. User Management</a></li>
+<li><a href="#general">4.1. General</a></li>
+<li><a href="#authentication">4.2. Authentication</a></li>
+<li><a href="#user-management">4.3. User Management</a></li>
+<li><a href="#inventory-management">4.4. Inventory Management</a></li>
 <li><a href="#sale-orders-management">4.5. Sale Orders Management</a></li>
-<li><a href="#reports-management">4.6. Reports Management</a></li>
-<li><a href="#purchase-order-management">4.7. Purchase Order Management</a></li>
-<li><a href="#inventory-management">4.8. Inventory Management</a></li>
+<li><a href="#purchase-orders-management">4.6. Purchase Orders Management</a></li>
+<li><a href="#reports-management">4.7. Reports Management</a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -34,20 +33,19 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Inventory manager is a <strong>desktop application</strong> designed for <strong>Small to Medium Enterprises (SMEs)</strong> to <strong>manage their shop
-inventory</strong>. It allows users to perform multiple inventory management tasks such as <em>creating sales</em>, <em>generating
-reports</em>, <em>creating purchase orders</em> and more.</p>
+<p>Let Inventory Manager do the hard work of managing the shop inventory while you focus on making money.</p>
 </div>
 <div class="paragraph">
-<p>The main purpose of the application is to provide <strong>good inventory control</strong> for SMEs so that they are
-able to run an <strong>efficient business</strong> and make money in the process.</p>
+<p>Inventory Manager aims to tackle the chore of stock taking for Small to Medium Enterprises (SMEs). Designed to be easy
+to use, Inventory Manager gives you control over your business right from your keyboard.</p>
 </div>
 <div class="paragraph">
-<p>More importantly, it is <strong>optimized for those who prefer to work with a Command Line Interface (CLI)</strong> while still
-having the benefits of a Graphical User Interface (GUI).</p>
+<p>Inventory Manager comes with features to manage the shop inventory such as creating sale orders, purchase orders,
+generating reports and more. With user authentication put in place, it gives SMEs greater control over users'
+access to the application too.</p>
 </div>
 <div class="paragraph">
-<p>Ensure inventory control for your company now by jumping to <a href="#quick-start">Section 3, &#8220;Quick Start&#8221;</a>. Enjoy!</p>
+<p>Get control over your shop&#8217;s inventory now by heading over to <a href="#quick-start">Section 3, &#8220;Quick Start&#8221;</a>. Enjoy!</p>
 </div>
 </div>
 </div>
@@ -55,15 +53,12 @@ having the benefits of a Graphical User Interface (GUI).</p>
 <h2 id="about"><a class="link" href="#about">2. About</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This guide introduces you to Inventory Manager, provides set up instructions and  gives you an overview of
-the <em>basic</em> and <em>advanced</em> feature.</p>
+<p>This guide introduces you to Inventory Manager, provides set up instructions and gives you an overview of
+the features available.</p>
 </div>
 <div class="paragraph">
 <p>This document does not assume any prior technical knowledge, and the glossary explains any technical terms.
 Please check the FAQ section for frequent user issues.</p>
-</div>
-<div class="paragraph">
-<p>To set up Inventory Manager and try out the features, jump to <a href="#quick-start">Section 3, &#8220;Quick Start&#8221;</a>.</p>
 </div>
 </div>
 </div>
@@ -76,23 +71,23 @@ Please check the FAQ section for frequent user issues.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Ensure you have Java version <code>9</code> or later installed in your Computer.</p>
+<p>Ensure you have <a href="https://www.java.com/en/download/help/version_manual.xml">Java version 9</a> or later installed in your Computer.</p>
 </li>
 <li>
 <p>Download the latest <code>InventoryManager.jar</code> <a href="https://github.com/CS2103-AY1819S1-W14-4/main/releases">here</a>.</p>
 </li>
 <li>
-<p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
+<p>Copy the file to the folder you want to use as the home folder for Inventory Manager.</p>
 </li>
 <li>
-<p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
+<p>Double-click the file to start the application. Inventory Manager should show up on your screen in a couple of seconds.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/Ui.png" alt="Ui" width="790">
+<img src="images/doc-ui.png" alt="doc ui" width="790">
 </div>
 </div>
 <div class="paragraph">
-<p>Figure 1. The User Interface</p>
+<p><em>Figure 1. The Graphical User Interface on starting up.</em></p>
 </div>
 </li>
 </ol>
@@ -101,29 +96,34 @@ Please check the FAQ section for frequent user issues.</p>
 <p><strong>Congratulation! you have successfully set up Inventory Manager</strong>.<br></p>
 </div>
 <div class="paragraph">
-<p>You can now type a command in the command box  and press <kbd>Enter</kbd> to execute it.<br></p>
+<p>You can now type a command in the command box and press <kbd>Enter</kbd> to execute it.<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-command-box.png" alt="doc command box" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 2. The command box in Inventory Manager.</em></p>
 </div>
 <div class="paragraph">
 <p>A good start is entering the command <strong><code>help</code></strong> and pressing <kbd>Enter</kbd>, it will open the help window.</p>
 </div>
 <div class="paragraph">
-<p>Some example commands you can try:</p>
+<p>Below are some other commands you can try after logging into the system:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>list-item</code></strong> : lists all items</p>
+<p><strong><code>list-item</code></strong> : lists all items available</p>
 </li>
 <li>
-<p><strong><code>add-item</code></strong><code>n/IPhone X q/1000</code> : adds the item <code>Iphone X</code> to the inventory.</p>
-</li>
-<li>
-<p><strong><code>exit</code></strong> : exits the app</p>
+<p><strong><code>exit</code></strong> : exits the application</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Refer to <a href="#Features">Section 4, &#8220;Features&#8221;</a> for details of each available commands.</p>
+<p>You can refer to <a href="#Features">Section 4, &#8220;Features&#8221;</a> for details of each available features in Inventory Manager.</p>
 </div>
 </div>
 </div>
@@ -131,10 +131,13 @@ Please check the FAQ section for frequent user issues.</p>
 <h2 id="Features"><a class="link" href="#Features">4. Features</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Each feature has it&#8217;s own unique command to be entered  in the Command Box.</p>
+<p>Each feature has it&#8217;s own unique command to be entered into the command box.</p>
 </div>
-<div class="sect2">
-<h3 id="command-format"><a class="link" href="#command-format">4.1. Command Format</a></h3>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>Command Format Explained</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
@@ -152,16 +155,20 @@ Please check the FAQ section for frequent user issues.</p>
 </ul>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="basic-features"><a class="link" href="#basic-features">4.2. Basic Features</a></h3>
+<h3 id="general"><a class="link" href="#general">4.1. General</a></h3>
+<div class="paragraph">
+<p>Below are the general commands available for Inventory Manager.</p>
+</div>
 <div class="sect3">
-<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">4.2.1. Viewing help : <code>help</code></a></h4>
+<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">4.1.1. Viewing help : <code>help</code></a></h4>
 <div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">4.2.2. Listing entered commands : <code>history</code></a></h4>
+<h4 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">4.1.2. Listing entered commands : <code>history</code></a></h4>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
 Format: <code>history</code></p>
@@ -182,7 +189,7 @@ Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">4.2.3. Undoing previous command : <code>undo</code></a></h4>
+<h4 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">4.1.3. Undoing previous command : <code>undo</code></a></h4>
 <div class="paragraph">
 <p>Restores the Inventory Manager to the state before the previous <em>undoable</em> command was executed.<br>
 Format: <code>undo</code></p>
@@ -195,7 +202,7 @@ Format: <code>undo</code></p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Undoable commands: those commands that modify the Inventory Manager&#8217;s content (<code>add</code>, <code>delete</code>, <code>edit</code> and <code>clear</code>).</p>
+<p>Supported undoable commands: <code>add-item</code>, <code>delete-item</code>, <code>edit-item</code> and <code>clear</code>.</p>
 </div>
 </td>
 </tr>
@@ -207,7 +214,7 @@ Format: <code>undo</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
+<p><code>delete-item 1</code><br>
 <code>list</code><br>
 <code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
 </li>
@@ -218,16 +225,16 @@ Format: <code>undo</code></p>
 The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
 </li>
 <li>
-<p><code>delete 1</code><br>
+<p><code>delete-item 1</code><br>
 <code>clear</code><br>
 <code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<code>undo</code> (reverses the <code>delete-item 1</code> command)<br></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">4.2.4. Redoing the previously undone command : <code>redo</code></a></h4>
+<h4 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">4.1.4. Redoing the previously undone command : <code>redo</code></a></h4>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
 Format: <code>redo</code></p>
@@ -238,17 +245,17 @@ Format: <code>redo</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete 1</code><br>
+<p><code>delete-item 1</code><br>
 <code>undo</code> (reverses the <code>delete 1</code> command)<br>
 <code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
 </li>
 <li>
-<p><code>delete 1</code><br>
+<p><code>delete-item 1</code><br>
 <code>redo</code><br>
 The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
 </li>
 <li>
-<p><code>delete 1</code><br>
+<p><code>delete-item 1</code><br>
 <code>clear</code><br>
 <code>undo</code> (reverses the <code>clear</code> command)<br>
 <code>undo</code> (reverses the <code>delete 1</code> command)<br>
@@ -259,21 +266,21 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect3">
-<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.2.5. Clearing all entries : <code>clear</code></a></h4>
+<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.1.5. Clearing all entries : <code>clear</code></a></h4>
 <div class="paragraph">
-<p>Clears all entries from the Inventory Manager.<br>
+<p>Clears all entries from Inventory Manager.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.2.6. Exiting the program : <code>exit</code></a></h4>
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.1.6. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="saving-the-data"><a class="link" href="#saving-the-data">4.2.7. Saving the data</a></h4>
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">4.1.7. Saving the data</a></h4>
 <div class="paragraph">
 <p>Inventory Manager data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -281,15 +288,15 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="authentication"><a class="link" href="#authentication">4.3. Authentication</a></h3>
+<h3 id="authentication"><a class="link" href="#authentication">4.2. Authentication</a></h3>
 <div class="paragraph">
-<p>Users authenticate their identities prior using other functions of the applications and able to change their password.</p>
+<p>Users authenticate their identities prior to using other functions of the applications.</p>
 </div>
 <div class="paragraph">
 <p>The following commands are mainly used for admin to manage the users and for users login.</p>
 </div>
 <div class="sect3">
-<h4 id="login-to-the-system-code-login-code"><a class="link" href="#login-to-the-system-code-login-code">4.3.1. Login to the system : <code>login</code></a></h4>
+<h4 id="login-to-the-system-code-login-code"><a class="link" href="#login-to-the-system-code-login-code">4.2.1. Login to the system : <code>login</code></a></h4>
 <div class="paragraph">
 <p>Login with users' given username and password.<br>
 Format: <code>login u/USERNAME p/PASSWORD</code></p>
@@ -307,7 +314,7 @@ Format: <code>login u/USERNAME p/PASSWORD</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="change-user-s-password-code-change-password-code"><a class="link" href="#change-user-s-password-code-change-password-code">4.3.2. Change user&#8217;s password : <code>change-password</code></a></h4>
+<h4 id="change-user-s-password-code-change-password-code"><a class="link" href="#change-user-s-password-code-change-password-code">4.2.2. Change user&#8217;s password : <code>change-password</code></a></h4>
 <div class="paragraph">
 <p>Updates an user information into the system with given username.<br>
 Format: <code>change-password u/USERNAME o/OLD_PASSWORD n/NEW_PASSWORD</code></p>
@@ -325,7 +332,7 @@ Format: <code>change-password u/USERNAME o/OLD_PASSWORD n/NEW_PASSWORD</code></p
 </div>
 </div>
 <div class="sect3">
-<h4 id="logout-from-the-system-code-logout-code"><a class="link" href="#logout-from-the-system-code-logout-code">4.3.3. Logout from the system : <code>logout</code></a></h4>
+<h4 id="logout-from-the-system-code-logout-code"><a class="link" href="#logout-from-the-system-code-logout-code">4.2.3. Logout from the system : <code>logout</code></a></h4>
 <div class="paragraph">
 <p>Logout the current users from the system.<br>
 Format: <code>logout</code></p>
@@ -344,12 +351,12 @@ Format: <code>logout</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="user-management"><a class="link" href="#user-management">4.4. User Management</a></h3>
+<h3 id="user-management"><a class="link" href="#user-management">4.3. User Management</a></h3>
 <div class="paragraph">
 <p>Admin of the system manages the staffs who use this applications.</p>
 </div>
 <div class="sect3">
-<h4 id="add-users-code-add-user-code"><a class="link" href="#add-users-code-add-user-code">4.4.1. Add users : <code>add-user</code></a></h4>
+<h4 id="add-users-code-add-user-code"><a class="link" href="#add-users-code-add-user-code">4.3.1. Add users : <code>add-user</code></a></h4>
 <div class="paragraph">
 <p>Adds an user into the system.<br>
 Format: <code>add-user n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
@@ -367,14 +374,14 @@ Format: <code>add-user n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-users-code-list-user-code"><a class="link" href="#list-users-code-list-user-code">4.4.2. List users : <code>list-user</code></a></h4>
+<h4 id="list-users-code-list-user-code"><a class="link" href="#list-users-code-list-user-code">4.3.2. List users : <code>list-user</code></a></h4>
 <div class="paragraph">
 <p>Displays a list of existing users in the system.<br>
 Format: <code>list-user</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="update-users-code-update-user-code"><a class="link" href="#update-users-code-update-user-code">4.4.3. Update users : <code>update-user</code></a></h4>
+<h4 id="update-users-code-update-user-code"><a class="link" href="#update-users-code-update-user-code">4.3.3. Update users : <code>update-user</code></a></h4>
 <div class="paragraph">
 <p>Updates an user information into the system with given username.<br>
 Format: <code>update-user i/INDEX u/USERNAME n/NAME  r/ROLE</code></p>
@@ -392,7 +399,7 @@ Format: <code>update-user i/INDEX u/USERNAME n/NAME  r/ROLE</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="remove-users-code-delete-user-code"><a class="link" href="#remove-users-code-delete-user-code">4.4.4. Remove users : <code>delete-user</code></a></h4>
+<h4 id="remove-users-code-delete-user-code"><a class="link" href="#remove-users-code-delete-user-code">4.3.4. Remove users : <code>delete-user</code></a></h4>
 <div class="paragraph">
 <p>Deletes an user from the system with given index as shown in the list.<br>
 Format: <code>delete-user i/INDEX</code></p>
@@ -411,25 +418,239 @@ Format: <code>delete-user i/INDEX</code></p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="inventory-management"><a class="link" href="#inventory-management">4.4. Inventory Management</a></h3>
+<div class="paragraph">
+<p>The following commands are mainly used for users to manage the item in the inventory.</p>
+</div>
+<div class="sect3">
+<h4 id="adding-an-item-code-add-item-code"><a class="link" href="#adding-an-item-code-add-item-code">4.4.1. Adding an item : <code>add-item</code></a></h4>
+<div class="paragraph">
+<p>Adds an item to the inventory manager<br>
+Format: <code>add-item n/NAME p/PRICE q/QUANTITY s/SKU i/IMAGE_LOCATION [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+An item can have any number of tags (including 0)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add n/IPhone X p/1600 q/1000 s/SN-1234 i/docs/images/iphone.jpg t/12-12-2012</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="listing-all-items-code-list-item-code"><a class="link" href="#listing-all-items-code-list-item-code">4.4.2. Listing all items : <code>list-item</code></a></h4>
+<div class="paragraph">
+<p>Shows a list of all items in the inventory manager.<br>
+Format: <code>list-item</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-an-item-code-edit-item-code"><a class="link" href="#editing-an-item-code-edit-item-code">4.4.3. Editing an item : <code>edit-item</code></a></h4>
+<div class="paragraph">
+<p>Edits an existing item in the Inventory Manager.<br>
+Format: <code>edit-item INDEX [n/NAME] [p/PRICE] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Update the item at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed inventory list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p>When updating tags, the existing tags of the item will be removed i.e adding of tags is not cumulative.</p>
+</li>
+<li>
+<p>You can remove all the item&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit-item 1 i/docs/images/iphone.jpg q/999</code><br>
+Updates the image location and quantity of the 1st item to be <code>docs/images/iphone.jpg</code> and <code>999</code> respectively.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="locating-items-by-name-code-find-item-code"><a class="link" href="#locating-items-by-name-code-find-item-code">4.4.4. Locating items by name : <code>find-item</code></a></h4>
+<div class="paragraph">
+<p>Finds item whose names contain any of the given keywords.<br>
+Format: <code>find-item KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>iphone</code> will match <code>IPhone</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>X IPhone</code> will match <code>IPhone X</code></p>
+</li>
+<li>
+<p>Only the name of the item is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>phone</code> will not match <code>IPhone</code></p>
+</li>
+<li>
+<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Iphone 10</code> will return <code>IPhone X</code>, <code>Samsung 10</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find-item iphone</code><br>
+Returns <code>IPhone X</code> and <code>IPhone 10</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-an-item-code-delete-item-code"><a class="link" href="#deleting-an-item-code-delete-item-code">4.4.5. Deleting an item : <code>delete-item</code></a></h4>
+<div class="paragraph">
+<p>Deletes the specified item from the inventory.<br>
+Format: <code>delete-item INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the item at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed inventory list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-item</code><br>
+<code>delete-item 2</code><br>
+Deletes the 2nd item in the inventory.</p>
+</li>
+<li>
+<p><code>find-item IPhone X</code><br>
+<code>delete-item 1</code><br>
+Deletes the 1st item in the results of the <code>find-item</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="selecting-an-item-code-select-code"><a class="link" href="#selecting-an-item-code-select-code">4.4.6. Selecting an item : <code>select</code></a></h4>
+<div class="paragraph">
+<p>Selects the item identified by the index number used in the displayed inventory.<br>
+Format: <code>select INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Selects the person and loads the Google search page the person at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed item list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-item</code><br>
+<code>select 2</code><br>
+Selects the 2nd item in the inventory.</p>
+</li>
+<li>
+<p><code>find-item IPhone X</code><br>
+<code>select 1</code><br>
+Selects the 1st item in the results of the <code>find-item</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="sale-orders-management"><a class="link" href="#sale-orders-management">4.5. Sale Orders Management</a></h3>
 <div class="paragraph">
-<p>Staff users and manager users can create sale orders on the system using the commands below.</p>
+<p>All authenticated users can manage sale orders on the system using the commands below.</p>
 </div>
 <div class="sect3">
 <h4 id="creating-a-sale-order-code-add-sale-code"><a class="link" href="#creating-a-sale-order-code-add-sale-code">4.5.1. Creating a sale order : <code>add-sale</code></a></h4>
 <div class="paragraph">
-<p>This command allows the user to add a new sale order into Inventory Manager. Adding a new sale order will deduct the
+<p>The <code>add-sale</code> command allows the user to add a new sale order into Inventory Manager. Adding a new sale order will deduct the
 item quantity automatically. User will need to ensure that the entered item SKU and sold quantity is valid.</p>
 </div>
 <div class="paragraph">
 <p>Entering an invalid SKU that cannot be found in Inventory Manager will result in an error shown on screen.
 Entering a quantity that is greater than the available item quantity will result in an error shown on screen too.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-add-sale-failed.png" alt="doc add sale failed" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure X. Error shown on screen when creating a sale order with invalid SKU.</em></p>
+</div>
 <div class="paragraph">
 <p>Format: <code>add-sale s/SKU q/QTY</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -437,27 +658,31 @@ Entering a quantity that is greater than the available item quantity will result
 <p>User sold 5 quantity of a product with SKU 0123.<br>
 <code>add-sale s/0123 q/5</code></p>
 </li>
-<li>
-<p>User sold 1 quantity of a product with SKU 456.<br>
-<code>add-sale s/456 q/1</code></p>
-</li>
 </ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="deleting-a-sale-order-code-delete-sale-code"><a class="link" href="#deleting-a-sale-order-code-delete-sale-code">4.5.2. Deleting a sale order : <code>delete-sale</code></a></h4>
 <div class="paragraph">
-<p>This command allows the user to delete a specific sale order in Inventory Manager. Deleting a sale order will restore
+<p>The <code>delete-sale</code> command allows the user to delete a specific sale order in Inventory Manager. Deleting a sale order will restore
 the inventory quantity deducted automatically. User will need to ensure that the entered sale ID is valid.</p>
 </div>
 <div class="paragraph">
 <p>Entering an invalid sale ID that cannot be found in Inventory Manager will result in an error shown on screen.</p>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-delete-sale-failed.png" alt="doc delete sale failed" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure X. Error shown on screen when deleting a sale order that cannot be found.</em></p>
+</div>
 <div class="paragraph">
 <p>Format: <code>delete-sale SALE-ID</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -465,17 +690,21 @@ the inventory quantity deducted automatically. User will need to ensure that the
 <p>User wishes to delete sale ID 12.<br>
 <code>delete-sale 12</code></p>
 </li>
-<li>
-<p>User wishes to delete sale ID 123.<br>
-<code>delete-sale 123</code></p>
-</li>
 </ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="listing-sale-orders-code-list-sale-code"><a class="link" href="#listing-sale-orders-code-list-sale-code">4.5.3. Listing sale orders : <code>list-sale</code></a></h4>
 <div class="paragraph">
-<p>This command allows the user to list all sale orders in Inventory Manager.</p>
+<p>The <code>list-sale</code> command allows the user to list all sale orders in Inventory Manager.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-list-sale.png" alt="doc list sale" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure X. All sales in Inventory Manager listed on screen.</em></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>list-sale</code></p>
@@ -494,11 +723,89 @@ the inventory quantity deducted automatically. User will need to ensure that the
 </div>
 </div>
 <div class="sect2">
-<h3 id="reports-management"><a class="link" href="#reports-management">4.6. Reports Management</a></h3>
+<h3 id="purchase-orders-management"><a class="link" href="#purchase-orders-management">4.6. Purchase Orders Management</a></h3>
 <div class="paragraph">
-<p>The following commands are mainly used to export and import data for report analysis.
-==== Export to CSV: <code>export-csv</code></p>
+<p>The following commands are mainly used for staff and manager to manage purchase order.
+==== Generate purchase order : <code>generate-po</code></p>
 </div>
+<div class="paragraph">
+<p>Generate purchase order for an item.<br>
+The id of a purchase order and the date will be auto generated.<br>
+Format: <code>generate-po i/SKU_NUMBER q/QUANTITY sp/SUPPLIER rd/REQUIRED_DATE [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>generate-po i/S7192DA q/1000 sp/Your Company rd/12-12-2018</code></p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="list-all-purchase-order-code-list-po-code"><a class="link" href="#list-all-purchase-order-code-list-po-code">4.6.1. List all purchase order : <code>list po</code></a></h4>
+<div class="paragraph">
+<p>Shows a list of all the purchase order.
+Format: <code>list-po</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-approved-purchase-order-code-list-approved-po-code"><a class="link" href="#list-approved-purchase-order-code-list-approved-po-code">4.6.2. List approved purchase order : <code>list approved-po</code></a></h4>
+<div class="paragraph">
+<p>Shows a list of all the approved purchase order.
+Format: <code>list approved-po</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="list-pending-purchase-order-code-list-pending-po-code"><a class="link" href="#list-pending-purchase-order-code-list-pending-po-code">4.6.3. List pending purchase order : <code>list pending-po</code></a></h4>
+<div class="paragraph">
+<p>Shows a list of all the pending purchase order.
+Format: <code>list pending-po</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="approve-purchase-order-code-approve-code"><a class="link" href="#approve-purchase-order-code-approve-code">4.6.4. Approve purchase order : <code>approve</code></a></h4>
+<div class="paragraph">
+<p>Approve a purchase order.
+Format: <code>approve id/PO_ID</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>approve id/12</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="reject-purchase-order-code-reject-code"><a class="link" href="#reject-purchase-order-code-reject-code">4.6.5. Reject purchase order : <code>reject</code></a></h4>
+<div class="paragraph">
+<p>Reject a purchase order along with a reason description.
+Format: <code>reject id/PO_ID d/DESCRIPTION</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>reject id/12 d/Only 100 amount is allowed</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="reports-management"><a class="link" href="#reports-management">4.7. Reports Management</a></h3>
+<div class="paragraph">
+<p>The following commands are mainly used to export and import data for report analysis.</p>
+</div>
+<div class="sect3">
+<h4 id="export-to-csv-code-export-csv-code"><a class="link" href="#export-to-csv-code-export-csv-code">4.7.1. Export to CSV: <code>export-csv</code></a></h4>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -550,8 +857,9 @@ Format: <code>export-csv-users f/FILEPATH</code></p>
 Format: <code>export-csv-orders f/FILEPATH</code></p>
 </div>
 </div>
+</div>
 <div class="sect3">
-<h4 id="export-entire-data-to-im-file-code-export-im-code"><a class="link" href="#export-entire-data-to-im-file-code-export-im-code">4.6.5. Export entire data to .im file: <code>export-im</code></a></h4>
+<h4 id="export-entire-data-to-im-file-code-export-im-code"><a class="link" href="#export-entire-data-to-im-file-code-export-im-code">4.7.2. Export entire data to .im file: <code>export-im</code></a></h4>
 <div class="paragraph">
 <p>Export the entire data to the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
 Format: <code>export-im f/FILEPATH</code></p>
@@ -581,7 +889,7 @@ Format: <code>export-im f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-from-csv-code-import-csv-code"><a class="link" href="#import-from-csv-code-import-csv-code">4.6.6. Import from CSV: <code>import-csv</code></a></h4>
+<h4 id="import-from-csv-code-import-csv-code"><a class="link" href="#import-from-csv-code-import-csv-code">4.7.3. Import from CSV: <code>import-csv</code></a></h4>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -635,7 +943,7 @@ Format: <code>import-csv-orders f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-entire-data-from-im-file-code-import-im-code"><a class="link" href="#import-entire-data-from-im-file-code-import-im-code">4.6.7. Import entire data from .im file: <code>import-im</code></a></h4>
+<h4 id="import-entire-data-from-im-file-code-import-im-code"><a class="link" href="#import-entire-data-from-im-file-code-import-im-code">4.7.4. Import entire data from .im file: <code>import-im</code></a></h4>
 <div class="paragraph">
 <p>Import the entire data from the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
 Format: <code>import-im f/FILEPATH</code></p>
@@ -665,289 +973,6 @@ Format: <code>import-im f/FILEPATH</code></p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="purchase-order-management"><a class="link" href="#purchase-order-management">4.7. Purchase Order Management</a></h3>
-<div class="paragraph">
-<p>The following commands are mainly used for staff and manager to manage purchase order.
-==== Generate purchase order : <code>generate-po</code></p>
-</div>
-<div class="paragraph">
-<p>Generate purchase order for an item.<br>
-The id of a purchase order and the date will be auto generated.<br>
-Format: <code>generate-po i/SKU_NUMBER q/QUANTITY sp/SUPPLIER rd/REQUIRED_DATE [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>generate-po i/S7192DA q/1000 sp/Your Company rd/12-12-2018</code></p>
-</li>
-</ul>
-</div>
-<div class="sect3">
-<h4 id="list-all-purchase-order-code-list-po-code"><a class="link" href="#list-all-purchase-order-code-list-po-code">4.7.1. List all purchase order : <code>list po</code></a></h4>
-<div class="paragraph">
-<p>Shows a list of all the purchase order.
-Format: <code>list-po</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-approved-purchase-order-code-list-approved-po-code"><a class="link" href="#list-approved-purchase-order-code-list-approved-po-code">4.7.2. List approved purchase order : <code>list approved-po</code></a></h4>
-<div class="paragraph">
-<p>Shows a list of all the approved purchase order.
-Format: <code>list approved-po</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-pending-purchase-order-code-list-pending-po-code"><a class="link" href="#list-pending-purchase-order-code-list-pending-po-code">4.7.3. List pending purchase order : <code>list pending-po</code></a></h4>
-<div class="paragraph">
-<p>Shows a list of all the pending purchase order.
-Format: <code>list pending-po</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="approve-purchase-order-code-approve-code"><a class="link" href="#approve-purchase-order-code-approve-code">4.7.4. Approve purchase order : <code>approve</code></a></h4>
-<div class="paragraph">
-<p>Approve a purchase order.
-Format: <code>approve id/PO_ID</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>approve id/12</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="reject-purchase-order-code-reject-code"><a class="link" href="#reject-purchase-order-code-reject-code">4.7.5. Reject purchase order : <code>reject</code></a></h4>
-<div class="paragraph">
-<p>Reject a purchase order along with a reason description.
-Format: <code>reject id/PO_ID d/DESCRIPTION</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>reject id/12 d/Only 100 amount is allowed</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="inventory-management"><a class="link" href="#inventory-management">4.8. Inventory Management</a></h3>
-<div class="paragraph">
-<p>The following commands are mainly used for users to manage the item in the inventory.</p>
-</div>
-<div class="sect3">
-<h4 id="adding-an-item-code-add-item-code"><a class="link" href="#adding-an-item-code-add-item-code">4.8.1. Adding an item : <code>add-item</code></a></h4>
-<div class="paragraph">
-<p>Adds an item to the inventory manager<br>
-Format: <code>add-item n/NAME p/PRICE q/QUANTITY s/SKU i/IMAGE_LOCATION [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-An item can have any number of tags (including 0)
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>add n/IPhone X p/1600 q/1000 s/SN-1234 i/docs/images/iphone.jpg t/12-12-2012</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="listing-all-items-code-list-item-code"><a class="link" href="#listing-all-items-code-list-item-code">4.8.2. Listing all items : <code>list-item</code></a></h4>
-<div class="paragraph">
-<p>Shows a list of all items in the inventory manager.<br>
-Format: <code>list-item</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="editing-an-item-code-edit-item-code"><a class="link" href="#editing-an-item-code-edit-item-code">4.8.3. Editing an item : <code>edit-item</code></a></h4>
-<div class="paragraph">
-<p>Edits an existing item in the Inventory Manager.<br>
-Format: <code>edit-item INDEX [n/NAME] [p/PRICE] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Update the item at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed inventory list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-<li>
-<p>At least one of the optional fields must be provided.</p>
-</li>
-<li>
-<p>Existing values will be updated to the input values.</p>
-</li>
-<li>
-<p>When updating tags, the existing tags of the item will be removed i.e adding of tags is not cumulative.</p>
-</li>
-<li>
-<p>You can remove all the item&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>edit-item 1 i/docs/images/iphone.jpg q/999</code><br>
-Updates the image location and quantity of the 1st item to be <code>docs/images/iphone.jpg</code> and <code>999</code> respectively.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="locating-items-by-name-code-find-item-code"><a class="link" href="#locating-items-by-name-code-find-item-code">4.8.4. Locating items by name : <code>find-item</code></a></h4>
-<div class="paragraph">
-<p>Finds item whose names contain any of the given keywords.<br>
-Format: <code>find-item KEYWORD [MORE_KEYWORDS]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The search is case insensitive. e.g <code>iphone</code> will match <code>IPhone</code></p>
-</li>
-<li>
-<p>The order of the keywords does not matter. e.g. <code>X IPhone</code> will match <code>IPhone X</code></p>
-</li>
-<li>
-<p>Only the name of the item is searched.</p>
-</li>
-<li>
-<p>Only full words will be matched e.g. <code>phone</code> will not match <code>IPhone</code></p>
-</li>
-<li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Iphone 10</code> will return <code>IPhone X</code>, <code>Samsung 10</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>find-item iphone</code><br>
-Returns <code>IPhone X</code> and <code>IPhone 10</code></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="deleting-an-item-code-delete-item-code"><a class="link" href="#deleting-an-item-code-delete-item-code">4.8.5. Deleting an item : <code>delete-item</code></a></h4>
-<div class="paragraph">
-<p>Deletes the specified item from the inventory.<br>
-Format: <code>delete-item INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Deletes the item at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed inventory list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list-item</code><br>
-<code>delete-item 2</code><br>
-Deletes the 2nd item in the inventory.</p>
-</li>
-<li>
-<p><code>find-item IPhone X</code><br>
-<code>delete-item 1</code><br>
-Deletes the 1st item in the results of the <code>find-item</code> command.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="selecting-an-item-code-select-code"><a class="link" href="#selecting-an-item-code-select-code">4.8.6. Selecting an item : <code>select</code></a></h4>
-<div class="paragraph">
-<p>Selects the item identified by the index number used in the displayed inventory.<br>
-Format: <code>select INDEX</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>Selects the person and loads the Google search page the person at the specified <code>INDEX</code>.</p>
-</li>
-<li>
-<p>The index refers to the index number shown in the displayed item list.</p>
-</li>
-<li>
-<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>list-item</code><br>
-<code>select 2</code><br>
-Selects the 2nd item in the inventory.</p>
-</li>
-<li>
-<p><code>find-item IPhone X</code><br>
-<code>select 1</code><br>
-Selects the 1st item in the results of the <code>find-item</code> command.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -955,7 +980,7 @@ Selects the 1st item in the results of the <code>find-item</code> command.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: <em>How do I transfer my data to another Computer?</em><br>
-<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Inventory Manager folder.</p>
+<strong>A</strong>: Install Inventory Manager in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Inventory Manager folder.</p>
 </div>
 <div class="paragraph">
 <p><strong>Q</strong>: <em>How do I save my data?</em><br>
@@ -963,7 +988,11 @@ Selects the 1st item in the results of the <code>find-item</code> command.</p>
 </div>
 <div class="paragraph">
 <p><strong>Q</strong>: <em>How can I report a bug or suggest improvements to this application?</em><br>
-<strong>A</strong>: Open an issue <a href="https://github.com/CS2103-AY1819S1-W14-4/main/issues">here</a>!</p>
+<strong>A</strong>: You can open an issue <a href="https://github.com/CS2103-AY1819S1-W14-4/main/issues">here</a>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Q</strong>: <em>I forgot my password, how do I reset?</em><br>
+<strong>A</strong>: Please contact your administrator to assist you in resetting your password.</p>
 </div>
 </div>
 </div>
@@ -971,7 +1000,7 @@ Selects the 1st item in the results of the <code>find-item</code> command.</p>
 <h2 id="command-summary"><a class="link" href="#command-summary">6. Command Summary</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The following table summarises Inventory Manager commands along with examples:</p>
+<p>The following table summarises commands available in Inventory Manager, along with examples:</p>
 </div>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -987,6 +1016,9 @@ Selects the 1st item in the results of the <code>find-item</code> command.</p>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>General</strong></p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Clear</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>clear</code></p></td>
@@ -1013,34 +1045,7 @@ Selects the 1st item in the results of the <code>find-item</code> command.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Redo</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Add item into inventory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-item n/NAME p/PRICE q/QUANTITY s/SKU i/IMAGE_PATH [t/TAG]&#8230;&#8203;</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-item n/iPhone XR p/1500.00 q/70 s/apple-iphone-xr i/docs/images/iphone.jpg t/apple t/smartphone</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Delete an item from inventory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-item INDEX</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-item 3</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Edit an existing item in inventory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-item INDEX [n/NAME] [p/PRICE] [q/QUANTITY] [s/SKU] [i/IMAGE_PATH] [t/TAG]&#8230;&#8203;</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-item 2 p/1600 q/300</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Find an existing item in inventory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find-item KEYWORD [MORE_KEYWORDS]</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find-item iPhone Samsung</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List all existing items in inventory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-item</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-item</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Select an item in inventory</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>select INDEX</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>select 2</code></p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Authentication</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Login</code></p></td>
@@ -1056,6 +1061,9 @@ Selects the 1st item in the results of the <code>find-item</code> command.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Logout</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>logout</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>logout</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Users Management</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Add User</code></p></td>
@@ -1078,6 +1086,42 @@ Selects the 1st item in the results of the <code>find-item</code> command.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-user i/3</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Inventory Management</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Add Item</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-item n/NAME p/PRICE q/QUANTITY s/SKU i/IMAGE_PATH [t/TAG]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-item n/iPhone XR p/1500.00 q/70 s/apple-iphone-xr i/docs/images/iphone.jpg t/apple t/smartphone</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Delete Item</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-item INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-item 3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Edit Existing Item</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-item INDEX [n/NAME] [p/PRICE] [q/QUANTITY] [s/SKU] [i/IMAGE_PATH] [t/TAG]&#8230;&#8203;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-item 2 p/1600 q/300</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Find Existing Item</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find-item KEYWORD [MORE_KEYWORDS]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>find-item iPhone Samsung</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List All Items</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-item</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-item</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Select Item</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>select INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>select 2</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Sale Orders Management</strong></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Add Sale Order</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-sale s/SKU q/QTY</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-sale s/0123 q/1</code></p></td>
@@ -1093,82 +1137,88 @@ Selects the 1st item in the results of the <code>find-item</code> command.</p>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-sale</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generate purchase order</code></p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Purchase Orders Management</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generate Purchase Order</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>generate-po</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>generate-po i/S7192DA q/1000 sp/Your Company rd/12-12-2018</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List all purchase order</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List All Purchase Orders</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-po</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-po</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List approved purchase order</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List Approved Purchase Orders</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>list approved-po</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>list approved-po</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List pending purchase order</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List Pending Purchase Orders</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>list pending-po</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>list pending-po</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Approve purchase order</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Approve Purchase Order</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>approve</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>approve id/12</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Reject purchase order</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Reject Purchase Order</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>reject</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>reject id/12 d/Only 100 amount is allowed</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export sales report to CSV</code></p></td>
+<td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Reports Management</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export Sales Report to CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-sales f/FILEPATH</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-sales f/C:/out/sales.csv</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export list of items to CSV</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export List of Items to CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-items f/FILEPATH</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-items f/C:/out/items.csv</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export list of users to CSV</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export List of Users to CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-users f/FILEPATH</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-users f/C:/out/users.csv</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export list of orders to CSV</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export List of Sale Orders to CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-orders f/FILEPATH</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-orders f/C:/out/orders.csv</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export entire data to .im file</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export Entire Data to .im File</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-im f/FILEPATH</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-im f/C:/out/data.im</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import sales report from CSV</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import Sales Report from CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-sales f/FILEPATH</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-sales f/C:/in/sales.csv</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import list of items from CSV</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import List of Items from CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-items f/FILEPATH</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-items f/C:/in/items.csv</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import list of users from CSV</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import List of Users from CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-users f/FILEPATH</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-users f/C:/in/users.csv</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import list of orders from CSV</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import List of Sale Orders from CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-orders f/FILEPATH</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-orders f/C:/in/orders.csv</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import entire data from .im file</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import Entire Data From .im File</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-im f/FILEPATH</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-im f/C:/in/data.im</code></p></td>
 </tr>
@@ -1180,16 +1230,17 @@ Selects the 1st item in the results of the <code>find-item</code> command.</p>
 <h2 id="glossary"><a class="link" href="#glossary">7. Glossary</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>User</strong></p>
-</div>
-<div class="paragraph">
-<p>Refers to everyone that is using the application; Admin, Staff and Manager.</p>
-</div>
-<div class="paragraph">
 <p><strong>CLI (Command Line Interface)</strong></p>
 </div>
 <div class="paragraph">
 <p>A command line interface (CLI) is an interface where you can input commands to interact with the software.</p>
+</div>
+<div class="paragraph">
+<p><strong>CSV (Comma Separated Values)</strong></p>
+</div>
+<div class="paragraph">
+<p>A Comma Separated Values file is a delimited text file that uses a comma to separate values. The file can be open using
+an Excel software.</p>
 </div>
 <div class="paragraph">
 <p><strong>GUI (Graphical User Interface)</strong></p>
@@ -1197,5 +1248,17 @@ Selects the 1st item in the results of the <code>find-item</code> command.</p>
 <div class="paragraph">
 <p>A graphical user interface (GUI) is an interface through which a user interacts with the software.</p>
 </div>
+<div class="paragraph">
+<p><strong>SKU (Stock Keeping Unit)</strong></p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-24 06:23:09 UTC</div></div></div></body></html>
+<div class="paragraph">
+<p>A Stock Keeping Unit is a product identification code assigned to a product.</p>
+</div>
+<div class="paragraph">
+<p><strong>User</strong></p>
+</div>
+<div class="paragraph">
+<p>Refers to everyone that is using the application; Admin, Staff and Manager.</p>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-25 02:20:37 UTC</div></div></div></body></html>

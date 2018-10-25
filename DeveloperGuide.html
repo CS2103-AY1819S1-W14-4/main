@@ -29,7 +29,7 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
-<li><a href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></li>
+<li><a href="#sale-order-creation">3.2. Sale Order Creation</a></li>
 <li><a href="#logging">3.3. Logging</a></li>
 <li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
 <li><a href="#export-csv-mechanism">3.5. Export CSV mechanism</a></li>
@@ -95,6 +95,9 @@
 </div>
 <div class="sect2">
 <h3 id="prerequisites"><a class="link" href="#prerequisites">1.1. Prerequisites</a></h3>
+<div class="paragraph">
+<p>The prerequisites for setting up Inventory Manager is described below.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -134,6 +137,9 @@ Do not disable them. If you have disabled them, go to <code>File</code> &gt; <co
 </div>
 <div class="sect2">
 <h3 id="setting-up-the-project-in-your-computer"><a class="link" href="#setting-up-the-project-in-your-computer">1.2. Setting up the project in your computer</a></h3>
+<div class="paragraph">
+<p>Begin setting up Inventory Manager in your computer by following the steps below.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -192,19 +198,25 @@ This will generate all resources required by the application and tests.</p>
 </div>
 <div class="sect2">
 <h3 id="verifying-the-setup"><a class="link" href="#verifying-the-setup">1.3. Verifying the setup</a></h3>
+<div class="paragraph">
+<p>After setting up, you can verify if Inventory Manager is setup correctly by performing the steps below.</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Run the <code>seedu.inventory.MainApp</code> and try a few commands (e.g. <code>help</code> or <code>list</code>).</p>
 </li>
 <li>
-<p><a href="#Testing">Run the tests</a> to ensure they all pass.</p>
+<p><a href="#Testing">Run the tests</a> to ensure all tests pass.</p>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect2">
 <h3 id="configuring-the-setup"><a class="link" href="#configuring-the-setup">1.4. Configuring the setup</a></h3>
+<div class="paragraph">
+<p>You are encouraged to customise your setup in your local computer by following the steps below.</p>
+</div>
 <div class="sect3">
 <h4 id="configuring-the-coding-style"><a class="link" href="#configuring-the-coding-style">1.4.1. Configuring the coding style</a></h4>
 <div class="paragraph">
@@ -545,7 +557,7 @@ Note how the event is propagated through the <code>EventsCenter</code> to the <c
 <p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
 </li>
 <li>
-<p>stores the Address Book data.</p>
+<p>stores the Inventory Manager data.</p>
 </li>
 <li>
 <p>exposes an unmodifiable <code>ObservableList&lt;Item&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
@@ -590,7 +602,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Inventory</co
 <p>can save <code>UserPref</code> objects in json format and read it back.</p>
 </li>
 <li>
-<p>can save the Address Book data in xml format and read it back.</p>
+<p>can save the Inventory Manager data in xml format and read it back.</p>
 </li>
 </ul>
 </div>
@@ -608,31 +620,31 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Inventory</co
 <div class="sect3">
 <h4 id="current-implementation"><a class="link" href="#current-implementation">3.1.1. Current Implementation</a></h4>
 <div class="paragraph">
-<p>The undo/redo mechanism is facilitated by <code>VersionedAddressBook</code>.
-It extends <code>AddressBook</code> with an undo/redo history, stored internally as an <code>addressBookStateList</code> and <code>currentStatePointer</code>.
+<p>The undo/redo mechanism is facilitated by <code>VersionedInventory</code>.
+It extends <code>Inventory</code> with an undo/redo history, stored internally as an <code>inventoryStateList</code> and <code>currentStatePointer</code>.
 Additionally, it implements the following operations:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>VersionedAddressBook#commit()</code>&#8201;&#8212;&#8201;Saves the current image book state in its history.</p>
+<p><code>VersionedInventory#commit()</code>&#8201;&#8212;&#8201;Saves the current inventory state in its history.</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#undo()</code>&#8201;&#8212;&#8201;Restores the previous image book state from its history.</p>
+<p><code>VersionedInventory#undo()</code>&#8201;&#8212;&#8201;Restores the previous inventory state from its history.</p>
 </li>
 <li>
-<p><code>VersionedAddressBook#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone image book state from its history.</p>
+<p><code>VersionedInventory#redo()</code>&#8201;&#8212;&#8201;Restores a previously undone inventory state from its history.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> and <code>Model#redoAddressBook()</code> respectively.</p>
+<p>These operations are exposed in the <code>Model</code> interface as <code>Model#commitInventory()</code>, <code>Model#undoInventory()</code> and <code>Model#redoInventory()</code> respectively.</p>
 </div>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the undo/redo mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application for the first time. The <code>VersionedAddressBook</code> will be initialized with the initial image book state, and the <code>currentStatePointer</code> pointing to that single image book state.</p>
+<p>Step 1. The user launches the application for the first time. The <code>VersionedInventory</code> will be initialized with the initial state, and the <code>currentStatePointer</code> pointing to that single state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -640,7 +652,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 2. The user executes <code>delete 5</code> command to delete the 5th item in the image book. The <code>delete</code> command calls <code>Model#commitAddressBook()</code>, causing the modified state of the image book after the <code>delete 5</code> command executes to be saved in the <code>addressBookStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted image book state.</p>
+<p>Step 2. The user executes <code>delete-item 5</code> command to delete the 5th item in Inventory Manager. The <code>delete</code> command calls <code>Model#commitInventory()</code>, causing the modified state of Inventory Manager after the <code>delete 5</code> command executes to be saved in the <code>InventoryStateList</code>, and the <code>currentStatePointer</code> is shifted to the newly inserted Inventory Manager state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -648,7 +660,7 @@ Additionally, it implements the following operations:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>add n/David &#8230;&#8203;</code> to add a new item. The <code>add</code> command also calls <code>Model#commitAddressBook()</code>, causing another modified image book state to be saved into the <code>addressBookStateList</code>.</p>
+<p>Step 3. The user executes <code>add-item n/iPhone &#8230;&#8203;</code> to add a new item. The <code>add</code> command also calls <code>Model#commitInventory()</code>, causing another modified inventory state to be saved into the <code>inventoryStateList</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -662,13 +674,13 @@ Additionally, it implements the following operations:</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If a command fails its execution, it will not call <code>Model#commitAddressBook()</code>, so the image book state will not be saved into the <code>addressBookStateList</code>.
+If a command fails its execution, it will not call <code>Model#commitInventory()</code>, so the inventory state will not be saved into the <code>inventoryStateList</code>.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 4. The user now decides that adding the item was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoAddressBook()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous image book state, and restores the image book to that state.</p>
+<p>Step 4. The user now decides that adding the item was a mistake, and decides to undo that action by executing the <code>undo</code> command. The <code>undo</code> command will call <code>Model#undoInventory()</code>, which will shift the <code>currentStatePointer</code> once to the left, pointing it to the previous inventory state, and restores the inventory to that state.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -682,7 +694,7 @@ If a command fails its execution, it will not call <code>Model#commitAddressBook
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index 0, pointing to the initial image book state, then there are no previous image book states to restore. The <code>undo</code> command uses <code>Model#canUndoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
+If the <code>currentStatePointer</code> is at index 0, pointing to the initial inventory state, then there is no previous inventory state to restore. The <code>undo</code> command uses <code>Model#canUndoInventory()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the undo.
 </td>
 </tr>
 </table>
@@ -696,7 +708,7 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial i
 </div>
 </div>
 <div class="paragraph">
-<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoAddressBook()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the image book to that state.</p>
+<p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoInventory()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the inventory to that state.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -705,13 +717,13 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial i
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If the <code>currentStatePointer</code> is at index <code>addressBookStateList.size() - 1</code>, pointing to the latest image book state, then there are no undone image book states to restore. The <code>redo</code> command uses <code>Model#canRedoAddressBook()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
+If the <code>currentStatePointer</code> is at index <code>inventoryStateList.size() - 1</code>, pointing to the latest inventory state, then there is no undone inventory state to restore. The <code>redo</code> command uses <code>Model#canRedoAInventory()</code> to check if this is the case. If so, it will return an error to the user rather than attempting to perform the redo.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list</code>. Commands that do not modify the image book, such as <code>list</code>, will usually not call <code>Model#commitAddressBook()</code>, <code>Model#undoAddressBook()</code> or <code>Model#redoAddressBook()</code>. Thus, the <code>addressBookStateList</code> remains unchanged.</p>
+<p>Step 5. The user then decides to execute the command <code>list-item</code>. Commands that do not modify Inventory Manager, such as <code>list-item</code>, will usually not call <code>Model#commitInventory()</code>, <code>Model#undoInventory()</code> or <code>Model#redoInventory()</code>. Thus, the <code>inventoryStateList</code> remains unchanged.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -719,7 +731,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="paragraph">
-<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitAddressBook()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>addressBookStateList</code>, all image book states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add n/David &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
+<p>Step 6. The user executes <code>clear</code>, which calls <code>Model#commitInventory()</code>. Since the <code>currentStatePointer</code> is not pointing at the end of the <code>inventoryStateList</code>, all inventory states after the <code>currentStatePointer</code> will be purged. We designed it this way because it no longer makes sense to redo the <code>add-item n/iPhone &#8230;&#8203;</code> command. This is the behavior that most modern desktop applications follow.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -742,7 +754,7 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Saves the entire image book.</p>
+<p><strong>Alternative 1 (current choice):</strong> Saves the entire inventory.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -775,14 +787,14 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of image book states.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use a list to store the history of inventory states.</p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: Easy for new Computer Science student undergraduates to understand, who are likely to be the new incoming developers of our project.</p>
 </li>
 <li>
-<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedAddressBook</code>.</p>
+<p>Cons: Logic is duplicated twice. For example, when a new command is executed, we must remember to update both <code>HistoryManager</code> and <code>VersionedInventory</code>.</p>
 </li>
 </ul>
 </div>
@@ -806,9 +818,85 @@ If the <code>currentStatePointer</code> is at index <code>addressBookStateList.s
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.2. [Proposed] Data Encryption</a></h3>
+<h3 id="sale-order-creation"><a class="link" href="#sale-order-creation">3.2. Sale Order Creation</a></h3>
 <div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
+<p>Creating a sale order will have the item&#8217;s quantity automatically deducted. Below will describe how this
+feature is implemented in Inventory Manager.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">3.2.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The creation of sale order is handled by <code>AddSaleCommand</code>. The use of it will trigger <code>Model#updateItem</code>,
+which will update the item&#8217;s quantity. However, for <code>AddSaleCommand#execute</code> to be successful,
+there are two conditions which needs to be met.</p>
+</div>
+<div class="sect4">
+<h5 id="conditions"><a class="link" href="#conditions">Conditions</a></h5>
+<div class="paragraph">
+<p>The following two conditions must be met before.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The item must exists in Inventory Manager.</p>
+</li>
+<li>
+<p>The item quantity must be more than or equal to the quantity sold.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><code>AddSaleCommand#execute</code> will perform the validation before proceeding. If any of the above validation fails,
+<code>CommandException</code> will be thrown and it will not call <code>Model#updateItem</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-consideration"><a class="link" href="#design-consideration">3.2.2. Design Consideration</a></h4>
+<div class="paragraph">
+<p>There are a few design considerations when creating a sale order. Below will explain the various considerations and the
+choices made.</p>
+</div>
+<div class="sect4">
+<h5 id="aspect-where-code-updateitem-code-executes"><a class="link" href="#aspect-where-code-updateitem-code-executes">Aspect: Where <code>updateItem</code> executes</a></h5>
+<div class="paragraph">
+<p>There are various places where <code>updateItem</code> can be executed. The pros and cons for each option is shown below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Executed at Logic<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement<br></p>
+</li>
+<li>
+<p>Cons: Direct calling of <code>Model#addSale</code> will not be validated.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Executed at Model</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Ensures that all entries are validated before sale can be created.<br></p>
+</li>
+<li>
+<p>Cons: <code>Model#addSale</code> will need to access inventory to perform validations.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Based on the above pros and cons, the first option is chosen as it is easier to implement, and it does not require
+<code>Model#addSale</code> to read the inventory and perform validations.</p>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -868,7 +956,7 @@ We are using <code>ExportCsvItemsCommand</code>, <code>ExportCsvSalesCommand</co
 to retrieve external data and where to validate the given file path.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">3.5.1. Implementation</a></h4>
+<h4 id="implementation-3"><a class="link" href="#implementation-3">3.5.1. Implementation</a></h4>
 <div class="sect4">
 <h5 id="data-access"><a class="link" href="#data-access">Data Access</a></h5>
 <div class="paragraph">
@@ -1061,7 +1149,7 @@ See <a href="UsingTravis.html#deploying-github-pages">UsingTravis.adoc</a> to le
 <div class="sect2">
 <h3 id="converting-documentation-to-pdf-format"><a class="link" href="#converting-documentation-to-pdf-format">4.3. Converting Documentation to PDF format</a></h3>
 <div class="paragraph">
-<p>We use <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> for converting documentation to PDF format, as Chrome&#8217;s PDF engine preserves hyperlinks used in webpages.</p>
+<p>We use <a href="https://www.google.com/chrome/browser/desktop/">Google Chrome</a> for converting the documentation to PDF format, as Chrome&#8217;s PDF engine preserves hyperlinks used in webpages.</p>
 </div>
 <div class="paragraph">
 <p>Here are the steps to convert the project documentation files to PDF format.</p>
@@ -1456,7 +1544,7 @@ See <a href="UsingNetlify.html">UsingNetlify.adoc</a> for more details.
 <div class="sect2">
 <h3 id="managing-dependencies"><a class="link" href="#managing-dependencies">6.6. Managing Dependencies</a></h3>
 <div class="paragraph">
-<p>A project often depends on third-party libraries. For example, Address Book depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
+<p>A project often depends on third-party libraries. For example, Inventory Manager depends on the <a href="http://wiki.fasterxml.com/JacksonHome">Jackson library</a> for XML parsing. Managing these <em>dependencies</em> can be automated using Gradle. For example, Gradle can download the dependencies automatically, which is better than these alternatives.<br>
 a. Include those libraries in the repo (this bloats the repo size)<br>
 b. Require developers to download those libraries manually (this creates extra work for developers)</p>
 </div>
@@ -3322,4 +3410,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-24 06:23:09 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-25 02:20:37 UTC</div></div></div></body></html>
