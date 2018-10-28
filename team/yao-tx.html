@@ -160,8 +160,10 @@ It allows users to perform multiple inventory management tasks such as creating 
 <div class="sect3">
 <h4 id="adding-an-item-code-add-item-code"><a class="link" href="#adding-an-item-code-add-item-code">Adding an item : <code>add-item</code></a></h4>
 <div class="paragraph">
-<p>Adds an item to the inventory manager<br>
-Format: <code>add-item n/NAME p/PRICE q/QUANTITY s/SKU i/IMAGE_LOCATION [t/TAG]&#8230;&#8203;</code></p>
+<p>The <code>add-item</code> command adds an item to the inventory manager.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add-item n/NAME p/PRICE q/QUANTITY s/SKU i/IMAGE_LOCATION [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -189,15 +191,27 @@ An item can have any number of tags (including 0)
 <div class="sect3">
 <h4 id="listing-all-items-code-list-item-code"><a class="link" href="#listing-all-items-code-list-item-code">Listing all items : <code>list-item</code></a></h4>
 <div class="paragraph">
-<p>Shows a list of all items in the inventory manager.<br>
-Format: <code>list-item</code></p>
+<p>The <code>list-item</code> command shows a list of all items in the inventory manager.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/doc-list-item.png" alt="doc list item" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.5. All items in Inventory Manager listed on screen.</em></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>list-item</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="editing-an-item-code-edit-item-code"><a class="link" href="#editing-an-item-code-edit-item-code">Editing an item : <code>edit-item</code></a></h4>
 <div class="paragraph">
-<p>Edits an existing item in the Inventory Manager.<br>
-Format: <code>edit-item INDEX [n/NAME] [p/PRICE] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/TAG]&#8230;&#8203;</code></p>
+<p>The <code>edit-item</code> command edits an existing item in the Inventory Manager.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>edit-item INDEX [n/NAME] [p/PRICE] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -237,8 +251,18 @@ Updates the image location and quantity of the 1st item to be <code>docs/images/
 <div class="sect3">
 <h4 id="locating-items-by-name-code-find-item-code"><a class="link" href="#locating-items-by-name-code-find-item-code">Locating items by name : <code>find-item</code></a></h4>
 <div class="paragraph">
-<p>Finds item whose names contain any of the given keywords.<br>
-Format: <code>find-item KEYWORD [MORE_KEYWORDS]</code></p>
+<p>The <code>find-item</code> command finds item whose names contain any of the given keywords.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/doc-find-item.png" alt="doc find item" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.6. The item searched for will be displayed on screen.</em></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>find-item KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -278,8 +302,10 @@ Returns <code>IPhone X</code> and <code>IPhone 10</code></p>
 <div class="sect3">
 <h4 id="deleting-an-item-code-delete-item-code"><a class="link" href="#deleting-an-item-code-delete-item-code">Deleting an item : <code>delete-item</code></a></h4>
 <div class="paragraph">
-<p>Deletes the specified item from the inventory.<br>
-Format: <code>delete-item INDEX</code></p>
+<p>The <code>delete-item</code> command deletes the specified item from the inventory.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete-item INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -319,8 +345,10 @@ Deletes the 1st item in the results of the <code>find-item</code> command.</p>
 <div class="sect3">
 <h4 id="selecting-an-item-code-select-code"><a class="link" href="#selecting-an-item-code-select-code">Selecting an item : <code>select</code></a></h4>
 <div class="paragraph">
-<p>Selects the item identified by the index number used in the displayed inventory.<br>
-Format: <code>select INDEX</code></p>
+<p>The <code>select</code> command selects the item identified by the index number used in the displayed inventory.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>select INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -549,4 +577,4 @@ Selects the 1st item in the results of the <code>find-item</code> command.</p>
 </div>
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-28 08:02:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-28 14:48:30 UTC</div></div></div></body></html>

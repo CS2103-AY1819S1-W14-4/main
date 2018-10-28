@@ -10,39 +10,91 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Let Inventory Manager do the hard work of managing the shop inventory while you focus on making money.</p>
+<p>This portfolio aims to document my contributions as a developer to the Inventory Manager project.</p>
 </div>
 <div class="paragraph">
-<p>Inventory Manager aims to tackle the chore of stock taking for Small to Medium Enterprises (SMEs). Designed to be easy
-to use, Inventory Manager gives you control over your business right from your keyboard.</p>
+<p>Inventory Manager is developed for Small to Medium Enterprises (SMEs) to tackle the chore of stock taking. Designed to be easy to use, Inventory Manager gives the user control over their business right from their keyboard.</p>
 </div>
 <div class="paragraph">
-<p>Inventory Manager comes with features to manage the shop inventory such as creating sale orders, purchase orders,
-generating reports and more. With user authentication put in place, it gives SMEs greater control over users'
-access to the application too.</p>
-</div>
-<div class="paragraph">
-<p>Get control over your shop&#8217;s inventory now by heading over to <a href="#Quick Start">[Quick Start]</a>. Enjoy!</p>
+<p>Inventory Manager comes with features to manage the shop inventory such as creating sale orders, purchase orders, generating reports and more. With user authentication built in, it gives SMEs greater control over users' access to the application too.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Below is a summary of the contributions I have made to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>:</p>
+<p><strong>Major Enhancement</strong>: Developed Sale Orders Management Feature</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Created Sale Orders Management Feature</p>
+<p>What it does: This feature allows the user to create a sale order in the application. When a sale order is created, Inventory Manager will automatically deduct stocks from the inventory.</p>
+</li>
+<li>
+<p>Justification: This feature is critical for Inventory Manager to work. Without the ability to create sale orders, Inventory Manager will not be able to track and manage item stocks accurately.</p>
+</li>
+<li>
+<p>Highlights: This feature requires interaction with the update item command in Inventory Manager and the ability to validate item quantity before a sale is allowed.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
+<p><strong>Minor Enhancement</strong>:</p>
+</li>
+<li>
 <p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>]</p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project Management:</p>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated the introduction of the User Guide (Pull requests <a href="https://github.com/CS2103-AY1819S1-W14-4/main/pull/93">#93</a>)</p>
+</li>
+<li>
+<p>Added the section on Sale Orders Management to the User Guide (Pull requests <a href="https://github.com/CS2103-AY1819S1-W14-4/main/pull/93">#93</a>)</p>
+</li>
+<li>
+<p>Updated various sections of the Developer Guide (Pull requests <a href="https://github.com/CS2103-AY1819S1-W14-4/main/pull/93">#93</a>)</p>
+</li>
+<li>
+<p>Added the section on Sale Order Creation to the Developer Guide (Pull requests <a href="https://github.com/CS2103-AY1819S1-W14-4/main/pull/93">#93</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs Reviewed</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -82,7 +134,7 @@ Entering a quantity that is greater than the available item quantity will result
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure X. Error shown on screen when creating a sale order with invalid SKU.</em></p>
+<p><em>Figure 4.7. Error shown on screen when creating a sale order with invalid SKU.</em></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add-sale s/SKU q/QTY</code></p>
@@ -114,7 +166,7 @@ the inventory quantity deducted automatically. User will need to ensure that the
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure X. Error shown on screen when deleting a sale order that cannot be found.</em></p>
+<p><em>Figure 4.8. Error shown on screen when deleting a sale order that cannot be found.</em></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete-sale SALE-ID</code></p>
@@ -142,7 +194,7 @@ the inventory quantity deducted automatically. User will need to ensure that the
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure X. All sales in Inventory Manager listed on screen.</em></p>
+<p><em>Figure 4.9. All sales in Inventory Manager listed on screen.</em></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>list-sale</code></p>
@@ -175,160 +227,75 @@ the inventory quantity deducted automatically. User will need to ensure that the
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="setting-up"><a class="link" href="#setting-up">Setting up</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The steps for developers to setup Inventory Manager locally is described below.</p>
-</div>
 <div class="sect2">
-<h3 id="prerequisites"><a class="link" href="#prerequisites">Prerequisites</a></h3>
+<h3 id="sale-order-creation"><a class="link" href="#sale-order-creation">Sale Order Creation</a></h3>
 <div class="paragraph">
-<p>The prerequisites for setting up Inventory Manager is described below.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><strong>JDK <code>9</code></strong> or later</p>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-JDK <code>10</code> on Windows will fail to run tests in <a href="UsingGradle.html#Running-Tests">headless mode</a> due to a <a href="https://github.com/javafxports/openjdk-jfx/issues/66">JavaFX bug</a>.
-Windows developers are highly recommended to use JDK <code>9</code>.
-</td>
-</tr>
-</table>
-</div>
-</li>
-<li>
-<p><strong>IntelliJ</strong> IDE</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-IntelliJ by default has Gradle and JavaFx plugins installed.<br>
-Do not disable them. If you have disabled them, go to <code>File</code> &gt; <code>Settings</code> &gt; <code>Plugins</code> to re-enable them.
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="setting-up-the-project-in-your-computer"><a class="link" href="#setting-up-the-project-in-your-computer">Setting up the project in your computer</a></h3>
-<div class="paragraph">
-<p>Begin setting up Inventory Manager in your computer by following the steps below.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Fork this repo, and clone the fork to your computer.</p>
-</li>
-<li>
-<p>Open IntelliJ (if you are not in the welcome screen, click <code>File</code> &gt; <code>Close Project</code> to close the existing project dialog first).</p>
-</li>
-<li>
-<p>Set up the correct JDK version for Gradle.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Click <code>Configure</code> &gt; <code>Project Defaults</code> &gt; <code>Project Structure</code>.</p>
-</li>
-<li>
-<p>Click <code>New&#8230;&#8203;</code> and find the directory where the JDK is stored.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Click <code>Import Project</code>.</p>
-</li>
-<li>
-<p>Locate the <code>build.gradle</code> file and select it. Click <code>OK</code>.</p>
-</li>
-<li>
-<p>Click <code>Open as Project</code>.</p>
-</li>
-<li>
-<p>Click <code>OK</code> to accept the default settings.</p>
-</li>
-<li>
-<p>Open a console and run the command <code>gradlew processResources</code> (Mac/Linux: <code>./gradlew processResources</code>). It should finish with the <code>BUILD SUCCESSFUL</code> message.<br>
-This will generate all resources required by the application and tests.</p>
-</li>
-<li>
-<p>Open <a href="{repoURL}/blob/master/src/main/java/seedu/inventory/storage/XmlAdaptedItem.java"><code>XmlAdaptedItem.java</code></a> and <a href="{repoURL}/blob/master/src/main/java/seedu/inventory/ui/MainWindow.java"><code>MainWindow.java</code></a> and check for any code errors.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Due to an ongoing <a href="https://youtrack.jetbrains.com/issue/IDEA-189060">issue</a> with some of the newer versions of IntelliJ, code errors may be detected even if the project can be built and run successfully</p>
-</li>
-<li>
-<p>To resolve this, place your cursor over any of the code section highlighted in red. Press the keys:[ALT + ENTER], and select <code>Add '--add-modules=&#8230;&#8203;' to module compiler options</code> for each error.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Repeat the above step for the test folder as well (i.e. check <a href="{repoURL}/blob/master/src/test/java/seedu/inventory/commons/util/XmlUtilTest.java"><code>XmlUtilTest.java</code></a> and <a href="{repoURL}/blob/master/src/test/java/seedu/inventory/ui/HelpWindowTest.java"><code>HelpWindowTest.java</code></a> for code errors, and if so, resolve it the same way as above).</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="verifying-the-setup"><a class="link" href="#verifying-the-setup">Verifying the setup</a></h3>
-<div class="paragraph">
-<p>After setting up, you can verify if Inventory Manager is setup correctly by performing the steps below.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Run the <code>seedu.inventory.MainApp</code> and try a few commands (e.g. <code>help</code> or <code>list</code>).</p>
-</li>
-<li>
-<p><a href="#Testing">Run the tests</a> to ensure all tests pass.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="configuring-the-setup"><a class="link" href="#configuring-the-setup">Configuring the setup</a></h3>
-<div class="paragraph">
-<p>You are encouraged to customise your setup in your local computer by following the steps below.</p>
+<p>Creating a sale order will have the item&#8217;s quantity automatically deducted. Below will describe how this
+feature is implemented in Inventory Manager.</p>
 </div>
 <div class="sect3">
-<h4 id="configuring-the-coding-style"><a class="link" href="#configuring-the-coding-style">Configuring the coding style</a></h4>
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
 <div class="paragraph">
-<p>This project follows <a href="https://github.com/oss-generic/process/blob/master/docs/CodingStandards.adoc">oss-generic coding standards</a>. IntelliJ&#8217;s default style is mostly compliant with ours but it uses a different import order from ours. To rectify, please follow the steps described below.</p>
+<p>The creation of sale order is handled by <code>AddSaleCommand</code>. The use of it will trigger <code>Model#updateItem</code>,
+which will update the item&#8217;s quantity. However, for <code>AddSaleCommand#execute</code> to be successful,
+there are two conditions which needs to be met.</p>
+</div>
+<div class="sect4">
+<h5 id="conditions"><a class="link" href="#conditions">Conditions</a></h5>
+<div class="paragraph">
+<p>The following two conditions must be met before.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Go to <code>File</code> &gt; <code>Settings&#8230;&#8203;</code> (Windows/Linux), or <code>IntelliJ IDEA</code> &gt; <code>Preferences&#8230;&#8203;</code> (macOS).</p>
+<p>The item must exists in Inventory Manager.</p>
 </li>
 <li>
-<p>Select <code>Editor</code> &gt; <code>Code Style</code> &gt; <code>Java</code>.</p>
+<p>The item quantity must be more than or equal to the quantity sold.</p>
 </li>
+</ol>
+</div>
+<div class="paragraph">
+<p><code>AddSaleCommand#execute</code> will perform the validation before proceeding. If any of the above validation fails,
+<code>CommandException</code> will be thrown and it will not call <code>Model#updateItem</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-consideration"><a class="link" href="#design-consideration">Design Consideration</a></h4>
+<div class="paragraph">
+<p>There are a few design considerations when creating a sale order. Below will explain the various considerations and the
+choices made.</p>
+</div>
+<div class="sect4">
+<h5 id="aspect-where-code-updateitem-code-executes"><a class="link" href="#aspect-where-code-updateitem-code-executes">Aspect: Where <code>updateItem</code> executes</a></h5>
+<div class="paragraph">
+<p>There are various places where <code>updateItem</code> can be executed. The pros and cons for each option is shown below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Click on the <code>Imports</code> tab to set the order.</p>
+<p>Executed at Logic<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>For <code>Class count to use import with '*'</code> and <code>Names count to use static import with '*'</code>: Set to <code>999</code> to prevent IntelliJ from contracting the import statements.</p>
+<p>Pros: Easy to implement<br></p>
 </li>
 <li>
-<p>For <code>Import Layout</code>: The order is <code>import static all other imports</code>, <code>import java.*</code>, <code>import javax.*</code>, <code>import org.*</code>, <code>import com.*</code>, <code>import all other imports</code>. Add a <code>&lt;blank line&gt;</code> between each <code>import</code>.</p>
+<p>Cons: Direct calling of <code>Model#addSale</code> will not be validated.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Executed at Model</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Ensures that all entries are validated before sale can be created.<br></p>
+</li>
+<li>
+<p>Cons: <code>Model#addSale</code> will need to access inventory to perform validations.</p>
 </li>
 </ul>
 </div>
@@ -336,207 +303,11 @@ This will generate all resources required by the application and tests.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>Optionally, you can follow the <a href="UsingCheckstyle.html">UsingCheckstyle.adoc</a> document to configure Intellij to check style-compliance as you write code.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="updating-documentation-to-match-your-fork"><a class="link" href="#updating-documentation-to-match-your-fork">Updating documentation to match your fork</a></h4>
-<div class="paragraph">
-<p>After forking the repo, the documentation will still have the SE-EDU branding and reference to the <code>se-edu/addressbook-level4</code> repo.</p>
-</div>
-<div class="paragraph">
-<p>If you plan to develop this fork as a separate product (i.e. instead of contributing to <code>se-edu/addressbook-level4</code>), you should do the following:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Configure the <a href="#Docs-SiteWideDocSettings">site-wide documentation settings</a> in <a href="{repoURL}/blob/master/build.gradle"><code>build.gradle</code></a>, such as the <code>site-name</code>, to suit your own project.</p>
-</li>
-<li>
-<p>Replace the URL in the attribute <code>repoURL</code> in <a href="{repoURL}/blob/master/docs/DeveloperGuide.adoc"><code>DeveloperGuide.adoc</code></a> and <a href="{repoURL}/blob/master/docs/UserGuide.adoc"><code>UserGuide.adoc</code></a> with the URL of your fork.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="setting-up-continuous-integration"><a class="link" href="#setting-up-continuous-integration">Setting up Continuous Integration</a></h4>
-<div class="paragraph">
-<p>Set up Travis to perform Continuous Integration (CI) for your fork. See <a href="UsingTravis.html">UsingTravis.adoc</a> to learn how to set it up.</p>
-</div>
-<div class="paragraph">
-<p>After setting up Travis, you can optionally set up coverage reporting for your team fork (see <a href="UsingCoveralls.html">UsingCoveralls.adoc</a>).</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Coverage reporting may be useful for a team repository that hosts the final version but it is not that useful for your personal fork.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Optionally, you can set up AppVeyor as a second CI (see <a href="UsingAppVeyor.html">UsingAppVeyor.adoc</a>).</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Having both Travis and AppVeyor ensures your App works on both Unix-based platforms and Windows-based platforms (Travis is Unix-based and AppVeyor is Windows-based).
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="getting-started-with-coding"><a class="link" href="#getting-started-with-coding">Getting started with coding</a></h4>
-<div class="paragraph">
-<p>Below you start coding, do take note of the below two points.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Get some sense of the overall design by reading <a href="#Design-Architecture">[Design-Architecture]</a>.</p>
-</li>
-<li>
-<p>Take a look at <a href="#GetStartedProgramming">[GetStartedProgramming]</a>.
-== Testing</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Testing the software will provide a better user experience for the users. Below will describe the type of tests available, the ways it can be run and the steps to troubleshooting the tests when it fails.</p>
+<p>Based on the above pros and cons, the first option is chosen as it is easier to implement, and it does not require
+<code>Model#addSale</code> to read the inventory and perform validations.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="types-of-tests"><a class="link" href="#types-of-tests">Types of tests</a></h3>
-<div class="paragraph">
-<p>Below describe the two types of tests available.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p><strong>GUI Tests</strong> - These are tests involving the GUI. They include the below.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><em>System Tests</em> that test the entire App by simulating user actions on the GUI. These are in the <code>systemtests</code> package.</p>
-</li>
-<li>
-<p><em>Unit tests</em> that test the individual components. These are in <code>seedu.inventory.ui</code> package.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p><strong>Non-GUI Tests</strong> - These are tests not involving the GUI. They include the below.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p><em>Unit tests</em> targeting the lowest level methods / classes.<br>
-e.g. <code>seedu.inventory.commons.StringUtilTest</code></p>
-</li>
-<li>
-<p><em>Integration tests</em> that are checking the integration of multiple code units (those code units are assumed to be working).<br>
-e.g. <code>seedu.inventory.storage.StorageManagerTest</code></p>
-</li>
-<li>
-<p>Hybrids of unit and integration tests. These test are checking multiple code units as well as how the are connected together.<br>
-e.g. <code>seedu.inventory.logic.LogicManagerTest</code></p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="running-tests"><a class="link" href="#running-tests">Running Tests</a></h3>
-<div class="paragraph">
-<p>There are three ways to run tests.</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-The most reliable way to run tests is the third method. The first two methods might fail some GUI tests due to platform / resolution-specific idiosyncrasies.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Method 1: Using IntelliJ JUnit test runner</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>To run all tests, right-click on the <code>src/test/java</code> folder and choose <code>Run 'All Tests'</code>.</p>
-</li>
-<li>
-<p>To run a subset of tests, you can right-click on a test package, test class, or a test and choose <code>Run 'X'</code>.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Method 2: Using Gradle</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Open a console and run the command <code>gradlew clean allTests</code> (Mac/Linux: <code>./gradlew clean allTests</code>).</p>
-</li>
-</ul>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-See <a href="UsingGradle.html">UsingGradle.adoc</a> for more information on how to run tests using Gradle.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Method 3: Using Gradle (headless)</strong></p>
-</div>
-<div class="paragraph">
-<p>Thanks to the <a href="https://github.com/TestFX/TestFX">TestFX</a> library we use, our GUI tests can run in the <em>headless</em> mode. In the headless mode, GUI tests do not show up on the screen. That means the developer can perform other tasks on the computer while the tests are running.</p>
-</div>
-<div class="paragraph">
-<p>To run the tests in headless mode, open a console and run the command <code>gradlew clean headless allTests</code> (Mac/Linux: <code>./gradlew clean headless allTests</code>).</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="troubleshooting-testing"><a class="link" href="#troubleshooting-testing">Troubleshooting Testing</a></h3>
-<div class="paragraph">
-<p>Below is a common error faced during testing.</p>
-</div>
-<div class="paragraph">
-<p><strong><code>NullPointerException</code> error.</strong></p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Reason: One of its dependencies, such as <code>HelpWindow.html</code> in <code>src/main/resources/docs</code> is missing.</p>
-</li>
-<li>
-<p>Solution: Execute Gradle task <code>processResources</code>.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-28 08:02:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-28 14:48:30 UTC</div></div></div></body></html>

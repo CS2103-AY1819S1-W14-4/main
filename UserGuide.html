@@ -87,7 +87,7 @@ Please check the FAQ section for frequent user issues.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 1. The Graphical User Interface on starting up.</em></p>
+<p><em>Figure 3.1. The Graphical User Interface on starting up.</em></p>
 </div>
 </li>
 </ol>
@@ -104,7 +104,7 @@ Please check the FAQ section for frequent user issues.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 2. The command box in Inventory Manager.</em></p>
+<p><em>Figure 3.2. The command box in Inventory Manager.</em></p>
 </div>
 <div class="paragraph">
 <p>A good start is entering the command <strong><code>help</code></strong> and pressing <kbd>Enter</kbd>, it will open the help window.</p>
@@ -164,14 +164,19 @@ Please check the FAQ section for frequent user issues.</p>
 <div class="sect3">
 <h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">4.1.1. Viewing help : <code>help</code></a></h4>
 <div class="paragraph">
+<p>The <code>help</code> command brings up the help screen.</p>
+</div>
+<div class="paragraph">
 <p>Format: <code>help</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">4.1.2. Listing entered commands : <code>history</code></a></h4>
 <div class="paragraph">
-<p>Lists all the commands that you have entered in reverse chronological order.<br>
-Format: <code>history</code></p>
+<p>The <code>history</code> command lists all the commands that you have entered in reverse chronological order.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>history</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -191,8 +196,10 @@ Format: <code>history</code></p>
 <div class="sect3">
 <h4 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">4.1.3. Undoing previous command : <code>undo</code></a></h4>
 <div class="paragraph">
-<p>Restores the Inventory Manager to the state before the previous <em>undoable</em> command was executed.<br>
-Format: <code>undo</code></p>
+<p>The <code>undo</code> command restores Inventory Manager to the state before the previous <em>undoable</em> command was executed.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>undo</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -214,21 +221,23 @@ Format: <code>undo</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete-item 1</code><br>
+<p>Performing an undo on the delete command.<br>
+<code>delete-item 1</code><br>
 <code>list</code><br>
-<code>undo</code> (reverses the <code>delete 1</code> command)<br></p>
+<code>undo</code></p>
 </li>
 <li>
-<p><code>select 1</code><br>
+<p>Performing an undo on the select command, which will fail as there is no undoable commands executed previously.<br>
+<code>select 1</code><br>
 <code>list</code><br>
-<code>undo</code><br>
-The <code>undo</code> command fails as there are no undoable commands executed previously.</p>
+<code>undo</code><br></p>
 </li>
 <li>
-<p><code>delete-item 1</code><br>
+<p>Performing multiple undo commands.<br>
+<code>delete-item 1</code><br>
 <code>clear</code><br>
 <code>undo</code> (reverses the <code>clear</code> command)<br>
-<code>undo</code> (reverses the <code>delete-item 1</code> command)<br></p>
+<code>undo</code> (reverses the <code>delete-item 1</code> command)</p>
 </li>
 </ul>
 </div>
@@ -236,8 +245,10 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 <div class="sect3">
 <h4 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">4.1.4. Redoing the previously undone command : <code>redo</code></a></h4>
 <div class="paragraph">
-<p>Reverses the most recent <code>undo</code> command.<br>
-Format: <code>redo</code></p>
+<p>The <code>redo</code> command reverses the most recent <code>undo</code> command.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>redo</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -245,22 +256,24 @@ Format: <code>redo</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>delete-item 1</code><br>
+<p>Performing a redo on an undo command.<br>
+<code>delete-item 1</code><br>
 <code>undo</code> (reverses the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>delete 1</code> command)<br></p>
+<code>redo</code> (reapplies the <code>delete 1</code> command)</p>
 </li>
 <li>
-<p><code>delete-item 1</code><br>
-<code>redo</code><br>
-The <code>redo</code> command fails as there are no <code>undo</code> commands executed previously.</p>
+<p>Performing a redo, which will fail as there was no undo command executed previously.<br>
+<code>delete-item 1</code><br>
+<code>redo</code></p>
 </li>
 <li>
-<p><code>delete-item 1</code><br>
+<p>Performing multiple redo commands.<br>
+<code>delete-item 1</code><br>
 <code>clear</code><br>
 <code>undo</code> (reverses the <code>clear</code> command)<br>
 <code>undo</code> (reverses the <code>delete 1</code> command)<br>
 <code>redo</code> (reapplies the <code>delete 1</code> command)<br>
-<code>redo</code> (reapplies the <code>clear</code> command)<br></p>
+<code>redo</code> (reapplies the <code>clear</code> command)</p>
 </li>
 </ul>
 </div>
@@ -268,22 +281,23 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 <div class="sect3">
 <h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.1.5. Clearing all entries : <code>clear</code></a></h4>
 <div class="paragraph">
-<p>Clears all entries from Inventory Manager.<br>
+<p>The <code>clear</code> command clears all entries from Inventory Manager.
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.1.6. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
-<p>Exits the program.<br>
-Format: <code>exit</code></p>
+<p>The <code>exit</code> command exits Inventory Manager.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="saving-the-data"><a class="link" href="#saving-the-data">4.1.7. Saving the data</a></h4>
 <div class="paragraph">
-<p>Inventory Manager data are saved in the hard disk automatically after any command that changes the data.<br>
-There is no need to save manually.</p>
+<p>Inventory Manager data are saved in the hard disk automatically after any command that changes the data. No action is required to manually save the data.</p>
 </div>
 </div>
 </div>
@@ -298,8 +312,18 @@ There is no need to save manually.</p>
 <div class="sect3">
 <h4 id="login-to-the-system-code-login-code"><a class="link" href="#login-to-the-system-code-login-code">4.2.1. Login to the system : <code>login</code></a></h4>
 <div class="paragraph">
-<p>Login with users' given username and password.<br>
-Format: <code>login u/USERNAME p/PASSWORD</code></p>
+<p>The <code>login</code> command allows the user to login with the given username and password.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-login.png" alt="doc login" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.1. User is required to login before proceeding.</em></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>login u/USERNAME p/PASSWORD</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -316,8 +340,18 @@ Format: <code>login u/USERNAME p/PASSWORD</code></p>
 <div class="sect3">
 <h4 id="change-user-s-password-code-change-password-code"><a class="link" href="#change-user-s-password-code-change-password-code">4.2.2. Change user&#8217;s password : <code>change-password</code></a></h4>
 <div class="paragraph">
-<p>Updates an user information into the system with given username.<br>
-Format: <code>change-password u/USERNAME o/OLD_PASSWORD n/NEW_PASSWORD</code></p>
+<p>The <code>change-password</code> command updates an user information into the system with given username.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-change-password.png" alt="doc change password" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.2. User attempting to change password.</em></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>change-password u/USERNAME o/OLD_PASSWORD n/NEW_PASSWORD</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -334,8 +368,10 @@ Format: <code>change-password u/USERNAME o/OLD_PASSWORD n/NEW_PASSWORD</code></p
 <div class="sect3">
 <h4 id="logout-from-the-system-code-logout-code"><a class="link" href="#logout-from-the-system-code-logout-code">4.2.3. Logout from the system : <code>logout</code></a></h4>
 <div class="paragraph">
-<p>Logout the current users from the system.<br>
-Format: <code>logout</code></p>
+<p>The <code>logout</code> Logout the current users from the system.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>logout</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -353,13 +389,15 @@ Format: <code>logout</code></p>
 <div class="sect2">
 <h3 id="user-management"><a class="link" href="#user-management">4.3. User Management</a></h3>
 <div class="paragraph">
-<p>Admin of the system manages the staffs who use this applications.</p>
+<p>Admin of the system manages the staffs who use this application.</p>
 </div>
 <div class="sect3">
-<h4 id="add-users-code-add-user-code"><a class="link" href="#add-users-code-add-user-code">4.3.1. Add users : <code>add-user</code></a></h4>
+<h4 id="add-users-code-add-staff-code"><a class="link" href="#add-users-code-add-staff-code">4.3.1. Add users : <code>add-staff</code></a></h4>
 <div class="paragraph">
-<p>Adds an user into the system.<br>
-Format: <code>add-user n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
+<p>The <code>add-staff</code> command adds an user into the system.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add-staff n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -368,23 +406,35 @@ Format: <code>add-user n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
 <ul>
 <li>
 <p>Add user with username as yaotx, password as yaotxfanboi, name as Yao TengXiong and role as manager.<br>
-<code>add-user u/yaotx p/yaotxfanboi n/Yao TengXiong r/manager</code>.</p>
+<code>add-staff u/yaotx p/yaotxfanboi n/Yao TengXiong r/manager</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-users-code-list-user-code"><a class="link" href="#list-users-code-list-user-code">4.3.2. List users : <code>list-user</code></a></h4>
+<h4 id="list-users-code-list-staff-code"><a class="link" href="#list-users-code-list-staff-code">4.3.2. List users : <code>list-staff</code></a></h4>
 <div class="paragraph">
-<p>Displays a list of existing users in the system.<br>
-Format: <code>list-user</code></p>
+<p>The <code>list-staff</code> command displays a list of existing users in the system.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-list-user.png" alt="doc list user" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.3. All users in Inventory Manager listed on screen.</em></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>list-staff</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="update-users-code-update-user-code"><a class="link" href="#update-users-code-update-user-code">4.3.3. Update users : <code>update-user</code></a></h4>
+<h4 id="update-users-code-update-staff-code"><a class="link" href="#update-users-code-update-staff-code">4.3.3. Update users : <code>update-staff</code></a></h4>
 <div class="paragraph">
-<p>Updates an user information into the system with given username.<br>
-Format: <code>update-user i/INDEX u/USERNAME n/NAME  r/ROLE</code></p>
+<p>The <code>update-staff</code> command updates an user information into the system with given username.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>update-staff i/INDEX u/USERNAME n/NAME  r/ROLE</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -393,16 +443,29 @@ Format: <code>update-user i/INDEX u/USERNAME n/NAME  r/ROLE</code></p>
 <ul>
 <li>
 <p>Update user with given username as yaotx. Change name to Yao Teng Xiong and role as admin.<br>
-<code>update-user i/2 u/yaotx n/Yao Teng Xiong r/admin</code>.</p>
+<code>update-staff i/2 u/yaotx n/Yao Teng Xiong r/admin</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="remove-users-code-delete-user-code"><a class="link" href="#remove-users-code-delete-user-code">4.3.4. Remove users : <code>delete-user</code></a></h4>
+<h4 id="remove-users-code-delete-staff-code"><a class="link" href="#remove-users-code-delete-staff-code">4.3.4. Remove users : <code>delete-staff</code></a></h4>
 <div class="paragraph">
-<p>Deletes an user from the system with given index as shown in the list.<br>
-Format: <code>delete-user i/INDEX</code></p>
+<p>The <code>delete-staff</code> command deletes an user from the system with given index as shown in the list.</p>
+</div>
+<div class="paragraph">
+<p>An error will be shown if the entered index is invalid.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-delete-user-failed.png" alt="doc delete user failed" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.4. Error shown if the deleted index is invalid.</em></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete-staff i/INDEX</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -410,8 +473,8 @@ Format: <code>delete-user i/INDEX</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Reomove user with given index as shown in the list.<br>
-<code>remove-user i/1</code>.</p>
+<p>Remove user with given index as shown in the list.<br>
+<code>remove-staff i/1</code>.</p>
 </li>
 </ul>
 </div>
@@ -425,8 +488,10 @@ Format: <code>delete-user i/INDEX</code></p>
 <div class="sect3">
 <h4 id="adding-an-item-code-add-item-code"><a class="link" href="#adding-an-item-code-add-item-code">4.4.1. Adding an item : <code>add-item</code></a></h4>
 <div class="paragraph">
-<p>Adds an item to the inventory manager<br>
-Format: <code>add-item n/NAME p/PRICE q/QUANTITY s/SKU i/IMAGE_LOCATION [t/TAG]&#8230;&#8203;</code></p>
+<p>The <code>add-item</code> command adds an item to the inventory manager.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>add-item n/NAME p/PRICE q/QUANTITY s/SKU i/IMAGE_LOCATION [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -454,15 +519,27 @@ An item can have any number of tags (including 0)
 <div class="sect3">
 <h4 id="listing-all-items-code-list-item-code"><a class="link" href="#listing-all-items-code-list-item-code">4.4.2. Listing all items : <code>list-item</code></a></h4>
 <div class="paragraph">
-<p>Shows a list of all items in the inventory manager.<br>
-Format: <code>list-item</code></p>
+<p>The <code>list-item</code> command shows a list of all items in the inventory manager.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-list-item.png" alt="doc list item" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.5. All items in Inventory Manager listed on screen.</em></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>list-item</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="editing-an-item-code-edit-item-code"><a class="link" href="#editing-an-item-code-edit-item-code">4.4.3. Editing an item : <code>edit-item</code></a></h4>
 <div class="paragraph">
-<p>Edits an existing item in the Inventory Manager.<br>
-Format: <code>edit-item INDEX [n/NAME] [p/PRICE] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/TAG]&#8230;&#8203;</code></p>
+<p>The <code>edit-item</code> command edits an existing item in the Inventory Manager.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>edit-item INDEX [n/NAME] [p/PRICE] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -502,8 +579,18 @@ Updates the image location and quantity of the 1st item to be <code>docs/images/
 <div class="sect3">
 <h4 id="locating-items-by-name-code-find-item-code"><a class="link" href="#locating-items-by-name-code-find-item-code">4.4.4. Locating items by name : <code>find-item</code></a></h4>
 <div class="paragraph">
-<p>Finds item whose names contain any of the given keywords.<br>
-Format: <code>find-item KEYWORD [MORE_KEYWORDS]</code></p>
+<p>The <code>find-item</code> command finds item whose names contain any of the given keywords.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-find-item.png" alt="doc find item" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.6. The item searched for will be displayed on screen.</em></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>find-item KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -543,8 +630,10 @@ Returns <code>IPhone X</code> and <code>IPhone 10</code></p>
 <div class="sect3">
 <h4 id="deleting-an-item-code-delete-item-code"><a class="link" href="#deleting-an-item-code-delete-item-code">4.4.5. Deleting an item : <code>delete-item</code></a></h4>
 <div class="paragraph">
-<p>Deletes the specified item from the inventory.<br>
-Format: <code>delete-item INDEX</code></p>
+<p>The <code>delete-item</code> command deletes the specified item from the inventory.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete-item INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -584,8 +673,10 @@ Deletes the 1st item in the results of the <code>find-item</code> command.</p>
 <div class="sect3">
 <h4 id="selecting-an-item-code-select-code"><a class="link" href="#selecting-an-item-code-select-code">4.4.6. Selecting an item : <code>select</code></a></h4>
 <div class="paragraph">
-<p>Selects the item identified by the index number used in the displayed inventory.<br>
-Format: <code>select INDEX</code></p>
+<p>The <code>select</code> command selects the item identified by the index number used in the displayed inventory.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>select INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -644,7 +735,7 @@ Entering a quantity that is greater than the available item quantity will result
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure X. Error shown on screen when creating a sale order with invalid SKU.</em></p>
+<p><em>Figure 4.7. Error shown on screen when creating a sale order with invalid SKU.</em></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add-sale s/SKU q/QTY</code></p>
@@ -676,7 +767,7 @@ the inventory quantity deducted automatically. User will need to ensure that the
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure X. Error shown on screen when deleting a sale order that cannot be found.</em></p>
+<p><em>Figure 4.8. Error shown on screen when deleting a sale order that cannot be found.</em></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete-sale SALE-ID</code></p>
@@ -704,7 +795,7 @@ the inventory quantity deducted automatically. User will need to ensure that the
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure X. All sales in Inventory Manager listed on screen.</em></p>
+<p><em>Figure 4.9. All sales in Inventory Manager listed on screen.</em></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>list-sale</code></p>
@@ -726,12 +817,14 @@ the inventory quantity deducted automatically. User will need to ensure that the
 <h3 id="purchase-orders-management"><a class="link" href="#purchase-orders-management">4.6. Purchase Orders Management</a></h3>
 <div class="paragraph">
 <p>The following commands are mainly used for staff and manager to manage purchase order.
-==== Generate purchase order : <code>generate-po</code></p>
+==== Generate purchase order : <code>add-po</code></p>
 </div>
 <div class="paragraph">
-<p>Generate purchase order for an item.<br>
-The id of a purchase order and the date will be auto generated.<br>
-Format: <code>generate-po i/SKU_NUMBER q/QUANTITY sp/SUPPLIER rd/REQUIRED_DATE [t/TAG]&#8230;&#8203;</code></p>
+<p>The <code>add-po</code> command adds a purchase order for an item.<br>
+The id of a purchase order and the date will be auto generated.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>generate-po i/SKU_NUMBER q/QUANTITY sp/SUPPLIER rd/REQUIRED_DATE [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -744,31 +837,47 @@ Format: <code>generate-po i/SKU_NUMBER q/QUANTITY sp/SUPPLIER rd/REQUIRED_DATE [
 </ul>
 </div>
 <div class="sect3">
-<h4 id="list-all-purchase-order-code-list-po-code"><a class="link" href="#list-all-purchase-order-code-list-po-code">4.6.1. List all purchase order : <code>list po</code></a></h4>
+<h4 id="list-all-purchase-order-code-list-po-code"><a class="link" href="#list-all-purchase-order-code-list-po-code">4.6.1. List all purchase order : <code>list-po</code></a></h4>
 <div class="paragraph">
-<p>Shows a list of all the purchase order.
-Format: <code>list-po</code></p>
+<p>The <code>list-po</code> command shows a list of all the purchase order.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-list-po.png" alt="doc list po" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.10. All purchase orders in Inventory Manager listed on screen.</em></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>list-po</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-approved-purchase-order-code-list-approved-po-code"><a class="link" href="#list-approved-purchase-order-code-list-approved-po-code">4.6.2. List approved purchase order : <code>list approved-po</code></a></h4>
+<h4 id="list-approved-purchase-order-code-list-approved-po-code"><a class="link" href="#list-approved-purchase-order-code-list-approved-po-code">4.6.2. List approved purchase order : <code>list-approved-po</code></a></h4>
 <div class="paragraph">
-<p>Shows a list of all the approved purchase order.
-Format: <code>list approved-po</code></p>
+<p>The <code>list-approved-po</code> command shows a list of all the approved purchase order.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>list approved-po</code></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="list-pending-purchase-order-code-list-pending-po-code"><a class="link" href="#list-pending-purchase-order-code-list-pending-po-code">4.6.3. List pending purchase order : <code>list pending-po</code></a></h4>
 <div class="paragraph">
-<p>Shows a list of all the pending purchase order.
-Format: <code>list pending-po</code></p>
+<p>The <code>list-pending-po</code> command shows a list of all the pending purchase order.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>list pending-po</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="approve-purchase-order-code-approve-code"><a class="link" href="#approve-purchase-order-code-approve-code">4.6.4. Approve purchase order : <code>approve</code></a></h4>
+<h4 id="approve-purchase-order-code-approve-po-code"><a class="link" href="#approve-purchase-order-code-approve-po-code">4.6.4. Approve purchase order : <code>approve-po</code></a></h4>
 <div class="paragraph">
-<p>Approve a purchase order.
-Format: <code>approve id/PO_ID</code></p>
+<p>The <code>approve-po</code> command approve a purchase order.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>approve id/PO_ID</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -782,10 +891,20 @@ Format: <code>approve id/PO_ID</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="reject-purchase-order-code-reject-code"><a class="link" href="#reject-purchase-order-code-reject-code">4.6.5. Reject purchase order : <code>reject</code></a></h4>
+<h4 id="reject-purchase-order-code-reject-po-code"><a class="link" href="#reject-purchase-order-code-reject-po-code">4.6.5. Reject purchase order : <code>reject-po</code></a></h4>
 <div class="paragraph">
-<p>Reject a purchase order along with a reason description.
-Format: <code>reject id/PO_ID d/DESCRIPTION</code></p>
+<p>The <code>reject-po</code> command reject a purchase order along with a reason description.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-delete-po.png" alt="doc delete po" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.11. Deleting a specific purchase order by using it&#8217;s ID.</em></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>reject id/PO_ID d/DESCRIPTION</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -832,29 +951,45 @@ Format: <code>reject id/PO_ID d/DESCRIPTION</code></p>
 <div class="sect4">
 <h5 id="export-sales-report-to-csv-code-export-csv-sales-code"><a class="link" href="#export-sales-report-to-csv-code-export-csv-sales-code">Export sales report to CSV: <code>export-csv-sales</code></a></h5>
 <div class="paragraph">
-<p>Export the sales report in CSV format to the filepath given.<br>
-Format: <code>export-csv-sales f/FILEPATH</code></p>
+<p>The <code>export-csv-sales</code> command export the sales report in CSV format to the filepath given.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>export-csv-sales f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="export-list-of-items-to-csv-code-export-csv-items-code"><a class="link" href="#export-list-of-items-to-csv-code-export-csv-items-code">Export list of items to CSV : <code>export-csv-items</code></a></h5>
 <div class="paragraph">
-<p>Export the list of items in CSV format to the filepath given.<br>
-Format: <code>export-csv-items f/FILEPATH</code></p>
+<p>The <code>export-csv-items</code> command export the list of items in CSV format to the filepath given.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-export-csv-item.png" alt="doc export csv item" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.12. Export successful prompt will be shown upon completion of export.</em></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>export-csv-items f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="export-list-of-users-to-csv-code-export-csv-users-code"><a class="link" href="#export-list-of-users-to-csv-code-export-csv-users-code">Export list of users to CSV: <code>export-csv-users</code></a></h5>
+<h5 id="export-list-of-users-to-csv-code-export-csv-staffs-code"><a class="link" href="#export-list-of-users-to-csv-code-export-csv-staffs-code">Export list of users to CSV: <code>export-csv-staffs</code></a></h5>
 <div class="paragraph">
-<p>Export the list of users in CSV format to the filepath given.<br>
-Format: <code>export-csv-users f/FILEPATH</code></p>
+<p>The <code>export-csv-staffs</code> command export the list of users in CSV format to the filepath given.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>export-csv-staffs f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="export-list-of-purchase-orders-to-csv-code-export-csv-orders-code"><a class="link" href="#export-list-of-purchase-orders-to-csv-code-export-csv-orders-code">Export list of purchase orders to CSV: <code>export-csv-orders</code></a></h5>
 <div class="paragraph">
-<p>Export the list of purchase orders in CSV format to the filepath given.<br>
-Format: <code>export-csv-orders f/FILEPATH</code></p>
+<p>The <code>export-csv-orders</code> command export the list of purchase orders in CSV format to the filepath given.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>export-csv-orders f/FILEPATH</code></p>
 </div>
 </div>
 </div>
@@ -862,7 +997,7 @@ Format: <code>export-csv-orders f/FILEPATH</code></p>
 <h4 id="export-entire-data-to-im-file-code-export-im-code"><a class="link" href="#export-entire-data-to-im-file-code-export-im-code">4.7.2. Export entire data to .im file: <code>export-im</code></a></h4>
 <div class="paragraph">
 <p>(coming in v2.0)<br>
-Export the entire data to the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
+The <code>export-im</code> command export the entire data to the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
 Format: <code>export-im f/FILEPATH</code></p>
 </div>
 <div class="sidebarblock">
@@ -917,29 +1052,37 @@ Format: <code>export-im f/FILEPATH</code></p>
 <div class="sect4">
 <h5 id="import-sales-report-from-csv-code-import-csv-sales-code"><a class="link" href="#import-sales-report-from-csv-code-import-csv-sales-code">Import sales report from CSV: <code>import-csv-sales</code></a></h5>
 <div class="paragraph">
-<p>Import the sales report in CSV format from the filepath given.<br>
-Format: <code>import-csv-sales f/FILEPATH</code></p>
+<p>The <code>import-csv-sales</code> command imports the sales report in CSV format from the filepath given.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>import-csv-sales f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="import-list-of-items-from-csv-code-import-csv-items-code"><a class="link" href="#import-list-of-items-from-csv-code-import-csv-items-code">Import list of items from CSV : <code>import-csv-items</code></a></h5>
 <div class="paragraph">
-<p>Import the list of items in CSV format from the filepath given.<br>
-Format: <code>import-csv-items f/FILEPATH</code></p>
+<p>The <code>import-csv-items</code> command imports the list of items in CSV format from the filepath given.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>import-csv-items f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="import-list-of-users-from-csv-code-import-csv-users-code"><a class="link" href="#import-list-of-users-from-csv-code-import-csv-users-code">Import list of users from CSV: <code>import-csv-users</code></a></h5>
+<h5 id="import-list-of-users-from-csv-code-import-csv-staffs-code"><a class="link" href="#import-list-of-users-from-csv-code-import-csv-staffs-code">Import list of users from CSV: <code>import-csv-staffs</code></a></h5>
 <div class="paragraph">
-<p>Import the list of users in CSV format from the filepath given.<br>
-Format: <code>import-csv-users f/FILEPATH</code></p>
+<p>The <code>import-csv-staffs</code> command imports the list of users in CSV format from the filepath given.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>import-csv-staffs f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="import-list-of-purchase-orders-from-csv-code-import-csv-orders-code"><a class="link" href="#import-list-of-purchase-orders-from-csv-code-import-csv-orders-code">Import list of purchase orders from CSV: <code>import-csv-orders</code></a></h5>
 <div class="paragraph">
-<p>Import the list of purchase orders in CSV format from the filepath given.<br>
-Format: <code>import-csv-orders f/FILEPATH</code></p>
+<p>The <code>import-csv-orders</code> command imports the list of purchase orders in CSV format from the filepath given.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>import-csv-orders f/FILEPATH</code></p>
 </div>
 </div>
 </div>
@@ -947,8 +1090,10 @@ Format: <code>import-csv-orders f/FILEPATH</code></p>
 <h4 id="import-entire-data-from-im-file-code-import-im-code"><a class="link" href="#import-entire-data-from-im-file-code-import-im-code">4.7.4. Import entire data from .im file: <code>import-im</code></a></h4>
 <div class="paragraph">
 <p>(coming in v2.0)<br>
-Import the entire data from the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
-Format: <code>import-im f/FILEPATH</code></p>
+The <code>import-im</code> command imports the entire data from the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>import-im f/FILEPATH</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -1069,23 +1214,23 @@ Format: <code>import-im f/FILEPATH</code></p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Add User</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-user n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-user n/Zulqarnain u/zulq9 p/zulcomel r/admin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-staff n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-staff n/Zulqarnain u/zulq9 p/zulcomel r/admin</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>List User</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-user</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-staff</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-user</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Update User</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>update-user i/INDEX n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>update-user i/2 n/Muhammad Zulqarnain u/zulq9 p/zulsenpai r/admin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>update-staff i/INDEX n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>update-staff i/2 n/Muhammad Zulqarnain u/zulq9 p/zulsenpai r/admin</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Remove User</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-user i/INDEX</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-user i/3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-staff i/INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-staff i/3</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Inventory Management</strong></p></td>
@@ -1143,8 +1288,8 @@ Format: <code>import-im f/FILEPATH</code></p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generate Purchase Order</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>generate-po</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>generate-po i/S7192DA q/1000 sp/Your Company rd/12-12-2018</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-po</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-po i/S7192DA q/1000 sp/Your Company rd/12-12-2018</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>List All Purchase Orders</code></p></td>
@@ -1153,23 +1298,23 @@ Format: <code>import-im f/FILEPATH</code></p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>List Approved Purchase Orders</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list approved-po</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list approved-po</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-approved-po</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-approved-po</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>List Pending Purchase Orders</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list pending-po</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list pending-po</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-pending-po</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-pending-po</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Approve Purchase Order</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>approve</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>approve id/12</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>approve-po</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>approve-po id/12</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Reject Purchase Order</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reject</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reject id/12 d/Only 100 amount is allowed</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reject-po</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reject-po id/12 d/Only 100 amount is allowed</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Reports Management</strong></p></td>
@@ -1186,8 +1331,8 @@ Format: <code>import-im f/FILEPATH</code></p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export List of Users to CSV</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-users f/FILEPATH</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-users f/C:/out/users.csv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-staffs f/FILEPATH</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-staffs f/C:/out/users.csv</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export List of Sale Orders to CSV</code></p></td>
@@ -1211,8 +1356,8 @@ Format: <code>import-im f/FILEPATH</code></p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import List of Users from CSV</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-users f/FILEPATH</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-users f/C:/in/users.csv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-staffs f/FILEPATH</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-staffs f/C:/in/users.csv</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import List of Sale Orders from CSV</code></p></td>
@@ -1263,4 +1408,4 @@ an Excel software.</p>
 <p>Refers to everyone that is using the application; Admin, Staff and Manager.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-28 08:02:59 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-28 14:48:29 UTC</div></div></div></body></html>
