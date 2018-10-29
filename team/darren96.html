@@ -33,7 +33,7 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <p>Created user authentication feature</p>
 </li>
 <li>
-<p>Create user management features</p>
+<p>Created user management features</p>
 </li>
 </ul>
 </div>
@@ -46,8 +46,14 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Project management:
-<strong>*</strong></p>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Setup a release for v1.1</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>Enhancements to existing features:
@@ -144,7 +150,7 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <div class="sect3">
 <h4 id="change-user-s-password-code-change-password-code"><a class="link" href="#change-user-s-password-code-change-password-code">Change user&#8217;s password : <code>change-password</code></a></h4>
 <div class="paragraph">
-<p>The <code>change-password</code> command updates an user information into the system with given username.</p>
+<p>The <code>change-password</code> command updates a user information into the system with given new password.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -155,7 +161,7 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <p><em>Figure 4.2. User attempting to change password.</em></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>change-password u/USERNAME o/OLD_PASSWORD n/NEW_PASSWORD</code></p>
+<p>Format: <code>change-password p/NEW_PASSWORD</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -163,8 +169,8 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Change user&#8217;s password with given username as darren96, old password as darren123, new password as darrensinglenus.<br>
-<code>change-password u/darren96 o/darren123 n/darrensinglenus</code>.</p>
+<p>Change user&#8217;s password with given new password as darrensinglenus.<br>
+<code>change-password p/darrensinglenus</code>.</p>
 </li>
 </ul>
 </div>
@@ -196,12 +202,15 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <p>Admin of the system manages the staffs who use this application.</p>
 </div>
 <div class="sect3">
-<h4 id="add-users-code-add-staff-code"><a class="link" href="#add-users-code-add-staff-code">Add users : <code>add-staff</code></a></h4>
+<h4 id="adding-a-user-code-add-staff-code"><a class="link" href="#adding-a-user-code-add-staff-code">Adding a user : <code>add-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>add-staff</code> command adds an user into the system.</p>
+<p>The <code>add-staff</code> command adds a user into the system.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add-staff n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
+</div>
+<div class="paragraph">
+<p>Remark: <code>ROLE</code> can only be either <code>user</code>, <code>manager</code> or <code>admin</code>.</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -209,14 +218,14 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Add user with username as yaotx, password as yaotxfanboi, name as Yao TengXiong and role as manager.<br>
+<p>Add staff with username as yaotx, password as yaotxfanboi, name as Yao TengXiong and role as manager.<br>
 <code>add-staff u/yaotx p/yaotxfanboi n/Yao TengXiong r/manager</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-users-code-list-staff-code"><a class="link" href="#list-users-code-list-staff-code">List users : <code>list-staff</code></a></h4>
+<h4 id="listing-all-the-users-code-list-staff-code"><a class="link" href="#listing-all-the-users-code-list-staff-code">Listing all the users : <code>list-staff</code></a></h4>
 <div class="paragraph">
 <p>The <code>list-staff</code> command displays a list of existing users in the system.</p>
 </div>
@@ -233,12 +242,15 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="update-users-code-update-staff-code"><a class="link" href="#update-users-code-update-staff-code">Update users : <code>update-staff</code></a></h4>
+<h4 id="updating-a-user-code-edit-staff-code"><a class="link" href="#updating-a-user-code-edit-staff-code">Updating a user : <code>edit-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>update-staff</code> command updates an user information into the system with given username.</p>
+<p>The <code>edit-staff</code> command updates a user information into the system with given username.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>update-staff i/INDEX u/USERNAME n/NAME  r/ROLE</code></p>
+<p>Format: <code>edit-staff INDEX [n/NAME] [u/USERNAME] [p/PASSWORD] [r/ROLE]</code></p>
+</div>
+<div class="paragraph">
+<p>Remark: <code>ROLE</code> can only be either <code>user</code>, <code>manager</code> or <code>admin</code>.</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -246,19 +258,20 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Update user with given username as yaotx. Change name to Yao Teng Xiong and role as admin.<br>
-<code>update-staff i/2 u/yaotx n/Yao Teng Xiong r/admin</code>.</p>
+<p>Edit staff with given id, 2 in the list. Change name to Yao Teng Xiong and role as admin.<br>
+<code>update-staff 2 n/Yao Teng Xiong r/admin</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="remove-users-code-delete-staff-code"><a class="link" href="#remove-users-code-delete-staff-code">Remove users : <code>delete-staff</code></a></h4>
+<h4 id="deleting-a-user-code-delete-staff-code"><a class="link" href="#deleting-a-user-code-delete-staff-code">Deleting a user : <code>delete-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>delete-staff</code> command deletes an user from the system with given index as shown in the list.</p>
+<p>The <code>delete-staff</code> command deletes a user from the system with given index as shown in the list.</p>
 </div>
 <div class="paragraph">
-<p>An error will be shown if the entered index is invalid.</p>
+<p>An error will be shown if the entered index is invalid.
+<code>edit-user 2 u/yaotx n/Yao Teng Xiong r/admin</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -269,7 +282,7 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <p><em>Figure 4.4. Error shown if the deleted index is invalid.</em></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>delete-staff i/INDEX</code></p>
+<p>Format: <code>delete-staff INDEX</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -277,8 +290,8 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Remove user with given index as shown in the list.<br>
-<code>remove-staff i/1</code>.</p>
+<p>Delete user with given index as shown in the list.<br>
+<code>delete-staff 1</code>.</p>
 </li>
 </ul>
 </div>
@@ -299,7 +312,132 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="use-case-delete-staff" class="discrete">Use case: Delete staff</h3>
+<h3 id="use-case-add-user" class="discrete">Use case: Add User</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Admin requests to add item into Inventory Manager.</p>
+</li>
+<li>
+<p>Inventory Manager adds the staff into the Staff list.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. Staff name does not follow the correct format.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1b. Staff username does not follow the correct format.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1c. Staff password does not follow the correct format.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1c1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>1d. Staff Role does not equal to user, manager or admin.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1d1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-edit-user" class="discrete">Use case: Edit User</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list staffs.</p>
+</li>
+<li>
+<p>Inventory Manager shows a list of staffs</p>
+</li>
+<li>
+<p>User requests to edit a specific staff in the list</p>
+</li>
+<li>
+<p>Inventory Manager edits the staff</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-delete-user" class="discrete">Use case: Delete User</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
@@ -341,7 +479,7 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <p>3a1. Inventory Manager shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.
-=== Login</p>
+=== Authentication</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -353,7 +491,7 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <p>Prerequisites: The username and password of the staff must be in the staffs record.</p>
 </li>
 <li>
-<p>Test case: <code>login u/user1 p/password1</code><br>
+<p>Test case: <code>login u/admin p/password</code><br>
 Expected: User will be logged in and granted access on using other functions of the application.</p>
 </li>
 <li>
@@ -367,6 +505,46 @@ Expected: Similar to previous.</p>
 </ol>
 </div>
 </li>
+<li>
+<p>Change Password</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must be logged in and the new password must be different from the old password.</p>
+</li>
+<li>
+<p>Test case: <code>change-password p/newpassword</code><br>
+Expected: User will be logged in and granted access on using other functions of the application.</p>
+</li>
+<li>
+<p>Test case: <code>change-password p/newpassword</code><br>
+Expected: User will be prompted to fill in a new password.</p>
+</li>
+<li>
+<p>Test case: <code>change-password p/</code><br>
+Expected: User will be prompted to fill in the empty password field.</p>
+</li>
+<li>
+<p>Test case: <code>change-password</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Logout</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must be logged in.</p>
+</li>
+<li>
+<p>Test case: <code>logout</code><br>
+Expected: User will be logged out.</p>
+</li>
+</ol>
+</div>
+</li>
 </ol>
 </div>
 </li>
@@ -376,22 +554,80 @@ Expected: Similar to previous.</p>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-staff"><a class="link" href="#deleting-a-staff">Deleting a staff</a></h3>
+<h3 id="user-management-2"><a class="link" href="#user-management-2">User Management</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a staff</p>
+<p>Adding a user</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The staff to be added must not be a duplicated entry in the list and must login as an admin.</p>
+</li>
+<li>
+<p>Test case: <code>add-staff u/johnd p/johndoe n/John Doe r/user</code><br>
+Expected: Staff will be added into the system. Details of the added staff shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>add-staff u/</code><br>
+Expected: No staff is added. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect add-staff commands to try: <code>add-staff</code>, `add-staff ,,,`_<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Listing all the users</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Must login as an admin.</p>
+</li>
+<li>
+<p>Test case: <code>list-staff</code><br>
+Expected: Staffs will be listed at the panel on the left of the UI.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Editing a user</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The staff to be edited must be an existing entry in the list</p>
+</li>
+<li>
+<p>Test case: <code>edit-staff 1 u/johnd p/johndoe n/John Doe r/user</code><br>
+Expected: Edited staff will replace the existing staff in the system. Details of the edited staff shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>edit-staff u/</code><br>
+Expected: No staff is edited. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect add-staff commands to try: <code>edit-staff</code>, `edit-staff ,,,`_<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting a user</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
 <p>Prerequisites: The index provided must be the index in the existing list of staff shown</p>
 </li>
 <li>
-<p>Test case: <code>delete-staff i/2</code><br>
+<p>Test case: <code>delete-staff 2</code><br>
 Expected: Staff listed as second in the list will be deleted. Details of the deleted staff shown in the status message. Timestamp in the status bar is updated.</p>
 </li>
 <li>
-<p>Test case: <code>delete-staff i/</code><br>
+<p>Test case: `delete-staff `<br>
 Expected: No staff is deleted. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
@@ -419,9 +655,6 @@ Expected: Similar to previous.</p>
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>include::https://github.com/darren96/PeerNUS</p>
-</div>
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-28 14:48:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 02:51:11 UTC</div></div></div></body></html>

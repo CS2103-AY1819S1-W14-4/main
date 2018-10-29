@@ -110,6 +110,11 @@ Please check the FAQ section for frequent user issues.</p>
 <p>A good start is entering the command <strong><code>help</code></strong> and pressing <kbd>Enter</kbd>, it will open the help window.</p>
 </div>
 <div class="paragraph">
+<p>As a first time user, you can enter the command <strong><code>login u/admin p/password</code></strong> to login to the Inventory Manager as a
+as a super-admin.
+This super-admin account is a default administrator account.</p>
+</div>
+<div class="paragraph">
 <p>Below are some other commands you can try after logging into the system:</p>
 </div>
 <div class="ulist">
@@ -340,7 +345,7 @@ Format: <code>clear</code></p>
 <div class="sect3">
 <h4 id="change-user-s-password-code-change-password-code"><a class="link" href="#change-user-s-password-code-change-password-code">4.2.2. Change user&#8217;s password : <code>change-password</code></a></h4>
 <div class="paragraph">
-<p>The <code>change-password</code> command updates an user information into the system with given username.</p>
+<p>The <code>change-password</code> command updates a user information into the system with given new password.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -351,7 +356,7 @@ Format: <code>clear</code></p>
 <p><em>Figure 4.2. User attempting to change password.</em></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>change-password u/USERNAME o/OLD_PASSWORD n/NEW_PASSWORD</code></p>
+<p>Format: <code>change-password p/NEW_PASSWORD</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -359,8 +364,8 @@ Format: <code>clear</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Change user&#8217;s password with given username as darren96, old password as darren123, new password as darrensinglenus.<br>
-<code>change-password u/darren96 o/darren123 n/darrensinglenus</code>.</p>
+<p>Change user&#8217;s password with given new password as darrensinglenus.<br>
+<code>change-password p/darrensinglenus</code>.</p>
 </li>
 </ul>
 </div>
@@ -392,12 +397,15 @@ Format: <code>clear</code></p>
 <p>Admin of the system manages the staffs who use this application.</p>
 </div>
 <div class="sect3">
-<h4 id="add-users-code-add-staff-code"><a class="link" href="#add-users-code-add-staff-code">4.3.1. Add users : <code>add-staff</code></a></h4>
+<h4 id="adding-a-user-code-add-staff-code"><a class="link" href="#adding-a-user-code-add-staff-code">4.3.1. Adding a user : <code>add-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>add-staff</code> command adds an user into the system.</p>
+<p>The <code>add-staff</code> command adds a user into the system.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add-staff n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
+</div>
+<div class="paragraph">
+<p>Remark: <code>ROLE</code> can only be either <code>user</code>, <code>manager</code> or <code>admin</code>.</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -405,14 +413,14 @@ Format: <code>clear</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Add user with username as yaotx, password as yaotxfanboi, name as Yao TengXiong and role as manager.<br>
+<p>Add staff with username as yaotx, password as yaotxfanboi, name as Yao TengXiong and role as manager.<br>
 <code>add-staff u/yaotx p/yaotxfanboi n/Yao TengXiong r/manager</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-users-code-list-staff-code"><a class="link" href="#list-users-code-list-staff-code">4.3.2. List users : <code>list-staff</code></a></h4>
+<h4 id="listing-all-the-users-code-list-staff-code"><a class="link" href="#listing-all-the-users-code-list-staff-code">4.3.2. Listing all the users : <code>list-staff</code></a></h4>
 <div class="paragraph">
 <p>The <code>list-staff</code> command displays a list of existing users in the system.</p>
 </div>
@@ -429,12 +437,15 @@ Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="update-users-code-update-staff-code"><a class="link" href="#update-users-code-update-staff-code">4.3.3. Update users : <code>update-staff</code></a></h4>
+<h4 id="updating-a-user-code-edit-staff-code"><a class="link" href="#updating-a-user-code-edit-staff-code">4.3.3. Updating a user : <code>edit-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>update-staff</code> command updates an user information into the system with given username.</p>
+<p>The <code>edit-staff</code> command updates a user information into the system with given username.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>update-staff i/INDEX u/USERNAME n/NAME  r/ROLE</code></p>
+<p>Format: <code>edit-staff INDEX [n/NAME] [u/USERNAME] [p/PASSWORD] [r/ROLE]</code></p>
+</div>
+<div class="paragraph">
+<p>Remark: <code>ROLE</code> can only be either <code>user</code>, <code>manager</code> or <code>admin</code>.</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -442,19 +453,20 @@ Format: <code>clear</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Update user with given username as yaotx. Change name to Yao Teng Xiong and role as admin.<br>
-<code>update-staff i/2 u/yaotx n/Yao Teng Xiong r/admin</code>.</p>
+<p>Edit staff with given id, 2 in the list. Change name to Yao Teng Xiong and role as admin.<br>
+<code>update-staff 2 n/Yao Teng Xiong r/admin</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="remove-users-code-delete-staff-code"><a class="link" href="#remove-users-code-delete-staff-code">4.3.4. Remove users : <code>delete-staff</code></a></h4>
+<h4 id="deleting-a-user-code-delete-staff-code"><a class="link" href="#deleting-a-user-code-delete-staff-code">4.3.4. Deleting a user : <code>delete-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>delete-staff</code> command deletes an user from the system with given index as shown in the list.</p>
+<p>The <code>delete-staff</code> command deletes a user from the system with given index as shown in the list.</p>
 </div>
 <div class="paragraph">
-<p>An error will be shown if the entered index is invalid.</p>
+<p>An error will be shown if the entered index is invalid.
+<code>edit-user 2 u/yaotx n/Yao Teng Xiong r/admin</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -465,7 +477,7 @@ Format: <code>clear</code></p>
 <p><em>Figure 4.4. Error shown if the deleted index is invalid.</em></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>delete-staff i/INDEX</code></p>
+<p>Format: <code>delete-staff INDEX</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -473,8 +485,8 @@ Format: <code>clear</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Remove user with given index as shown in the list.<br>
-<code>remove-staff i/1</code>.</p>
+<p>Delete user with given index as shown in the list.<br>
+<code>delete-staff 1</code>.</p>
 </li>
 </ul>
 </div>
@@ -1201,8 +1213,8 @@ The <code>import-im</code> command imports the entire data from the .im file spe
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Change Password</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>change-password o/OLD_PASSWORD n/NEW_PASSWORD</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>change-password o/password11 n/wacaonima</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>change-password p/NEW_PASSWORD</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>change-password p/newpassword</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Logout</code></p></td>
@@ -1224,13 +1236,13 @@ The <code>import-im</code> command imports the entire data from the .im file spe
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Update User</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>update-staff i/INDEX n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>update-staff i/2 n/Muhammad Zulqarnain u/zulq9 p/zulsenpai r/admin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-staff INDEX [n/NAME] [u/USERNAME] [p/PASSWORD] [r/ROLE]</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-staff 2 n/Muhammad Zulqarnain u/zulq9 p/zulsenpai r/admin</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Remove User</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-staff i/INDEX</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-staff i/3</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-staff INDEX</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-staff 3</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Inventory Management</strong></p></td>
@@ -1408,4 +1420,4 @@ an Excel software.</p>
 <p>Refers to everyone that is using the application; Admin, Staff and Manager.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-28 14:48:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 02:51:11 UTC</div></div></div></body></html>
