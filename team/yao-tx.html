@@ -20,9 +20,6 @@ It allows users to perform multiple inventory management tasks such as creating 
 <div class="paragraph">
 <p>More importantly, it is optimized for those who prefer to work with a Command Line Interface (CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
 </div>
-<div class="paragraph">
-<p>Ensure inventory control for your company now by jumping to Section 3, “Quick Start”. Enjoy!</p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -48,17 +45,19 @@ It allows users to perform multiple inventory management tasks such as creating 
 <p>Add/Delete/Edit items in inventory</p>
 </li>
 <li>
-<p>Search for items using SKUs or tags</p>
+<p>Search for items via name or SKU</p>
 </li>
 <li>
 <p>Image support for items</p>
 </li>
 <li>
-<p>List items with low quantities
-<strong>*</strong></p>
+<p>List items with low quantities</p>
 </li>
 <li>
-<p>Develop inventory management API</p>
+<p>Display warning for items with low quantities</p>
+</li>
+<li>
+<p>Filtering of products based on price and/or quantity</p>
 </li>
 </ul>
 </div>
@@ -68,7 +67,13 @@ It allows users to perform multiple inventory management tasks such as creating 
 <div class="ulist">
 <ul>
 <li>
-<p>In charge of transforming and modifying the Address Book into the current Inventory Manager</p>
+<p>Transformed and modified the Address Book into the current Inventory Manager</p>
+</li>
+<li>
+<p>Developed the inventory management portion of the application</p>
+</li>
+<li>
+<p>Managed releases <code>v1.2.1</code> (1 release) on GitHub</p>
 </li>
 </ul>
 </div>
@@ -84,16 +89,6 @@ It allows users to perform multiple inventory management tasks such as creating 
 </div>
 </li>
 <li>
-<p>Project management:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Managed releases <code>v1.2.2</code> (1 release) on GitHub</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
 <p>Enhancements to existing features:</p>
 <div class="ulist">
 <ul>
@@ -102,6 +97,9 @@ It allows users to perform multiple inventory management tasks such as creating 
 </li>
 <li>
 <p>Modified the browser panel for displaying of items</p>
+</li>
+<li>
+<p>Allowed searching of items via SKU which does not require full word matching</p>
 </li>
 </ul>
 </div>
@@ -118,19 +116,16 @@ It allows users to perform multiple inventory management tasks such as creating 
 </li>
 <li>
 <p>Community:</p>
-</li>
-<li>
-<p>Tools:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Created an organization for team on Github</p>
-</li>
-<li>
-<p>Integrated a Github plugin (TravisCI) to the team repo</p>
+<p>Reviewed and commented on Pull Requests made by teammates</p>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>Tools:</p>
 </li>
 </ul>
 </div>
@@ -155,7 +150,7 @@ It allows users to perform multiple inventory management tasks such as creating 
 <div class="sect2">
 <h3 id="inventory-management"><a class="link" href="#inventory-management">Inventory Management</a></h3>
 <div class="paragraph">
-<p>The following commands are mainly used for users to manage the item in the inventory.</p>
+<p>The following commands are mainly used for users to manage the items stored in the inventory.</p>
 </div>
 <div class="sect3">
 <h4 id="adding-an-item-code-add-item-code"><a class="link" href="#adding-an-item-code-add-item-code">Adding an item : <code>add-item</code></a></h4>
@@ -178,7 +173,7 @@ An item can have any number of tags (including 0)
 </table>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -193,6 +188,12 @@ An item can have any number of tags (including 0)
 <div class="paragraph">
 <p>The <code>list-item</code> command shows a list of all items in the inventory manager.</p>
 </div>
+<div class="paragraph">
+<p>Format: <code>list-item</code></p>
+</div>
+<div class="paragraph">
+<p>Upon entering the <code>list-item</code> command into the command box and pressing <kbd>Enter</kbd>, a list of all items will appear as can be seen in the screenshot below.</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/doc-list-item.png" alt="doc list item" width="790">
@@ -201,8 +202,32 @@ An item can have any number of tags (including 0)
 <div class="paragraph">
 <p><em>Figure 4.5. All items in Inventory Manager listed on screen.</em></p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="listing-all-items-with-low-quantities-code-list-low-qty-code"><a class="link" href="#listing-all-items-with-low-quantities-code-list-low-qty-code">Listing all items with low quantities : <code>list-low-qty</code></a></h4>
 <div class="paragraph">
-<p>Format: <code>list-item</code></p>
+<p>The <code>list-low-qty</code> command shows a list of all items in the inventory manager that have low quantities.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>list-low-qty</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>An item is considered to have a <code>low quantity</code> if it has a quantity of 10 or less.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Upon entering the <code>list-low-qty</code> command into the command box and pressing <kbd>Enter</kbd>, a list of all items with quantities
+of 10 or less will appear as can be seen in the screenshot below.</p>
 </div>
 </div>
 <div class="sect3">
@@ -212,6 +237,9 @@ An item can have any number of tags (including 0)
 </div>
 <div class="paragraph">
 <p>Format: <code>edit-item INDEX [n/NAME] [p/PRICE] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="paragraph">
+<p>For the <code>edit-item</code> command, do take note of the following points:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -242,8 +270,12 @@ An item can have any number of tags (including 0)
 <div class="ulist">
 <ul>
 <li>
+<p><code>edit-item 5 s/SN-8888</code><br>
+Updates the SKU and tags of the 5th item to <code>SN-8888</code>.</p>
+</li>
+<li>
 <p><code>edit-item 1 i/docs/images/iphone.jpg q/999</code><br>
-Updates the image location and quantity of the 1st item to be <code>docs/images/iphone.jpg</code> and <code>999</code> respectively.</p>
+Updates the image location and quantity of the 1st item to <code>docs/images/iphone.jpg</code> and <code>999</code> respectively.</p>
 </li>
 </ul>
 </div>
@@ -251,18 +283,25 @@ Updates the image location and quantity of the 1st item to be <code>docs/images/
 <div class="sect3">
 <h4 id="locating-items-by-name-code-find-item-code"><a class="link" href="#locating-items-by-name-code-find-item-code">Locating items by name : <code>find-item</code></a></h4>
 <div class="paragraph">
-<p>The <code>find-item</code> command finds item whose names contain any of the given keywords.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/doc-find-item.png" alt="doc find item" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p><em>Figure 4.6. The item searched for will be displayed on screen.</em></p>
+<p>The <code>find-item</code> command finds items that have names containing any of the given keywords.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>find-item KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Multiple keywords are allowed for the <code>find-item</code> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For the <code>find-item</code> command, do take note of the following points:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -281,14 +320,25 @@ Updates the image location and quantity of the 1st item to be <code>docs/images/
 <p>Only full words will be matched e.g. <code>phone</code> will not match <code>IPhone</code></p>
 </li>
 <li>
-<p>Persons matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Iphone 10</code> will return <code>IPhone X</code>, <code>Samsung 10</code></p>
+<p>Items matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Iphone 10</code> will return <code>IPhone X</code>, <code>Samsung 10</code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p>The following demonstrates entering the <code>find-item</code> command in the command box with the keyword <code>LG</code>, followed by <kbd>Enter</kbd>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/doc-find-item.png" alt="doc find item" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.6. The item(s) searched for will be displayed on screen.</em></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -300,12 +350,139 @@ Returns <code>IPhone X</code> and <code>IPhone 10</code></p>
 </div>
 </div>
 <div class="sect3">
+<h4 id="locating-items-by-sku-code-find-item-sku-code"><a class="link" href="#locating-items-by-sku-code-find-item-sku-code">Locating items by SKU : <code>find-item-sku</code></a></h4>
+<div class="paragraph">
+<p>The <code>find-item-sku</code> command finds items that have SKUs containing any of the given keywords.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>find-item-sku KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Just like the <code>find-item</code> command, multiple keywords are allowed for the <code>find-item-sku</code> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For the <code>find-item-sku</code> command, do take note of the following points:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Partial keywords will be matched e.g. <code>sn</code> will match items with SKUs <code>SN-1234</code> and <code>SN4321</code></p>
+</li>
+<li>
+<p>The search is case insensitive. e.g <code>sn-1234</code> will match item(s) containing the SKU <code>SN-1234</code></p>
+</li>
+<li>
+<p>Only the SKU of the item is searched.</p>
+</li>
+<li>
+<p>Items matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>iphone sn</code> will return
+items with SKUs containing the SKUs <code>iphone-s9-9234</code>, <code>SN-1234</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The following demonstrates entering the <code>find-item-sku</code> command in the command box with the keyword <code>lg-g7</code>, followed by <kbd>Enter</kbd>.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find-item-sku iphone</code><br>
+Returns <code>IPhone X</code> and <code>IPhone 10</code>, which contains the SKUs <code>iphone-x</code> and <code>iphone-10</code> respectively.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="filtering-items-by-price-and-or-quantity-code-filter-item-code"><a class="link" href="#filtering-items-by-price-and-or-quantity-code-filter-item-code">Filtering items by price and/or quantity : <code>filter-item</code></a></h4>
+<div class="paragraph">
+<p>The <code>filter-item</code> command filters items that have prices and/or quantities within the conditions set in the keywords.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>filter-item [p/[&lt;][&gt;]PRICE] [q/[&lt;][&gt;]QUANTITY]</code></p>
+</div>
+<div class="paragraph">
+<p>For the <code>filter-item</code> command, do take note of the following points:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p><code>'&lt;'</code> represents <code>less than or equals to</code> e.g. <code>q/&lt;30</code> represents quantity less than or equals to 30</p>
+</li>
+<li>
+<p><code>'&gt;'</code> represents <code>more than or equals to</code> e.g. <code>p/&gt;500</code> represents price more than or equals to 500</p>
+</li>
+<li>
+<p>For price, both whole numbers and decimals are allowed.</p>
+</li>
+<li>
+<p>For quantity, only whole numbers are allowed.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can combine both conditions or use only one condition to filter your products.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following demonstrates entering the <code>filter-item</code> command in the command box with the condition <code>p/&lt;100</code>, followed by <kbd>Enter</kbd>.</p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>filter-item p/&gt;900</code><br>
+Returns <code>IPhone X</code> and <code>IPhone 10</code> which both have prices more than or equal to $900.</p>
+</li>
+<li>
+<p><code>filter-item q/&lt;100</code><br>
+Returns <code>LG G7</code> and <code>Samsung Note 9</code> which both have quantities less than or equal to 100.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
 <h4 id="deleting-an-item-code-delete-item-code"><a class="link" href="#deleting-an-item-code-delete-item-code">Deleting an item : <code>delete-item</code></a></h4>
 <div class="paragraph">
 <p>The <code>delete-item</code> command deletes the specified item from the inventory.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete-item INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>For the <code>delete-item</code> command, do take note of the following points:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -345,17 +522,20 @@ Deletes the 1st item in the results of the <code>find-item</code> command.</p>
 <div class="sect3">
 <h4 id="selecting-an-item-code-select-code"><a class="link" href="#selecting-an-item-code-select-code">Selecting an item : <code>select</code></a></h4>
 <div class="paragraph">
-<p>The <code>select</code> command selects the item identified by the index number used in the displayed inventory.</p>
+<p>The <code>select</code> command selects an item identified by the index number used in the displayed inventory list.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>select INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>For the <code>select</code> command, do take note of the following points:</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Selects the person and loads the Google search page the person at the specified <code>INDEX</code>.</p>
+<p>Selects the item and loads up the item&#8217;s details at the specified <code>INDEX</code>.</p>
 </li>
 <li>
 <p>The index refers to the index number shown in the displayed item list.</p>
@@ -577,4 +757,4 @@ Selects the 1st item in the results of the <code>find-item</code> command.</p>
 </div>
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 02:51:11 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-29 03:17:34 UTC</div></div></div></body></html>
