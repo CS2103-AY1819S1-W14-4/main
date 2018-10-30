@@ -155,7 +155,8 @@ It allows users to perform multiple inventory management tasks such as creating 
 <div class="sect3">
 <h4 id="adding-an-item-code-add-item-code"><a class="link" href="#adding-an-item-code-add-item-code">Adding an item : <code>add-item</code></a></h4>
 <div class="paragraph">
-<p>The <code>add-item</code> command adds an item to the inventory manager.</p>
+<p>The <code>add-item</code> command adds an item to the inventory manager.<br>
+This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add-item n/NAME p/PRICE q/QUANTITY s/SKU i/IMAGE_LOCATION [t/TAG]&#8230;&#8203;</code></p>
@@ -186,7 +187,8 @@ An item can have any number of tags (including 0)
 <div class="sect3">
 <h4 id="listing-all-items-code-list-item-code"><a class="link" href="#listing-all-items-code-list-item-code">Listing all items : <code>list-item</code></a></h4>
 <div class="paragraph">
-<p>The <code>list-item</code> command shows a list of all items in the inventory manager.</p>
+<p>The <code>list-item</code> command shows a list of all items in the inventory manager.<br>
+This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>list-item</code></p>
@@ -206,7 +208,8 @@ An item can have any number of tags (including 0)
 <div class="sect3">
 <h4 id="listing-all-items-with-low-quantities-code-list-low-qty-code"><a class="link" href="#listing-all-items-with-low-quantities-code-list-low-qty-code">Listing all items with low quantities : <code>list-low-qty</code></a></h4>
 <div class="paragraph">
-<p>The <code>list-low-qty</code> command shows a list of all items in the inventory manager that have low quantities.</p>
+<p>The <code>list-low-qty</code> command shows a list of all items in the inventory manager that have low quantities.<br>
+This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>list-low-qty</code></p>
@@ -234,7 +237,8 @@ of 10 or less will appear as can be seen in the screenshot below.</p>
 <h4 id="editing-an-item-code-edit-item-code"><a class="link" href="#editing-an-item-code-edit-item-code">Editing an item : <code>edit-item</code></a></h4>
 <div class="paragraph">
 <p>The <code>edit-item</code> command edits an existing item in the Inventory Manager.<br>
-It also edits all the purchase orders that contains the existing item to the edited item if the sku is changed.</p>
+It also edits all the purchase orders that contains the existing item to the edited item if the sku is changed.<br>
+This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>edit-item INDEX [n/NAME] [p/PRICE] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/TAG]&#8230;&#8203;</code></p>
@@ -284,7 +288,8 @@ Updates the image location and quantity of the 1st item to <code>docs/images/iph
 <div class="sect3">
 <h4 id="locating-items-by-name-code-find-item-code"><a class="link" href="#locating-items-by-name-code-find-item-code">Locating items by name : <code>find-item</code></a></h4>
 <div class="paragraph">
-<p>The <code>find-item</code> command finds items that have names containing any of the given keywords.</p>
+<p>The <code>find-item</code> command finds items that have names containing any of the given keywords.<br>
+This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>find-item KEYWORD [MORE_KEYWORDS]</code></p>
@@ -353,7 +358,8 @@ Returns <code>IPhone X</code> and <code>IPhone 10</code></p>
 <div class="sect3">
 <h4 id="locating-items-by-sku-code-find-item-sku-code"><a class="link" href="#locating-items-by-sku-code-find-item-sku-code">Locating items by SKU : <code>find-item-sku</code></a></h4>
 <div class="paragraph">
-<p>The <code>find-item-sku</code> command finds items that have SKUs containing any of the given keywords.</p>
+<p>The <code>find-item-sku</code> command finds items that have SKUs containing any of the given keywords.<br>
+This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>find-item-sku KEYWORD [MORE_KEYWORDS]</code></p>
@@ -412,7 +418,8 @@ Returns <code>IPhone X</code> and <code>IPhone 10</code>, which contains the SKU
 <div class="sect3">
 <h4 id="filtering-items-by-price-and-or-quantity-code-filter-item-code"><a class="link" href="#filtering-items-by-price-and-or-quantity-code-filter-item-code">Filtering items by price and/or quantity : <code>filter-item</code></a></h4>
 <div class="paragraph">
-<p>The <code>filter-item</code> command filters items that have prices and/or quantities within the conditions set in the keywords.</p>
+<p>The <code>filter-item</code> command filters items that have prices and/or quantities within the conditions set in the keywords.<br>
+This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>filter-item [p/[&lt;][&gt;]PRICE] [q/[&lt;][&gt;]QUANTITY]</code></p>
@@ -478,7 +485,8 @@ Returns <code>LG G7</code> and <code>Samsung Note 9</code> which both have quant
 <h4 id="deleting-an-item-code-delete-item-code"><a class="link" href="#deleting-an-item-code-delete-item-code">Deleting an item : <code>delete-item</code></a></h4>
 <div class="paragraph">
 <p>The <code>delete-item</code> command deletes the specified item from the inventory.<br>
-It also deletes all purchase orders that contains the deleted item.</p>
+It also deletes all purchase orders that contains the deleted item.<br>
+This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete-item INDEX</code></p>
@@ -524,7 +532,8 @@ Deletes the 1st item in the results of the <code>find-item</code> command.</p>
 <div class="sect3">
 <h4 id="selecting-an-item-code-select-code"><a class="link" href="#selecting-an-item-code-select-code">Selecting an item : <code>select</code></a></h4>
 <div class="paragraph">
-<p>The <code>select</code> command selects an item identified by the index number used in the displayed inventory list.</p>
+<p>The <code>select</code> command selects an item identified by the index number used in the displayed inventory list.<br>
+This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>select INDEX</code></p>
@@ -759,4 +768,4 @@ Selects the 1st item in the results of the <code>find-item</code> command.</p>
 </div>
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 13:24:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 15:21:06 UTC</div></div></div></body></html>
