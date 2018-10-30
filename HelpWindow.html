@@ -286,8 +286,10 @@ This super-admin account is a default administrator account.</p>
 <div class="sect3">
 <h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.1.5. Clearing all entries : <code>clear</code></a></h4>
 <div class="paragraph">
-<p>The <code>clear</code> command clears all entries from Inventory Manager.
-Format: <code>clear</code></p>
+<p>The <code>clear</code> command clears all entries from Inventory Manager.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect3">
@@ -345,7 +347,7 @@ Format: <code>clear</code></p>
 <div class="sect3">
 <h4 id="change-user-s-password-code-change-password-code"><a class="link" href="#change-user-s-password-code-change-password-code">4.2.2. Change user&#8217;s password : <code>change-password</code></a></h4>
 <div class="paragraph">
-<p>The <code>change-password</code> command updates a user information into the system with given new password.</p>
+<p>The <code>change-password</code> command updates a user information into the system with given new password.<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -373,7 +375,7 @@ Format: <code>clear</code></p>
 <div class="sect3">
 <h4 id="logout-from-the-system-code-logout-code"><a class="link" href="#logout-from-the-system-code-logout-code">4.2.3. Logout from the system : <code>logout</code></a></h4>
 <div class="paragraph">
-<p>The <code>logout</code> Logout the current users from the system.</p>
+<p>The <code>logout</code> Logout the current users from the system.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>logout</code></p>
@@ -578,7 +580,8 @@ of 10 or less will appear as can be seen in the screenshot below.</p>
 <div class="sect3">
 <h4 id="editing-an-item-code-edit-item-code"><a class="link" href="#editing-an-item-code-edit-item-code">4.4.4. Editing an item : <code>edit-item</code></a></h4>
 <div class="paragraph">
-<p>The <code>edit-item</code> command edits an existing item in the Inventory Manager.</p>
+<p>The <code>edit-item</code> command edits an existing item in the Inventory Manager.<br>
+It also edits all the purchase orders that contains the existing item to the edited item if the sku is changed.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>edit-item INDEX [n/NAME] [p/PRICE] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/TAG]&#8230;&#8203;</code></p>
@@ -821,7 +824,8 @@ Returns <code>LG G7</code> and <code>Samsung Note 9</code> which both have quant
 <div class="sect3">
 <h4 id="deleting-an-item-code-delete-item-code"><a class="link" href="#deleting-an-item-code-delete-item-code">4.4.8. Deleting an item : <code>delete-item</code></a></h4>
 <div class="paragraph">
-<p>The <code>delete-item</code> command deletes the specified item from the inventory.</p>
+<p>The <code>delete-item</code> command deletes the specified item from the inventory.<br>
+It also deletes all purchase orders that contains the deleted item.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete-item INDEX</code></p>
@@ -1013,30 +1017,13 @@ the inventory quantity deducted automatically. User will need to ensure that the
 <div class="sect2">
 <h3 id="purchase-orders-management"><a class="link" href="#purchase-orders-management">4.6. Purchase Orders Management</a></h3>
 <div class="paragraph">
-<p>The following commands are mainly used for staff and manager to manage purchase order.
-==== Generate purchase order : <code>add-po</code></p>
-</div>
-<div class="paragraph">
-<p>The <code>add-po</code> command adds a purchase order for an item.<br>
-The id of a purchase order and the date will be auto generated.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>generate-po i/SKU_NUMBER q/QUANTITY sp/SUPPLIER rd/REQUIRED_DATE [t/TAG]&#8230;&#8203;</code></p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>generate-po i/S7192DA q/1000 sp/Your Company rd/12-12-2018</code></p>
-</li>
-</ul>
+<p>The following commands are used to manage purchase order.</p>
 </div>
 <div class="sect3">
-<h4 id="list-all-purchase-order-code-list-po-code"><a class="link" href="#list-all-purchase-order-code-list-po-code">4.6.1. List all purchase order : <code>list-po</code></a></h4>
+<h4 id="listing-all-purchase-order-code-list-po-code"><a class="link" href="#listing-all-purchase-order-code-list-po-code">4.6.1. Listing all purchase order : <code>list-po</code></a></h4>
 <div class="paragraph">
-<p>The <code>list-po</code> command shows a list of all the purchase order.</p>
+<p>The <code>list-po</code> command shows a list of all the purchase order.<br>
+This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1051,30 +1038,14 @@ The id of a purchase order and the date will be auto generated.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list-approved-purchase-order-code-list-approved-po-code"><a class="link" href="#list-approved-purchase-order-code-list-approved-po-code">4.6.2. List approved purchase order : <code>list-approved-po</code></a></h4>
+<h4 id="adding-a-purchase-order-code-add-po-code"><a class="link" href="#adding-a-purchase-order-code-add-po-code">4.6.2. Adding a purchase order : <code>add-po</code></a></h4>
 <div class="paragraph">
-<p>The <code>list-approved-po</code> command shows a list of all the approved purchase order.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>list approved-po</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="list-pending-purchase-order-code-list-pending-po-code"><a class="link" href="#list-pending-purchase-order-code-list-pending-po-code">4.6.3. List pending purchase order : <code>list pending-po</code></a></h4>
-<div class="paragraph">
-<p>The <code>list-pending-po</code> command shows a list of all the pending purchase order.</p>
+<p>The <code>add-po</code> command adds a purchase order for an item based on it&#8217;s sku.<br>
+The default status of the added purchase order is 'PENDING'
+This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>list pending-po</code></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="approve-purchase-order-code-approve-po-code"><a class="link" href="#approve-purchase-order-code-approve-po-code">4.6.4. Approve purchase order : <code>approve-po</code></a></h4>
-<div class="paragraph">
-<p>The <code>approve-po</code> command approve a purchase order.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>approve id/PO_ID</code></p>
+<p>Format: <code>add-po s/SKU_NUMBER q/QUANTITY d/REQUIRED_DATE sp/SUPPLIER</code></p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -1082,15 +1053,58 @@ The id of a purchase order and the date will be auto generated.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>approve id/12</code></p>
+<p><code>add-po s/apple-iphone-xr q/1000 d/2018-12-12 sp/Apple Inc</code></p>
+</li>
+<li>
+<p><code>add-po s/samsung-s9 q/12 d/2101-12-12 sp/Samsung</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="reject-purchase-order-code-reject-po-code"><a class="link" href="#reject-purchase-order-code-reject-po-code">4.6.5. Reject purchase order : <code>reject-po</code></a></h4>
+<h4 id="approving-a-purchase-order-code-approve-po-code"><a class="link" href="#approving-a-purchase-order-code-approve-po-code">4.6.3. Approving a purchase order : <code>approve-po</code></a></h4>
 <div class="paragraph">
-<p>The <code>reject-po</code> command reject a purchase order along with a reason description.</p>
+<p>The <code>approve-po</code> command approves the specified purchase order from the purchase order list.<br>
+Upon approving, the quantity stated in the purchase order will be added to the designated item.<br>
+This command is available to the <strong>manager</strong> only.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>approve-po INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>For the <code>approve-po</code> command, do take note of the following points:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Approves the purchase order at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed inventory list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>The command can only be applied to purchase order with 'PENDING' status</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-po</code><br>
+<code>approve-po 1</code><br>
+Approves the first purchase order in the purchase order list.</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1098,18 +1112,149 @@ The id of a purchase order and the date will be auto generated.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 4.11. Deleting a specific purchase order by using it&#8217;s ID.</em></p>
+<p><em>Figure 4.11. Approves the specified purchase order by the it&#8217;s index in the list.</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="rejecting-a-purchase-order-code-reject-po-code"><a class="link" href="#rejecting-a-purchase-order-code-reject-po-code">4.6.4. Rejecting a purchase order : <code>reject-po</code></a></h4>
+<div class="paragraph">
+<p>The <code>reject-po</code> command rejects the specified purchase order from the purchase order list.<br>
+This command is available to the <strong>manager</strong> only.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>reject id/PO_ID d/DESCRIPTION</code></p>
+<p>Format: <code>reject-po INDEX</code></p>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p>For the <code>reject-po</code> command, do take note of the following points:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Rejects the purchase order at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed inventory list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>The command can only be applied to purchase order with 'PENDING' status</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>reject id/12 d/Only 100 amount is allowed</code></p>
+<p><code>list-po</code><br>
+<code>reject-po 1</code><br>
+Rejects the first purchase order in the purchase order list.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="editing-a-purchase-order-code-edit-po-code"><a class="link" href="#editing-a-purchase-order-code-edit-po-code">4.6.5. Editing a purchase order : <code>edit-po</code></a></h4>
+<div class="paragraph">
+<p>The <code>edit-po</code> command edits an existing purchase order in the Inventory Manager.<br>
+This command is available to <strong>members</strong> only.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>edit-po INDEX [q/QUANTITY] [d/REQUIRED_DATE] [sp/SUPPLIER]</code></p>
+</div>
+<div class="paragraph">
+<p>For the <code>edit-po</code> command, do take note of the following points:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Update the purchase order at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed purchase order list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>At least one of the optional fields must be provided.</p>
+</li>
+<li>
+<p>Existing values will be updated to the input values.</p>
+</li>
+<li>
+<p><em>SKU</em> of the item in the purchase order list is uneditable</p>
+</li>
+<li>
+<p>The command can only be applied to purchase order with 'PENDING' status</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit-po 2 q/100</code><br>
+Updates the quantity of the 3rd purchase order to <code>100</code>.</p>
+</li>
+<li>
+<p><code>edit-po 1 q/999 d/2018-12-12</code><br>
+Updates the quantity and required date of the 1st purchase order to <code>999</code> and <code>2018-12-12</code> respectively.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deleting-a-purchase-order-code-delete-po-code"><a class="link" href="#deleting-a-purchase-order-code-delete-po-code">4.6.6. Deleting a purchase order : <code>delete-po</code></a></h4>
+<div class="paragraph">
+<p>The <code>delete-po</code> command deletes the specified purchase order from the purchase order list.<br>
+This command is available to <strong>members</strong> only.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete-po INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>For the <code>delete-po</code> command, do take note of the following points:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the purchase order at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed purchase order list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-po</code><br>
+<code>delete-po 5</code><br>
+Deletes the 5th purchase order in the inventory.</p>
 </li>
 </ul>
 </div>
@@ -1121,7 +1266,7 @@ The id of a purchase order and the date will be auto generated.</p>
 <p>The following commands are mainly used to export and import data for report analysis.</p>
 </div>
 <div class="sect3">
-<h4 id="export-to-csv-code-export-csv-code"><a class="link" href="#export-to-csv-code-export-csv-code">4.7.1. Export to CSV: <code>export-csv</code></a></h4>
+<h4 id="exporting-data-to-csv-code-export-csv-code"><a class="link" href="#exporting-data-to-csv-code-export-csv-code">4.7.1. Exporting data to CSV: <code>export-csv</code></a></h4>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -1146,7 +1291,7 @@ The id of a purchase order and the date will be auto generated.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="export-sales-report-to-csv-code-export-csv-sales-code"><a class="link" href="#export-sales-report-to-csv-code-export-csv-sales-code">Export sales report to CSV: <code>export-csv-sales</code></a></h5>
+<h5 id="exporting-sales-report-to-csv-code-export-csv-sales-code"><a class="link" href="#exporting-sales-report-to-csv-code-export-csv-sales-code">Exporting sales report to CSV: <code>export-csv-sales</code></a></h5>
 <div class="paragraph">
 <p>The <code>export-csv-sales</code> command export the sales report in CSV format to the filepath given.</p>
 </div>
@@ -1155,7 +1300,7 @@ The id of a purchase order and the date will be auto generated.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="export-list-of-items-to-csv-code-export-csv-items-code"><a class="link" href="#export-list-of-items-to-csv-code-export-csv-items-code">Export list of items to CSV : <code>export-csv-items</code></a></h5>
+<h5 id="exporting-list-of-items-to-csv-code-export-csv-items-code"><a class="link" href="#exporting-list-of-items-to-csv-code-export-csv-items-code">Exporting list of items to CSV : <code>export-csv-items</code></a></h5>
 <div class="paragraph">
 <p>The <code>export-csv-items</code> command export the list of items in CSV format to the filepath given.</p>
 </div>
@@ -1172,7 +1317,7 @@ The id of a purchase order and the date will be auto generated.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="export-list-of-users-to-csv-code-export-csv-staffs-code"><a class="link" href="#export-list-of-users-to-csv-code-export-csv-staffs-code">Export list of users to CSV: <code>export-csv-staffs</code></a></h5>
+<h5 id="exporting-list-of-users-to-csv-code-export-csv-staffs-code"><a class="link" href="#exporting-list-of-users-to-csv-code-export-csv-staffs-code">Exporting list of users to CSV: <code>export-csv-staffs</code></a></h5>
 <div class="paragraph">
 <p>The <code>export-csv-staffs</code> command export the list of users in CSV format to the filepath given.</p>
 </div>
@@ -1181,7 +1326,7 @@ The id of a purchase order and the date will be auto generated.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="export-list-of-purchase-orders-to-csv-code-export-csv-orders-code"><a class="link" href="#export-list-of-purchase-orders-to-csv-code-export-csv-orders-code">Export list of purchase orders to CSV: <code>export-csv-orders</code></a></h5>
+<h5 id="exporting-list-of-purchase-orders-to-csv-code-export-csv-orders-code"><a class="link" href="#exporting-list-of-purchase-orders-to-csv-code-export-csv-orders-code">Exporting list of purchase orders to CSV: <code>export-csv-orders</code></a></h5>
 <div class="paragraph">
 <p>The <code>export-csv-orders</code> command export the list of purchase orders in CSV format to the filepath given.</p>
 </div>
@@ -1191,7 +1336,7 @@ The id of a purchase order and the date will be auto generated.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="export-entire-data-to-im-file-code-export-im-code"><a class="link" href="#export-entire-data-to-im-file-code-export-im-code">4.7.2. Export entire data to .im file: <code>export-im</code></a></h4>
+<h4 id="exporting-entire-data-to-im-file-code-export-im-code"><a class="link" href="#exporting-entire-data-to-im-file-code-export-im-code">4.7.2. Exporting entire data to .im file: <code>export-im</code></a></h4>
 <div class="paragraph">
 <p>(coming in v2.0)<br>
 The <code>export-im</code> command export the entire data to the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
@@ -1222,7 +1367,7 @@ Format: <code>export-im f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-from-csv-code-import-csv-code"><a class="link" href="#import-from-csv-code-import-csv-code">4.7.3. Import from CSV: <code>import-csv</code></a></h4>
+<h4 id="importing-data-from-csv-code-import-csv-code"><a class="link" href="#importing-data-from-csv-code-import-csv-code">4.7.3. Importing data from CSV: <code>import-csv</code></a></h4>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
@@ -1247,7 +1392,7 @@ Format: <code>export-im f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="import-sales-report-from-csv-code-import-csv-sales-code"><a class="link" href="#import-sales-report-from-csv-code-import-csv-sales-code">Import sales report from CSV: <code>import-csv-sales</code></a></h5>
+<h5 id="importing-sales-report-from-csv-code-import-csv-sales-code"><a class="link" href="#importing-sales-report-from-csv-code-import-csv-sales-code">Importing sales report from CSV: <code>import-csv-sales</code></a></h5>
 <div class="paragraph">
 <p>The <code>import-csv-sales</code> command imports the sales report in CSV format from the filepath given.</p>
 </div>
@@ -1256,7 +1401,7 @@ Format: <code>export-im f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="import-list-of-items-from-csv-code-import-csv-items-code"><a class="link" href="#import-list-of-items-from-csv-code-import-csv-items-code">Import list of items from CSV : <code>import-csv-items</code></a></h5>
+<h5 id="importing-list-of-items-from-csv-code-import-csv-items-code"><a class="link" href="#importing-list-of-items-from-csv-code-import-csv-items-code">Importing list of items from CSV : <code>import-csv-items</code></a></h5>
 <div class="paragraph">
 <p>The <code>import-csv-items</code> command imports the list of items in CSV format from the filepath given.</p>
 </div>
@@ -1265,7 +1410,7 @@ Format: <code>export-im f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="import-list-of-users-from-csv-code-import-csv-staffs-code"><a class="link" href="#import-list-of-users-from-csv-code-import-csv-staffs-code">Import list of users from CSV: <code>import-csv-staffs</code></a></h5>
+<h5 id="importing-list-of-users-from-csv-code-import-csv-staffs-code"><a class="link" href="#importing-list-of-users-from-csv-code-import-csv-staffs-code">Importing list of users from CSV: <code>import-csv-staffs</code></a></h5>
 <div class="paragraph">
 <p>The <code>import-csv-staffs</code> command imports the list of users in CSV format from the filepath given.</p>
 </div>
@@ -1274,7 +1419,7 @@ Format: <code>export-im f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="import-list-of-purchase-orders-from-csv-code-import-csv-orders-code"><a class="link" href="#import-list-of-purchase-orders-from-csv-code-import-csv-orders-code">Import list of purchase orders from CSV: <code>import-csv-orders</code></a></h5>
+<h5 id="importing-list-of-purchase-orders-from-csv-code-import-csv-orders-code"><a class="link" href="#importing-list-of-purchase-orders-from-csv-code-import-csv-orders-code">Importing list of purchase orders from CSV: <code>import-csv-orders</code></a></h5>
 <div class="paragraph">
 <p>The <code>import-csv-orders</code> command imports the list of purchase orders in CSV format from the filepath given.</p>
 </div>
@@ -1284,7 +1429,7 @@ Format: <code>export-im f/FILEPATH</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="import-entire-data-from-im-file-code-import-im-code"><a class="link" href="#import-entire-data-from-im-file-code-import-im-code">4.7.4. Import entire data from .im file: <code>import-im</code></a></h4>
+<h4 id="importing-entire-data-from-im-file-code-import-im-code"><a class="link" href="#importing-entire-data-from-im-file-code-import-im-code">4.7.4. Importing entire data from .im file: <code>import-im</code></a></h4>
 <div class="paragraph">
 <p>(coming in v2.0)<br>
 The <code>import-im</code> command imports the entire data from the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.</p>
@@ -1484,34 +1629,34 @@ The <code>import-im</code> command imports the entire data from the .im file spe
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Purchase Orders Management</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Generate Purchase Order</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List all Purchase Orders</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-po</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-po</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Add Purchase Order</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-po</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-po i/S7192DA q/1000 sp/Your Company rd/12-12-2018</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List All Purchase Orders</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-po</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-po</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List Approved Purchase Orders</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-approved-po</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-approved-po</code></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>List Pending Purchase Orders</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-pending-po</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>list-pending-po</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>add-po s/apple-iphone-xr q/1000 d/12-12-2018 sp/Apple Inc.</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Approve Purchase Order</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>approve-po</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>approve-po id/12</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>approve-po 2</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Reject Purchase Order</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>reject-po</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reject-po id/12 d/Only 100 amount is allowed</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>reject-po 3</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Edit Purchase Order</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-po</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>edit-po 3 q/100</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Delete Purchase Order</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-po</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>delete-po 1</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top" colspan="3"><p class="tableblock"><strong>Reports Management</strong></p></td>
@@ -1602,7 +1747,13 @@ an Excel software.</p>
 <p><strong>User</strong></p>
 </div>
 <div class="paragraph">
-<p>Refers to everyone that is using the application; Admin, Staff and Manager.</p>
+<p>Refers to everyone that is using the application; Non-member and member(Admin, Staff and Manager).</p>
+</div>
+<div class="paragraph">
+<p><strong>Member</strong></p>
+</div>
+<div class="paragraph">
+<p>Refers to Admin, Staff and Manager.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 09:34:32 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-30 09:50:09 UTC</div></div></div></body></html>
