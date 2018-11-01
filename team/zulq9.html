@@ -10,12 +10,15 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Inventory manager is for Small to Medium Enterprises (SMEs) who prefer to use a
-desktop app to manage their shop inventory. More importantly, it is optimized for those
-who prefer to work with a Command Line Interface (CLI) while still having the benefits of
-a Graphical User Interface (GUI). It will allow various users to perform multiple inventory
-management tasks such as creating sales, generating reports, creating purchase orders
-and more. The user interacts with it using a CLI, and it has a GUI created
+<p>Inventory Manager aims to tackle the chore of stock taking for Small to Medium Enterprises (SMEs). Designed to be easy
+to use, Inventory Manager gives you control over your business right from your keyboard.</p>
+</div>
+<div class="paragraph">
+<p>Inventory Manager allows various users to perform multiple inventory management tasks such as creating sales, generating reports, creating purchase orders and more.
+With user authentication put in place, it gives SMEs greater control over users' access to the application too.</p>
+</div>
+<div class="paragraph">
+<p>The user interacts with it using a Command Line Interface (CLI) through the Graphical User Interface (GUI) created
 with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 </div>
 </div>
@@ -26,51 +29,74 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>:</p>
+<p><strong>Major Enhancement</strong>: Added the <strong>Purchase Orders Management</strong> Feature</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows the user to generate purchase order in the application.
+When a purchase order is approved by the manager, Inventory Manager will automatically update the stocks in the inventory.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Justification: This feature <strong>allows user to restock item easily and manage the purchase order details efficiently</strong>.
+It also tackles the issue of the hassle of writing hard-copy purchase orders.</p>
+</li>
+<li>
+<p>Highlights: This feature is dependant of the item storage as purchase order can only be created on existing items.
+It is also tied with user management as only manager can approve/reject a purchase order.
+Deleting and editing an item must now update the relevant purchase orders as well.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor Enhancement</strong>: Rearranged the command box to the bottom of the Inventory Manager User Interface</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Justification: Provides a more user friendly visual for the user.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Project management:</p>
+<p>Project Management:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>=</p>
+<p>Maintained issue tracker, milestone, pull request approval and merger.</p>
+</li>
+<li>
+<p>Managed release <code>V1.3</code> on GitHub.</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Enhancements to existing features:
-<strong>*</strong></p>
 </li>
 <li>
 <p>Documentation:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Updated the user guides of Purchase Order Management component in Inventory Manager [#99]</p>
+</li>
+<li>
+<p>Updated the developer guides of Purchase Order Management component in Inventory Manager [#99]</p>
+</li>
+<li>
+<p>Updated the team&#8217;s about us page [#99]</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
 <p>Community:</p>
-</li>
-<li>
-<p>Tools:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Created an organization for team on Github</p>
-</li>
-<li>
-<p>Integrated a Github plugin (TravisCI) to the team repo</p>
+<p>Reviewed pull requests</p>
 </li>
 </ul>
 </div>
@@ -79,9 +105,6 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -353,23 +376,26 @@ Deletes the 5th purchase order in the inventory.</p>
 </tr>
 </tbody>
 </table>
-<h3 id="use-case-generate-po" class="discrete">Use case: Generate PO</h3>
+<h3 id="use-case-add-purchase-order" class="discrete">Use case: Add Purchase order</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list inventory</p>
+<p>User requests to list items.</p>
 </li>
 <li>
-<p>Inventory Manager shows a list of inventory</p>
+<p>Inventory Manager shows a list of items</p>
 </li>
 <li>
-<p>User requests to generate PO on the inventory with low amount</p>
+<p>User requests to add purchase order on an item based on it&#8217;s SKU</p>
 </li>
 <li>
-<p>Inventory Manager generates PO</p>
+<p>Inventory Manager adds purchase order</p>
+</li>
+<li>
+<p>Inventory Manager shows a successful purchase order added message</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -382,43 +408,67 @@ Deletes the 5th purchase order in the inventory.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>2. The item list is empty.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
-<li>
-<p>3a. The given command is invalid.</p>
+</ul>
+</div>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>3a1. Inventory Manager shows an error message.</p>
+<p>3a. The given command does not contain any item&#8217;s sku in the item list.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Inventory Manager shows an item not found message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
-<h3 id="use-case-approve-po" class="discrete">Use case: Approve PO</h3>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b. The given command format is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-approve-purchase-order" class="discrete">Use case: Approve Purchase order</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list PO</p>
+<p>User requests to list purchase orders</p>
 </li>
 <li>
-<p>Inventory Manager shows a list of PO</p>
+<p>Inventory Manager shows a list of purchase orders</p>
 </li>
 <li>
-<p>User requests to approve a specific PO in the list</p>
+<p>User requests to approve a specific pending Purchase order in the list</p>
 </li>
 <li>
-<p>Inventory Manager updates PO status</p>
+<p>Inventory Manager updates purchase order status</p>
+</li>
+<li>
+<p>Inventory Manager shows a successful approval message</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -431,13 +481,17 @@ Deletes the 5th purchase order in the inventory.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>2. The purchase order list is empty.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>3a. The given PO ID is invalid.</p>
+<p>3a. The given purchase order ID is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -445,29 +499,66 @@ Deletes the 5th purchase order in the inventory.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
 </div>
-<h3 id="use-case-reject-po" class="discrete">Use case: Reject PO</h3>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b. The given command format is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3c. The given purchase order status is not 'PENDING'.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3c1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-reject-purchase-order" class="discrete">Use case: Reject Purchase order</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list PO</p>
+<p>User requests to list purchase orders</p>
 </li>
 <li>
-<p>Inventory Manager shows a list of PO</p>
+<p>Inventory Manager shows a list of purchase orders</p>
 </li>
 <li>
-<p>User requests to reject a specific PO in the list</p>
+<p>User requests to reject a specific pending Purchase order in the list</p>
 </li>
 <li>
-<p>Inventory Manager updates PO status</p>
+<p>Inventory Manager updates purchase order status</p>
+</li>
+<li>
+<p>Inventory Manager shows a successful rejection message</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -480,13 +571,17 @@ Deletes the 5th purchase order in the inventory.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>2. The purchase order list is empty.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
 <li>
-<p>3a. The given PO ID is invalid.</p>
+<p>3a. The given purchase order ID is invalid.</p>
 <div class="ulist none">
 <ul class="none">
 <li>
@@ -499,20 +594,374 @@ Deletes the 5th purchase order in the inventory.</p>
 </div>
 </li>
 </ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b. The given command format is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3c. The given purchase order status is not 'PENDING'.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3c1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-edit-purchase-order" class="discrete">Use case: Edit Purchase order</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list purchase orders</p>
+</li>
+<li>
+<p>Inventory Manager shows a list of purchase orders</p>
+</li>
+<li>
+<p>User requests to edit a specific purchase order in the list</p>
+</li>
+<li>
+<p>Inventory Manager edits the purchase order</p>
+</li>
+<li>
+<p>Inventory Manager shows a successful edit message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2. The purchase order list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b. The given command format is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3c. The given purchase order status is not 'PENDING'.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3c1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-delete-purchase-order" class="discrete">Use case: Delete Purchase order</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list purchase orders</p>
+</li>
+<li>
+<p>Inventory Manager shows a list of purchase orders</p>
+</li>
+<li>
+<p>User requests to delete a specific purchase order in the list</p>
+</li>
+<li>
+<p>Inventory Manager deletes the purchase order</p>
+</li>
+<li>
+<p>Inventory Manager shows a successful deletion message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2. The purchase order list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a. The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b. The given command format is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b1. Inventory Manager shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="purchase-order-management"><a class="link" href="#purchase-order-management">Purchase Order Management</a></h3>
+<div class="paragraph">
+<p><strong>Purchase order management</strong> is introduced in Inventory manager to <strong>allow user to restock item easily and manage the purchase order details efficiently.</strong></p>
+</div>
+<div class="paragraph">
+<p>The purchase order details includes the <em>item&#8217;s SKU</em>, <em>restock quantity</em>, <em>required date</em> and <em>supplier</em>.<br>
+Purchase order can only be added if it matches the item&#8217;s SKU.
+Newly added purchase order comes with a default <code>PENDING</code> status which subsequently can be <em>edited</em>, <em>approved</em>, <em>rejected</em> and <em>deleted</em>.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="sect4">
+<h5 id="model-component"><a class="link" href="#model-component">Model Component</a></h5>
+<div class="paragraph">
+<p>Purchase orders are maintained in the Model in a NonUniquePurchaseOrderList, allowing non unique purchase order among the stored individual purchase orders.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ComingSoon.png" alt="ComingSoon" width="200">
+</div>
+<div class="title">Figure 1. UML diagram showing representation of NonUniquePurchaseOrderList in Inventory Manager.</div>
+</div>
+<div class="paragraph">
+<p>Individual purchase order are represented by the <code>PurchaseOrder</code> object with attributes <code>Sku</code>, <code>Quantity</code>, <code>RequiredDate</code> and <code>Supplier</code>. The class relationship is shown
+in Figure 11 below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ComingSoon.png" alt="ComingSoon" width="200">
+</div>
+<div class="title">Figure 2. UML diagram showing representation of Purchase Order in Inventory Manager.</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="storage-component"><a class="link" href="#storage-component">Storage Component</a></h5>
+<div class="paragraph">
+<p>Purchase orders are stored in <code>XmlAdaptedPurchaseOrder</code> objects, which maintain a class relationship as shown in this diagram.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ComingSoon.png" alt="ComingSoon" width="200">
+</div>
+<div class="title">Figure 3. PurchaseOrder objects are saved using XmlAdaptedJPurchaseOrder objects as shown above.</div>
+</div>
+<div class="paragraph">
+<p>An example purchase order stored in this format is reproduced below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;purchaseOrders&gt;
+                &lt;sku&gt;apple-iphone-xr&lt;/sku&gt;
+                &lt;quantity&gt;1000&lt;/quantity&gt;
+                &lt;reqDate&gt;2018-12-12&lt;/reqDate&gt;
+                &lt;supplier&gt;Apple Inc.&lt;/supplier&gt;
+                &lt;status&gt;APPROVED&lt;/status&gt;
+&lt;/purchaseOrders&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="ui-component"><a class="link" href="#ui-component">UI Component</a></h5>
+<div class="paragraph">
+<p>The main window contains a ListPanel, which is interchangeable to display any list based on the command entered.
+Purchase order list is shown in the ListPanel upon executing <code>list-po</code>.
+Individual purchase orders are represented using PurchaseOrderCards that contains the attributes fields using Labels and flowPanes.
+An example of the a purchase order card is shown in figure 13 below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ComingSoon.png" alt="ComingSoon" width="200">
+</div>
+<div class="title">Figure 4. Example of the a purchase order card in Inventory Manager UI.</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="logic-component"><a class="link" href="#logic-component">Logic Component</a></h5>
+<div class="paragraph">
+<p>The following commands were added to handle the purchase order:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list-po</code> : List all purchase orders</p>
+</li>
+<li>
+<p><code>add-po</code> : Add a purchase order</p>
+</li>
+<li>
+<p><code>delete-po</code> : Delete a purchase order</p>
+</li>
+<li>
+<p><code>approve-po</code> : Approve a purchase order</p>
+</li>
+<li>
+<p><code>reject-po</code> : Reject a purchase order</p>
+</li>
+<li>
+<p><code>edit-po</code> : Edit a purchase order</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following diagram details the class relationship for the Purchase order Commands.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ComingSoon.png" alt="ComingSoon" width="200">
+</div>
+<div class="title">Figure 5. UML Diagram depicting the class relationship between command classes.</div>
+</div>
+<div class="paragraph">
+<p>Operations performed on purchase orders follow the sequence of operations described in the diagram below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Command input is received by the UI component.</p>
+</li>
+<li>
+<p>The command execution is handled by the Logic component.</p>
+</li>
+<li>
+<p>The changes to data are effected by the Model component.</p>
+</li>
+<li>
+<p>The new Inventory Manager data is saved by the Storage component.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This sequence of events is summarized in the following sequence diagram.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ComingSoon.png" alt="ComingSoon" width="200">
+</div>
+<div class="title">Figure 6. A high level sequence diagram showing events triggered by the <code>add-po</code> command.</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Where <code>updateItem</code> is executed<br>
+There are various places where <code>updateItem</code> can be executed. The pros and cons for each option is shown below.</p>
+</div>
+<div class="paragraph">
+<p><strong>Alternative 1 (current choice):</strong> Executed at Logic<br>
+<strong>Pros:</strong> Easy to implement.<br>
+<strong>Cons:</strong> Direct calling of <code>Model.approvePurchaseOrder()</code> will not be validated.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Alternative 2:</strong> Executed at Model<br>
+<strong>Pros:</strong> Ensures that all entries are validated before sale can be created.<br>
+<strong>Cons:</strong><code>Model.approvePurchaseOrder()</code> will need to access inventory to perform validations..</p>
+</div>
+<div class="paragraph">
+<p>Based on the above pros and cons, the first option is chosen as it is easier to implement, and it does not require
+<code>Model.approvePurchaseOrder()</code> to read the inventory and perform validations.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="project-synchronus"><a class="link" href="#project-synchronus">PROJECT: SynchroNUS</a></h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>|==
-|_This project is the project I did during the summer holiday for SOC Orbital Programme.
-|==</p>
-</div>
-<div class="paragraph">
-<p>include::https://github.com/zulq9/Orbital2018_SynchroNUS</p>
-</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This project is the project I did during the summer holiday for SOC Orbital Programme.</p></td>
+</tr>
+</tbody>
+</table>
 <hr>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-10-31 11:59:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-01 02:36:19 UTC</div></div></div></body></html>
