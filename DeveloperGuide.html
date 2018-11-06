@@ -29,12 +29,13 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#undo-redo-feature">3.1. Undo/Redo feature</a></li>
-<li><a href="#users-creation">3.2. Users Creation</a></li>
-<li><a href="#sale-order-creation">3.3. Sale Order Creation</a></li>
-<li><a href="#logging">3.4. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
-<li><a href="#export-csv-mechanism">3.6. Export CSV mechanism</a></li>
-<li><a href="#purchase-order-management">3.7. Purchase Order Management</a></li>
+<li><a href="#sale-order-creation">3.2. Sale Order Creation</a></li>
+<li><a href="#logging">3.3. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.4. Configuration</a></li>
+<li><a href="#authentication">3.5. Authentication</a></li>
+<li><a href="#users-creation">3.6. Users Creation</a></li>
+<li><a href="#export-csv-mechanism">3.7. Export CSV mechanism</a></li>
+<li><a href="#purchase-order-management">3.8. Purchase Order Management</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a>
@@ -80,7 +81,7 @@
 <li><a href="#instructions-for-manual-testing">Appendix I: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">I.1. Launch and Shutdown</a></li>
-<li><a href="#authentication">I.2. Authentication</a></li>
+<li><a href="#authentication-2">I.2. Authentication</a></li>
 <li><a href="#user-management">I.3. User Management</a></li>
 <li><a href="#deleting-a-person">I.4. Deleting a person</a></li>
 <li><a href="#saving-data">I.5. Saving data</a></li>
@@ -820,102 +821,20 @@ If the <code>currentStatePointer</code> is at index <code>inventoryStateList.siz
 </div>
 </div>
 <div class="sect2">
-<h3 id="users-creation"><a class="link" href="#users-creation">3.2. Users Creation</a></h3>
-<div class="paragraph">
-<p>Creating a user will have the staff&#8217;s account created. Below will describe how this
-feature is implemented in Inventory Manager.</p>
-</div>
-<div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">3.2.1. Implementation</a></h4>
-<div class="paragraph">
-<p>The creation of user is handled by <code>AddStaffCommand</code>. The use of it will trigger <code>Model#addUser</code>,
-which will add the user into the Inventory Manager. However, for <code>AddStaffCommand#execute</code> to be successful,
-there are two conditions which needs to be met.</p>
-</div>
-<div class="sect4">
-<h5 id="conditions"><a class="link" href="#conditions">Conditions</a></h5>
-<div class="paragraph">
-<p>The following two conditions must be met before.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Current user who are executing the command must be a user with admin role.</p>
-</li>
-<li>
-<p>The staff with same identity which are username and password cannot exists in the staff list.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><code>AddStaffCommand#execute</code> will perform the validation before proceeding. If any of the above validation fails,
-<code>CommandException</code> will be thrown and it will not call <code>Model#addStaff</code>.</p>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-consideration"><a class="link" href="#design-consideration">3.2.2. Design Consideration</a></h4>
-<div class="paragraph">
-<p>There are a few design considerations when creating a staff. Below will explain the various considerations and the
-choices made.</p>
-</div>
-<div class="sect4">
-<h5 id="aspect-where-code-adduser-code-executes"><a class="link" href="#aspect-where-code-adduser-code-executes">Aspect: Where <code>addUser</code> executes</a></h5>
-<div class="paragraph">
-<p>There are various places where <code>addUser</code> can be executed. The pros and cons for each option is shown below.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Executed at Logic<br></p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Easy to implement<br></p>
-</li>
-<li>
-<p>Cons: Direct calling of <code>Model#addUser</code> will not be validated.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Executed at Model</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Ensures that all entries are validated before sale can be created.<br></p>
-</li>
-<li>
-<p>Cons: <code>Model#addUser</code> will need to access staff list to perform validations.</p>
-</li>
-</ul>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Based on the above pros and cons, the first option is chosen as it is easier to implement, and it does not require
-<code>Model#addUser</code> to read the inventory and perform validations.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sale-order-creation"><a class="link" href="#sale-order-creation">3.3. Sale Order Creation</a></h3>
+<h3 id="sale-order-creation"><a class="link" href="#sale-order-creation">3.2. Sale Order Creation</a></h3>
 <div class="paragraph">
 <p>Creating a sale order will have the item&#8217;s quantity automatically deducted. Below will describe how this
 feature is implemented in Inventory Manager.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">3.3.1. Implementation</a></h4>
+<h4 id="implementation-2"><a class="link" href="#implementation-2">3.2.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The creation of sale order is handled by <code>AddSaleCommand</code>. The use of it will trigger <code>Model#updateItem</code>,
 which will update the item&#8217;s quantity. However, for <code>AddSaleCommand#execute</code> to be successful,
 there are two conditions which needs to be met.</p>
 </div>
 <div class="sect4">
-<h5 id="conditions-2"><a class="link" href="#conditions-2">Conditions</a></h5>
+<h5 id="conditions"><a class="link" href="#conditions">Conditions</a></h5>
 <div class="paragraph">
 <p>The following two conditions must be met before.</p>
 </div>
@@ -936,7 +855,7 @@ there are two conditions which needs to be met.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-consideration-2"><a class="link" href="#design-consideration-2">3.3.2. Design Consideration</a></h4>
+<h4 id="design-consideration"><a class="link" href="#design-consideration">3.2.2. Design Consideration</a></h4>
 <div class="paragraph">
 <p>There are a few design considerations when creating a sale order. Below will explain the various considerations and the
 choices made.</p>
@@ -984,14 +903,14 @@ choices made.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.4. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">3.3. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.5, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.4, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1022,13 +941,149 @@ choices made.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.5. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.4. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g App name, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="export-csv-mechanism"><a class="link" href="#export-csv-mechanism">3.6. Export CSV mechanism</a></h3>
+<h3 id="authentication"><a class="link" href="#authentication">3.5. Authentication</a></h3>
+<div class="paragraph">
+<p><strong>Authentication is introduced in Inventory Management to *allow users to login to the system to perform their inventory
+management tasks</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Authentication component is to help the SMEs to strengthen their security on the data in the inventory manager. It is also
+to prevent any unidentified users to be able to access the application.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">3.5.1. Implementation</a></h4>
+<div class="sect4">
+<h5 id="logic-component"><a class="link" href="#logic-component">Logic Component</a></h5>
+<div class="paragraph">
+<p>Authentication will be largely involved in the Logic Component. This is because logic component will identify whether a user of the
+application is authenticated and authorized to execute the commands.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="model-component"><a class="link" href="#model-component">Model Component</a></h5>
+<div class="paragraph">
+<p>Authentication has a #UserSession stores in the Model Component of the system. This is due to this component has to be largely relied on
+when the commands are executed.</p>
+</div>
+<div class="paragraph">
+<p>The user session are represented by <code>staff</code> and <code>isLogin</code>.
+User session can only be created after the user executed the login command and authenticated his/her identity.
+Newly created user session object comes with a <code>isLogin</code> status with true which indicates the user is logged in.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.5.2. Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Where <code>authenticateUser</code> is executed<br>
+There are various places where <code>authenticateUser</code> can be executed. The pros and cons for each option is shown below.</p>
+</div>
+<div class="paragraph">
+<p><strong>Alternative 1 (current choice):</strong> Executed at Logic<br>
+<strong>Pros:</strong> Easy to implement.<br>
+<strong>Cons:</strong> Direct calling of <code>Model.authenticateUser()</code> will not be validated.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Alternative 2:</strong> Executed at Model<br>
+<strong>Pros:</strong> Ensures that all entries are validated before sale can be created.<br>
+<strong>Cons:</strong><code>Model.authenticateUser()</code> will need to access inventory to perform validations..</p>
+</div>
+<div class="paragraph">
+<p>Based on the above pros and cons, the first option is chosen as it is easier to implement, and it does not require
+<code>Model.authenticateUser()</code> to read the inventory and perform validations.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="users-creation"><a class="link" href="#users-creation">3.6. Users Creation</a></h3>
+<div class="paragraph">
+<p>Creating a user will have the staff&#8217;s account created. Below will describe how this
+feature is implemented in Inventory Manager.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-4"><a class="link" href="#implementation-4">3.6.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The creation of user is handled by <code>AddStaffCommand</code>. The use of it will trigger <code>Model#addUser</code>,
+which will add the user into the Inventory Manager. However, for <code>AddStaffCommand#execute</code> to be successful,
+there are two conditions which needs to be met.</p>
+</div>
+<div class="sect4">
+<h5 id="conditions-2"><a class="link" href="#conditions-2">Conditions</a></h5>
+<div class="paragraph">
+<p>The following two conditions must be met before.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Current user who are executing the command must be a user with admin role.</p>
+</li>
+<li>
+<p>The staff with same identity which are username and password cannot exists in the staff list.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><code>AddStaffCommand#execute</code> will perform the validation before proceeding. If any of the above validation fails,
+<code>CommandException</code> will be thrown and it will not call <code>Model#addStaff</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-consideration-2"><a class="link" href="#design-consideration-2">3.6.2. Design Consideration</a></h4>
+<div class="paragraph">
+<p>There are a few design considerations when creating a staff. Below will explain the various considerations and the
+choices made.</p>
+</div>
+<div class="sect4">
+<h5 id="aspect-where-code-add-staff-code-executes"><a class="link" href="#aspect-where-code-add-staff-code-executes">Aspect: Where <code>add-staff</code> executes</a></h5>
+<div class="paragraph">
+<p>There are various places where <code>add-staff</code> can be executed. The pros and cons for each option is shown below.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Executed at Logic<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement<br></p>
+</li>
+<li>
+<p>Cons: Direct calling of <code>Model#addStaff</code> will not be validated.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Executed at Model</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Ensures that all entries are validated before sale can be created.<br></p>
+</li>
+<li>
+<p>Cons: <code>Model#addStaff</code> will need to access staff list to perform validations.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Based on the above pros and cons, the first option is chosen as it is easier to implement, and it does not require
+<code>Model#addUser</code> to read the inventory and perform validations.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="export-csv-mechanism"><a class="link" href="#export-csv-mechanism">3.7. Export CSV mechanism</a></h3>
 <div class="paragraph">
 <p>In order to enable users to have further analysis on the data in <strong>Inventory Manager</strong>,
 we support several <code>export</code> commands to export the data in <strong>Inventory Manager</strong> to CSV files.
@@ -1040,7 +1095,7 @@ We are using <code>ExportCsvItemsCommand</code>, <code>ExportCsvSalesCommand</co
 to retrieve external data and where to validate the given file path.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">3.6.1. Implementation</a></h4>
+<h4 id="implementation-5"><a class="link" href="#implementation-5">3.7.1. Implementation</a></h4>
 <div class="sect4">
 <h5 id="data-access"><a class="link" href="#data-access">Data Access</a></h5>
 <div class="paragraph">
@@ -1086,7 +1141,7 @@ for <code>ExportCsvItemsCommand</code> to illustrate how the <code>export</code>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.6.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.7.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-code-export-code-commands-interact-with-code-storage-code-component-and-code-logic-code-component"><a class="link" href="#aspect-how-code-export-code-commands-interact-with-code-storage-code-component-and-code-logic-code-component">Aspect: How <code>export</code> commands interact with <code>Storage</code> Component and <code>Logic</code> Component</a></h5>
 <div class="ulist">
@@ -1174,7 +1229,7 @@ Need to raise an additional event for invalid file path.<br></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="purchase-order-management"><a class="link" href="#purchase-order-management">3.7. Purchase Order Management</a></h3>
+<h3 id="purchase-order-management"><a class="link" href="#purchase-order-management">3.8. Purchase Order Management</a></h3>
 <div class="paragraph">
 <p><strong>Purchase order management</strong> is introduced in Inventory manager to <strong>allow user to restock item easily and manage the purchase order details efficiently.</strong></p>
 </div>
@@ -1184,9 +1239,9 @@ Purchase order can only be added if it matches the item&#8217;s SKU.
 Newly added purchase order comes with a default <code>PENDING</code> status which subsequently can be <em>edited</em>, <em>approved</em>, <em>rejected</em> and <em>deleted</em>.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">3.7.1. Implementation</a></h4>
+<h4 id="implementation-6"><a class="link" href="#implementation-6">3.8.1. Implementation</a></h4>
 <div class="sect4">
-<h5 id="model-component"><a class="link" href="#model-component">Model Component</a></h5>
+<h5 id="model-component-2"><a class="link" href="#model-component-2">Model Component</a></h5>
 <div class="paragraph">
 <p>Purchase orders are maintained in the Model in a NonUniquePurchaseOrderList, allowing non unique purchase order among the stored individual purchase orders.</p>
 </div>
@@ -1249,7 +1304,7 @@ An example of the a purchase order card is shown in figure 13 below.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="logic-component"><a class="link" href="#logic-component">Logic Component</a></h5>
+<h5 id="logic-component-2"><a class="link" href="#logic-component-2">Logic Component</a></h5>
 <div class="paragraph">
 <p>The following commands were added to handle the purchase order:</p>
 </div>
@@ -1315,7 +1370,7 @@ An example of the a purchase order card is shown in figure 13 below.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.7.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.8.2. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Where <code>updateItem</code> is executed<br>
 There are various places where <code>updateItem</code> can be executed. The pros and cons for each option is shown below.</p>
@@ -3945,7 +4000,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="authentication"><a class="link" href="#authentication">I.2. Authentication</a></h3>
+<h3 id="authentication-2"><a class="link" href="#authentication-2">I.2. Authentication</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4153,4 +4208,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-05 13:49:25 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-06 12:01:26 UTC</div></div></div></body></html>
