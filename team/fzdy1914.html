@@ -3,54 +3,95 @@
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html"><img src="../images/InventoryManagerLogo.png" alt="Inventory manager logo"></a><a class="navbar-brand" href="../index.html">Inventory Manager</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/CS2103-AY1819S1-W14-4/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Wang Chao  - Project Portfolio</h1></div><div id="content"><div class="sect1">
 <h2 id="project-inventory-manager"><a class="link" href="#project-inventory-manager">PROJECT: Inventory Manager</a></h2>
 <div class="sectionbody">
-<hr>
+
 </div>
 </div>
 <div class="sect1">
-<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<h2 id="overview"><a class="link" href="#overview">1. Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Inventory manager is for Small to Medium Enterprises (SMEs) who prefer to use a
+<p>This portfolio aims to showcases my ability to work in a software development team. It also documents
+my contribution to the project of our team, the <strong>Inventory Manager</strong>. There are mainly two part of my contributions,
+ codes and documentations.</p>
+</div>
+<div class="paragraph">
+<p><strong>Inventory Manager</strong> is for Small to Medium Enterprises (SMEs) who prefer to use a
 desktop app to manage their shop inventory. More importantly, it is optimized for those
 who prefer to work with a Command Line Interface (CLI) while still having the benefits of
-a Graphical User Interface (GUI). It will allow various users to perform multiple inventory
-management tasks such as creating sales, generating reports, creating purchase orders
-and more. The user interacts with it using a CLI, and it has a GUI created
-with JavaFX. It is written in Java, and has about 10 kLoC.</p>
+a Graphical User Interface (GUI). It has mainly three core features, including item management,
+sales management and reporting module. It also has two other special features including
+user authentication and purchase order management.</p>
+</div>
+<div class="paragraph">
+<p>For <strong>Inventory Manager</strong>, I have designed and implemented the <strong>Reporting Module</strong> of the product.
+It mainly provides the users with the ability to export and import the data of  <strong>Inventory Manager</strong> to
+and from the outer system.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">2. Summary of contributions</a></h2>
 <div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Below is a summary of the contributions I have made to the <strong>Inventory Manager</strong>.</em></p></td>
+</tr>
+</tbody>
+</table>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: Reporting Module of Inventory Manager.</p>
+<p><strong>Major enhancement</strong>: Added the <strong>Reporting Module</strong> of <strong>Inventory Manager</strong>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: This feature allows the user to to export and import data for report analysis.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Justification: This feature is critical for <strong>Inventory Manager</strong>. Without this feature, users will not be able to have further analysis of the data using other applications.</p>
+</li>
+<li>
+<p>Highlights: The file format that this feature support is CSV file, which can be interacted directly with <strong>Excel</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Improved the structure of existing Model and Storage Component.</p>
+</li>
+<li>
+<p>Added the table views of different elements in the <strong>Inventory Manager</strong>.</p>
+</li>
+<li>
+<p>Added support for undo/redo feature for the <strong>Reporting Module</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&amp;search=fzdy1914">Reposense</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Minor enhancements:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Autolock of Inventory Manager</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
 <p>Project management:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Call for meetings for the project.</p>
+<p>Called for several meetings for the project.</p>
+</li>
+<li>
+<p>Managed release <code>v1.3.1</code> on GitHub [<a href="https://github.com/CS2103-AY1819S1-W14-4/main/releases/tag/v1.3.1">GitHub</a>]</p>
 </li>
 </ul>
 </div>
@@ -60,20 +101,30 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Did some change to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Added the section on <strong>Reporting Module</strong> to the User Guide (Pull requests <a href="https://github.com/CS2103-AY1819S1-W14-4/main/pull/18">#18</a>)</p>
+</li>
+<li>
+<p>Added the use cases of <strong>Reporting Module</strong> to the Developer Guide (Pull requests <a href="https://github.com/CS2103-AY1819S1-W14-4/main/pull/18">#18</a>)</p>
+</li>
+<li>
+<p>Added the implementation of Export Command to the Developer Guide (Pull requests <a href="https://github.com/CS2103-AY1819S1-W14-4/main/pull/77">#77</a>)</p>
+</li>
+<li>
+<p>Edited the existing implementation of undo/redo feature in the Developer Guide
+(Pull requests <a href="https://github.com/CS2103-AY1819S1-W14-4/main/pull/191">#191</a>)</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
 <p>Community:</p>
-</li>
-<li>
-<p>Tools:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Be in charge of JavaFX and UI</p>
+<p>Reviewed Pull Requests of my teammates[<a href="https://github.com/CS2103-AY1819S1-W14-4/main/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3Afzdy1914">Pull Requests</a>]</p>
+</li>
+<li>
+<p>Reported bugs for other teams in the class [<a href="https://github.com/CS2103-AY1819S1-T09-3/main/issues?utf8=%E2%9C%93&amp;q=is%3Aissue+is%3Aopen+Piconso">Issues</a>]</p>
 </li>
 </ul>
 </div>
@@ -86,7 +137,7 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">3. Contributions to the User Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -99,19 +150,19 @@ with JavaFX. It is written in Java, and has about 10 kLoC.</p>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="reports-management"><a class="link" href="#reports-management">Reports Management</a></h3>
+<h3 id="reporting-module"><a class="link" href="#reporting-module">3.1. Reporting Module</a></h3>
 <div class="paragraph">
 <p>The following commands are mainly used to export and import data for report analysis.<br>
-All the command in this section is available to <strong>admins</strong> only.<br></p>
+All the commands in this section are available to <strong>admin</strong> only.<br></p>
 </div>
 <div class="sect3">
-<h4 id="exporting-data-to-csv-code-export-csv-code"><a class="link" href="#exporting-data-to-csv-code-export-csv-code">Exporting data to CSV: <code>export-csv</code></a></h4>
+<h4 id="exporting-data-to-csv-code-export-csv-code"><a class="link" href="#exporting-data-to-csv-code-export-csv-code">3.1.1. Exporting data to CSV: <code>export-csv</code></a></h4>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Export the data to the file specified by <code>FILEPATH</code>.</p>
+<p>This command exports the data to the file specified by <code>FILEPATH</code>.</p>
 </li>
 <li>
 <p><code>FILEPATH</code> must end with an extension of <code>.csv</code>.</p>
@@ -124,6 +175,12 @@ All the command in this section is available to <strong>admins</strong> only.<br
 </li>
 <li>
 <p>The parent directories will be created if they do not exist.</p>
+</li>
+<li>
+<p>A table view of the exported data will appear.</p>
+</li>
+<li>
+<p>CSV files can be opened and edited by Excel.</p>
 </li>
 </ul>
 </div>
@@ -132,87 +189,71 @@ All the command in this section is available to <strong>admins</strong> only.<br
 <div class="sect4">
 <h5 id="exporting-sales-report-to-csv-code-export-csv-sales-code"><a class="link" href="#exporting-sales-report-to-csv-code-export-csv-sales-code">Exporting sales report to CSV: <code>export-csv-sales</code></a></h5>
 <div class="paragraph">
-<p>The <code>export-csv-sales</code> command export the sales report in CSV format to the filepath given.</p>
+<p>The <code>export-csv-sales</code> command exports the sales report in CSV format to the file path given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>export-csv-sales f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>export-csv-sales f/E:/out/sales.csv</code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="exporting-list-of-items-to-csv-code-export-csv-items-code"><a class="link" href="#exporting-list-of-items-to-csv-code-export-csv-items-code">Exporting list of items to CSV : <code>export-csv-items</code></a></h5>
 <div class="paragraph">
-<p>The <code>export-csv-items</code> command export the list of items in CSV format to the filepath given.</p>
+<p>The <code>export-csv-items</code> command exports the list of items in CSV format to the file path given.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>export-csv-items f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>export-csv-items f/E:/out/items.csv</code></p>
+</div>
+<div class="paragraph">
+<p>Following screenshot showcases what will happen when you enter the correct <code>export-csv-items</code> command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/doc-export-csv-item.png" alt="doc export csv item" width="790">
+<img src="../images/doc-export-csv-items.png" alt="doc export csv items" width="700">
 </div>
 </div>
 <div class="paragraph">
 <p><em>Figure 4.13. Export successful prompt will be shown upon completion of export.</em></p>
 </div>
-<div class="paragraph">
-<p>Format: <code>export-csv-items f/FILEPATH</code></p>
-</div>
 </div>
 <div class="sect4">
 <h5 id="exporting-list-of-users-to-csv-code-export-csv-staffs-code"><a class="link" href="#exporting-list-of-users-to-csv-code-export-csv-staffs-code">Exporting list of users to CSV: <code>export-csv-staffs</code></a></h5>
 <div class="paragraph">
-<p>The <code>export-csv-staffs</code> command export the list of users in CSV format to the filepath given.</p>
+<p>The <code>export-csv-staffs</code> command exports the list of users in CSV format to the file path given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>export-csv-staffs f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>export-csv-staffs f/E:/out/staffs.csv</code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="exporting-list-of-purchase-orders-to-csv-code-export-csv-orders-code"><a class="link" href="#exporting-list-of-purchase-orders-to-csv-code-export-csv-orders-code">Exporting list of purchase orders to CSV: <code>export-csv-orders</code></a></h5>
 <div class="paragraph">
-<p>The <code>export-csv-orders</code> command export the list of purchase orders in CSV format to the filepath given.</p>
+<p>The <code>export-csv-orders</code> command exports the list of purchase orders in CSV format to the filepath given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>export-csv-orders f/FILEPATH</code></p>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="exporting-entire-data-to-im-file-code-export-im-code"><a class="link" href="#exporting-entire-data-to-im-file-code-export-im-code">Exporting entire data to .im file: <code>export-im</code></a></h4>
 <div class="paragraph">
-<p>(coming in v2.0)<br>
-The <code>export-im</code> command export the entire data to the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
-Format: <code>export-im f/FILEPATH</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The .im is a format that the <strong>Inventory Manager</strong> use to tranfer the entire data.</p>
-</li>
-<li>
-<p><code>FILEPATH</code> must end with an extension of <code>.im</code>.</p>
-</li>
-<li>
-<p><code>FILEPATH</code> can be a relative path and the data will be exported to a location relative to the <strong>Inventory Manager</strong> installation directory.</p>
-</li>
-<li>
-<p>Existing data file at <code>FILEPATH</code> will be overwritten.</p>
-</li>
-<li>
-<p>The parent directories will be created if they do not exist.</p>
-</li>
-</ul>
-</div>
+<p>Example: <code>export-csv-orders f/E:/out/orders.csv</code></p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="importing-data-from-csv-code-import-csv-code"><a class="link" href="#importing-data-from-csv-code-import-csv-code">Importing data from CSV: <code>import-csv</code></a></h4>
+<h4 id="importing-data-from-csv-code-import-csv-code"><a class="link" href="#importing-data-from-csv-code-import-csv-code">3.1.2. Importing data from CSV: <code>import-csv</code></a></h4>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Imports the data from the file specified by <code>FILEPATH</code>.</p>
+<p>This command imports the data from the file specified by <code>FILEPATH</code>.</p>
 </li>
 <li>
 <p><code>FILEPATH</code> must end with an extension of <code>.csv</code>.</p>
@@ -224,7 +265,7 @@ Format: <code>export-im f/FILEPATH</code></p>
 <p>Original data in <strong>Inventory Manager</strong> will be overwritten.</p>
 </li>
 <li>
-<p>Data in the CSV file must be recognizable by <strong>Inventory Manager</strong>.</p>
+<p>Data in the CSV file must be <strong>recognizable</strong> by <strong>Inventory Manager</strong>.</p>
 </li>
 </ul>
 </div>
@@ -233,70 +274,60 @@ Format: <code>export-im f/FILEPATH</code></p>
 <div class="sect4">
 <h5 id="importing-sales-report-from-csv-code-import-csv-sales-code"><a class="link" href="#importing-sales-report-from-csv-code-import-csv-sales-code">Importing sales report from CSV: <code>import-csv-sales</code></a></h5>
 <div class="paragraph">
-<p>The <code>import-csv-sales</code> command imports the sales report in CSV format from the filepath given.</p>
+<p>The <code>import-csv-sales</code> command imports the sales report in CSV format from the file path given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>import-csv-sales f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>import-csv-sales f/E:/in/sales.csv</code></p>
+</div>
+<div class="paragraph">
+<p>Following screenshot showcases what will happen when you enter the correct <code>import-csv-sales</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/doc-import-csv-sales.png" alt="doc import csv sales" width="700">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.13. Import successful prompt will be shown upon completion of import.</em></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="importing-list-of-items-from-csv-code-import-csv-items-code"><a class="link" href="#importing-list-of-items-from-csv-code-import-csv-items-code">Importing list of items from CSV : <code>import-csv-items</code></a></h5>
 <div class="paragraph">
-<p>The <code>import-csv-items</code> command imports the list of items in CSV format from the filepath given.</p>
+<p>The <code>import-csv-items</code> command imports the list of items in CSV format from the file path given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>import-csv-items f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>import-csv-items f/E:/in/items.csv</code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="importing-list-of-users-from-csv-code-import-csv-staffs-code"><a class="link" href="#importing-list-of-users-from-csv-code-import-csv-staffs-code">Importing list of users from CSV: <code>import-csv-staffs</code></a></h5>
 <div class="paragraph">
-<p>The <code>import-csv-staffs</code> command imports the list of users in CSV format from the filepath given.</p>
+<p>The <code>import-csv-staffs</code> command imports the list of users in CSV format from the file path given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>import-csv-staffs f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>import-csv-staffs f/E:/in/staffs.csv</code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="importing-list-of-purchase-orders-from-csv-code-import-csv-orders-code"><a class="link" href="#importing-list-of-purchase-orders-from-csv-code-import-csv-orders-code">Importing list of purchase orders from CSV: <code>import-csv-orders</code></a></h5>
 <div class="paragraph">
-<p>The <code>import-csv-orders</code> command imports the list of purchase orders in CSV format from the filepath given.</p>
+<p>The <code>import-csv-orders</code> command imports the list of purchase orders in CSV format from the file path given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>import-csv-orders f/FILEPATH</code></p>
 </div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="importing-entire-data-from-im-file-code-import-im-code"><a class="link" href="#importing-entire-data-from-im-file-code-import-im-code">Importing entire data from .im file: <code>import-im</code></a></h4>
 <div class="paragraph">
-<p>(coming in v2.0)<br>
-The <code>import-im</code> command imports the entire data from the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>import-im f/FILEPATH</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The .im is a format that the <strong>Inventory Manager</strong> use to tranfer the entire data.</p>
-</li>
-<li>
-<p><code>FILEPATH</code> must end with an extension of <code>.im</code>.</p>
-</li>
-<li>
-<p><code>FILEPATH</code> can be a relative path and the data will be imported from a location relative to the <strong>Inventory Manager</strong> installation directory.</p>
-</li>
-<li>
-<p>Original data in <strong>Inventory Manager</strong> will be overwritten.</p>
-</li>
-<li>
-<p>Data in the .im file must be recognizable by <strong>Inventory Manager</strong>.</p>
-</li>
-</ul>
-</div>
+<p>Example: <code>import-csv-orders f/E:/in/orders.csv</code></p>
 </div>
 </div>
 </div>
@@ -304,7 +335,7 @@ The <code>import-im</code> command imports the entire data from the .im file spe
 </div>
 </div>
 <div class="sect1">
-<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">4. Contributions to the Developer Guide</a></h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
@@ -316,139 +347,33 @@ The <code>import-im</code> command imports the entire data from the .im file spe
 </tr>
 </tbody>
 </table>
-<h3 id="use-case-export-data" class="discrete">Use case: Export data</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to export data with a filepath given.</p>
-</li>
-<li>
-<p>Inventory Manager exports the data to the filepath given.</p>
-</li>
-<li>
-<p>Inventory Manager shows a preview of the data exported</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. The filepath is empty or invalid.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a1. Inventory Manager shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>2a. The exporting progress fails.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2a1. Inventory Manager shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-import-data" class="discrete">Use case: Import data</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to import data with a filepath given.</p>
-</li>
-<li>
-<p>Inventory Manager imports the data from the filepath given.</p>
-</li>
-<li>
-<p>Inventory Manager shows a preview of the data imported</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a. The filepath is empty or invalid.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a1. Inventory Manager shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>2a. The importing progress fails.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2a1. Inventory Manager shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 1.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
 <div class="sect2">
-<h3 id="export-csv-mechanism"><a class="link" href="#export-csv-mechanism">Export CSV mechanism</a></h3>
+<h3 id="export-csv-mechanism"><a class="link" href="#export-csv-mechanism">4.1. Export CSV mechanism</a></h3>
 <div class="paragraph">
-<p>In order to enable users to have further analysis on the data in <strong>Inventory Manager</strong>,
-we support several <code>export</code> commands to export the data in <strong>Inventory Manager</strong> to CSV files.
-We are using <code>ExportCsvItemsCommand</code>, <code>ExportCsvSalesCommand</code>, <code>ExportCsvOrdersCommand</code>, <code>ExportCsvUsersCommand</code>
- to support exporting of <strong>Inventory Manager</strong> data through CSV files.</p>
+<p>In order to enable users to have further analysis of the data in <strong>Inventory Manager</strong>,
+we support several <code>export-csv</code> commands to export the data in <strong>Inventory Manager</strong> to CSV files.
+We are using <code>export-csv-items</code>, <code>export-csv-sales</code>, <code>export-csv-staffs</code>, <code>export-csv-orders</code>
+to support exporting of <strong>Inventory Manager</strong> data through CSV files.</p>
 </div>
 <div class="paragraph">
 <p>In the following sections, we will focus on how these commands depend on the <code>Model</code> and <code>Storage</code> component
 to retrieve external data and where to validate the given file path.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<h4 id="implementation"><a class="link" href="#implementation">4.1.1. Implementation</a></h4>
 <div class="sect4">
 <h5 id="data-access"><a class="link" href="#data-access">Data Access</a></h5>
 <div class="paragraph">
 <p>In order to achieve their tasks, all <code>export</code> commands require direct access to the data and output to the
-external environment. Unlike other command, these commands are highly depend on the <code>Storage</code> component.
-However, if we only directly set an <code>Storage</code> for the command and manipulate on the <code>Storage</code> in <code>export</code> command,
+external environment. Unlike other commands, these commands highly depend on the <code>Storage</code> component.
+However, if we only directly set a <code>Storage</code> for the command and manipulate on the <code>Storage</code> in <code>export</code> command,
 we also need <code>Storage</code> component to directly access the data in <code>Model</code> component which will violate
 Single Responsibility Principle.</p>
 </div>
 <div class="paragraph">
 <p>So we decide to use the same method as other command use to export data. When executing the <code>export</code> commands,
 a <code>DataExportEvent</code> will be raised in the <code>EventsCenter</code> through <code>Model</code> component. Since <code>Logic</code> directly has
-<code>Model</code> as one field, it will not violate Single Responsibility Principle. Then, the handler function in <code>Storage</code>
+<code>Model</code> as one field, it will not violate the Single Responsibility Principle. Then, the handler function in <code>Storage</code>
 component will catch this <code>DataExportingEvent</code> and export data to the external environment.</p>
 </div>
 </div>
@@ -456,7 +381,7 @@ component will catch this <code>DataExportingEvent</code> and export data to the
 <h5 id="file-path-validation"><a class="link" href="#file-path-validation">File Path Validation</a></h5>
 <div class="paragraph">
 <p>File paths, as required by <code>export</code> commands, need to be validated during the execution of the commands.
-However, where to implement it can be decided. It can be implement in <code>CommandParser</code> or <code>Command</code>
+However, where to implement it can be decided. It can be implemented in <code>CommandParser</code> or <code>Command</code>
 or even in <code>Storage</code>.</p>
 </div>
 <div class="paragraph">
@@ -464,38 +389,62 @@ or even in <code>Storage</code>.</p>
 in <code>FileUtil</code> will be called to test whether the given file path is valid when executing the command. In doing so,
 we are able to make sure that the path parameter passed to <code>Model</code> component and <code>Storage</code> component is a valid
 file path. Also, it is easier for the implementation of command feedback to the users.
-Further details can be found in the sequence diagram of next section.</p>
+Further details can be found in the sequence diagram of the next section.</p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="sequence-diagram"><a class="link" href="#sequence-diagram">Sequence Diagram</a></h5>
 <div class="paragraph">
 <p>Considering that all the <code>export</code> commands have similar sequence diagrams. So we will just show the sequence diagrams
-for <code>ExportCsvItemsCommand</code> to illustrate how the <code>export</code> commands work.</p>
+for <code>export-csv-items</code> command to illustrate how the <code>export</code> commands work.</p>
+</div>
+<div class="paragraph">
+<p>The <em>Sequence Diagram</em> below shows how the components interact for the scenario where the user issues the
+command <code>export-csv-items f/items.csv</code>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/ExportCsvItemCommandSequenceDiagram.png" alt="ExportCsvItemCommandSequenceDiagram" width="1000">
+<img src="../images/SDforExportCsvItem.png" alt="SDforExportCsvItem" width="800">
 </div>
+<div class="title">Figure 1. Component interactions for <code>export-csv-items f/items.csv</code> command (part 1)</div>
+</div>
+<div class="paragraph">
+<p>The diagram below shows how the <code>EventsCenter</code> reacts to that event, which eventually results in the item list being
+exported and the alert window of the UI being popped up to reflect the success of exporting.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SDforExportCsvItemEventHandling.png" alt="SDforExportCsvItemEventHandling" width="800">
+</div>
+<div class="title">Figure 2. Component interactions for <code>export-csv-items f/items.csv</code> command (part 2)</div>
+</div>
+<div class="paragraph">
+<p>The diagram below is the lower level sequence diagram for <code>export-csv-items f/items.csv</code> command inside <code>Logic</code> component.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ExportCsvItemCommandSequenceDiagram.png" alt="ExportCsvItemCommandSequenceDiagram" width="900">
+</div>
+<div class="title">Figure 3. Lower level sequence diagram for <code>export-csv-items f/items.csv</code> command inside <code>Logic</code> component</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-code-export-code-commands-interact-with-code-storage-code-component-and-code-logic-code-component"><a class="link" href="#aspect-how-code-export-code-commands-interact-with-code-storage-code-component-and-code-logic-code-component">Aspect: How <code>export</code> commands interact with <code>Storage</code> Component and <code>Logic</code> Component</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Raise a <code>DataExportEvent</code> in the <code>EventsCenter</code> through <code>Model</code> and handle it
+<p><strong>Alternative 1 (current choice):</strong> Raises a <code>DataExportEvent</code> in the <code>EventsCenter</code> through <code>Model</code> and handles it
 in <code>Storage</code>.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Avoid direct access of <code>Storage</code> from <code>export</code> commands. Does not violate Single Responsibility Principle.<br></p>
+<p>Pros: Avoids direct access of <code>Storage</code> from <code>export</code> commands. Does not violate the Single Responsibility Principle.<br></p>
 </li>
 <li>
-<p>Cons: Need a middle Component to achieve the goal. An additional event need to be raised<br></p>
+<p>Cons: Needs a middle Component to achieve the goal. Needs to raise an additional event.<br></p>
 </li>
 </ul>
 </div>
@@ -508,8 +457,8 @@ in <code>Storage</code>.<br></p>
 <p>Pros: Provides direct access to <code>Storage</code> for commands that is highly depend it.<br></p>
 </li>
 <li>
-<p>Cons: <code>Storage</code> will also need directly access of data in <code>Model</code> component which will violate
-Single Responsibility Principle.<br></p>
+<p>Cons: Needs directly access of data in <code>Model</code> component for <code>Storage</code> which will violate
+the Single Responsibility Principle.<br></p>
 </li>
 </ul>
 </div>
@@ -522,26 +471,25 @@ Single Responsibility Principle.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Implement in <code>FileUtil</code> and check in <code>export</code> command.<br></p>
+<p><strong>Alternative 1 (current choice):</strong> Implements in <code>FileUtil</code> and checks in <code>export</code> command.<br></p>
 <div class="ulist">
 <ul>
 <li>
 <p>Pros: It&#8217;s sure that the path passed to <code>Model</code> component and <code>Storage</code> component is a valid file path.
-Easier implementation of command feedback. File Validation is reusable in other component.<br></p>
+The implementation of command feedback is easier. File Validation is reusable in other component.<br></p>
 </li>
 <li>
-<p>Cons: File Validation need to interact with <code>Commons</code> component.
-due to the saving of the address book.<br></p>
+<p>Cons: File Validation needs to interact with <code>Commons</code> component.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Implement in <code>CommandParser</code> and check in <code>CommandParser</code> command.<br></p>
+<p><strong>Alternative 2:</strong> Implements in <code>CommandParser</code> and checks in <code>CommandParser</code> class.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: No need to interact with other component.<br></p>
+<p>Pros: There is no need to interact with other component.<br></p>
 </li>
 <li>
 <p>Cons: File Validation is not reusable in other component.<br></p>
@@ -550,15 +498,15 @@ due to the saving of the address book.<br></p>
 </div>
 </li>
 <li>
-<p><strong>Alternative 3:</strong> Implement in <code>Storage</code> and check in <code>Storage</code>.<br></p>
+<p><strong>Alternative 3:</strong> Implements in <code>Storage</code> and checks in <code>Storage</code>.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: No need to interact with other component. File Validation is reusable in other method of <code>Storage</code>.<br></p>
+<p>Pros: There is no need to interact with other component. File Validation is reusable in other method of <code>Storage</code>.<br></p>
 </li>
 <li>
-<p>Cons: The path passed to <code>Storage</code> component may not be valid. More difficult implementation of command feedback.
-Need to raise an additional event for invalid file path.<br></p>
+<p>Cons: The path passed to <code>Storage</code> component may not be valid. The implementation of command feedback is more difficult.
+<code>Storage</code> needs to raise an additional event for invalid file path.<br></p>
 </li>
 </ul>
 </div>
@@ -567,6 +515,36 @@ Need to raise an additional event for invalid file path.<br></p>
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="csv-file-recognizing"><a class="link" href="#csv-file-recognizing">4.1.3. Csv File Recognizing</a></h4>
+<div class="paragraph">
+<p>Since Csv file do not have standardized format for storing objects. So we designed a format that need to be followed when
+importing csv files. If the process of importing fails due to unrecognizable failure, do check the file to import meets the
+requirement.</p>
+</div>
+<div class="paragraph">
+<p>An example of recognizable csv file storing the items is reproduced below: (Opened with a Plain Text Editor,not Excel)</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Item,,,,,
+name,price,quantity,sku,image,tags
+iPhone XR,1500.00,30,apple-iphone-xr,/images/iphone.jpg,"apple,iphone"
+LG G7,1250.50,90,lg-g7,/images/lg.jpg,"smartphone,lg"
+Samsung S9,1499.99,14,samsung-s9,/images/samsung.jpg,"samsung,smartphone"
+HTC U6 ,999.00,88,htc-u6,/images/htc.jpg,"samsung,phablet"
+Google Pixel XL,1435.90,3,google-pixel-xl,/images/google.jpg,google</pre>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 17:34:39 UTC</div></div></div></body></html>
+<div class="paragraph">
+<p>The first two lines are headers to determine which kind of object is this csv file storing.
+Following lines are the details of the objects. Empty lines are not allowed. If a cell contains commas(<code>,</code>), it must be surrounded
+by double quotation marks(<code>"</code> <code>"</code>).</p>
+</div>
+<div class="paragraph">
+<p>The required format can be gotten by simply exporting each kind of objects first.</p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 17:56:33 UTC</div></div></div></body></html>

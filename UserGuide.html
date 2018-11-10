@@ -20,7 +20,7 @@
 <li><a href="#inventory-management">4.4. Inventory Management</a></li>
 <li><a href="#sale-orders-management">4.5. Sale Orders Management</a></li>
 <li><a href="#purchase-orders-management">4.6. Purchase Orders Management</a></li>
-<li><a href="#reports-management">4.7. Reports Management</a></li>
+<li><a href="#reporting-module">4.7. Reporting Module</a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -1354,10 +1354,10 @@ Deletes the 5th purchase order in the inventory.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="reports-management"><a class="link" href="#reports-management">4.7. Reports Management</a></h3>
+<h3 id="reporting-module"><a class="link" href="#reporting-module">4.7. Reporting Module</a></h3>
 <div class="paragraph">
 <p>The following commands are mainly used to export and import data for report analysis.<br>
-All the command in this section is available to <strong>admins</strong> only.<br></p>
+All the commands in this section are available to <strong>admin</strong> only.<br></p>
 </div>
 <div class="sect3">
 <h4 id="exporting-data-to-csv-code-export-csv-code"><a class="link" href="#exporting-data-to-csv-code-export-csv-code">4.7.1. Exporting data to CSV: <code>export-csv</code></a></h4>
@@ -1366,7 +1366,7 @@ All the command in this section is available to <strong>admins</strong> only.<br
 <div class="ulist">
 <ul>
 <li>
-<p>Export the data to the file specified by <code>FILEPATH</code>.</p>
+<p>This command exports the data to the file specified by <code>FILEPATH</code>.</p>
 </li>
 <li>
 <p><code>FILEPATH</code> must end with an extension of <code>.csv</code>.</p>
@@ -1380,6 +1380,12 @@ All the command in this section is available to <strong>admins</strong> only.<br
 <li>
 <p>The parent directories will be created if they do not exist.</p>
 </li>
+<li>
+<p>A table view of the exported data will appear.</p>
+</li>
+<li>
+<p>CSV files can be opened and edited by Excel.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -1387,61 +1393,83 @@ All the command in this section is available to <strong>admins</strong> only.<br
 <div class="sect4">
 <h5 id="exporting-sales-report-to-csv-code-export-csv-sales-code"><a class="link" href="#exporting-sales-report-to-csv-code-export-csv-sales-code">Exporting sales report to CSV: <code>export-csv-sales</code></a></h5>
 <div class="paragraph">
-<p>The <code>export-csv-sales</code> command export the sales report in CSV format to the filepath given.</p>
+<p>The <code>export-csv-sales</code> command exports the sales report in CSV format to the file path given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>export-csv-sales f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>export-csv-sales f/E:/out/sales.csv</code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="exporting-list-of-items-to-csv-code-export-csv-items-code"><a class="link" href="#exporting-list-of-items-to-csv-code-export-csv-items-code">Exporting list of items to CSV : <code>export-csv-items</code></a></h5>
 <div class="paragraph">
-<p>The <code>export-csv-items</code> command export the list of items in CSV format to the filepath given.</p>
+<p>The <code>export-csv-items</code> command exports the list of items in CSV format to the file path given.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>export-csv-items f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>export-csv-items f/E:/out/items.csv</code></p>
+</div>
+<div class="paragraph">
+<p>Following screenshot showcases what will happen when you enter the correct <code>export-csv-items</code> command:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/doc-export-csv-item.png" alt="doc export csv item" width="790">
+<img src="images/doc-export-csv-items.png" alt="doc export csv items" width="700">
 </div>
 </div>
 <div class="paragraph">
 <p><em>Figure 4.13. Export successful prompt will be shown upon completion of export.</em></p>
 </div>
-<div class="paragraph">
-<p>Format: <code>export-csv-items f/FILEPATH</code></p>
-</div>
 </div>
 <div class="sect4">
 <h5 id="exporting-list-of-users-to-csv-code-export-csv-staffs-code"><a class="link" href="#exporting-list-of-users-to-csv-code-export-csv-staffs-code">Exporting list of users to CSV: <code>export-csv-staffs</code></a></h5>
 <div class="paragraph">
-<p>The <code>export-csv-staffs</code> command export the list of users in CSV format to the filepath given.</p>
+<p>The <code>export-csv-staffs</code> command exports the list of users in CSV format to the file path given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>export-csv-staffs f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>export-csv-staffs f/E:/out/staffs.csv</code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="exporting-list-of-purchase-orders-to-csv-code-export-csv-orders-code"><a class="link" href="#exporting-list-of-purchase-orders-to-csv-code-export-csv-orders-code">Exporting list of purchase orders to CSV: <code>export-csv-orders</code></a></h5>
 <div class="paragraph">
-<p>The <code>export-csv-orders</code> command export the list of purchase orders in CSV format to the filepath given.</p>
+<p>The <code>export-csv-orders</code> command exports the list of purchase orders in CSV format to the filepath given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>export-csv-orders f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>export-csv-orders f/E:/out/orders.csv</code></p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="exporting-entire-data-to-im-file-code-export-im-code"><a class="link" href="#exporting-entire-data-to-im-file-code-export-im-code">4.7.2. Exporting entire data to .im file: <code>export-im</code></a></h4>
 <div class="paragraph">
-<p>(coming in v2.0)<br>
-The <code>export-im</code> command export the entire data to the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br>
-Format: <code>export-im f/FILEPATH</code></p>
+<p>(coming in v2.0)</p>
+</div>
+<div class="paragraph">
+<p>The <code>export-im</code> command exports the entire data to the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.<br></p>
+</div>
+<div class="paragraph">
+<p>Format: <code>export-im f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>export-im f/E:/out/data.im</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>The .im is a format that the <strong>Inventory Manager</strong> use to tranfer the entire data.</p>
+<p>The .im is a format that the <strong>Inventory Manager</strong> uses to transfer the entire data.</p>
 </li>
 <li>
 <p><code>FILEPATH</code> must end with an extension of <code>.im</code>.</p>
@@ -1467,7 +1495,7 @@ Format: <code>export-im f/FILEPATH</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Imports the data from the file specified by <code>FILEPATH</code>.</p>
+<p>This command imports the data from the file specified by <code>FILEPATH</code>.</p>
 </li>
 <li>
 <p><code>FILEPATH</code> must end with an extension of <code>.csv</code>.</p>
@@ -1479,7 +1507,7 @@ Format: <code>export-im f/FILEPATH</code></p>
 <p>Original data in <strong>Inventory Manager</strong> will be overwritten.</p>
 </li>
 <li>
-<p>Data in the CSV file must be recognizable by <strong>Inventory Manager</strong>.</p>
+<p>Data in the CSV file must be <strong>recognizable</strong> by <strong>Inventory Manager</strong>.</p>
 </li>
 </ul>
 </div>
@@ -1488,55 +1516,83 @@ Format: <code>export-im f/FILEPATH</code></p>
 <div class="sect4">
 <h5 id="importing-sales-report-from-csv-code-import-csv-sales-code"><a class="link" href="#importing-sales-report-from-csv-code-import-csv-sales-code">Importing sales report from CSV: <code>import-csv-sales</code></a></h5>
 <div class="paragraph">
-<p>The <code>import-csv-sales</code> command imports the sales report in CSV format from the filepath given.</p>
+<p>The <code>import-csv-sales</code> command imports the sales report in CSV format from the file path given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>import-csv-sales f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>import-csv-sales f/E:/in/sales.csv</code></p>
+</div>
+<div class="paragraph">
+<p>Following screenshot showcases what will happen when you enter the correct <code>import-csv-sales</code> command:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-import-csv-sales.png" alt="doc import csv sales" width="700">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.13. Import successful prompt will be shown upon completion of import.</em></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="importing-list-of-items-from-csv-code-import-csv-items-code"><a class="link" href="#importing-list-of-items-from-csv-code-import-csv-items-code">Importing list of items from CSV : <code>import-csv-items</code></a></h5>
 <div class="paragraph">
-<p>The <code>import-csv-items</code> command imports the list of items in CSV format from the filepath given.</p>
+<p>The <code>import-csv-items</code> command imports the list of items in CSV format from the file path given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>import-csv-items f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>import-csv-items f/E:/in/items.csv</code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="importing-list-of-users-from-csv-code-import-csv-staffs-code"><a class="link" href="#importing-list-of-users-from-csv-code-import-csv-staffs-code">Importing list of users from CSV: <code>import-csv-staffs</code></a></h5>
 <div class="paragraph">
-<p>The <code>import-csv-staffs</code> command imports the list of users in CSV format from the filepath given.</p>
+<p>The <code>import-csv-staffs</code> command imports the list of users in CSV format from the file path given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>import-csv-staffs f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>import-csv-staffs f/E:/in/staffs.csv</code></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="importing-list-of-purchase-orders-from-csv-code-import-csv-orders-code"><a class="link" href="#importing-list-of-purchase-orders-from-csv-code-import-csv-orders-code">Importing list of purchase orders from CSV: <code>import-csv-orders</code></a></h5>
 <div class="paragraph">
-<p>The <code>import-csv-orders</code> command imports the list of purchase orders in CSV format from the filepath given.</p>
+<p>The <code>import-csv-orders</code> command imports the list of purchase orders in CSV format from the file path given.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>import-csv-orders f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>import-csv-orders f/E:/in/orders.csv</code></p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="importing-entire-data-from-im-file-code-import-im-code"><a class="link" href="#importing-entire-data-from-im-file-code-import-im-code">4.7.4. Importing entire data from .im file: <code>import-im</code></a></h4>
 <div class="paragraph">
-<p>(coming in v2.0)<br>
-The <code>import-im</code> command imports the entire data from the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.</p>
+<p>(coming in v2.0)</p>
+</div>
+<div class="paragraph">
+<p>The <code>import-im</code> command imports the entire data from the .im file specified by <code>FILEPATH</code> to quickly transfer the data between two <strong>Inventory Manager</strong> applications.</p>
 </div>
 <div class="paragraph">
 <p>Format: <code>import-im f/FILEPATH</code></p>
+</div>
+<div class="paragraph">
+<p>Example: <code>import-im f/E:/in/data.im</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>The .im is a format that the <strong>Inventory Manager</strong> use to tranfer the entire data.</p>
+<p>The .im is a format that the <strong>Inventory Manager</strong> uses to transfer the entire data.</p>
 </li>
 <li>
 <p><code>FILEPATH</code> must end with an extension of <code>.im</code>.</p>
@@ -1548,7 +1604,7 @@ The <code>import-im</code> command imports the entire data from the .im file spe
 <p>Original data in <strong>Inventory Manager</strong> will be overwritten.</p>
 </li>
 <li>
-<p>Data in the .im file must be recognizable by <strong>Inventory Manager</strong>.</p>
+<p>Data in the .im file must be <strong>recognizable</strong> by <strong>Inventory Manager</strong>.</p>
 </li>
 </ul>
 </div>
@@ -1563,7 +1619,9 @@ The <code>import-im</code> command imports the entire data from the .im file spe
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: <em>How do I transfer my data to another Computer ?</em><br>
-<strong>A</strong>: Install Inventory Manager in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Inventory Manager folder.</p>
+<strong>A</strong>: Install Inventory Manager in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Inventory Manager folder.<br>
+<strong>A</strong>: Export the data in your current Inventory Manager first. Then, install the Inventory Manager in the other computer
+and import the data back.</p>
 </div>
 <div class="paragraph">
 <p><strong>Q</strong>: <em>How do I save my data ?</em><br>
@@ -1787,61 +1845,61 @@ The <code>import-im</code> command imports the entire data from the .im file spe
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export Sales Report to CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-sales f/FILEPATH</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-sales f/C:/out/sales.csv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-sales f/E:/out/sales.csv</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Admin</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export List of Items to CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-items f/FILEPATH</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-items f/C:/out/items.csv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-items f/E:/out/items.csv</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Admin</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export List of Users to CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-staffs f/FILEPATH</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-staffs f/C:/out/users.csv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-staffs f/E:/out/staffs.csv</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Admin</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export List of Sale Orders to CSV</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export List of Purchase Orders to CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-orders f/FILEPATH</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-orders f/C:/out/orders.csv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-csv-orders f/E:/out/orders.csv</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Admin</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Export Entire Data to .im File</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-im f/FILEPATH</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-im f/C:/out/data.im</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>export-im f/E:/out/data.im</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Admin</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import Sales Report from CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-sales f/FILEPATH</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-sales f/C:/in/sales.csv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-sales f/E:/in/sales.csv</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Admin</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import List of Items from CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-items f/FILEPATH</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-items f/C:/in/items.csv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-items f/E:/in/items.csv</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Admin</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import List of Users from CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-staffs f/FILEPATH</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-staffs f/C:/in/users.csv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-staffs f/E:/in/staffs.csv</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Admin</code></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import List of Sale Orders from CSV</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import List of Purchase Orders from CSV</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-orders f/FILEPATH</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-orders f/C:/in/orders.csv</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-csv-orders f/E:/in/orders.csv</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Admin</code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Import Entire Data From .im File</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-im f/FILEPATH</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-im f/C:/in/data.im</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>import-im f/E:/in/data.im</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Admin</code></p></td>
 </tr>
 </tbody>
@@ -1889,4 +1947,4 @@ an Excel software.</p>
 <p>This refers to everyone that uses Inventory Manager, which includes the Members and non-logged in users.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 17:34:39 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 17:56:33 UTC</div></div></div></body></html>
