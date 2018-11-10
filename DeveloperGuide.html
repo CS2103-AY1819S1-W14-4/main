@@ -1535,11 +1535,12 @@ Newly added purchase order comes with a default <code>PENDING</code> status whic
 <div class="sect4">
 <h5 id="model-component-3"><a class="link" href="#model-component-3">Model Component</a></h5>
 <div class="paragraph">
-<p>Purchase orders are maintained in the Model in a NonUniquePurchaseOrderList, allowing non unique purchase order among the stored individual purchase orders.</p>
+<p>Purchase orders are maintained in the Model in a NonUniquePurchaseOrderList, allowing non unique purchase order among the stored individual purchase orders.
+The UML diagram is as shown in the figure below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ComingSoon.png" alt="ComingSoon" width="200">
+<img src="images/PoModel1.png" alt="PoModel1" width="800">
 </div>
 <div class="title">Figure 13. UML diagram showing representation of NonUniquePurchaseOrderList in Inventory Manager.</div>
 </div>
@@ -1549,7 +1550,7 @@ in Figure 11 below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ComingSoon.png" alt="ComingSoon" width="200">
+<img src="images/PoModel2.png" alt="PoModel2" width="370">
 </div>
 <div class="title">Figure 14. UML diagram showing representation of Purchase Order in Inventory Manager.</div>
 </div>
@@ -1557,16 +1558,17 @@ in Figure 11 below.</p>
 <div class="sect4">
 <h5 id="storage-component-2"><a class="link" href="#storage-component-2">Storage Component</a></h5>
 <div class="paragraph">
-<p>Purchase orders are stored in <code>XmlAdaptedPurchaseOrder</code> objects, which maintain a class relationship as shown in this diagram.</p>
+<p>Purchase orders are stored in <code>XmlAdaptedPurchaseOrder</code> objects, which maintain a class relationship as shown in the diagram below:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ComingSoon.png" alt="ComingSoon" width="200">
+<img src="images/PoStorage.png" alt="PoStorage" width="900">
 </div>
-<div class="title">Figure 15. PurchaseOrder objects are saved using XmlAdaptedJPurchaseOrder objects as shown above.</div>
+<div class="title">Figure 15. PurchaseOrder objects are saved using XmlAdaptedPurchaseOrder objects as shown above.</div>
 </div>
 <div class="paragraph">
-<p>An example purchase order stored in this format is reproduced below:</p>
+<p>To save the XmlAdaptedPurchaseOrder objects created, it is stored in a plain text file following the XML format.<br>
+An example purchase order stored in XML format is reproduced below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1584,15 +1586,24 @@ in Figure 11 below.</p>
 <h5 id="ui-component-2"><a class="link" href="#ui-component-2">UI Component</a></h5>
 <div class="paragraph">
 <p>The main window contains a ListPanel, which is interchangeable to display any list based on the command entered.
-Purchase order list is shown in the ListPanel upon executing <code>list-po</code>.
+The diagram below shows how purchase order panel is integrated in the Ui class diagram.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PoUi.png" alt="PoUi" width="500">
+</div>
+<div class="title">Figure 16. Example of the a purchase order card in Inventory Manager UI.</div>
+</div>
+<div class="paragraph">
+<p>Purchase order list is shown in the ListPanel upon executing <code>list-po</code>.
 Individual purchase orders are represented using PurchaseOrderCards that contains the attributes fields using Labels and flowPanes.
 An example of the a purchase order card is shown in figure 13 below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ComingSoon.png" alt="ComingSoon" width="200">
+<img src="images/PoCard.png" alt="PoCard" width="300">
 </div>
-<div class="title">Figure 16. Example of the a purchase order card in Inventory Manager UI.</div>
+<div class="title">Figure 17. Example of the a purchase order card in Inventory Manager UI.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1627,9 +1638,9 @@ An example of the a purchase order card is shown in figure 13 below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ComingSoon.png" alt="ComingSoon" width="200">
+<img src="images/PoCommand.png" alt="PoCommand" width="280">
 </div>
-<div class="title">Figure 17. UML Diagram depicting the class relationship between command classes.</div>
+<div class="title">Figure 18. UML Diagram depicting the class relationship between command classes.</div>
 </div>
 <div class="paragraph">
 <p>Operations performed on purchase orders follow the sequence of operations described in the diagram below.</p>
@@ -1651,35 +1662,59 @@ An example of the a purchase order card is shown in figure 13 below.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>This sequence of events is summarized in the following sequence diagram.</p>
+<p>This sequence of events is summarized in the following sequence diagrams:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ComingSoon.png" alt="ComingSoon" width="200">
+<img src="images/PoList.png" alt="PoList" width="550">
 </div>
-<div class="title">Figure 18. A high level sequence diagram showing events triggered by the <code>add-po</code> command.</div>
+<div class="title">Figure 19. A high level sequence diagram showing events triggered by the <code>list-po</code> command.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/PoAdd.png" alt="PoAdd" width="550">
+</div>
+<div class="title">Figure 20. A high level sequence diagram showing events triggered by the <code>add-po</code> command.</div>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.9.2. Design Considerations</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Where <code>updateItem</code> is executed<br>
-There are various places where <code>updateItem</code> can be executed. The pros and cons for each option is shown below.</p>
+<p><strong>Aspect:</strong> Implementation of purchase order commands that requires the item to be updated. <br>
+Commands such as <code>approve-po</code> will update the item quantity upon approval. Consequently, there are various places where
+<code>updateItem</code> can be executed. The pros and cons for each option is shown below.</p>
 </div>
 <div class="paragraph">
 <p><strong>Alternative 1 (current choice):</strong> Executed at Logic<br>
-<strong>Pros:</strong> Easy to implement.<br>
-<strong>Cons:</strong> Direct calling of <code>Model.approvePurchaseOrder()</code> will not be validated.<br></p>
+<strong>Pros:</strong> Allows the user to get the item list from the model directly; less hassle.<br>
+<strong>Cons:</strong> Complicates the test cases as everything is done in one method.<br></p>
 </div>
 <div class="paragraph">
 <p><strong>Alternative 2:</strong> Executed at Model<br>
-<strong>Pros:</strong> Ensures that all entries are validated before sale can be created.<br>
-<strong>Cons:</strong><code>Model.approvePurchaseOrder()</code> will need to access inventory to perform validations..</p>
+<strong>Pros:</strong> Allows the user to call the item directly from the list that is stored in the model.<br>
+<strong>Cons:</strong> Requires additional method in the model which in turns requires to update 4 relevant model files.</p>
 </div>
 <div class="paragraph">
-<p>Based on the above pros and cons, the first option is chosen as it is easier to implement, and it does not require
-<code>Model.approvePurchaseOrder()</code> to read the inventory and perform validations.</p>
+<p>Based on the above pros and cons, the first option is chosen as it is easier to implement and only requires 1 logic file to be edited.</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Implementation of purchase order storage<br>
+There are various design on how to integrate purchase order in the existing storage system. The pros and cons for each option is shown below.</p>
+</div>
+<div class="paragraph">
+<p><strong>Alternative 1 (current choice):</strong> Stored in the same file as the item but with different xml tag<br>
+<strong>Pros:</strong> Eases the implementation by adding in relevant purchase order detail in the existing storage implementation.<br>
+<strong>Cons:</strong> Disorganizes the storage file as all the different data is clunked together<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Alternative 2:</strong> Created a whole new standalone storage for purchase order<br>
+<strong>Pros:</strong> Organizes the data separately into it&#8217;s own file.<br>
+<strong>Cons:</strong> Requires a lot of work, additional files and test cases.</p>
+</div>
+<div class="paragraph">
+<p>Based on the above pros and cons, the first option is chosen as it is easier to implement, requires lesser test case and more efficient work load.</p>
 </div>
 </div>
 </div>
@@ -1768,7 +1803,7 @@ See <a href="UsingTravis.html#deploying-github-pages">UsingTravis.adoc</a> to le
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 19. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 21. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -4500,4 +4535,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 15:18:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 17:34:39 UTC</div></div></div></body></html>
