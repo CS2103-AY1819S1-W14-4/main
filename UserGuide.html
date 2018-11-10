@@ -521,7 +521,7 @@ This command is available to admins only.<br></p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>An item&#8217;s uniqueness is based on its SKU. It can have the same name and other attributes but its SKU must be unique.</p>
+<p>An item&#8217;s uniqueness is based on its SKU. It can have the same name and other attributes but its SKU must be <strong>unique</strong>.</p>
 </div>
 </td>
 </tr>
@@ -569,11 +569,11 @@ This command is available to <strong>members</strong> only.<br></p>
 <p>Format: <code>list-item</code></p>
 </div>
 <div class="paragraph">
-<p>Upon entering the <code>list-item</code> command into the command box and pressing <kbd>Enter</kbd>, a list of all items will appear as can be seen in the screenshot below.</p>
+<p>Upon entering the <code>list-item</code> command into the command box and pressing <kbd>Enter</kbd>, a list of all items will appear as can be seen in the screenshot below:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/doc-list-item.png" alt="doc list item" width="790">
+<img src="images/doc-list-item.png" alt="doc list item" width="500">
 </div>
 </div>
 <div class="paragraph">
@@ -596,8 +596,15 @@ This command is available to <strong>members</strong> only.<br></p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="paragraph">
+<div class="ulist">
+<ul>
+<li>
 <p>An item is considered to have a <code>low quantity</code> if it has a quantity of 10 or less.</p>
+</li>
+<li>
+<p>An item that is on <code>low quantity</code> will have its quantity highlighted in red with a warning sign when selected.</p>
+</li>
+</ul>
 </div>
 </td>
 </tr>
@@ -605,18 +612,31 @@ This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="paragraph">
 <p>Upon entering the <code>list-low-qty</code> command into the command box and pressing <kbd>Enter</kbd>, a list of all items with quantities
-of 10 or less will appear as can be seen in the screenshot below.</p>
+of 10 or less will appear.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="editing-an-item-code-edit-item-code"><a class="link" href="#editing-an-item-code-edit-item-code">4.4.4. Editing an item : <code>edit-item</code></a></h4>
 <div class="paragraph">
 <p>The <code>edit-item</code> command edits an existing item in the Inventory Manager.<br>
-It also edits all the purchase orders that contains the existing item to the edited item if the sku is changed.<br>
 This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>edit-item INDEX [n/NAME] [p/PRICE] [q/QUANTITY] [s/SKU] [i/IMAGE_LOCATION] [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If the edited item has its SKU changed and it exists in a purchase order, the purchase order will also be edited accordingly based on the edited item&#8217;s new SKU.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>For the <code>edit-item</code> command, do take note of the following points:</p>
@@ -629,16 +649,16 @@ This command is available to <strong>members</strong> only.<br></p>
 <p>Update the item at the specified <code>INDEX</code>. The index refers to the index number shown in the displayed inventory list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
 </li>
 <li>
-<p>At least one of the optional fields must be provided.</p>
+<p>At least one of the optional fields must be provided</p>
 </li>
 <li>
-<p>Existing values will be updated to the input values.</p>
+<p>Existing values will be updated to the input values</p>
 </li>
 <li>
-<p>When updating tags, the existing tags of the item will be removed i.e adding of tags is not cumulative.</p>
+<p>When updating tags, the existing tags of the item will be removed i.e adding of tags is not cumulative</p>
 </li>
 <li>
-<p>You can remove all the item&#8217;s tags by typing <code>t/</code> without specifying any tags after it.</p>
+<p>You can remove all the item&#8217;s tags by typing <code>t/</code> without specifying any tags after it</p>
 </li>
 </ul>
 </div>
@@ -695,24 +715,24 @@ Multiple keywords are allowed for the <code>find-item</code> command.
 <p>The order of the keywords does not matter. e.g. <code>X IPhone</code> will match <code>IPhone X</code></p>
 </li>
 <li>
-<p>Only the name of the item is searched.</p>
+<p>Only the name of the item is searched</p>
 </li>
 <li>
 <p>Only full words will be matched e.g. <code>phone</code> will not match <code>IPhone</code></p>
 </li>
 <li>
-<p>Items matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Iphone 10</code> will return <code>IPhone X</code>, <code>Samsung 10</code></p>
+<p>Items matching at least one keyword will be returned (i.e. an <code>OR</code> search). e.g. <code>Iphone 10</code> will return <code>IPhone X</code>, <code>Samsung 10</code></p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>The following demonstrates entering the <code>find-item</code> command in the command box with the keyword <code>LG</code>, followed by <kbd>Enter</kbd>.</p>
+<p>The following screenshot demonstrates entering the <code>find-item</code> command in the command box with the keyword <code>LG</code>, followed by <kbd>Enter</kbd>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/doc-find-item.png" alt="doc find item" width="790">
+<img src="images/doc-find-item.png" alt="doc find item" width="500">
 </div>
 </div>
 <div class="paragraph">
@@ -759,24 +779,21 @@ Just like the <code>find-item</code> command, multiple keywords are allowed for 
 <div class="ulist">
 <ul>
 <li>
-<p>Partial keywords will be matched e.g. <code>sn</code> will match items with SKUs <code>SN-1234</code> and <code>SN4321</code></p>
+<p><strong>Partial</strong> keywords will be matched e.g. <code>SN</code> will match items with SKUs <code>SN-1234</code> and <code>SN4321</code></p>
 </li>
 <li>
 <p>The search is case insensitive. e.g <code>sn-1234</code> will match item(s) containing the SKU <code>SN-1234</code></p>
 </li>
 <li>
-<p>Only the SKU of the item is searched.</p>
+<p>Only the SKU of the item is searched</p>
 </li>
 <li>
-<p>Items matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>iphone sn</code> will return
+<p>Items matching at least one keyword will be returned. e.g. <code>iphone sn</code> will return
 items with SKUs containing the SKUs <code>iphone-s9-9234</code>, <code>SN-1234</code></p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-<div class="paragraph">
-<p>The following demonstrates entering the <code>find-item-sku</code> command in the command box with the keyword <code>lg-g7</code>, followed by <kbd>Enter</kbd>.</p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -799,6 +816,18 @@ This command is available to <strong>members</strong> only.<br></p>
 <div class="paragraph">
 <p>Format: <code>filter-item [p/[&lt;][&gt;]PRICE] [q/[&lt;][&gt;]QUANTITY]</code></p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can combine both conditions or use only one condition to filter your items.
+</td>
+</tr>
+</table>
+</div>
 <div class="paragraph">
 <p>For the <code>filter-item</code> command, do take note of the following points:</p>
 </div>
@@ -807,41 +836,37 @@ This command is available to <strong>members</strong> only.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>At least one of the optional fields must be provided.</p>
+<p>At least one of the optional fields must be provided (i.e. either the <code>q/</code> field or <code>p/</code> field must be present)</p>
 </li>
 <li>
-<p><code>'&lt;'</code> represents <code>less than or equals to</code> e.g. <code>q/&lt;30</code> represents quantity less than or equals to 30</p>
+<p><code>'&lt;'</code> represents <code>less than or equals to</code>. e.g. <code>q/&lt;30</code> represents quantity less than or equals to 30</p>
 </li>
 <li>
-<p><code>'&gt;'</code> represents <code>more than or equals to</code> e.g. <code>p/&gt;500</code> represents price more than or equals to 500</p>
+<p><code>'&gt;'</code> represents <code>more than or equals to</code>. e.g. <code>p/&gt;500</code> represents price more than or equals to 500</p>
 </li>
 <li>
-<p>For price, both whole numbers and decimals are allowed.</p>
+<p>For price, both whole numbers and decimals are allowed</p>
 </li>
 <li>
-<p>For quantity, only whole numbers are allowed.</p>
+<p>For quantity, only whole numbers are allowed</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-You can combine both conditions or use only one condition to filter your products.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p>The following screenshot demonstrates entering the <code>filter-item</code> command in the command box with the condition <code>q/&gt;85</code> (i.e. quantity more than or equals to 85), followed by <kbd>Enter</kbd>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-filter-item.png" alt="doc filter item" width="500">
+</div>
 </div>
 <div class="paragraph">
-<p>The following demonstrates entering the <code>filter-item</code> command in the command box with the condition <code>p/&lt;100</code>, followed by <kbd>Enter</kbd>.</p>
+<p><em>Figure 4.7. The item(s) filtered for based on the condition(s) set will be displayed on screen.</em></p>
 </div>
 <div class="paragraph">
-<p>Example:</p>
+<p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -853,6 +878,10 @@ Returns <code>IPhone X</code> and <code>IPhone 10</code> which both have prices 
 <p><code>filter-item q/&lt;100</code><br>
 Returns <code>LG G7</code> and <code>Samsung Note 9</code> which both have quantities less than or equal to 100.</p>
 </li>
+<li>
+<p><code>filter-item p/&lt;800 q/&lt;100</code><br>
+Returns <code>Samsung Note 9</code> which has a price of less than or equals to $800, and a quantity of less than or equals to 100.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -860,11 +889,24 @@ Returns <code>LG G7</code> and <code>Samsung Note 9</code> which both have quant
 <h4 id="deleting-an-item-code-delete-item-code"><a class="link" href="#deleting-an-item-code-delete-item-code">4.4.8. Deleting an item : <code>delete-item</code></a></h4>
 <div class="paragraph">
 <p>The <code>delete-item</code> command deletes the specified item from the inventory.<br>
-It also deletes all purchase orders that contains the deleted item.<br>
 This command is available to <strong>members</strong> only.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete-item INDEX</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>All purchase orders containing the deleted item will be deleted as well.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>For the <code>delete-item</code> command, do take note of the following points:</p>
@@ -973,7 +1015,7 @@ an error when an invalid SKU is entered.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 4.7. Error shown on screen when creating a sale order with invalid SKU.</em></p>
+<p><em>Figure 4.8. Error shown on screen when creating a sale order with invalid SKU.</em></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add-sale s/SKU q/QTY</code></p>
@@ -1006,7 +1048,7 @@ screenshot below is an example of an error when an invalid sale ID is entered.</
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 4.8. Error shown on screen when deleting a sale order that cannot be found.</em></p>
+<p><em>Figure 4.9. Error shown on screen when deleting a sale order that cannot be found.</em></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete-sale SALE-ID</code></p>
@@ -1037,7 +1079,7 @@ screenshot below is an example of an error when an invalid sale ID is entered.</
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 4.9. All sales in Inventory Manager listed on screen.</em></p>
+<p><em>Figure 4.10. All sales in Inventory Manager listed on screen.</em></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>list-sale</code></p>
@@ -1072,7 +1114,7 @@ This command is available to <strong>members</strong> only.<br></p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 4.10. All purchase orders in Inventory Manager listed on screen.</em></p>
+<p><em>Figure 4.11. All purchase orders in Inventory Manager listed on screen.</em></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>list-po</code></p>
@@ -1153,7 +1195,7 @@ Approves the first purchase order in the purchase order list.</p>
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 4.11. Approves the specified purchase order by the it&#8217;s index in the list.</em></p>
+<p><em>Figure 4.12. Approves the specified purchase order by the it&#8217;s index in the list.</em></p>
 </div>
 </div>
 <div class="sect3">
@@ -1352,7 +1394,7 @@ All the command in this section is available to <strong>admins</strong> only.<br
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 4.12. Export successful prompt will be shown upon completion of export.</em></p>
+<p><em>Figure 4.13. Export successful prompt will be shown upon completion of export.</em></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>export-csv-items f/FILEPATH</code></p>
@@ -1837,4 +1879,4 @@ an Excel software.</p>
 <p>This refers to everyone that uses Inventory Manager, which includes the Members and non-logged in users.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-09 12:46:31 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 06:27:07 UTC</div></div></div></body></html>
