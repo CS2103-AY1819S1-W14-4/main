@@ -86,6 +86,7 @@
 <li><a href="#user-management">I.3. User Management</a></li>
 <li><a href="#inventory-management-2">I.4. Inventory Management</a></li>
 <li><a href="#sale-management">I.5. Sale Management</a></li>
+<li><a href="#purchase-order-management-2">I.6. Purchase Order Management</a></li>
 </ul>
 </li>
 </ul>
@@ -4610,5 +4611,118 @@ Expected: Similar to previous.</p>
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="purchase-order-management-2"><a class="link" href="#purchase-order-management-2">I.6. Purchase Order Management</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Listing all purchase orders</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must be logged in</p>
+</li>
+<li>
+<p>Test case: <code>list-po</code><br>
+Expected: Purchase orders will be listed at the panel on the left of the UI.</p>
+</li>
+</ol>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-10 18:08:50 UTC</div></div></div></body></html>
+</li>
+<li>
+<p>Adding a purchase order</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must be logged, item sku must exist in the inventory manager, required date must be beyond the current date
+and the quantity must be valid.</p>
+</li>
+<li>
+<p>Test case: <code>add-po s/apple-iphone-xr q/1000 d/2018-12-12 sp/Apple Inc</code><br>
+Expected: Purchase order will be added into the system. Details of the added purchase order is shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>add-po s/</code><br>
+Expected: No purchase order is added. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect add-po commands to try: <code>add-po</code>, `add-po ,,,`_<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Editing a purchase order</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must be logged, purchase order index must exist in the list and purchase order status must be in 'PENDING' status.</p>
+</li>
+<li>
+<p>Test case: <code>edit-po 2 q/1000</code><br>
+Expected: Edited purchase order will replace the existing purchase order in the system. Details of the edited purchase order is shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>edit-po asd sd/</code><br>
+Expected: No purchase order is edited. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect edit-po commands to try: <code>edit-po</code>, `edit-po ,,,`_<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting a purchase order</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must be logged, purchase order index must exist in the list.</p>
+</li>
+<li>
+<p>Test case: <code>delete-po 2</code><br>
+Expected: Purchase order at index 2 will be deleted. Details of the deleted purchase order is shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>delete-po asd</code><br>
+Expected: No purchase order is deleted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete-po commands to try: <code>delete-po</code>, `delete-po ,,,`_<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Approving a purchase order</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must be logged, purchase order index must exist in the list and purchase order status must be in 'PENDING' status.</p>
+</li>
+<li>
+<p>Test case: <code>approve-po 2</code><br>
+Expected: Purchase order at index 2 will be approved. Details of the approved purchase order is shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>approve-po asd sd/</code><br>
+Expected: No purchase order is approved. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect approve-po commands to try: <code>approve-po</code>, `approve-po ,,,`_<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><em>{ more test cases &#8230;&#8203; }</em></p>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 01:44:05 UTC</div></div></div></body></html>
