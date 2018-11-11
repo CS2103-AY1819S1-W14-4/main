@@ -1242,8 +1242,8 @@ choices made.</p>
 <div class="sect2">
 <h3 id="authentication"><a class="link" href="#authentication">3.6. Authentication</a></h3>
 <div class="paragraph">
-<p>Authentication is introduced in Inventory Management to allow users to login to the system to perform their inventory
-management tasks. This is to prevent unauthorized users from accessing the system.</p>
+<p>Authentication is introduced in Inventory Manager which allows users to authenticate themselves to perform their inventory
+management tasks. This is to prevent any unauthorized users from accessing the system.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation-4"><a class="link" href="#implementation-4">3.6.1. Implementation</a></h4>
@@ -1256,8 +1256,8 @@ there are two conditions which needs to be met.</p>
 <h5 id="conditions-2"><a class="link" href="#conditions-2">Conditions</a></h5>
 <div class="paragraph">
 <p>The following two conditions must be met before executing:
-. Current user who are executing the command must be providing correct username and password.
-. The index of the staff must be a valid number and existing in the staff list shown.</p>
+. Current user who are executing the command must be providing valid username and password.
+. The user must have an account exists in the system.</p>
 </div>
 <div class="paragraph">
 <p><code>LoginCommand#execute</code> will perform the validation before proceeding. If any of the above validation fails,
@@ -1284,7 +1284,7 @@ choices made.</p>
 <div class="paragraph">
 <p><strong>Alternative 2:</strong> Executed as an Event<br>
 <strong>Pros:</strong> Able to be used by any component of the application.<br>
-<strong>Cons:</strong> <code>AuthenticateUserEvent.execute()</code> will need to access inventory to perform validations.</p>
+<strong>Cons:</strong> <code>AuthenticateUserEvent.execute()</code> will need to access the staff list to perform validations.</p>
 </div>
 <div class="paragraph">
 <p>Based on the above pros and cons, the first option is chosen as it is easier to implement, and it does not require
@@ -1311,9 +1311,9 @@ choices made.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/LoginSDForLogic.png" alt="LoginSDForLogic" width="450">
+<img src="images/LoginSDForLogic.png" alt="LoginSDForLogic" width="790">
 </div>
-<div class="title">Figure 13. UML diagram shows how login is executed and works at the logic component.</div>
+<div class="title">Figure 13. This UML diagram shows how login is executed and works at the logic component.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1327,9 +1327,9 @@ largely relied on when the commands are executed.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AuthenticationModelComponentClassDiagram.png" alt="AuthenticationModelComponentClassDiagram" width="450">
+<img src="images/AuthenticationModelComponentClassDiagram.png" alt="AuthenticationModelComponentClassDiagram" width="790">
 </div>
-<div class="title">Figure 14. UML diagram shows the UserSession object stores a Staff object and is stored in ModelManager.</div>
+<div class="title">Figure 14. This UML diagram shows the UserSession object stores a Staff object and is stored in ModelManager.</div>
 </div>
 </div>
 </div>
@@ -1409,17 +1409,29 @@ choices made.</p>
 <div class="sect4">
 <h5 id="logic-component-3"><a class="link" href="#logic-component-3">Logic Component</a></h5>
 <div class="paragraph">
-<p>The following commands are added for User Management:
-* <code>add-staff</code> : Add a staff
-* <code>list-staff</code> : List all staffs
-* <code>edit-po</code> : Edit a staff
-* <code>delete-staff</code> : Delete a staff</p>
+<p>The following commands are added for User Management:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add-staff</code> : Add a staff</p>
+</li>
+<li>
+<p><code>list-staff</code> : List all staffs</p>
+</li>
+<li>
+<p><code>edit-po</code> : Edit a staff</p>
+</li>
+<li>
+<p><code>delete-staff</code> : Delete a staff</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/EditStaffSDForLogic.png" alt="EditStaffSDForLogic" width="450">
+<img src="images/EditStaffSDForLogic.png" alt="EditStaffSDForLogic" width="790">
 </div>
-<div class="title">Figure 15. UML diagram shows how <code>edit-staff</code> is executed and works at the logic component.</div>
+<div class="title">Figure 15. This UML diagram shows how <code>edit-staff</code> is executed and works at the logic component.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1429,9 +1441,9 @@ choices made.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/StaffModelComponentClassDiagram.png" alt="StaffModelComponentClassDiagram" width="450">
+<img src="images/StaffModelComponentClassDiagram.png" alt="StaffModelComponentClassDiagram" width="790">
 </div>
-<div class="title">Figure 16. UML diagram shows representation of Staff and UniqueStaffList in Inventory Manager.</div>
+<div class="title">Figure 16. This UML diagram shows representation of Staff and UniqueStaffList in Inventory Manager.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1441,12 +1453,12 @@ choices made.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/StaffStorageComponentClassDiagram.png" alt="StaffStorageComponentClassDiagram" width="450">
+<img src="images/StaffStorageComponentClassDiagram.png" alt="StaffStorageComponentClassDiagram" width="790">
 </div>
-<div class="title">Figure 17. UML diagram shows Staff objects are saved using XmlAdaptedStaff objects into a XMLSerializableStaffList as shown above.</div>
+<div class="title">Figure 17. This UML diagram shows Staff objects are saved using XmlAdaptedStaff objects into a XMLSerializableStaffList as shown above.</div>
 </div>
 <div class="paragraph">
-<p>An example staff stored in this format is reproduced below:</p>
+<p>An example staff stored in XML format is reproduced below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -4926,4 +4938,4 @@ Expected: The item list is not exported due to invalid file format. Error detail
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 14:55:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 15:19:27 UTC</div></div></div></body></html>

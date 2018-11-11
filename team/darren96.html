@@ -15,31 +15,28 @@ a Graphical User Interface (GUI).</p>
 </div>
 <div class="paragraph">
 <p>In this Inventory Manager, I have designed and implemented the authentication component and
-user management component. This two components provides the inventory manager on the ability
-to authenticate and authorize users to manage the inventory.</p>
+user management component. These two components provide the ability to the inventory manager to authenticate and
+authorize users to manage the inventory.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">2. Summary of contributions</a></h2>
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">2. Summary of Contributions</a></h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>:</p>
+<p><strong>Major Enhancement</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Created user authentication feature</p>
-</li>
-<li>
-<p>Created user management features</p>
+<p>Created authentication and user management feature</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Code contributed</strong>:</p>
+<p><strong>Code Contributed</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -58,50 +55,53 @@ to authenticate and authorize users to manage the inventory.</p>
 <li>
 <p><a href="https://github.com/CS2103-AY1819S1-W14-4/main/pulls?q=is%3Apr+is%3Aclosed+reviewed-by%3Adarren96">Pull Requests Reviewed</a></p>
 </li>
+</ul>
+</div>
+</li>
 <li>
-<p>Project management:</p>
+<p><strong>Project Management</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Setup a release for v1.1</p>
+<p>Setup a release for <a href="https://github.com/CS2103-AY1819S1-W14-4/main/releases/tag/v1.1">v1.1</a></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Enhancements to existing features:</p>
+<p><strong>Enhancements to Existing Features</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Enable <code>undo</code> and <code>redo</code> commands to be executed for the user management component</p>
+<p>Enabled <code>undo</code> and <code>redo</code> commands to be executed for the user management component</p>
 </li>
 <li>
-<p>Enhancement on command history of the user to be cleared once user logout</p>
+<p>Cleared command history of the user once user is logged out</p>
 </li>
 <li>
-<p>Mask user entered password in the log file</p>
+<p>Masked up the password which will be shown in the log file</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Documentation:</p>
+<p><strong>Documentation</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Update the user guides of User Management and Authentication components of Inventory Manager <a href="https://cs2103-ay1819s1-w14-4.github.io/main/UserGuide.html">#22</a></p>
+<p>Updated the user guides of Authentication and User Management components of Inventory Manager <a href="https://github.com/CS2103-AY1819S1-W14-4/main/pull/211">(#211)</a></p>
 </li>
 <li>
-<p>Update the developer guides of User Management component of Inventory Manager <a href="https://cs2103-ay1819s1-w14-4.github.io/main/UserGuide.html">#22</a></p>
+<p>Updated the developer guides of Authentication and User Management component of Inventory Manager <a href="https://github.com/CS2103-AY1819S1-W14-4/main/pull/211">(#211)</a></p>
 </li>
 <li>
-<p>Update my personal portfolio <a href="https://github.com/CS2103-AY1819S1-W14-4/main/pull/22">#22</a></p>
+<p>Updated my personal portfolio <a href="https://cs2103-ay1819s1-w14-4.github.io/main/team/darren96.html">(#211)</a></p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Tools:</p>
+<p><strong>Tools</strong>:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -109,9 +109,6 @@ to authenticate and authorize users to manage the inventory.</p>
 </li>
 <li>
 <p>Integrated a Github plugin (TravisCI) to the team repo</p>
-</li>
-</ul>
-</div>
 </li>
 </ul>
 </div>
@@ -136,7 +133,7 @@ to authenticate and authorize users to manage the inventory.</p>
 <div class="sect2">
 <h3 id="authentication"><a class="link" href="#authentication">3.1. Authentication</a></h3>
 <div class="paragraph">
-<p>Users authenticate their identities prior to using other functions of the applications.</p>
+<p>Users authenticate their identities prior using any other functions of the applications.</p>
 </div>
 <div class="paragraph">
 <p>The following commands are only available to any members except <code>login</code> which can be executed by any user.<br></p>
@@ -144,7 +141,7 @@ to authenticate and authorize users to manage the inventory.</p>
 <div class="sect3">
 <h4 id="login-to-the-system-code-login-code"><a class="link" href="#login-to-the-system-code-login-code">3.1.1. Login to the system : <code>login</code></a></h4>
 <div class="paragraph">
-<p>The <code>login</code> command allows the user to login with the given username and password.<br></p>
+<p>The <code>login</code> command allows the user to login with given username and password.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>login u/USERNAME p/PASSWORD</code></p>
@@ -162,7 +159,7 @@ to authenticate and authorize users to manage the inventory.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/doc-login.png" alt="doc login" width="450">
+<img src="../images/doc-login.png" alt="doc login" width="790">
 </div>
 </div>
 <div class="paragraph">
@@ -172,8 +169,8 @@ to authenticate and authorize users to manage the inventory.</p>
 <div class="sect3">
 <h4 id="change-user-s-password-code-change-password-code"><a class="link" href="#change-user-s-password-code-change-password-code">3.1.2. Change user&#8217;s password : <code>change-password</code></a></h4>
 <div class="paragraph">
-<p>The <code>change-password</code> command updates a user password into the system with given new password.<br>
-If there are multiple inputs for the new password, then only the last input of the new password is accepted.<br></p>
+<p>The <code>change-password</code> command updates the user&#8217;s password in the system with a given new password.<br>
+If there are multiple inputs for the new password field, then only the last input of the new password is accepted.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>change-password p/NEW_PASSWORD</code></p>
@@ -191,7 +188,7 @@ If there are multiple inputs for the new password, then only the last input of t
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/doc-change-password.png" alt="doc change password" width="450">
+<img src="../images/doc-change-password.png" alt="doc change password" width="790">
 </div>
 </div>
 <div class="paragraph">
@@ -201,7 +198,7 @@ If there are multiple inputs for the new password, then only the last input of t
 <div class="sect3">
 <h4 id="logout-from-the-system-code-logout-code"><a class="link" href="#logout-from-the-system-code-logout-code">3.1.3. Logout from the system : <code>logout</code></a></h4>
 <div class="paragraph">
-<p>The <code>logout</code> Logout the current users from the system.<br></p>
+<p>The <code>logout</code> command signs out the current users from the system and removes all the commands history.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>logout</code></p>
@@ -262,7 +259,7 @@ This command is available to admins only.<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/doc-list-user.png" alt="doc list user" width="450">
+<img src="../images/doc-list-user.png" alt="doc list user" width="790">
 </div>
 </div>
 <div class="paragraph">
@@ -305,7 +302,7 @@ This command is available to admins only.<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/doc-delete-user-failed.png" alt="doc delete user failed" width="450">
+<img src="../images/doc-delete-user-failed.png" alt="doc delete user failed" width="790">
 </div>
 </div>
 <div class="paragraph">
@@ -345,8 +342,8 @@ This command is available to admins only.<br></p>
 <div class="sect2">
 <h3 id="authentication-2"><a class="link" href="#authentication-2">4.1. Authentication</a></h3>
 <div class="paragraph">
-<p>Authentication is introduced in Inventory Management to allow users to login to the system to perform their inventory
-management tasks. This is to prevent unauthorized users from accessing the system.</p>
+<p>Authentication is introduced in Inventory Manager which allows users to authenticate themselves to perform their inventory
+management tasks. This is to prevent any unauthorized users from accessing the system.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation"><a class="link" href="#implementation">4.1.1. Implementation</a></h4>
@@ -359,8 +356,8 @@ there are two conditions which needs to be met.</p>
 <h5 id="conditions"><a class="link" href="#conditions">Conditions</a></h5>
 <div class="paragraph">
 <p>The following two conditions must be met before executing:
-. Current user who are executing the command must be providing correct username and password.
-. The index of the staff must be a valid number and existing in the staff list shown.</p>
+. Current user who are executing the command must be providing valid username and password.
+. The user must have an account exists in the system.</p>
 </div>
 <div class="paragraph">
 <p><code>LoginCommand#execute</code> will perform the validation before proceeding. If any of the above validation fails,
@@ -387,7 +384,7 @@ choices made.</p>
 <div class="paragraph">
 <p><strong>Alternative 2:</strong> Executed as an Event<br>
 <strong>Pros:</strong> Able to be used by any component of the application.<br>
-<strong>Cons:</strong> <code>AuthenticateUserEvent.execute()</code> will need to access inventory to perform validations.</p>
+<strong>Cons:</strong> <code>AuthenticateUserEvent.execute()</code> will need to access the staff list to perform validations.</p>
 </div>
 <div class="paragraph">
 <p>Based on the above pros and cons, the first option is chosen as it is easier to implement, and it does not require
@@ -414,9 +411,9 @@ choices made.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/LoginSDForLogic.png" alt="LoginSDForLogic" width="450">
+<img src="../images/LoginSDForLogic.png" alt="LoginSDForLogic" width="790">
 </div>
-<div class="title">Figure 1. UML diagram shows how login is executed and works at the logic component.</div>
+<div class="title">Figure 1. This UML diagram shows how login is executed and works at the logic component.</div>
 </div>
 </div>
 <div class="sect4">
@@ -430,9 +427,9 @@ largely relied on when the commands are executed.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/AuthenticationModelComponentClassDiagram.png" alt="AuthenticationModelComponentClassDiagram" width="450">
+<img src="../images/AuthenticationModelComponentClassDiagram.png" alt="AuthenticationModelComponentClassDiagram" width="790">
 </div>
-<div class="title">Figure 2. UML diagram shows the UserSession object stores a Staff object and is stored in ModelManager.</div>
+<div class="title">Figure 2. This UML diagram shows the UserSession object stores a Staff object and is stored in ModelManager.</div>
 </div>
 </div>
 </div>
@@ -512,17 +509,29 @@ choices made.</p>
 <div class="sect4">
 <h5 id="logic-component-2"><a class="link" href="#logic-component-2">Logic Component</a></h5>
 <div class="paragraph">
-<p>The following commands are added for User Management:
-* <code>add-staff</code> : Add a staff
-* <code>list-staff</code> : List all staffs
-* <code>edit-po</code> : Edit a staff
-* <code>delete-staff</code> : Delete a staff</p>
+<p>The following commands are added for User Management:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add-staff</code> : Add a staff</p>
+</li>
+<li>
+<p><code>list-staff</code> : List all staffs</p>
+</li>
+<li>
+<p><code>edit-po</code> : Edit a staff</p>
+</li>
+<li>
+<p><code>delete-staff</code> : Delete a staff</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/EditStaffSDForLogic.png" alt="EditStaffSDForLogic" width="450">
+<img src="../images/EditStaffSDForLogic.png" alt="EditStaffSDForLogic" width="790">
 </div>
-<div class="title">Figure 3. UML diagram shows how <code>edit-staff</code> is executed and works at the logic component.</div>
+<div class="title">Figure 3. This UML diagram shows how <code>edit-staff</code> is executed and works at the logic component.</div>
 </div>
 </div>
 <div class="sect4">
@@ -532,9 +541,9 @@ choices made.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/StaffModelComponentClassDiagram.png" alt="StaffModelComponentClassDiagram" width="450">
+<img src="../images/StaffModelComponentClassDiagram.png" alt="StaffModelComponentClassDiagram" width="790">
 </div>
-<div class="title">Figure 4. UML diagram shows representation of Staff and UniqueStaffList in Inventory Manager.</div>
+<div class="title">Figure 4. This UML diagram shows representation of Staff and UniqueStaffList in Inventory Manager.</div>
 </div>
 </div>
 <div class="sect4">
@@ -544,12 +553,12 @@ choices made.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/StaffStorageComponentClassDiagram.png" alt="StaffStorageComponentClassDiagram" width="450">
+<img src="../images/StaffStorageComponentClassDiagram.png" alt="StaffStorageComponentClassDiagram" width="790">
 </div>
-<div class="title">Figure 5. UML diagram shows Staff objects are saved using XmlAdaptedStaff objects into a XMLSerializableStaffList as shown above.</div>
+<div class="title">Figure 5. This UML diagram shows Staff objects are saved using XmlAdaptedStaff objects into a XMLSerializableStaffList as shown above.</div>
 </div>
 <div class="paragraph">
-<p>An example staff stored in this format is reproduced below:</p>
+<p>An example staff stored in XML format is reproduced below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -578,4 +587,4 @@ Passwords are stored in hashed format using SHA-256 encoding.
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 14:55:23 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 15:19:27 UTC</div></div></div></body></html>
