@@ -34,7 +34,7 @@
 <li><a href="#logging">3.4. Logging</a></li>
 <li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
 <li><a href="#authentication">3.6. Authentication</a></li>
-<li><a href="#users-creation">3.7. Users Creation</a></li>
+<li><a href="#user-management">3.7. User Management</a></li>
 <li><a href="#export-csv-mechanism">3.8. Export CSV mechanism</a></li>
 <li><a href="#purchase-order-management">3.9. Purchase Order Management</a></li>
 </ul>
@@ -83,7 +83,7 @@
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">I.1. Launch and Shutdown</a></li>
 <li><a href="#authentication-2">I.2. Authentication</a></li>
-<li><a href="#user-management">I.3. User Management</a></li>
+<li><a href="#user-management-2">I.3. User Management</a></li>
 <li><a href="#inventory-management-2">I.4. Inventory Management</a></li>
 <li><a href="#sale-management">I.5. Sale Management</a></li>
 <li><a href="#purchase-order-management-2">I.6. Purchase Order Management</a></li>
@@ -1248,40 +1248,39 @@ choices made.</p>
 <div class="sect2">
 <h3 id="authentication"><a class="link" href="#authentication">3.6. Authentication</a></h3>
 <div class="paragraph">
-<p><strong>Authentication is introduced in Inventory Management to *allow users to login to the system to perform their inventory
-management tasks</strong>.</p>
-</div>
-<div class="paragraph">
-<p>Authentication component is to help the SMEs to strengthen their security on the data in the inventory manager. It is also
-to prevent any unidentified users to be able to access the application.</p>
+<p>Authentication is introduced in Inventory Management to allow users to login to the system to perform their inventory
+management tasks. This is to prevent unauthorized users from accessing the system.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation-4"><a class="link" href="#implementation-4">3.6.1. Implementation</a></h4>
-<div class="sect4">
-<h5 id="logic-component-2"><a class="link" href="#logic-component-2">Logic Component</a></h5>
 <div class="paragraph">
-<p>Authentication will be largely involved in the Logic Component. This is because logic component will identify whether a user of the
-application is authenticated and authorized to execute the commands.</p>
-</div>
+<p>The authentication of user is handled by <code>LoginCommand</code>. The use of it will trigger <code>Model#authenticateUser</code>,
+which will authenticate the user in the Inventory Manager. However, for <code>LoginCommand#execute</code> to be successful,
+there are two conditions which needs to be met.</p>
 </div>
 <div class="sect4">
-<h5 id="model-component-2"><a class="link" href="#model-component-2">Model Component</a></h5>
+<h5 id="conditions-2"><a class="link" href="#conditions-2">Conditions</a></h5>
 <div class="paragraph">
-<p>Authentication has a #UserSession stores in the Model Component of the system. This is due to this component has to be largely relied on
-when the commands are executed.</p>
+<p>The following two conditions must be met before executing:
+. Current user who are executing the command must be providing correct username and password.
+. The index of the staff must be a valid number and existing in the staff list shown.</p>
 </div>
 <div class="paragraph">
-<p>The user session are represented by <code>staff</code> and <code>isLogin</code>.
-User session can only be created after the user executed the login command and authenticated his/her identity.
-Newly created user session object comes with a <code>isLogin</code> status with true which indicates the user is logged in.</p>
+<p><code>LoginCommand#execute</code> will perform the validation before proceeding. If any of the above validation fails,
+<code>CommandException</code> will be thrown and it will not call <code>Model#authenticateUser</code>.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.6.2. Design Considerations</a></h4>
+<h4 id="design-consideration-2"><a class="link" href="#design-consideration-2">3.6.2. Design Consideration</a></h4>
 <div class="paragraph">
-<p><strong>Aspect:</strong> Where <code>authenticateUser</code> is executed<br>
-There are various places where <code>authenticateUser</code> can be executed. The pros and cons for each option is shown below.</p>
+<p>There are a few design considerations when authenticating a staff. Below will explain the various considerations and the
+choices made.</p>
+</div>
+<div class="sect4">
+<h5 id="aspect-where-code-login-code-executes"><a class="link" href="#aspect-where-code-login-code-executes">Aspect: Where <code>login</code> executes</a></h5>
+<div class="paragraph">
+<p>There are various places where <code>authenticateUser</code> can be executed. The pros and cons for each option is shown below.</p>
 </div>
 <div class="paragraph">
 <p><strong>Alternative 1 (current choice):</strong> Executed at Logic<br>
@@ -1289,60 +1288,94 @@ There are various places where <code>authenticateUser</code> can be executed. Th
 <strong>Cons:</strong> Direct calling of <code>Model.authenticateUser()</code> will not be validated.<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Alternative 2:</strong> Executed at Model<br>
-<strong>Pros:</strong> Ensures that all entries are validated before sale can be created.<br>
-<strong>Cons:</strong><code>Model.authenticateUser()</code> will need to access inventory to perform validations..</p>
+<p><strong>Alternative 2:</strong> Executed as an Event<br>
+<strong>Pros:</strong> Able to be used by any component of the application.<br>
+<strong>Cons:</strong> <code>AuthenticateUserEvent.execute()</code> will need to access inventory to perform validations.</p>
 </div>
 <div class="paragraph">
 <p>Based on the above pros and cons, the first option is chosen as it is easier to implement, and it does not require
-<code>Model.authenticateUser()</code> to read the inventory and perform validations.</p>
+<code>AuthenticateUserEvent.execute()</code> to read the inventory and perform validations.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="logic-component-2"><a class="link" href="#logic-component-2">Logic Component</a></h5>
+<div class="paragraph">
+<p>The following commands are added for Authentication:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>login</code> : Authenticates a staff</p>
+</li>
+<li>
+<p><code>change-password</code> : Changes the current user&#8217;s password</p>
+</li>
+<li>
+<p><code>logout</code> : Logout a staff and clears all the command history</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/LoginSDForLogic.png" alt="LoginSDForLogic" width="450">
+</div>
+<div class="title">Figure 13. UML diagram shows how login is executed and works at the logic component.</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="model-component-2"><a class="link" href="#model-component-2">Model Component</a></h5>
+<div class="paragraph">
+<p>Authentication has a <code>UserSession</code> stores in the Model Component of the system. This is due to this component has to be
+largely relied on when the commands are executed.</p>
+</div>
+<div class="paragraph">
+<p>Newly created user session object comes with a <code>Staff</code> object to store current user&#8217;s information.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AuthenticationModelComponentClassDiagram.png" alt="AuthenticationModelComponentClassDiagram" width="450">
+</div>
+<div class="title">Figure 14. UML diagram shows the UserSession object stores a Staff object and is stored in ModelManager.</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="users-creation"><a class="link" href="#users-creation">3.7. Users Creation</a></h3>
+<h3 id="user-management"><a class="link" href="#user-management">3.7. User Management</a></h3>
 <div class="paragraph">
-<p>Creating a user will have the staff&#8217;s account created. Below will describe how this
+<p>Editing a user will have the staff&#8217;s account information updated. Below will describe how this
 feature is implemented in Inventory Manager.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation-5"><a class="link" href="#implementation-5">3.7.1. Implementation</a></h4>
 <div class="paragraph">
-<p>The creation of user is handled by <code>AddStaffCommand</code>. The use of it will trigger <code>Model#addUser</code>,
-which will add the user into the Inventory Manager. However, for <code>AddStaffCommand#execute</code> to be successful,
+<p>The update of user is handled by <code>EditStaffCommand</code>. The use of it will trigger <code>Model#updateStaff</code>,
+which will edit the user in the Inventory Manager. However, for <code>EditStaffCommand#execute</code> to be successful,
 there are two conditions which needs to be met.</p>
 </div>
 <div class="sect4">
-<h5 id="conditions-2"><a class="link" href="#conditions-2">Conditions</a></h5>
+<h5 id="conditions-3"><a class="link" href="#conditions-3">Conditions</a></h5>
 <div class="paragraph">
-<p>The following two conditions must be met before.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Current user who are executing the command must be a user with admin role.</p>
-</li>
-<li>
-<p>The staff with same identity which are username and password cannot exists in the staff list.</p>
-</li>
-</ol>
+<p>The following two conditions must be met before:
+. Current user who are executing the command must be a user with admin role.
+. The index of the staff must be a valid number and existing in the staff list shown.</p>
 </div>
 <div class="paragraph">
-<p><code>AddStaffCommand#execute</code> will perform the validation before proceeding. If any of the above validation fails,
-<code>CommandException</code> will be thrown and it will not call <code>Model#addStaff</code>.</p>
+<p><code>EditStaffCommand#execute</code> will perform the validation before proceeding. If any of the above validation fails,
+<code>CommandException</code> will be thrown and it will not call <code>Model#updateStaff</code>.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-consideration-2"><a class="link" href="#design-consideration-2">3.7.2. Design Consideration</a></h4>
+<h4 id="design-consideration-3"><a class="link" href="#design-consideration-3">3.7.2. Design Consideration</a></h4>
 <div class="paragraph">
-<p>There are a few design considerations when creating a staff. Below will explain the various considerations and the
+<p>There are a few design considerations when editing a staff. Below will explain the various considerations and the
 choices made.</p>
 </div>
 <div class="sect4">
-<h5 id="aspect-where-code-add-staff-code-executes"><a class="link" href="#aspect-where-code-add-staff-code-executes">Aspect: Where <code>add-staff</code> executes</a></h5>
+<h5 id="aspect-where-code-edit-staff-code-executes"><a class="link" href="#aspect-where-code-edit-staff-code-executes">Aspect: Where <code>edit-staff</code> executes</a></h5>
 <div class="paragraph">
-<p>There are various places where <code>add-staff</code> can be executed. The pros and cons for each option is shown below.</p>
+<p>There are various places where <code>edit-staff</code> can be executed. The pros and cons for each option is shown below.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1354,20 +1387,20 @@ choices made.</p>
 <p>Pros: Easy to implement<br></p>
 </li>
 <li>
-<p>Cons: Direct calling of <code>Model#addStaff</code> will not be validated.</p>
+<p>Cons: Direct calling of <code>Model#editStaff</code> will not be validated.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Executed at Model</p>
+<p>Executed at Model<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Ensures that all entries are validated before sale can be created.<br></p>
+<p>Pros: Ensures that all entries are validated before staff can be updated.<br></p>
 </li>
 <li>
-<p>Cons: <code>Model#addStaff</code> will need to access staff list to perform validations.</p>
+<p>Cons: <code>Model#editStaff</code> will need to access staff list to perform validations.</p>
 </li>
 </ul>
 </div>
@@ -1376,7 +1409,72 @@ choices made.</p>
 </div>
 <div class="paragraph">
 <p>Based on the above pros and cons, the first option is chosen as it is easier to implement, and it does not require
-<code>Model#addUser</code> to read the inventory and perform validations.</p>
+<code>Model#editStaff</code> to read the inventory and perform validations.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="logic-component-3"><a class="link" href="#logic-component-3">Logic Component</a></h5>
+<div class="paragraph">
+<p>The following commands are added for User Management:
+* <code>add-staff</code> : Add a staff
+* <code>list-staff</code> : List all staffs
+* <code>edit-po</code> : Edit a staff
+* <code>delete-staff</code> : Delete a staff</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditStaffSDForLogic.png" alt="EditStaffSDForLogic" width="450">
+</div>
+<div class="title">Figure 15. UML diagram shows how <code>edit-staff</code> is executed and works at the logic component.</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="model-component-3"><a class="link" href="#model-component-3">Model Component</a></h5>
+<div class="paragraph">
+<p>Staffs are managed in the Model as a UniqueStaffList which disallows duplicated staff to be added.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/StaffModelComponentClassDiagram.png" alt="StaffModelComponentClassDiagram" width="450">
+</div>
+<div class="title">Figure 16. UML diagram shows representation of Staff and UniqueStaffList in Inventory Manager.</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="storage-component-2"><a class="link" href="#storage-component-2">Storage Component</a></h5>
+<div class="paragraph">
+<p>Staffs are stored as <code>XmlAdaptedStaff</code> objects in <code>XMLSerializableStaffList</code>, which maintain a class relationship as shown in this diagram.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/StaffStorageComponentClassDiagram.png" alt="StaffStorageComponentClassDiagram" width="450">
+</div>
+<div class="title">Figure 17. UML diagram shows Staff objects are saved using XmlAdaptedStaff objects into a XMLSerializableStaffList as shown above.</div>
+</div>
+<div class="paragraph">
+<p>An example staff stored in this format is reproduced below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;staffs&gt;</span>
+    <span class="tag">&lt;username&gt;</span>johndoe<span class="tag">&lt;/username&gt;</span>
+    <span class="tag">&lt;password&gt;</span>5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8<span class="tag">&lt;/password&gt;</span>
+    <span class="tag">&lt;name&gt;</span>John Doe<span class="tag">&lt;/name&gt;</span>
+    <span class="tag">&lt;role&gt;</span>user<span class="tag">&lt;/role&gt;</span>
+<span class="tag">&lt;/staffs&gt;</span></code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Passwords are stored in hashed format using SHA-256 encoding.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1440,7 +1538,7 @@ command <code>export-csv-items f/items.csv</code>.</p>
 <div class="content">
 <img src="images/SDforExportCsvItem.png" alt="SDforExportCsvItem" width="800">
 </div>
-<div class="title">Figure 13. Component interactions for <code>export-csv-items f/items.csv</code> command (part 1)</div>
+<div class="title">Figure 18. Component interactions for <code>export-csv-items f/items.csv</code> command (part 1)</div>
 </div>
 <div class="paragraph">
 <p>The diagram below shows how the <code>EventsCenter</code> reacts to that event, which eventually results in the item list being
@@ -1450,7 +1548,7 @@ exported and the alert window of the UI being popped up to reflect the success o
 <div class="content">
 <img src="images/SDforExportCsvItemEventHandling.png" alt="SDforExportCsvItemEventHandling" width="800">
 </div>
-<div class="title">Figure 14. Component interactions for <code>export-csv-items f/items.csv</code> command (part 2)</div>
+<div class="title">Figure 19. Component interactions for <code>export-csv-items f/items.csv</code> command (part 2)</div>
 </div>
 <div class="paragraph">
 <p>The diagram below is the lower level sequence diagram for <code>export-csv-items f/items.csv</code> command inside <code>Logic</code> component.</p>
@@ -1459,12 +1557,12 @@ exported and the alert window of the UI being popped up to reflect the success o
 <div class="content">
 <img src="images/ExportCsvItemCommandSequenceDiagram.png" alt="ExportCsvItemCommandSequenceDiagram" width="900">
 </div>
-<div class="title">Figure 15. Lower level sequence diagram for <code>export-csv-items f/items.csv</code> command inside <code>Logic</code> component</div>
+<div class="title">Figure 20. Lower level sequence diagram for <code>export-csv-items f/items.csv</code> command inside <code>Logic</code> component</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.8.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.8.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-code-export-code-commands-interact-with-code-storage-code-component-and-code-logic-code-component"><a class="link" href="#aspect-how-code-export-code-commands-interact-with-code-storage-code-component-and-code-logic-code-component">Aspect: How <code>export</code> commands interact with <code>Storage</code> Component and <code>Logic</code> Component</a></h5>
 <div class="ulist">
@@ -1593,7 +1691,7 @@ Newly added purchase order comes with a default <code>PENDING</code> status whic
 <div class="sect3">
 <h4 id="implementation-7"><a class="link" href="#implementation-7">3.9.1. Implementation</a></h4>
 <div class="sect4">
-<h5 id="model-component-3"><a class="link" href="#model-component-3">Model Component</a></h5>
+<h5 id="model-component-4"><a class="link" href="#model-component-4">Model Component</a></h5>
 <div class="paragraph">
 <p>Purchase orders are maintained in the Model in a NonUniquePurchaseOrderList, allowing non unique purchase order among the stored individual purchase orders.
 The UML diagram is as shown in the figure below.</p>
@@ -1602,7 +1700,7 @@ The UML diagram is as shown in the figure below.</p>
 <div class="content">
 <img src="images/PoModel1.png" alt="PoModel1" width="800">
 </div>
-<div class="title">Figure 16. UML diagram showing representation of NonUniquePurchaseOrderList in Inventory Manager.</div>
+<div class="title">Figure 21. UML diagram showing representation of NonUniquePurchaseOrderList in Inventory Manager.</div>
 </div>
 <div class="paragraph">
 <p>Individual purchase order are represented by the <code>PurchaseOrder</code> object with attributes <code>Sku</code>, <code>Quantity</code>, <code>RequiredDate</code> and <code>Supplier</code>. The class relationship is shown
@@ -1612,11 +1710,11 @@ in Figure 11 below.</p>
 <div class="content">
 <img src="images/PoModel2.png" alt="PoModel2" width="370">
 </div>
-<div class="title">Figure 17. UML diagram showing representation of Purchase Order in Inventory Manager.</div>
+<div class="title">Figure 22. UML diagram showing representation of Purchase Order in Inventory Manager.</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="storage-component-2"><a class="link" href="#storage-component-2">Storage Component</a></h5>
+<h5 id="storage-component-3"><a class="link" href="#storage-component-3">Storage Component</a></h5>
 <div class="paragraph">
 <p>Purchase orders are stored in <code>XmlAdaptedPurchaseOrder</code> objects, which maintain a class relationship as shown in the diagram below:</p>
 </div>
@@ -1624,7 +1722,7 @@ in Figure 11 below.</p>
 <div class="content">
 <img src="images/PoStorage.png" alt="PoStorage" width="900">
 </div>
-<div class="title">Figure 18. PurchaseOrder objects are saved using XmlAdaptedPurchaseOrder objects as shown above.</div>
+<div class="title">Figure 23. PurchaseOrder objects are saved using XmlAdaptedPurchaseOrder objects as shown above.</div>
 </div>
 <div class="paragraph">
 <p>To save the XmlAdaptedPurchaseOrder objects created, it is stored in a plain text file following the XML format.<br>
@@ -1632,13 +1730,13 @@ An example purchase order stored in XML format is reproduced below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>&lt;purchaseOrders&gt;
-                &lt;sku&gt;apple-iphone-xr&lt;/sku&gt;
-                &lt;quantity&gt;1000&lt;/quantity&gt;
-                &lt;reqDate&gt;2018-12-12&lt;/reqDate&gt;
-                &lt;supplier&gt;Apple Inc.&lt;/supplier&gt;
-                &lt;status&gt;APPROVED&lt;/status&gt;
-&lt;/purchaseOrders&gt;</pre>
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;purchaseOrders&gt;</span>
+                <span class="tag">&lt;sku&gt;</span>apple-iphone-xr<span class="tag">&lt;/sku&gt;</span>
+                <span class="tag">&lt;quantity&gt;</span>1000<span class="tag">&lt;/quantity&gt;</span>
+                <span class="tag">&lt;reqDate&gt;</span>2018-12-12<span class="tag">&lt;/reqDate&gt;</span>
+                <span class="tag">&lt;supplier&gt;</span>Apple Inc.<span class="tag">&lt;/supplier&gt;</span>
+                <span class="tag">&lt;status&gt;</span>APPROVED<span class="tag">&lt;/status&gt;</span>
+<span class="tag">&lt;/purchaseOrders&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1652,7 +1750,7 @@ The diagram below shows how purchase order panel is integrated in the Ui class d
 <div class="content">
 <img src="images/PoUi.png" alt="PoUi" width="500">
 </div>
-<div class="title">Figure 19. Example of the a purchase order card in Inventory Manager UI.</div>
+<div class="title">Figure 24. Example of the a purchase order card in Inventory Manager UI.</div>
 </div>
 <div class="paragraph">
 <p>Purchase order list is shown in the ListPanel upon executing <code>list-po</code>.
@@ -1663,11 +1761,11 @@ An example of the a purchase order card is shown in figure 13 below.</p>
 <div class="content">
 <img src="images/PoCard.png" alt="PoCard" width="300">
 </div>
-<div class="title">Figure 20. Example of the a purchase order card in Inventory Manager UI.</div>
+<div class="title">Figure 25. Example of the a purchase order card in Inventory Manager UI.</div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="logic-component-3"><a class="link" href="#logic-component-3">Logic Component</a></h5>
+<h5 id="logic-component-4"><a class="link" href="#logic-component-4">Logic Component</a></h5>
 <div class="paragraph">
 <p>The following commands were added to handle the purchase order:</p>
 </div>
@@ -1700,7 +1798,7 @@ An example of the a purchase order card is shown in figure 13 below.</p>
 <div class="content">
 <img src="images/PoCommand.png" alt="PoCommand" width="280">
 </div>
-<div class="title">Figure 21. UML Diagram depicting the class relationship between command classes.</div>
+<div class="title">Figure 26. UML Diagram depicting the class relationship between command classes.</div>
 </div>
 <div class="paragraph">
 <p>Operations performed on purchase orders follow the sequence of operations described in the diagram below.</p>
@@ -1728,18 +1826,18 @@ An example of the a purchase order card is shown in figure 13 below.</p>
 <div class="content">
 <img src="images/PoList.png" alt="PoList" width="550">
 </div>
-<div class="title">Figure 22. A high level sequence diagram showing events triggered by the <code>list-po</code> command.</div>
+<div class="title">Figure 27. A high level sequence diagram showing events triggered by the <code>list-po</code> command.</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/PoAdd.png" alt="PoAdd" width="550">
 </div>
-<div class="title">Figure 23. A high level sequence diagram showing events triggered by the <code>add-po</code> command.</div>
+<div class="title">Figure 28. A high level sequence diagram showing events triggered by the <code>add-po</code> command.</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">3.9.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.9.2. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of purchase order commands that requires the item to be updated. <br>
 Commands such as <code>approve-po</code> will update the item quantity upon approval. Consequently, there are various places where
@@ -1863,7 +1961,7 @@ See <a href="UsingTravis.html#deploying-github-pages">UsingTravis.adoc</a> to le
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 24. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 29. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -4311,6 +4409,10 @@ staff and inventory without a need to invest a huge sum in complicated and expen
 <div class="sectionbody">
 <div class="dlist">
 <dl>
+<dt class="hdlist1"><a id="UML"></a> UML</dt>
+<dd>
+<p>UML stands for Unified Modeling Language which is used to specify, visualize, construct and document the behavior of a software.</p>
+</dd>
 <dt class="hdlist1"><a id="mss"></a> MSS</dt>
 <dd>
 <p>MSS stands for Main Success Scenario where it describes the shortest and most straightforward interaction by which the post-conditions can be achieved</p>
@@ -4411,11 +4513,11 @@ Expected: Similar to previous.</p>
 </li>
 <li>
 <p>Test case: <code>change-password p/newpassword</code><br>
-Expected: User will be logged in and granted access on using other functions of the application.</p>
+Expected: User&#8217;s password will be updated and need to login using the new password in the next session.</p>
 </li>
 <li>
-<p>Test case: <code>change-password p/newpassword</code><br>
-Expected: User will be prompted to fill in a new password.</p>
+<p>Test case: <code>change-password p/passworddd p/newpassword</code><br>
+Expected: <code>newpassword</code> will be used as the new password.</p>
 </li>
 <li>
 <p>Test case: <code>change-password p/</code><br>
@@ -4446,7 +4548,7 @@ Expected: User will be logged out.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="user-management"><a class="link" href="#user-management">I.3. User Management</a></h3>
+<h3 id="user-management-2"><a class="link" href="#user-management-2">I.3. User Management</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -4725,4 +4827,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 01:44:05 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 02:05:51 UTC</div></div></div></body></html>
