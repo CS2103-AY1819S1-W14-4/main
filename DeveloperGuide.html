@@ -87,6 +87,7 @@
 <li><a href="#inventory-management-2">I.4. Inventory Management</a></li>
 <li><a href="#sale-management">I.5. Sale Management</a></li>
 <li><a href="#purchase-order-management-2">I.6. Purchase Order Management</a></li>
+<li><a href="#reporting-module">I.7. Reporting Module</a></li>
 </ul>
 </li>
 </ul>
@@ -4822,9 +4823,38 @@ Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
+</div>
+<div class="sect2">
+<h3 id="reporting-module"><a class="link" href="#reporting-module">I.7. Reporting Module</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Export the item list to csv file</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: User must be logged in as an <code>admin</code></p>
+</li>
+<li>
+<p>Test case: <code>export-csv-items f/items.csv</code><br>
+Expected: The item list is exported successfully to items.csv in the installed directory.</p>
+</li>
+<li>
+<p>Test case: <code>export-csv-items n/items.csv</code><br>
+Expected: The item list is not exported due to invalid prefix. Error details shown in the feedback.</p>
+</li>
+<li>
+<p>Test case: <code>export-csv-items f/items.xml</code><br>
+Expected: The item list is not exported due to invalid file format. Error details shown in the feedback.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
 <div class="paragraph">
 <p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 02:05:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 07:33:42 UTC</div></div></div></body></html>
