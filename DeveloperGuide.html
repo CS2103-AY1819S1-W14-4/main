@@ -1002,11 +1002,7 @@ if it passes the checks.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">/**
- * Returns true if both items have the same SKU.
- * This defines a weaker notion of equality between two items.
- */</span>
-<span class="directive">public</span> <span class="type">boolean</span> isSameItem(Item otherItem) {
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="type">boolean</span> isSameItem(Item otherItem) {
     <span class="keyword">if</span> (otherItem == <span class="local-variable">this</span>) {
         <span class="keyword">return</span> <span class="predefined-constant">true</span>;
     }
@@ -1027,14 +1023,11 @@ user is stored in a valid file path, and is a valid image file.</p>
 <p>Inventory Manager checks if the directory supplied by the user is a valid file path. Then, the file&#8217;s mime-type will be verified to ensure that it is a valid image file.</p>
 </div>
 <div class="paragraph">
-<p>The following code snippet shows how the image field is checked and validated:</p>
+<p>The following code snippet shows how the image URL is checked and validated:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="java"><span class="comment">/**
- * Returns true if a given string is a valid image file.
- */</span>
-<span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isValidImage(<span class="predefined-type">String</span> test) {
+<pre class="CodeRay highlight"><code data-lang="java"><span class="directive">public</span> <span class="directive">static</span> <span class="type">boolean</span> isValidImage(<span class="predefined-type">String</span> test) {
     <span class="keyword">if</span> (test.matches(IMAGE_VALIDATION_REGEX)) {
         <span class="predefined-type">File</span> file = <span class="keyword">new</span> <span class="predefined-type">File</span>(test);
 
@@ -4410,6 +4403,10 @@ staff and inventory without a need to invest a huge sum in complicated and expen
 <div class="sectionbody">
 <div class="dlist">
 <dl>
+<dt class="hdlist1"><a id="SKU"></a> SKU</dt>
+<dd>
+<p>SKU stands for Stock Keeping Unit. It is a product and service identification code for a store or product.</p>
+</dd>
 <dt class="hdlist1"><a id="UML"></a> UML</dt>
 <dd>
 <p>UML stands for Unified Modeling Language which is used to specify, visualize, construct and document the behavior of a software.</p>
@@ -4420,7 +4417,7 @@ staff and inventory without a need to invest a huge sum in complicated and expen
 </dd>
 <dt class="hdlist1"><a id="po"></a> PO</dt>
 <dd>
-<p>PO stands for purchase order</p>
+<p>PO stands for purchase order.</p>
 </dd>
 </dl>
 </div>
@@ -4640,7 +4637,79 @@ Expected: Similar to previous.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a item while all items are listed</p>
+<p>Adding an item</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Pre-requisites: The item to be added must not have the same SKU as another existing item in the inventory and must be logged in.</p>
+</li>
+<li>
+<p>Test case: <code>add-item n/iPhone XR p/1500.00 q/70 s/apple-iphone-xr i/iphone.jpg</code><br>
+Expected: Item will be added into the inventory. Details of the added item shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>add-item n/</code><br>
+Expected: No item is added. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect add-item commands to try: <code>add-item</code>, `add-item ,,,`_<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Listing all the items</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Must be logged in.</p>
+</li>
+<li>
+<p>Test case: <code>list-item</code><br>
+Expected: All items will be listed at the panel on the left of the UI.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Listing all the items that are low on stock</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Must be logged in.</p>
+</li>
+<li>
+<p>Test case: <code>list-low-qty</code><br>
+Expected: All items thath as quantities equal or less than 10 will be listed at the panel on the left of the UI.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Editing an item</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: The item to be edited must be an existing entry in the inventory list</p>
+</li>
+<li>
+<p>Test case: <code>edit-item 1 n/iPhone XS Midnight Blue</code><br>
+Expected: Edited item will replace the existing item in the system. Details of the edited item shown in the status message. Timestamp in the status bar is updated.</p>
+</li>
+<li>
+<p>Test case: <code>edit-item n/</code><br>
+Expected: No item is edited. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect edit-item commands to try: <code>edit-item</code>, `edit-item ,,,`_<br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Deleting an item while all items are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -4857,4 +4926,4 @@ Expected: The item list is not exported due to invalid file format. Error detail
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 10:04:11 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-11 12:40:30 UTC</div></div></div></body></html>
