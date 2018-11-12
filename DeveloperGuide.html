@@ -712,6 +712,7 @@ If the <code>currentStatePointer</code> is at index 0, pointing to the initial i
 <div class="content">
 <img src="images/UndoRedoSequenceDiagram.png" alt="UndoRedoSequenceDiagram" width="800">
 </div>
+<div class="title">Figure 10. A high level sequence diagram showing events triggered by the undo command.</div>
 </div>
 <div class="paragraph">
 <p>The <code>redo</code> command does the opposite&#8201;&#8212;&#8201;it calls <code>Model#redoInventory()</code>, which shifts the <code>currentStatePointer</code> once to the right, pointing to the previously undone state, and restores the inventory to that state.</p>
@@ -729,7 +730,8 @@ If the <code>currentStatePointer</code> is at index <code>inventoryStateList.siz
 </table>
 </div>
 <div class="paragraph">
-<p>Step 5. The user then decides to execute the command <code>list-item</code>. Commands that do not modify Inventory Manager, such as <code>list-item</code>, will usually not call <code>Model#commitInventory()</code>, <code>Model#undoInventory()</code> or <code>Model#redoInventory()</code>. Thus, the <code>inventoryStateList</code> remains unchanged.</p>
+<p>Step 5. The user then decides to execute the command <code>list-item</code>. Commands that do not modify Inventory Manager, such as <code>list-item</code>,
+will usually not call <code>Model#commitInventory()</code>, <code>Model#undoInventory()</code> or <code>Model#redoInventory()</code>. Thus, the <code>inventoryStateList</code> remains unchanged.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -751,6 +753,7 @@ If the <code>currentStatePointer</code> is at index <code>inventoryStateList.siz
 <div class="content">
 <img src="images/UndoRedoActivityDiagram.png" alt="UndoRedoActivityDiagram" width="650">
 </div>
+<div class="title">Figure 11. State diagram when a user executes a command</div>
 </div>
 </div>
 <div class="sect3">
@@ -860,9 +863,9 @@ If the <code>currentStatePointer</code> is at index <code>inventoryStateList.siz
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UniqueItemList.png" alt="UniqueItemList" width="500">
+<img src="images/UniqueItemList.png" alt="UniqueItemList" width="650">
 </div>
-<div class="title">Figure 10. UML diagram showing a representation of UniqueItemList in Inventory Manager.</div>
+<div class="title">Figure 12. UML diagram showing a representation of UniqueItemList in Inventory Manager.</div>
 </div>
 <div class="paragraph">
 <p>Individual items are represented by the <code>Item</code> object with attributes <code>Name</code>, <code>Price</code>, <code>Quantity</code>, <code>SKU</code>, <code>Image</code> and <code>Tag</code>.</p>
@@ -900,9 +903,9 @@ individual items are represented using <code>ItemCard</code>. The items' attribu
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ItemCard.PNG" alt="ItemCard" width="300">
+<img src="images/ItemCard.PNG" alt="ItemCard" width="400">
 </div>
-<div class="title">Figure 11. Example of the an item card in Inventory Manager UI.</div>
+<div class="title">Figure 13. Example of the an item card in Inventory Manager UI.</div>
 </div>
 </div>
 </div>
@@ -960,9 +963,9 @@ individual items are represented using <code>ItemCard</code>. The items' attribu
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DeleteItemSdForLogic.png" alt="DeleteItemSdForLogic" width="500">
+<img src="images/DeleteItemSdForLogic.png" alt="DeleteItemSdForLogic" width="800">
 </div>
-<div class="title">Figure 12. A high level sequence diagram showing events triggered by the <code>delete-item</code> command.</div>
+<div class="title">Figure 14. A high level sequence diagram showing events triggered by the <code>delete-item</code> command.</div>
 </div>
 </div>
 <div class="sect3">
@@ -1100,11 +1103,9 @@ the XML file.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AddSaleCommandSequenceDiagram.png" alt="AddSaleCommandSequenceDiagram" width="600">
+<img src="images/AddSaleCommandSequenceDiagram.png" alt="AddSaleCommandSequenceDiagram" width="800">
 </div>
-</div>
-<div class="paragraph">
-<p><em>Figure X: Sequence diagram for the add sale command.</em></p>
+<div class="title">Figure 15. Sequence diagram for the add sale command.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1320,9 +1321,9 @@ choices made.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/LoginSDForLogic.png" alt="LoginSDForLogic" width="790">
+<img src="images/LoginSDForLogic.png" alt="LoginSDForLogic" width="800">
 </div>
-<div class="title">Figure 13. This UML diagram shows how login is executed and works at the logic component.</div>
+<div class="title">Figure 16. This UML diagram shows how login is executed and works at the logic component.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1336,9 +1337,9 @@ largely relied on when the commands are executed.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/AuthenticationModelComponentClassDiagram.png" alt="AuthenticationModelComponentClassDiagram" width="790">
+<img src="images/AuthenticationModelComponentClassDiagram.png" alt="AuthenticationModelComponentClassDiagram" width="800">
 </div>
-<div class="title">Figure 14. This UML diagram shows the UserSession object stores a Staff object and is stored in ModelManager.</div>
+<div class="title">Figure 17. This UML diagram shows the UserSession object stores a Staff object and is stored in ModelManager.</div>
 </div>
 </div>
 </div>
@@ -1446,9 +1447,9 @@ choices made.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/EditStaffSDForLogic.png" alt="EditStaffSDForLogic" width="790">
+<img src="images/EditStaffSDForLogic.png" alt="EditStaffSDForLogic" width="800">
 </div>
-<div class="title">Figure 15. This UML diagram shows how <code>edit-staff</code> is executed and works at the logic component.</div>
+<div class="title">Figure 18. This UML diagram shows how <code>edit-staff</code> is executed and works at the logic component.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1458,9 +1459,9 @@ choices made.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/StaffModelComponentClassDiagram.png" alt="StaffModelComponentClassDiagram" width="790">
+<img src="images/StaffModelComponentClassDiagram.png" alt="StaffModelComponentClassDiagram" width="800">
 </div>
-<div class="title">Figure 16. This UML diagram shows the representation of Staff and UniqueStaffList in Inventory Manager.</div>
+<div class="title">Figure 19. This UML diagram shows the representation of Staff and UniqueStaffList in Inventory Manager.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1470,9 +1471,9 @@ choices made.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/StaffStorageComponentClassDiagram.png" alt="StaffStorageComponentClassDiagram" width="790">
+<img src="images/StaffStorageComponentClassDiagram.png" alt="StaffStorageComponentClassDiagram" width="800">
 </div>
-<div class="title">Figure 17. This UML diagram shows Staff objects are saved using XmlAdaptedStaff objects into a XMLSerializableStaffList as shown above.</div>
+<div class="title">Figure 20. This UML diagram shows Staff objects are saved using XmlAdaptedStaff objects into a XMLSerializableStaffList as shown above.</div>
 </div>
 <div class="paragraph">
 <p>An example staff stored in XML format is reproduced below:</p>
@@ -1561,7 +1562,7 @@ command <code>export-csv-items f/items.csv</code>.</p>
 <div class="content">
 <img src="images/SDforExportCsvItem.png" alt="SDforExportCsvItem" width="800">
 </div>
-<div class="title">Figure 18. Component interactions for <code>export-csv-items f/items.csv</code> command (part 1)</div>
+<div class="title">Figure 21. Component interactions for <code>export-csv-items f/items.csv</code> command (part 1)</div>
 </div>
 <div class="paragraph">
 <p>The diagram below shows how the <code>EventsCenter</code> reacts to that event, which eventually results in the item list being
@@ -1571,7 +1572,7 @@ exported and the alert window of the UI being popped up to reflect the success o
 <div class="content">
 <img src="images/SDforExportCsvItemEventHandling.png" alt="SDforExportCsvItemEventHandling" width="800">
 </div>
-<div class="title">Figure 19. Component interactions for <code>export-csv-items f/items.csv</code> command (part 2)</div>
+<div class="title">Figure 22. Component interactions for <code>export-csv-items f/items.csv</code> command (part 2)</div>
 </div>
 <div class="paragraph">
 <p>The diagram below is the lower level sequence diagram for <code>export-csv-items f/items.csv</code> command inside <code>Logic</code> component.</p>
@@ -1580,7 +1581,7 @@ exported and the alert window of the UI being popped up to reflect the success o
 <div class="content">
 <img src="images/ExportCsvItemCommandSequenceDiagram.png" alt="ExportCsvItemCommandSequenceDiagram" width="900">
 </div>
-<div class="title">Figure 20. Lower level sequence diagram for <code>export-csv-items f/items.csv</code> command inside <code>Logic</code> component</div>
+<div class="title">Figure 23. Lower level sequence diagram for <code>export-csv-items f/items.csv</code> command inside <code>Logic</code> component</div>
 </div>
 </div>
 </div>
@@ -1723,7 +1724,7 @@ The UML diagram is as shown in the figure below.</p>
 <div class="content">
 <img src="images/PoModel1.png" alt="PoModel1" width="800">
 </div>
-<div class="title">Figure 21. UML diagram showing representation of NonUniquePurchaseOrderList in Inventory Manager.</div>
+<div class="title">Figure 24. UML diagram showing representation of NonUniquePurchaseOrderList in Inventory Manager.</div>
 </div>
 <div class="paragraph">
 <p>Individual purchase order are represented by the <code>PurchaseOrder</code> object with attributes <code>Sku</code>, <code>Quantity</code>, <code>RequiredDate</code> and <code>Supplier</code>. The class relationship is shown
@@ -1731,9 +1732,9 @@ in Figure 11 below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/PoModel2.png" alt="PoModel2" width="370">
+<img src="images/PoModel2.png" alt="PoModel2" width="450">
 </div>
-<div class="title">Figure 22. UML diagram showing representation of Purchase Order in Inventory Manager.</div>
+<div class="title">Figure 25. UML diagram showing representation of Purchase Order in Inventory Manager.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1745,7 +1746,7 @@ in Figure 11 below.</p>
 <div class="content">
 <img src="images/PoStorage.png" alt="PoStorage" width="900">
 </div>
-<div class="title">Figure 23. PurchaseOrder objects are saved using XmlAdaptedPurchaseOrder objects as shown above.</div>
+<div class="title">Figure 26. PurchaseOrder objects are saved using XmlAdaptedPurchaseOrder objects as shown above.</div>
 </div>
 <div class="paragraph">
 <p>To save the XmlAdaptedPurchaseOrder objects created, it is stored in a plain text file following the XML format.<br>
@@ -1766,25 +1767,19 @@ An example purchase order stored in XML format is reproduced below:</p>
 <div class="sect4">
 <h5 id="ui-component-2"><a class="link" href="#ui-component-2">UI Component</a></h5>
 <div class="paragraph">
-<p>The main window contains a ListPanel, which is interchangeable to display any list based on the command entered.
-The diagram below shows how purchase order panel is integrated in the Ui class diagram.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/PoUi.png" alt="PoUi" width="500">
-</div>
-<div class="title">Figure 24. Example of the a purchase order card in Inventory Manager UI.</div>
+<p>The main window contains a ListPanel, which is interchangeable to display any list based on the
+command entered. Purchase order list is shown in the ListPanel upon executing <code>list-po</code>.
+Individual purchase orders are represented using PurchaseOrderCards that contains the
+attributes fields using labels and flowPanes.<br></p>
 </div>
 <div class="paragraph">
-<p>Purchase order list is shown in the ListPanel upon executing <code>list-po</code>.
-Individual purchase orders are represented using PurchaseOrderCards that contains the attributes fields using Labels and flowPanes.
-An example of the a purchase order card is shown in figure 13 below.</p>
+<p>The diagram below shows how purchase order panel is integrated in the Ui class diagram.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/PoCard.png" alt="PoCard" width="300">
+<img src="images/PoUi.png" alt="PoUi" width="650">
 </div>
-<div class="title">Figure 25. Example of the a purchase order card in Inventory Manager UI.</div>
+<div class="title">Figure 27. Example of the a purchase order card in Inventory Manager UI.</div>
 </div>
 </div>
 <div class="sect4">
@@ -1819,9 +1814,9 @@ An example of the a purchase order card is shown in figure 13 below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/PoCommand.png" alt="PoCommand" width="280">
+<img src="images/PoCommand.png" alt="PoCommand" width="350">
 </div>
-<div class="title">Figure 26. UML Diagram depicting the class relationship between command classes.</div>
+<div class="title">Figure 28. UML Diagram depicting the class relationship between command classes.</div>
 </div>
 <div class="paragraph">
 <p>Operations performed on purchase orders follow the sequence of operations described in the diagram below.</p>
@@ -1847,15 +1842,15 @@ An example of the a purchase order card is shown in figure 13 below.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/PoList.png" alt="PoList" width="550">
+<img src="images/PoList.png" alt="PoList" width="800">
 </div>
-<div class="title">Figure 27. A high level sequence diagram showing events triggered by the <code>list-po</code> command.</div>
+<div class="title">Figure 29. A high level sequence diagram showing events triggered by the <code>list-po</code> command.</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/PoAdd.png" alt="PoAdd" width="550">
+<img src="images/PoAdd.png" alt="PoAdd" width="800">
 </div>
-<div class="title">Figure 28. A high level sequence diagram showing events triggered by the <code>add-po</code> command.</div>
+<div class="title">Figure 30. A high level sequence diagram showing events triggered by the <code>add-po</code> command.</div>
 </div>
 </div>
 </div>
@@ -1984,7 +1979,7 @@ See <a href="UsingTravis.html#deploying-github-pages">UsingTravis.adoc</a> to le
 <div class="content">
 <img src="images/chrome_save_as_pdf.png" alt="chrome save as pdf" width="300">
 </div>
-<div class="title">Figure 29. Saving documentation as PDF files in Chrome</div>
+<div class="title">Figure 31. Saving documentation as PDF files in Chrome</div>
 </div>
 </div>
 <div class="sect2">
@@ -3111,12 +3106,13 @@ staff and inventory without a need to invest a huge sum in complicated and expen
 <div class="paragraph">
 <p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
 </div>
-<table class="tableblock frame-all grid-all" style="width: 59%;">
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 3. List of user stories</caption>
 <colgroup>
-<col style="width: 22%;">
-<col style="width: 23%;">
-<col style="width: 25%;">
-<col style="width: 30%;">
+<col style="width: 9.8591%;">
+<col style="width: 12.676%;">
+<col style="width: 35.2112%;">
+<col style="width: 42.2537%;">
 </colgroup>
 <thead>
 <tr>
@@ -4950,9 +4946,6 @@ Expected: The item list is not exported due to invalid file format. Error detail
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 12:32:42 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 12:42:20 UTC</div></div></div></body></html>
