@@ -358,7 +358,7 @@ to retrieve external data and where to validate the given file path.</p>
 <div class="sect3">
 <h4 id="implementation"><a class="link" href="#implementation">4.1.1. Implementation</a></h4>
 <div class="sect4">
-<h5 id="data-access"><a class="link" href="#data-access">Data Access</a></h5>
+<h5 id="data-access"><a class="link" href="#data-access">Data access</a></h5>
 <div class="paragraph">
 <p>In order to achieve their tasks, all <code>export</code> commands require direct access to the data and output to the
 external environment. Unlike other commands, these commands highly depend on the <code>Storage</code> component.
@@ -374,7 +374,7 @@ component will catch this <code>DataExportingEvent</code> and export data to the
 </div>
 </div>
 <div class="sect4">
-<h5 id="file-path-validation"><a class="link" href="#file-path-validation">File Path Validation</a></h5>
+<h5 id="file-path-validation"><a class="link" href="#file-path-validation">File path validation</a></h5>
 <div class="paragraph">
 <p>File paths, as required by <code>export</code> commands, need to be validated during the execution of the commands.
 However, where to implement it can be decided. It can be implemented in <code>CommandParser</code> or <code>Command</code>
@@ -389,7 +389,7 @@ Further details can be found in the sequence diagram of the next section.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="sequence-diagram"><a class="link" href="#sequence-diagram">Sequence Diagram</a></h5>
+<h5 id="sequence-diagram"><a class="link" href="#sequence-diagram">Sequence diagram</a></h5>
 <div class="paragraph">
 <p>Considering that all the <code>export</code> commands have similar sequence diagrams. So we will just show the sequence diagrams
 for <code>export-csv-items</code> command to illustrate how the <code>export</code> commands work.</p>
@@ -426,9 +426,9 @@ exported and the alert window of the UI being popped up to reflect the success o
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-how-code-export-code-commands-interact-with-code-storage-code-component-and-code-logic-code-component"><a class="link" href="#aspect-how-code-export-code-commands-interact-with-code-storage-code-component-and-code-logic-code-component">Aspect: How <code>export</code> commands interact with <code>Storage</code> Component and <code>Logic</code> Component</a></h5>
+<h5 id="aspect-how-code-export-code-commands-interact-with-code-storage-code-component-and-code-logic-code-component"><a class="link" href="#aspect-how-code-export-code-commands-interact-with-code-storage-code-component-and-code-logic-code-component">Aspect: How <code>export</code> commands interact with <code>Storage</code> component and <code>Logic</code> component</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -463,7 +463,7 @@ the Single Responsibility Principle.<br></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="aspect-location-for-implementation-of-file-path-validation-and-location-to-check-file-path-validation-br"><a class="link" href="#aspect-location-for-implementation-of-file-path-validation-and-location-to-check-file-path-validation-br">Aspect: Location for Implementation of File Path Validation and Location to Check File Path Validation<br></a></h5>
+<h5 id="aspect-location-for-implementation-of-file-path-validation-and-location-to-check-file-path-validation-br"><a class="link" href="#aspect-location-for-implementation-of-file-path-validation-and-location-to-check-file-path-validation-br">Aspect: Location for implementation of file path validation and location to check file path validation<br></a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -512,7 +512,7 @@ The implementation of command feedback is easier. File Validation is reusable in
 </div>
 </div>
 <div class="sect3">
-<h4 id="csv-file-recognizing"><a class="link" href="#csv-file-recognizing">4.1.3. Csv File Recognizing</a></h4>
+<h4 id="csv-file-recognizing"><a class="link" href="#csv-file-recognizing">4.1.3. CSV file recognizing</a></h4>
 <div class="paragraph">
 <p>Since Csv file do not have standardized format for storing objects. So we designed a format that need to be followed when
 importing csv files. If the process of importing fails due to unrecognizable failure, do check the file to import meets the
@@ -543,4 +543,4 @@ by double quotation marks(<code>"</code> <code>"</code>).</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:22:57 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:51:19 UTC</div></div></div></body></html>

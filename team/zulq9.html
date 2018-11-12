@@ -368,7 +368,7 @@ Deletes the 5th purchase order in the inventory.</p>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="purchase-order-management"><a class="link" href="#purchase-order-management">4.1. Purchase Order Management</a></h3>
+<h3 id="purchase-order-management"><a class="link" href="#purchase-order-management">4.1. Purchase order management</a></h3>
 <div class="paragraph">
 <p><strong>Purchase order management</strong> is introduced in Inventory manager to <strong>allow user to restock item easily and manage the purchase order details efficiently.</strong></p>
 </div>
@@ -380,7 +380,7 @@ Newly added purchase order comes with a default <code>PENDING</code> status whic
 <div class="sect3">
 <h4 id="implementation"><a class="link" href="#implementation">4.1.1. Implementation</a></h4>
 <div class="sect4">
-<h5 id="model-component"><a class="link" href="#model-component">Model Component</a></h5>
+<h5 id="model-component"><a class="link" href="#model-component">Model component</a></h5>
 <div class="paragraph">
 <p>Purchase orders are maintained in the Model in a NonUniquePurchaseOrderList, allowing non unique purchase order among the stored individual purchase orders.
 The UML diagram is as shown in the figure below.</p>
@@ -403,7 +403,7 @@ in Figure 11 below.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="storage-component"><a class="link" href="#storage-component">Storage Component</a></h5>
+<h5 id="storage-component"><a class="link" href="#storage-component">Storage component</a></h5>
 <div class="paragraph">
 <p>Purchase orders are stored in <code>XmlAdaptedPurchaseOrder</code> objects, which maintain a class relationship as shown in the diagram below:</p>
 </div>
@@ -430,7 +430,7 @@ An example purchase order stored in XML format is reproduced below:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="ui-component"><a class="link" href="#ui-component">UI Component</a></h5>
+<h5 id="ui-component"><a class="link" href="#ui-component">UI component</a></h5>
 <div class="paragraph">
 <p>The main window contains a ListPanel, which is interchangeable to display any list based on the
 command entered. Purchase order list is shown in the ListPanel upon executing <code>list-po</code>.
@@ -448,7 +448,7 @@ attributes fields using labels and flowPanes.<br></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="logic-component"><a class="link" href="#logic-component">Logic Component</a></h5>
+<h5 id="logic-component"><a class="link" href="#logic-component">Logic component</a></h5>
 <div class="paragraph">
 <p>The following commands were added to handle the purchase order:</p>
 </div>
@@ -520,7 +520,7 @@ attributes fields using labels and flowPanes.<br></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.2. Design considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Implementation of purchase order commands that requires the item to be updated. <br>
 Commands such as <code>approve-po</code> will update the item quantity upon approval. Consequently, there are various places where
@@ -561,4 +561,4 @@ There are various design on how to integrate purchase order in the existing stor
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:22:57 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 13:51:19 UTC</div></div></div></body></html>
