@@ -323,7 +323,7 @@ This command is available to <strong>any user</strong>.<br></p>
 <p>The following commands are only available to any members except <code>login</code> which can be executed by any user.<br></p>
 </div>
 <div class="sect3">
-<h4 id="login-to-the-system-code-login-code"><a class="link" href="#login-to-the-system-code-login-code">4.2.1. Login to the system : <code>login</code></a></h4>
+<h4 id="log-in-to-the-system-code-login-code"><a class="link" href="#log-in-to-the-system-code-login-code">4.2.1. Log in to the system : <code>login</code></a></h4>
 <div class="paragraph">
 <p>The <code>login</code> command allows the user to login with given username and password.<br></p>
 </div>
@@ -331,30 +331,20 @@ This command is available to <strong>any user</strong>.<br></p>
 <p>Format: <code>login u/USERNAME p/PASSWORD</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Login user with username as zulq9 and password as zulsenpai.<br>
-<code>login u/zulq9 p/zulsenpai</code></p>
-</li>
-</ul>
+<p>Examples: Login the user with username as admin and password as password.<br>
+<code>login u/admin p/password</code></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/doc-login.png" alt="doc login" width="790">
 </div>
-</div>
-<div class="paragraph">
-<p><em>Figure 4.1. User is required to login before proceeding.</em></p>
+<div class="title">Figure 1. The user is required to login before proceeding.</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="change-user-s-password-code-change-password-code"><a class="link" href="#change-user-s-password-code-change-password-code">4.2.2. Change user&#8217;s password : <code>change-password</code></a></h4>
 <div class="paragraph">
-<p>The <code>change-password</code> command updates the user&#8217;s password in the system with a given new password.<br>
-If there are multiple inputs for the new password field, then only the last input of the new password is accepted.<br></p>
+<p>The <code>change-password</code> command updates the user&#8217;s password in the system with a given new password.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>change-password p/NEW_PASSWORD</code></p>
@@ -365,8 +355,12 @@ If there are multiple inputs for the new password field, then only the last inpu
 <div class="ulist">
 <ul>
 <li>
-<p>Change user&#8217;s password with given new password as darrensinglenus.<br>
+<p>Change user&#8217;s password with a given new password as darrensinglenus.<br>
 <code>change-password p/darrensinglenus</code>.</p>
+</li>
+<li>
+<p>Change user&#8217;s password with multiple new passwords provided. Only the final input, which is nussoccat, will be accepted.<br>
+<code>change-password p/password p/nussoccat</code>.</p>
 </li>
 </ul>
 </div>
@@ -374,9 +368,7 @@ If there are multiple inputs for the new password field, then only the last inpu
 <div class="content">
 <img src="images/doc-change-password.png" alt="doc change password" width="790">
 </div>
-</div>
-<div class="paragraph">
-<p><em>Figure 4.2. User attempting to change password.</em></p>
+<div class="title">Figure 2. A user attempting to change the password.</div>
 </div>
 </div>
 <div class="sect3">
@@ -386,17 +378,6 @@ If there are multiple inputs for the new password field, then only the last inpu
 </div>
 <div class="paragraph">
 <p>Format: <code>logout</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Logout from the current session.<br>
-<code>logout</code></p>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -409,10 +390,9 @@ If there are multiple inputs for the new password field, then only the last inpu
 <p>The following commands are only accessible to the admin to manage the users.</p>
 </div>
 <div class="sect3">
-<h4 id="adding-a-user-code-add-staff-code"><a class="link" href="#adding-a-user-code-add-staff-code">4.3.1. Adding a user : <code>add-staff</code></a></h4>
+<h4 id="add-a-user-code-add-staff-code"><a class="link" href="#add-a-user-code-add-staff-code">4.3.1. Add a user : <code>add-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>add-staff</code> command adds a user into the system.<br>
-This command is available to admins only.<br></p>
+<p>The <code>add-staff</code> command adds a user into the system.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add-staff n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
@@ -426,17 +406,20 @@ This command is available to admins only.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Add staff with username as yaotx, password as yaotxfanboi, name as Yao TengXiong and role as manager.<br>
-<code>add-staff u/yaotx p/yaotxfanboi n/Yao TengXiong r/manager</code>.</p>
+<p>Add staff with username as johnd, password as johndoe1, name as John Doe and role as manager.<br>
+<code>add-staff u/johnd p/johndoe1 n/John Doe r/manager</code>.</p>
+</li>
+<li>
+<p>Add staff with username as damith, password as softengn, name as Damith Rajapakse and role as user.<br>
+<code>add-staff u/damith p/softengn n/Damith Rajapakse r/user</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-the-users-code-list-staff-code"><a class="link" href="#listing-all-the-users-code-list-staff-code">4.3.2. Listing all the users : <code>list-staff</code></a></h4>
+<h4 id="list-all-the-users-code-list-staff-code"><a class="link" href="#list-all-the-users-code-list-staff-code">4.3.2. List all the users : <code>list-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>list-staff</code> command displays a list of existing users in the system.<br>
-This command is available to admins only.<br></p>
+<p>The <code>list-staff</code> command displays a list of existing users in the system.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>list-staff</code></p>
@@ -445,16 +428,13 @@ This command is available to admins only.<br></p>
 <div class="content">
 <img src="images/doc-list-user.png" alt="doc list user" width="790">
 </div>
-</div>
-<div class="paragraph">
-<p><em>Figure 4.3. All users in Inventory Manager listed on screen.</em></p>
+<div class="title">Figure 3. All users in Inventory Manager listed on the screen.</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="updating-a-user-code-edit-staff-code"><a class="link" href="#updating-a-user-code-edit-staff-code">4.3.3. Updating a user : <code>edit-staff</code></a></h4>
+<h4 id="update-a-user-code-edit-staff-code"><a class="link" href="#update-a-user-code-edit-staff-code">4.3.3. Update a user : <code>edit-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>edit-staff</code> command updates a user information into the system with given username.<br>
-This command is available to admins only.<br></p>
+<p>The <code>edit-staff</code> command updates a user information into the system with the given username.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>edit-staff INDEX [n/NAME] [u/USERNAME] [p/PASSWORD] [r/ROLE]</code></p>
@@ -468,29 +448,20 @@ This command is available to admins only.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Edit staff with given id, 2 in the list. Change name to Yao Teng Xiong and role as admin.<br>
-<code>edit-staff 2 n/Yao Teng Xiong r/admin</code>.</p>
+<p>Edit staff with given id, 3 in the list. Change name to Yao Teng Xiong and role as admin.<br>
+<code>edit-staff 3 n/Yao Teng Xiong r/admin</code>.</p>
+</li>
+<li>
+<p>Edit staff with given id, 2 in the list. Change username to zulq8 and password as meowmeowzul.<br>
+<code>edit-staff 2 u/zulq8 p/meowmeowzul</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-user-code-delete-staff-code"><a class="link" href="#deleting-a-user-code-delete-staff-code">4.3.4. Deleting a user : <code>delete-staff</code></a></h4>
+<h4 id="delete-a-user-code-delete-staff-code"><a class="link" href="#delete-a-user-code-delete-staff-code">4.3.4. Delete a user : <code>delete-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>delete-staff</code> command deletes a user from the system with given index as shown in the list.<br>
-This command is available to admins only.<br></p>
-</div>
-<div class="paragraph">
-<p>An error will be shown if the entered index is invalid.
-<code>delete-staff 999</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/doc-delete-user-failed.png" alt="doc delete user failed" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p><em>Figure 4.4. Error shown if the deleted index is invalid.</em></p>
+<p>The <code>delete-staff</code> command deletes a user from the system with the given index as shown in the list.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete-staff INDEX</code></p>
@@ -501,10 +472,20 @@ This command is available to admins only.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Delete user with given index as shown in the list.<br>
+<p>Delete a user with given index as shown in the list.<br>
 <code>delete-staff 1</code>.</p>
 </li>
+<li>
+<p>Delete a user with an invalid index.<br>
+<code>delete-staff 999</code>.</p>
+</li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/doc-delete-user-failed.png" alt="doc delete user failed" width="790">
+</div>
+<div class="title">Figure 4. The error is shown if the provided index is invalid.</div>
 </div>
 </div>
 </div>
@@ -1497,7 +1478,7 @@ All the commands in this section are available to <strong>admin</strong> only.<b
 </div>
 </div>
 <div class="paragraph">
-<p><em>Figure 4.13. Import successful prompt will be shown upon completion of import.</em></p>
+<p><em>Figure 4.14. Import successful prompt will be shown upon completion of import.</em></p>
 </div>
 </div>
 <div class="sect4">
@@ -1911,4 +1892,4 @@ an Excel software.</p>
 <p>This refers to everyone that uses Inventory Manager, which includes the Members and non-logged in users.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 10:19:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 11:47:46 UTC</div></div></div></body></html>

@@ -4,8 +4,8 @@
 <h2 id="overview"><a class="link" href="#overview">1. Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This Personal Portfolio Page showcases what I have contributed in the project and the documentation for
-each contributions.</p>
+<p>This Personal Portfolio Page showcases what I have contributed to the project and the documentation for
+each contribution.</p>
 </div>
 <div class="paragraph">
 <p>Inventory manager is for Small to Medium Enterprises (SMEs) who prefer to use a
@@ -26,24 +26,10 @@ authorize users to manage the inventory.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major Enhancement</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Created authentication and user management feature</p>
-</li>
-</ul>
-</div>
+<p><strong>Major Enhancement</strong>: Created authentication and user management feature</p>
 </li>
 <li>
-<p><strong>Code Contributed</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&amp;search=darren96&amp;sort=displayName&amp;since=2018-09-12&amp;until=2018-11-07&amp;timeframe=day&amp;reverse=false&amp;repoSort=true">Functional Code</a></p>
-</li>
-</ul>
-</div>
+<p><strong>Code Contributed</strong>: <a href="https://nus-cs2103-ay1819s1.github.io/cs2103-dashboard/#=undefined&amp;search=darren96&amp;sort=displayName&amp;since=2018-09-12&amp;until=2018-11-07&amp;timeframe=day&amp;reverse=false&amp;repoSort=true">Functional Code</a></p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -59,14 +45,7 @@ authorize users to manage the inventory.</p>
 </div>
 </li>
 <li>
-<p><strong>Project Management</strong>:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Setup a release for <a href="https://github.com/CS2103-AY1819S1-W14-4/main/releases/tag/v1.1">v1.1</a></p>
-</li>
-</ul>
-</div>
+<p><strong>Project Management</strong>: Setup a release for <a href="https://github.com/CS2103-AY1819S1-W14-4/main/releases/tag/v1.1">v1.1</a></p>
 </li>
 <li>
 <p><strong>Enhancements to Existing Features</strong>:</p>
@@ -76,7 +55,7 @@ authorize users to manage the inventory.</p>
 <p>Enabled <code>undo</code> and <code>redo</code> commands to be executed for the user management component</p>
 </li>
 <li>
-<p>Cleared command history of the user once user is logged out</p>
+<p>Cleared command history of the user once the user is logged out</p>
 </li>
 <li>
 <p>Masked up the password which will be shown in the log file</p>
@@ -105,7 +84,7 @@ authorize users to manage the inventory.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Created an organization for team on Github</p>
+<p>Created an organization for the team on Github</p>
 </li>
 <li>
 <p>Integrated a Github plugin (TravisCI) to the team repo</p>
@@ -139,7 +118,7 @@ authorize users to manage the inventory.</p>
 <p>The following commands are only available to any members except <code>login</code> which can be executed by any user.<br></p>
 </div>
 <div class="sect3">
-<h4 id="login-to-the-system-code-login-code"><a class="link" href="#login-to-the-system-code-login-code">3.1.1. Login to the system : <code>login</code></a></h4>
+<h4 id="log-in-to-the-system-code-login-code"><a class="link" href="#log-in-to-the-system-code-login-code">3.1.1. Log in to the system : <code>login</code></a></h4>
 <div class="paragraph">
 <p>The <code>login</code> command allows the user to login with given username and password.<br></p>
 </div>
@@ -147,30 +126,20 @@ authorize users to manage the inventory.</p>
 <p>Format: <code>login u/USERNAME p/PASSWORD</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Login user with username as zulq9 and password as zulsenpai.<br>
-<code>login u/zulq9 p/zulsenpai</code></p>
-</li>
-</ul>
+<p>Examples: Login the user with username as admin and password as password.<br>
+<code>login u/admin p/password</code></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/doc-login.png" alt="doc login" width="790">
 </div>
-</div>
-<div class="paragraph">
-<p><em>Figure 4.1. User is required to login before proceeding.</em></p>
+<div class="title">Figure 1. The user is required to login before proceeding.</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="change-user-s-password-code-change-password-code"><a class="link" href="#change-user-s-password-code-change-password-code">3.1.2. Change user&#8217;s password : <code>change-password</code></a></h4>
 <div class="paragraph">
-<p>The <code>change-password</code> command updates the user&#8217;s password in the system with a given new password.<br>
-If there are multiple inputs for the new password field, then only the last input of the new password is accepted.<br></p>
+<p>The <code>change-password</code> command updates the user&#8217;s password in the system with a given new password.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>change-password p/NEW_PASSWORD</code></p>
@@ -181,8 +150,12 @@ If there are multiple inputs for the new password field, then only the last inpu
 <div class="ulist">
 <ul>
 <li>
-<p>Change user&#8217;s password with given new password as darrensinglenus.<br>
+<p>Change user&#8217;s password with a given new password as darrensinglenus.<br>
 <code>change-password p/darrensinglenus</code>.</p>
+</li>
+<li>
+<p>Change user&#8217;s password with multiple new passwords provided. Only the final input, which is nussoccat, will be accepted.<br>
+<code>change-password p/password p/nussoccat</code>.</p>
 </li>
 </ul>
 </div>
@@ -190,9 +163,7 @@ If there are multiple inputs for the new password field, then only the last inpu
 <div class="content">
 <img src="../images/doc-change-password.png" alt="doc change password" width="790">
 </div>
-</div>
-<div class="paragraph">
-<p><em>Figure 4.2. User attempting to change password.</em></p>
+<div class="title">Figure 2. A user attempting to change the password.</div>
 </div>
 </div>
 <div class="sect3">
@@ -202,17 +173,6 @@ If there are multiple inputs for the new password field, then only the last inpu
 </div>
 <div class="paragraph">
 <p>Format: <code>logout</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Logout from the current session.<br>
-<code>logout</code></p>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -225,10 +185,9 @@ If there are multiple inputs for the new password field, then only the last inpu
 <p>The following commands are only accessible to the admin to manage the users.</p>
 </div>
 <div class="sect3">
-<h4 id="adding-a-user-code-add-staff-code"><a class="link" href="#adding-a-user-code-add-staff-code">3.2.1. Adding a user : <code>add-staff</code></a></h4>
+<h4 id="add-a-user-code-add-staff-code"><a class="link" href="#add-a-user-code-add-staff-code">3.2.1. Add a user : <code>add-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>add-staff</code> command adds a user into the system.<br>
-This command is available to admins only.<br></p>
+<p>The <code>add-staff</code> command adds a user into the system.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>add-staff n/NAME u/USERNAME p/PASSWORD r/ROLE</code></p>
@@ -242,17 +201,20 @@ This command is available to admins only.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Add staff with username as yaotx, password as yaotxfanboi, name as Yao TengXiong and role as manager.<br>
-<code>add-staff u/yaotx p/yaotxfanboi n/Yao TengXiong r/manager</code>.</p>
+<p>Add staff with username as johnd, password as johndoe1, name as John Doe and role as manager.<br>
+<code>add-staff u/johnd p/johndoe1 n/John Doe r/manager</code>.</p>
+</li>
+<li>
+<p>Add staff with username as damith, password as softengn, name as Damith Rajapakse and role as user.<br>
+<code>add-staff u/damith p/softengn n/Damith Rajapakse r/user</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="listing-all-the-users-code-list-staff-code"><a class="link" href="#listing-all-the-users-code-list-staff-code">3.2.2. Listing all the users : <code>list-staff</code></a></h4>
+<h4 id="list-all-the-users-code-list-staff-code"><a class="link" href="#list-all-the-users-code-list-staff-code">3.2.2. List all the users : <code>list-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>list-staff</code> command displays a list of existing users in the system.<br>
-This command is available to admins only.<br></p>
+<p>The <code>list-staff</code> command displays a list of existing users in the system.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>list-staff</code></p>
@@ -261,16 +223,13 @@ This command is available to admins only.<br></p>
 <div class="content">
 <img src="../images/doc-list-user.png" alt="doc list user" width="790">
 </div>
-</div>
-<div class="paragraph">
-<p><em>Figure 4.3. All users in Inventory Manager listed on screen.</em></p>
+<div class="title">Figure 3. All users in Inventory Manager listed on the screen.</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="updating-a-user-code-edit-staff-code"><a class="link" href="#updating-a-user-code-edit-staff-code">3.2.3. Updating a user : <code>edit-staff</code></a></h4>
+<h4 id="update-a-user-code-edit-staff-code"><a class="link" href="#update-a-user-code-edit-staff-code">3.2.3. Update a user : <code>edit-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>edit-staff</code> command updates a user information into the system with given username.<br>
-This command is available to admins only.<br></p>
+<p>The <code>edit-staff</code> command updates a user information into the system with the given username.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>edit-staff INDEX [n/NAME] [u/USERNAME] [p/PASSWORD] [r/ROLE]</code></p>
@@ -284,29 +243,20 @@ This command is available to admins only.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Edit staff with given id, 2 in the list. Change name to Yao Teng Xiong and role as admin.<br>
-<code>edit-staff 2 n/Yao Teng Xiong r/admin</code>.</p>
+<p>Edit staff with given id, 3 in the list. Change name to Yao Teng Xiong and role as admin.<br>
+<code>edit-staff 3 n/Yao Teng Xiong r/admin</code>.</p>
+</li>
+<li>
+<p>Edit staff with given id, 2 in the list. Change username to zulq8 and password as meowmeowzul.<br>
+<code>edit-staff 2 u/zulq8 p/meowmeowzul</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="deleting-a-user-code-delete-staff-code"><a class="link" href="#deleting-a-user-code-delete-staff-code">3.2.4. Deleting a user : <code>delete-staff</code></a></h4>
+<h4 id="delete-a-user-code-delete-staff-code"><a class="link" href="#delete-a-user-code-delete-staff-code">3.2.4. Delete a user : <code>delete-staff</code></a></h4>
 <div class="paragraph">
-<p>The <code>delete-staff</code> command deletes a user from the system with given index as shown in the list.<br>
-This command is available to admins only.<br></p>
-</div>
-<div class="paragraph">
-<p>An error will be shown if the entered index is invalid.
-<code>delete-staff 999</code>.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/doc-delete-user-failed.png" alt="doc delete user failed" width="790">
-</div>
-</div>
-<div class="paragraph">
-<p><em>Figure 4.4. Error shown if the deleted index is invalid.</em></p>
+<p>The <code>delete-staff</code> command deletes a user from the system with the given index as shown in the list.<br></p>
 </div>
 <div class="paragraph">
 <p>Format: <code>delete-staff INDEX</code></p>
@@ -317,10 +267,20 @@ This command is available to admins only.<br></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Delete user with given index as shown in the list.<br>
+<p>Delete a user with given index as shown in the list.<br>
 <code>delete-staff 1</code>.</p>
 </li>
+<li>
+<p>Delete a user with an invalid index.<br>
+<code>delete-staff 999</code>.</p>
+</li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/doc-delete-user-failed.png" alt="doc delete user failed" width="790">
+</div>
+<div class="title">Figure 4. The error is shown if the provided index is invalid.</div>
 </div>
 </div>
 </div>
@@ -342,22 +302,30 @@ This command is available to admins only.<br></p>
 <div class="sect2">
 <h3 id="authentication-2"><a class="link" href="#authentication-2">4.1. Authentication</a></h3>
 <div class="paragraph">
-<p>Authentication is introduced in Inventory Manager which allows users to authenticate themselves to perform their inventory
+<p>Authentication is introduced in Inventory Manager which allows the users to authenticate themselves to perform their inventory
 management tasks. This is to prevent any unauthorized users from accessing the system.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation"><a class="link" href="#implementation">4.1.1. Implementation</a></h4>
 <div class="paragraph">
-<p>The authentication of user is handled by <code>LoginCommand</code>. The use of it will trigger <code>Model#authenticateUser</code>,
+<p>The authentication of the user is handled by <code>LoginCommand</code>. The use of it will trigger <code>Model#authenticateUser</code>,
 which will authenticate the user in the Inventory Manager. However, for <code>LoginCommand#execute</code> to be successful,
-there are two conditions which needs to be met.</p>
+there are two conditions which need to be met.</p>
 </div>
 <div class="sect4">
 <h5 id="conditions"><a class="link" href="#conditions">Conditions</a></h5>
 <div class="paragraph">
-<p>The following two conditions must be met before executing:
-. Current user who are executing the command must be providing valid username and password.
-. The user must have an account exists in the system.</p>
+<p>The following two conditions must be met before executing:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The current user who is executing the command must be providing a valid username and password.</p>
+</li>
+<li>
+<p>The user must have an account exists in the system.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p><code>LoginCommand#execute</code> will perform the validation before proceeding. If any of the above validation fails,
@@ -374,7 +342,7 @@ choices made.</p>
 <div class="sect4">
 <h5 id="aspect-where-code-login-code-executes"><a class="link" href="#aspect-where-code-login-code-executes">Aspect: Where <code>login</code> executes</a></h5>
 <div class="paragraph">
-<p>There are various places where <code>authenticateUser</code> can be executed. The pros and cons for each option is shown below.</p>
+<p>There are various places where <code>authenticateUser</code> can be executed. The pros and cons of each option are shown below.</p>
 </div>
 <div class="paragraph">
 <p><strong>Alternative 1 (current choice):</strong> Executed at Logic<br>
@@ -413,23 +381,23 @@ choices made.</p>
 <div class="content">
 <img src="../images/LoginSDForLogic.png" alt="LoginSDForLogic" width="790">
 </div>
-<div class="title">Figure 1. This UML diagram shows how login is executed and works at the logic component.</div>
+<div class="title">Figure 5. This UML diagram shows how login is executed and works at the logic component.</div>
 </div>
 </div>
 <div class="sect4">
 <h5 id="model-component"><a class="link" href="#model-component">Model Component</a></h5>
 <div class="paragraph">
-<p>Authentication has a <code>UserSession</code> stores in the Model Component of the system. This is due to this component has to be
+<p>Authentication has a <code>UserSession</code> object stores in the Model Component of the system. This is due to this component has to be
 largely relied on when the commands are executed.</p>
 </div>
 <div class="paragraph">
-<p>Newly created user session object comes with a <code>Staff</code> object to store current user&#8217;s information.</p>
+<p>Newly created user session object comes with a <code>Staff</code> object to store the current user&#8217;s information.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/AuthenticationModelComponentClassDiagram.png" alt="AuthenticationModelComponentClassDiagram" width="790">
 </div>
-<div class="title">Figure 2. This UML diagram shows the UserSession object stores a Staff object and is stored in ModelManager.</div>
+<div class="title">Figure 6. This UML diagram shows the UserSession object stores a Staff object and is stored in ModelManager.</div>
 </div>
 </div>
 </div>
@@ -438,21 +406,29 @@ largely relied on when the commands are executed.</p>
 <h3 id="user-management-2"><a class="link" href="#user-management-2">4.2. User Management</a></h3>
 <div class="paragraph">
 <p>Editing a user will have the staff&#8217;s account information updated. Below will describe how this
-feature is implemented in Inventory Manager.</p>
+feature is implemented in the Inventory Manager.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation-2"><a class="link" href="#implementation-2">4.2.1. Implementation</a></h4>
 <div class="paragraph">
-<p>The update of user is handled by <code>EditStaffCommand</code>. The use of it will trigger <code>Model#updateStaff</code>,
+<p>The update of the user is handled by <code>EditStaffCommand</code>. The use of it will trigger <code>Model#updateStaff</code>,
 which will edit the user in the Inventory Manager. However, for <code>EditStaffCommand#execute</code> to be successful,
-there are two conditions which needs to be met.</p>
+there are two conditions which need to be met.</p>
 </div>
 <div class="sect4">
 <h5 id="conditions-2"><a class="link" href="#conditions-2">Conditions</a></h5>
 <div class="paragraph">
-<p>The following two conditions must be met before:
-. Current user who are executing the command must be a user with admin role.
-. The index of the staff must be a valid number and existing in the staff list shown.</p>
+<p>The following two conditions must be met before:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ther current user who is executing the command must be a user with admin role.</p>
+</li>
+<li>
+<p>The index of the staff must be a valid number and existing in the staff list shown.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p><code>EditStaffCommand#execute</code> will perform the validation before proceeding. If any of the above validation fails,
@@ -469,7 +445,7 @@ choices made.</p>
 <div class="sect4">
 <h5 id="aspect-where-code-edit-staff-code-executes"><a class="link" href="#aspect-where-code-edit-staff-code-executes">Aspect: Where <code>edit-staff</code> executes</a></h5>
 <div class="paragraph">
-<p>There are various places where <code>edit-staff</code> can be executed. The pros and cons for each option is shown below.</p>
+<p>There are various places where <code>edit-staff</code> can be executed. The pros and cons of each option are shown below.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -481,7 +457,7 @@ choices made.</p>
 <p>Pros: Easy to implement<br></p>
 </li>
 <li>
-<p>Cons: Direct calling of <code>Model#editStaff</code> will not be validated.</p>
+<p>Cons: The direct calling of <code>Model#editStaff</code> will not be validated.</p>
 </li>
 </ul>
 </div>
@@ -494,7 +470,7 @@ choices made.</p>
 <p>Pros: Ensures that all entries are validated before staff can be updated.<br></p>
 </li>
 <li>
-<p>Cons: <code>Model#editStaff</code> will need to access staff list to perform validations.</p>
+<p>Cons: <code>Model#editStaff</code> will need to access the staff list to perform validations.</p>
 </li>
 </ul>
 </div>
@@ -520,7 +496,7 @@ choices made.</p>
 <p><code>list-staff</code> : List all staffs</p>
 </li>
 <li>
-<p><code>edit-po</code> : Edit a staff</p>
+<p><code>edit-staff</code> : Edit a staff</p>
 </li>
 <li>
 <p><code>delete-staff</code> : Delete a staff</p>
@@ -531,7 +507,7 @@ choices made.</p>
 <div class="content">
 <img src="../images/EditStaffSDForLogic.png" alt="EditStaffSDForLogic" width="790">
 </div>
-<div class="title">Figure 3. This UML diagram shows how <code>edit-staff</code> is executed and works at the logic component.</div>
+<div class="title">Figure 7. This UML diagram shows how <code>edit-staff</code> is executed and works at the logic component.</div>
 </div>
 </div>
 <div class="sect4">
@@ -543,7 +519,7 @@ choices made.</p>
 <div class="content">
 <img src="../images/StaffModelComponentClassDiagram.png" alt="StaffModelComponentClassDiagram" width="790">
 </div>
-<div class="title">Figure 4. This UML diagram shows representation of Staff and UniqueStaffList in Inventory Manager.</div>
+<div class="title">Figure 8. This UML diagram shows the representation of Staff and UniqueStaffList in Inventory Manager.</div>
 </div>
 </div>
 <div class="sect4">
@@ -555,7 +531,7 @@ choices made.</p>
 <div class="content">
 <img src="../images/StaffStorageComponentClassDiagram.png" alt="StaffStorageComponentClassDiagram" width="790">
 </div>
-<div class="title">Figure 5. This UML diagram shows Staff objects are saved using XmlAdaptedStaff objects into a XMLSerializableStaffList as shown above.</div>
+<div class="title">Figure 9. This UML diagram shows Staff objects are saved using XmlAdaptedStaff objects into a XMLSerializableStaffList as shown above.</div>
 </div>
 <div class="paragraph">
 <p>An example staff stored in XML format is reproduced below:</p>
@@ -587,4 +563,4 @@ Passwords are stored in hashed format using SHA-256 encoding.
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 10:19:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 11:47:46 UTC</div></div></div></body></html>

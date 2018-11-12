@@ -1243,22 +1243,30 @@ choices made.</p>
 <div class="sect2">
 <h3 id="authentication"><a class="link" href="#authentication">3.6. Authentication</a></h3>
 <div class="paragraph">
-<p>Authentication is introduced in Inventory Manager which allows users to authenticate themselves to perform their inventory
+<p>Authentication is introduced in Inventory Manager which allows the users to authenticate themselves to perform their inventory
 management tasks. This is to prevent any unauthorized users from accessing the system.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation-3"><a class="link" href="#implementation-3">3.6.1. Implementation</a></h4>
 <div class="paragraph">
-<p>The authentication of user is handled by <code>LoginCommand</code>. The use of it will trigger <code>Model#authenticateUser</code>,
+<p>The authentication of the user is handled by <code>LoginCommand</code>. The use of it will trigger <code>Model#authenticateUser</code>,
 which will authenticate the user in the Inventory Manager. However, for <code>LoginCommand#execute</code> to be successful,
-there are two conditions which needs to be met.</p>
+there are two conditions which need to be met.</p>
 </div>
 <div class="sect4">
 <h5 id="conditions-2"><a class="link" href="#conditions-2">Conditions</a></h5>
 <div class="paragraph">
-<p>The following two conditions must be met before executing:
-. Current user who are executing the command must be providing valid username and password.
-. The user must have an account exists in the system.</p>
+<p>The following two conditions must be met before executing:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The current user who is executing the command must be providing a valid username and password.</p>
+</li>
+<li>
+<p>The user must have an account exists in the system.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p><code>LoginCommand#execute</code> will perform the validation before proceeding. If any of the above validation fails,
@@ -1275,7 +1283,7 @@ choices made.</p>
 <div class="sect4">
 <h5 id="aspect-where-code-login-code-executes"><a class="link" href="#aspect-where-code-login-code-executes">Aspect: Where <code>login</code> executes</a></h5>
 <div class="paragraph">
-<p>There are various places where <code>authenticateUser</code> can be executed. The pros and cons for each option is shown below.</p>
+<p>There are various places where <code>authenticateUser</code> can be executed. The pros and cons of each option are shown below.</p>
 </div>
 <div class="paragraph">
 <p><strong>Alternative 1 (current choice):</strong> Executed at Logic<br>
@@ -1320,11 +1328,11 @@ choices made.</p>
 <div class="sect4">
 <h5 id="model-component-2"><a class="link" href="#model-component-2">Model Component</a></h5>
 <div class="paragraph">
-<p>Authentication has a <code>UserSession</code> stores in the Model Component of the system. This is due to this component has to be
+<p>Authentication has a <code>UserSession</code> object stores in the Model Component of the system. This is due to this component has to be
 largely relied on when the commands are executed.</p>
 </div>
 <div class="paragraph">
-<p>Newly created user session object comes with a <code>Staff</code> object to store current user&#8217;s information.</p>
+<p>Newly created user session object comes with a <code>Staff</code> object to store the current user&#8217;s information.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1339,21 +1347,29 @@ largely relied on when the commands are executed.</p>
 <h3 id="user-management"><a class="link" href="#user-management">3.7. User Management</a></h3>
 <div class="paragraph">
 <p>Editing a user will have the staff&#8217;s account information updated. Below will describe how this
-feature is implemented in Inventory Manager.</p>
+feature is implemented in the Inventory Manager.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation-4"><a class="link" href="#implementation-4">3.7.1. Implementation</a></h4>
 <div class="paragraph">
-<p>The update of user is handled by <code>EditStaffCommand</code>. The use of it will trigger <code>Model#updateStaff</code>,
+<p>The update of the user is handled by <code>EditStaffCommand</code>. The use of it will trigger <code>Model#updateStaff</code>,
 which will edit the user in the Inventory Manager. However, for <code>EditStaffCommand#execute</code> to be successful,
-there are two conditions which needs to be met.</p>
+there are two conditions which need to be met.</p>
 </div>
 <div class="sect4">
 <h5 id="conditions-3"><a class="link" href="#conditions-3">Conditions</a></h5>
 <div class="paragraph">
-<p>The following two conditions must be met before:
-. Current user who are executing the command must be a user with admin role.
-. The index of the staff must be a valid number and existing in the staff list shown.</p>
+<p>The following two conditions must be met before:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Ther current user who is executing the command must be a user with admin role.</p>
+</li>
+<li>
+<p>The index of the staff must be a valid number and existing in the staff list shown.</p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p><code>EditStaffCommand#execute</code> will perform the validation before proceeding. If any of the above validation fails,
@@ -1370,7 +1386,7 @@ choices made.</p>
 <div class="sect4">
 <h5 id="aspect-where-code-edit-staff-code-executes"><a class="link" href="#aspect-where-code-edit-staff-code-executes">Aspect: Where <code>edit-staff</code> executes</a></h5>
 <div class="paragraph">
-<p>There are various places where <code>edit-staff</code> can be executed. The pros and cons for each option is shown below.</p>
+<p>There are various places where <code>edit-staff</code> can be executed. The pros and cons of each option are shown below.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1382,7 +1398,7 @@ choices made.</p>
 <p>Pros: Easy to implement<br></p>
 </li>
 <li>
-<p>Cons: Direct calling of <code>Model#editStaff</code> will not be validated.</p>
+<p>Cons: The direct calling of <code>Model#editStaff</code> will not be validated.</p>
 </li>
 </ul>
 </div>
@@ -1395,7 +1411,7 @@ choices made.</p>
 <p>Pros: Ensures that all entries are validated before staff can be updated.<br></p>
 </li>
 <li>
-<p>Cons: <code>Model#editStaff</code> will need to access staff list to perform validations.</p>
+<p>Cons: <code>Model#editStaff</code> will need to access the staff list to perform validations.</p>
 </li>
 </ul>
 </div>
@@ -1421,7 +1437,7 @@ choices made.</p>
 <p><code>list-staff</code> : List all staffs</p>
 </li>
 <li>
-<p><code>edit-po</code> : Edit a staff</p>
+<p><code>edit-staff</code> : Edit a staff</p>
 </li>
 <li>
 <p><code>delete-staff</code> : Delete a staff</p>
@@ -1444,7 +1460,7 @@ choices made.</p>
 <div class="content">
 <img src="images/StaffModelComponentClassDiagram.png" alt="StaffModelComponentClassDiagram" width="790">
 </div>
-<div class="title">Figure 16. This UML diagram shows representation of Staff and UniqueStaffList in Inventory Manager.</div>
+<div class="title">Figure 16. This UML diagram shows the representation of Staff and UniqueStaffList in Inventory Manager.</div>
 </div>
 </div>
 <div class="sect4">
@@ -4939,4 +4955,4 @@ Expected: The item list is not exported due to invalid file format. Error detail
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 10:19:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2018-11-12 11:47:46 UTC</div></div></div></body></html>
